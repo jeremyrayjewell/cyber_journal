@@ -1,8 +1,8 @@
 # Cyber-Journal
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](LICENSE)  
-[![Last Commit](https://img.shields.io/github/last-commit/your-username/Cyber-Journal)](https://github.com/your-username/Cyber-Journal/commits/main)  
-[![Issues](https://img.shields.io/github/issues/your-username/Cyber-Journal)](https://github.com/your-username/Cyber-Journal/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/jeremyrayjewell/cyber_journal)](https://github.com/jeremyrayjewell/cyber_journal/commits/main)  
+[![Issues](https://img.shields.io/github/issues/jeremyrayjewell/cyber_journal)](https://github.com/jeremyrayjewell/cyber_journal/issues)
 
 A living log of my hands-on journey through CTFs, book summaries, SSH deep-dives, and pentesting experiments.
 
