@@ -11,6 +11,7 @@ File pattern: "name-XX" where
 
 No spoilers! Passwords are ROT13-obfuscated here
 and often updated by game admins anyways
+
 To decode the ones I found:
 
 ```bash
