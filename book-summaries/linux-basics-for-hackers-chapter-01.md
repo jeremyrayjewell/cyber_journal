@@ -84,21 +84,53 @@ SUMMARY OF
 
 - `cd ..` takes you up one level from where you are, `cd ../..` takes you up two levels, `cd ../../..` three, etc.
 
-- not mention here, though useful, is the distinction between relative and absolute locations when using `cd`. Absolute routes are prefixed with `/`, which relative routes lack. As a result, `cd /etc` will take you to the `etc` directory in the root `/` directory from anywhere in the filesystem. `cd etc` would only take you to the same directory if it is executed while working in the `/` directory.
+- not mentioned here, though useful, is the distinction between relative and absolute locations when using `cd`. Absolute routes are prefixed with `/`, which relative routes lack. As a result, `cd /etc` will take you to the `etc` directory in the root `/` directory from anywhere in the filesystem. `cd etc` would only take you to the same directory if it is executed while working in the `/` directory.
 
-	### Getting Help
+- `ls`: *list* prints the contents of a directory.
 
-	### Referencing Manual Pages with man
+- `ls -l`: *list* with a `-l` short option/flag/switch displays more details (*long-listing format*). Interchangeable with `--long`. 	
+
+- `ls -la`: The edition of the `-a`flag shows *all* contents, including hidden ones. Interchangeable with `--all`, and similar to `-A`/`--almost-all` which exclude the `.` and `..` special entries. 
+
+### Getting Help
+
+- Dedicate help files: conventionally, but not universally, `-h`, `--help`, or `-?` flags.
+
+### Referencing Manual Pages with man
+
+- `man`: Manuel pager utils - an interface to the system reference manuals. Run `man` plus the command/utility/application (i.e. `man ls`, `man cat`, `man man`).
+
+- Scroll through entries using `ENTER`, `PG UP`/`PG DM`, or the arrow keys. Press `q` to quit.
 
 ## Finding Stuff
 	
-	### Searching with locate
+### Searching with locate
 
-	### Finding Binaries with whereis
+- `locate`: searches filenames anywhere on the system using a periodically updated database (typically `/var/lib/mlocate/mlocate.db`). The database can be updated manually using `sudo updatedb`, which may be necessary if a file you are looking for is newer than the last automatic indexing.
 
-	### Finding Binaries in the PATH Variable with which
-	
-	### Performing More Powerful Searches with find
+- `locate` is very fast, but susceptible to errors in relation to databse updates.
+
+### Finding Binaries with whereis
+
+- `whereis`: searches binaries, source, and man pages via a small set of predfeined system paths (i.e. `/bin`, `/usr/bin`, `/usr/share/man`).
+
+- `whereis` is non-recursive and checks only standard system locations, and as such is non-exhaustive. It also ignores aliases, functions, and built-in commands.
+
+### Finding Binaries in the PATH Variable with which
+
+- `which`: searches executables in your `$PATH`; walks through each directory in your shell's `PATH` until it finds a matching executable. In other terms, it looks to see what is executed when a term is invoked.
+
+- `which` is limited to your `PATH`, and is best to use when confirming which binary being invoked.	
+
+### Performing More Powerful Searches with find
+
+- `find /`: recursively traverses the live filesystem descending from a starting point of `/` evaluating expressions on the fly to find files the match their criteria. The most flexible, up-to-the-minute search type. `/` can be substituted for any other starting point (i.e. `/etc`)
+
+- `find` is always up-to-date, but can be slow on large trees.
+
+- Use case: `find / -type f -name apache2`, where `/` is the starting directory, `-type f` specifies file type *file*, and `-name apache2` specifies name *apache2*.
+
+- Limiting the scope by choosing a nested directory can save time, i.e. `find /etc -type f -name apache2`.
 
 	### Filtering with grep
 
