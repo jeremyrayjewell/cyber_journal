@@ -1,6 +1,6 @@
-# SUMMARY OF 
-# **LINUX BASICS FOR HACKERS** 
-# (FIRST EDITION) BY OCCUPYTHEWEB
+SUMMARY OF 
+**LINUX BASICS FOR HACKERS** 
+(FIRST EDITION) BY OCCUPYTHEWEB
 
 ---
 
@@ -8,35 +8,41 @@
 
 ---
 
+## Introduction
+
+- one
+
+- two
+
 ## What's in This Book?
 
 ## What is Ethical Hacking?
 
-	### Penetration Testing
+### Penetration Testing
 
-	### Military and Espionage
+### Military and Espionage
 
 ## Why Hackers Use Linux
 
-	### Linux is Open Source
+### Linux is Open Source
 
-	### Linux is Transparent
+### Linux is Transparent
 
-	### Linux Offers Granular Control
+### Linux Offers Granular Control
 
-	### Most Hacking Tools Are Written for Linux
+### Most Hacking Tools Are Written for Linux
 
-	### The Future Belongs to Linux/Unix
+### The Future Belongs to Linux/Unix
 
 ## Downloading Kali Linux
 
 ## Virtual Machines
 	
-	### Installing VirtualBox
+### Installing VirtualBox
 
-	### Setting Up Your Virtual Machine
+### Setting Up Your Virtual Machine
 
-	### Installing Kali on the VM
+### Installing Kali on the VM
 
 ## Setting Up Kali
 
