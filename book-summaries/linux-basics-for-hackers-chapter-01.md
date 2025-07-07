@@ -90,15 +90,15 @@ SUMMARY OF
 
 - `ls -l`: *list* with a `-l` short option/flag/switch displays more details (*long-listing format*). Interchangeable with `--long`. 	
 
-- `ls -la`: The edition of the `-a`flag shows *all* contents, including hidden ones. Interchangeable with `--all`, and similar to `-A`/`--almost-all` which exclude the `.` and `..` special entries. 
+- `ls -la`: The addition of the `-a`flag shows *all* contents, including hidden ones. Interchangeable with `--all`, and similar to `-A`/`--almost-all` which exclude the `.` and `..` special entries. 
 
 ### Getting Help
 
-- Dedicate help files: conventionally, but not universally, `-h`, `--help`, or `-?` flags.
+- Dedicated help files: conventionally, but not universally, `-h`, `--help`, or `-?` flags.
 
 ### Referencing Manual Pages with man
 
-- `man`: Manuel pager utils - an interface to the system reference manuals. Run `man` plus the command/utility/application (i.e. `man ls`, `man cat`, `man man`).
+- `man`: Manual pager utils - an interface to the system reference manuals. Run `man` plus the command/utility/application (i.e. `man ls`, `man cat`, `man man`).
 
 - Scroll through entries using `ENTER`, `PG UP`/`PG DM`, or the arrow keys. Press `q` to quit.
 
@@ -112,7 +112,7 @@ SUMMARY OF
 
 ### Finding Binaries with whereis
 
-- `whereis`: searches binaries, source, and man pages via a small set of predfeined system paths (i.e. `/bin`, `/usr/bin`, `/usr/share/man`).
+- `whereis`: searches binaries, source, and man pages via a small set of predefined system paths (i.e. `/bin`, `/usr/bin`, `/usr/share/man`).
 
 - `whereis` is non-recursive and checks only standard system locations, and as such is non-exhaustive. It also ignores aliases, functions, and built-in commands.
 
@@ -120,11 +120,11 @@ SUMMARY OF
 
 - `which`: searches executables in your `$PATH`; walks through each directory in your shell's `PATH` until it finds a matching executable. In other terms, it looks to see what is executed when a term is invoked.
 
-- `which` is limited to your `PATH`, and is best to use when confirming which binary being invoked.	
+- `which` is limited to your `PATH`, and is best to use when confirming which binary is being invoked.	
 
 ### Performing More Powerful Searches with find
 
-- `find /`: recursively traverses the live filesystem descending from a starting point of `/` evaluating expressions on the fly to find files the match their criteria. The most flexible, up-to-the-minute search type. `/` can be substituted for any other starting point (i.e. `/etc`)
+- `find /`: recursively traverses the live filesystem descending from a starting point of `/` evaluating expressions on the fly to find files that match their criteria. The most flexible, up-to-the-minute search type. `/` can be substituted for any other starting point (i.e. `/etc`)
 
 - `find` is always up-to-date, but can be slow on large trees.
 
