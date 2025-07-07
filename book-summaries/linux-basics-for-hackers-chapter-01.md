@@ -8,13 +8,61 @@ SUMMARY OF
 
 ---
 
+- This chapter aims at providing some fundamental skills to begin hands-on engagement
+
 ## Introductory Terms and Concepts
+
+- Binaries: executable files, including utilities and applications, often in */usr/bin* or *usr/sbin*.
+
+- Case sensitivity: Linux filesystem does not recognize uppercase letters as their lowercase ounterparts, nor vice versa. Like Python.
+
+- Directory: hierarchically-organized location within the filesystem. Like Windows' *folders*.
+
+- Home: a directory holding directories belonging to each individual user; */home/user*. A default location for each user's files. 
+
+- Kali: a Debian-based Linux distribution focused on penetration testing with many pre-installed tools for that purpose. 
+
+- root: the system administrator (not to be confused with the *root* directory `/` nor the *root user* directory `/root`).
+
+- Script: commands run via interpreters; may be bash, Pyhton, Perl, etc.  
+
+- Shell: command-running environment and interpreter. Most typical for Linux, and that used in the book, is *bash* (*Bourne-again shell*)
+
+- Terminal: the text-based command line interface (CLI) you find inside a terminal emulator. The terminal interfaces with the shell to implement the CLI commands.
 
 ## A Tour of Kali
 
-	### The Terminal
+- After logging in you will want to understand the terminal interface and file structure.
 
-	### The Linux Filesystem
+### The Terminal
+
+- In Kali you can open the terminal via its icon on the desktop (top left). The terminal opens the shell. At this point the user may opt to change their password using `passwd`.
+
+### The Linux Filesystem
+
+- The Linux filesystem is distinct from others. It doesn't priotize physical media like Windows does.
+
+- The top of the system structure is *root*, or `/`. Here is a lay out of the root directory and its most important subdirectories:
+
+	/
+	├──/root [Confusingly, NOT the `/` root, but rather the home directory of the root user]
+	├──/boot [Kernel image]
+	├──/etc  [System configuration files]
+	├──/home [User directories]
+	├──/mnt  [General-purpose mount point]
+	├──/media[CD/USB mount point]
+	├──/proc ["Processes"; view of internal kernal data]
+	├──/sys	 ["System"; kernel's view of internal hardware]
+	├──/dev	 ["Devices"; special device files]
+	├──/bin  [Binaries]
+	├──/sbin [Binaries]
+	├──/lib  [Libraries[
+	└──/usr  ["Second tier" for shareable, read-only userland programs/files]
+	    ├──/bin  [Binaries]
+	    ├──/sbin [Binaries]
+	    └──/lib  [Libraries]
+
+- It is advisable *not* to login as root unless it is necessary so as to avoid having your system compromised with administrator-level permissions enabled. For the exercises in the book, however, the learner can remain in root.  
 
 ## Basic Commands in Linux
 

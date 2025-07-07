@@ -50,7 +50,7 @@ SUMMARY OF
 
 ### Linux Offers Granular Control
 
-- "Granular" here just means a non-monolithic, "one-size-fits-all" structure. Linux allows us control of all levels.
+- "Granular" here just means a non-monolithic, non-"one-size-fits-all" structure. Linux allows us control of all levels.
 
 ### Most Hacking Tools Are Written for Linux
 
