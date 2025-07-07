@@ -29,3 +29,9 @@ to disambiguate any filename that would otherwise be treated specially.
 
 - `cat /home/bandit1/-`
 
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+

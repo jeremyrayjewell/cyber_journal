@@ -34,15 +34,19 @@ one of the oldest and most fundamental Unix utilities.
 purpose: to con*cat*enate one or more files and to print the result
 to the terminal. `cat` predates all screen-based editors. Thus, 
 while its name reflects its original primary functionality, its use 
-today is very often as a quick pager (or text viewer).
-
-	
+today is very often as a quick pager (or text viewer).	
 
 ## Solutions ##
 	
-- `ssh -p 2220 bandit0@bandit.labs.overthewire.org`
-- This same command format must be used to connect to all subsequent
+`ssh -p 2220 bandit0@bandit.labs.overthewire.org`
+This same command format must be used to connect to all subsequent
 levels.
-- The password for user bandit0 is given as `bandit 0`.
-- User can run `ls` in home directory to reveal readme.
-- `cat readme` reveals the password.
+The password for user bandit0 is given as `bandit 0`.
+User can run `ls` in home directory to reveal readme.
+`cat readme` reveals the password.
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
