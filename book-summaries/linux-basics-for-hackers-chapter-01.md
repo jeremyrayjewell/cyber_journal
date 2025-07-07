@@ -42,6 +42,8 @@ SUMMARY OF
 
 - The Linux filesystem is distinct from others. It doesn't priotize physical media like Windows does.
 
+- It is advisable *not* to login as root user unless it is necessary so as to avoid having your system compromised with administrator-level permissions enabled. For the exercises in the book, however, the learner can remain in root.  
+
 - The top of the system structure is *root*, or `/`. Here is a lay out of the root directory and its most important subdirectories:
 
 	/
@@ -61,8 +63,6 @@ SUMMARY OF
 	    ├──/bin  [Binaries]
 	    ├──/sbin [Binaries]
 	    └──/lib  [Libraries]
-
-- It is advisable *not* to login as root unless it is necessary so as to avoid having your system compromised with administrator-level permissions enabled. For the exercises in the book, however, the learner can remain in root.  
 
 ## Basic Commands in Linux
 
