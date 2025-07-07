@@ -46,23 +46,23 @@ SUMMARY OF
 
 - The top of the system structure is *root*, or `/`. Here is a lay out of the root directory and its most important subdirectories:
 
-###	/
-###	├──/root [Confusingly, NOT the `/` root, but rather the home directory of the root user]
-###	├──/boot [Kernel image]
-###	├──/etc  [System configuration files]
-###	├──/home [User directories]
-###	├──/mnt  [General-purpose mount point]
-###	├──/media[CD/USB mount point]
-###	├──/proc ["Processes"; view of internal kernal data]
-###	├──/sys	 ["System"; kernel's view of internal hardware]
-###	├──/dev	 ["Devices"; special device files]
-###	├──/bin  [Binaries]
-###	├──/sbin [Binaries]
-###	├──/lib  [Libraries[
-###	└──/usr  ["Second tier" for shareable, read-only userland programs/files]
-###	    ├──/bin  [Binaries]
-###	    ├──/sbin [Binaries]
-###	    └──/lib  [Libraries]
+####	/
+####	├──/root [Confusingly, NOT the `/` root, but rather the home directory of the root user]
+####	├──/boot [Kernel image]
+####	├──/etc  [System configuration files]
+####	├──/home [User directories]
+####	├──/mnt  [General-purpose mount point]
+####	├──/media[CD/USB mount point]
+####	├──/proc ["Processes"; view of internal kernal data]
+####	├──/sys	 ["System"; kernel's view of internal hardware]
+####	├──/dev	 ["Devices"; special device files]
+####	├──/bin  [Binaries]
+####	├──/sbin [Binaries]
+####	├──/lib  [Libraries[
+####	└──/usr  ["Second tier" for shareable, read-only userland programs/files]
+####	    ├──/bin  [Binaries]
+####	    ├──/sbin [Binaries]
+####	    └──/lib  [Libraries]
 
 ## Basic Commands in Linux
 
