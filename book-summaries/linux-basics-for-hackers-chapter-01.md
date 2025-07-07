@@ -12,23 +12,23 @@ SUMMARY OF
 
 ## Introductory Terms and Concepts
 
-- Binaries: executable files, including utilities and applications, often in */usr/bin* or *usr/sbin*.
+- **Binaries**: executable files, including utilities and applications, often in */usr/bin* or *usr/sbin*.
 
-- Case sensitivity: Linux filesystem does not recognize uppercase letters as their lowercase ounterparts, nor vice versa. Like Python.
+- **Case sensitivity**: Linux filesystem does not recognize uppercase letters as their lowercase ounterparts, nor vice versa. Like Python.
 
-- Directory: hierarchically-organized location within the filesystem. Like Windows' *folders*.
+- **Directory**: hierarchically-organized location within the filesystem. Like Windows' *folders*.
 
-- Home: a directory holding directories belonging to each individual user; */home/user*. A default location for each user's files. 
+- **Home**: a directory holding directories belonging to each individual user; */home/user*. A default location for each user's files. 
 
-- Kali: a Debian-based Linux distribution focused on penetration testing with many pre-installed tools for that purpose. 
+- **Kali**: a Debian-based Linux distribution focused on penetration testing with many pre-installed tools for that purpose. 
 
-- root: the system administrator (not to be confused with the *root* directory `/` nor the *root user* directory `/root`).
+- **root**: the system administrator (not to be confused with the *root* directory `/` nor the *root user* directory `/root`).
 
-- Script: commands run via interpreters; may be bash, Pyhton, Perl, etc.  
+- **Script**: commands run via interpreters; may be bash, Pyhton, Perl, etc.  
 
-- Shell: command-running environment and interpreter. Most typical for Linux, and that used in the book, is *bash* (*Bourne-again shell*)
+- **Shell**: command-running environment and interpreter. Most typical for Linux, and that used in the book, is *bash* (*Bourne-again shell*)
 
-- Terminal: the text-based command line interface (CLI) you find inside a terminal emulator. The terminal interfaces with the shell to implement the CLI commands.
+- **Terminal**: the text-based command line interface (CLI) you find inside a terminal emulator. The terminal interfaces with the shell to implement the CLI commands.
 
 ## A Tour of Kali
 
