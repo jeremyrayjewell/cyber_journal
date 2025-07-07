@@ -132,6 +132,17 @@ SUMMARY OF
 
 - Limiting the scope by choosing a nested directory can save time, i.e. `find /etc -type f -name apache2`.
 
+### NOTE: A Quick Look at Wildcards
+<pre markdown>
+
+- `*`: *match zero or more characters*, i.e. `ls *.txt` lists all files ending in ".txt", `ls foo*` lists all files beginning with "foo"
+
+- `?`: *match exactly one character*, i.e. `ls file?.sh` lists "file1.sh", "filaA.sh", but not "file10.sh".
+
+- Not mentioned here: `[...]`: *character classes*, i.e. `ls report[0-9].pdf` lists "report0.pdf ... report9.pdf". `ls report[!0-9]` excludes digits 0-9, returning "reportA.pdf"
+
+</pre>
+
 	### Filtering with grep
 
 ## Modifying Files and Directories
