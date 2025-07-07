@@ -68,11 +68,23 @@ SUMMARY OF
 
 ## Basic Commands in Linux
 
-	### Finding Yourself with pwd
+### Finding Yourself with pwd
 
-	### Checking Your Login with pwd
+- `pwd`: *present/print working directory*. 
 
-	### Navigating the Linux Filesystem
+### Checking Your Login with whoami
+
+- `whoami`: prints your working user name
+
+### Navigating the Linux Filesystem
+
+- `cd`: *change directory*. `cd /` will take you to *root* `/`, `cd /etc` will take you to `/etc`.
+
+- `cd` then `pwd`: running `pwd` after changing directories with `cd` helps reiterate your path and location.
+
+- `cd ..` takes you up one level from where you are, `cd ../..` takes you up two levels, `cd ../../..` three, etc.
+
+- not mention here, though useful, is the distinction between relative and absolute locations when using `cd`. Absolute routes are prefixed with `/`, which relative routes lack. As a result, `cd /etc` will take you to the `etc` directory in the root `/` directory from anywhere in the filesystem. `cd etc` would only take you to the same directory if it is executed while working in the `/` directory.
 
 	### Getting Help
 
