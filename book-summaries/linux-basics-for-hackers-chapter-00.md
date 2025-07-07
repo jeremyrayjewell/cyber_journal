@@ -12,11 +12,13 @@ SUMMARY OF
 
 - The 21st-centrury world is shaped by hacking
 
-- Most professional hacking toold are Linux-based
+- Most professional hacking tools are Linux-based
 
 - The book is for newcomers, and covers essentials with real-world examples
 
 - It uses Kali as its OS of choice (I used Arch while reading the book and will note distinctions where applicable)
+
+- Options recommended are the author's choice (If I chose differently I will make note of it)
 
 ## What's in This Book?
 
