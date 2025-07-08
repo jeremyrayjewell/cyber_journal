@@ -171,7 +171,7 @@ SUMMARY OF
 
 	- `cat` with a *single redirect* can also be used to overwrite the file, i.e. `cat > foo`.
 
-- *File Creation with touch*
+- *File Creation with touch*:
 
 	- `touch foo` creates a new file, "foo".
 
