@@ -143,25 +143,89 @@ SUMMARY OF
 
 </pre>
 
-	### Filtering with grep
+### Filtering with grep
+
+- This section actually introduces a few concepts beyond `grep`, namely: `ps`, `aux`, and `|` *piping*.
+
+- `|`, *the pipe operator*: a shell construct common to Unix-derived systems that takes the *standard output* (STDOUT) of one program and "pipes" it directly into the *standard input* (STDIN) of another.
+
+- `ps`, *process status utility*: lists current proccesses
+
+- `aux`: three distinct options/flags/switches. `a`: show processes for **all** users; `u`: display in **user**-oriented (detailed) format; `x`: include processes **without** a controlling terminal. Note the difference here with previous flags, which were prefixed with `-` or `--`, in the UNIX/POSIX-style. `ps` also supports this style, but here the BSD-style free of "bare" flags is used. This is relatively uncommon in modern Linux. 
+
+- `grep`, *global regular expression point*: scans file(s) or STDIN for lines matching a **pattern** (a simple string or a regular expression), then prints those lines.
+
+- `ps aux | grep apache2` therefore 1) makes a lists of everyone's processes, in or out of terminals, with user information, and 2) pipes it to `grep` which segregates its contents and print those matching *apache2*
 
 ## Modifying Files and Directories
 	
-	### Creating Files
+### Creating Files
 
-	### Creating a Directory
+- *Concatenation with cat*:
+	
+	- `cat > foo`, or `cat` plus a *redirect* followed by the file to be created. `ENTER` will enter *interactive mode*, allowing you to add content to the file. `CTRL-D` exits and returns to prompt.
 
-	### Copying a File
+	- `cat foo`, as covered before, dumps the file into the terminal for quick viewing.
 
-	### Renaming a File
+	- `cat >> foo`, or `cat` plus a *double redirect*, allows you to *append* to the file in *interactive mode* (`CTRL-D` to exit and return to prompt).
 
-	### Removing a File
+	- `cat` with a *single redirect* can also be used to overwrite the file, i.e. `cat > foo`.
 
-	### Removing a Directory
+- *File Creation with touch*
+
+	- `touch foo` creates a new file, "foo".
+
+	- `touch` originated in Version 7 Unix (1979) as a way to update file access and modify timestamps without altering file contents, primarily in order to force rebuilds in toold where timestamps drive dependency checks. If the file in question didn't exist, the command would create it.
+
+### Creating a Directory
+
+- `mkdir foo` creates a directory "foo" within the present working directory, `cd foo` then takes you into it.
+
+### Copying a File
+
+- `cp` copies a file according the following syntaxes: 
+	
+	- `cp oldfile newfile` copies "oldfile" as "newfile"
+	
+	- `cp oldfile foo/` copies "oldfile" as "oldfile" into the relative directory "foo"
+
+	- `cp oldfile fool/newfile` copies "oldfile" as "newfile" into the relative directory "foo"
+
+### Renaming a File
+
+- `mv`, *move command*: dating back to the early days of Unix (1971), the `mv` command actually depends on the `rename()` system call to atomically change a file's directory entry from one name or location to another wihtout copying data. As a result, it has served both moving and renaming functions from the beginning.
+
+- `mv newfile newfile2` will result in the renaming of "newfile" to "newfile2".
+
+- `mv newfile foo/` will result in the removal of newfile from the working directory and its placement in the "foo" subdirectory.
+	
+- `mv newfile foo/newfile2` moves the file *and* renames it.
+
+### Removing a File
+
+- `rm` removes a file, i.e. `rm foo`.
+
+### Removing a Directory
+
+- `rmdir` removes an **empty** directory, not **not** one with contents, i.e. `rmdir foo`.
+
+- `rm -r` removes a directory *and all its contents*, where `-r` stands for recursive, applying the `rm` command to all directory contents and calling `rmdir()` on the now-empty directory.
 
 ## Go Play Now!
 
+- The author encourages the reader to playfully explore with these newly introduced navigation tools.
+
 ## Exercises
+
+- Practice using `ls`, `cd`, and `pwd` to navigate through the filesystem
+
+- Practice using `whoami`
+
+- Practice using `locate` (one may also wish to practice the other search commands, `find`, `which`, `whereis`)
+
+- Practice using `cat` with `>` to redirect input to a file and `>>` to append to a file
+
+- Practice using `cp` (one may also with to practice `mv`)
 
 ---
 
