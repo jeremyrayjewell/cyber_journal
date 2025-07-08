@@ -27,7 +27,9 @@ to disambiguate any filename that would otherwise be treated specially.
 
 - `cat ./-`
 
-- `cat /home/bandit1/-`
+- `cat /home/bandit1/-` (absolute file path)
+
+- or navigate elsewhere and use relative file path, i.e. `cd .. && cat bandit1/-`
 
 ___
 
