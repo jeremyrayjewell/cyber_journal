@@ -105,9 +105,9 @@ Another networking model is the Department of Defense (DoD) model, a.k.a. the DA
 
 - **Broadcast Traffic** - *all hosts on a single network segment (broadcast domain)*: L2 `ff:ff:ff:ff:ff:ff`l L3 highest IP in subnet (e.g. `192.168.0.255`): one-to-all; every device sees then drops non-target traffic
 
-- ** Multicast Traffic** - *only hosts that join a specific group*: IP `224.0.0.0`-`239.255.255.255`: one-to-many; packets replicated only along paths to group members
+- **Multicast Traffic** - *only hosts that join a specific group*: IP `224.0.0.0`-`239.255.255.255`: one-to-many; packets replicated only along paths to group members
 
-- ** Unicast Traffic ** - *a single destination host*: that host's unique MAC or IP: one-to-one; direct point-to-point delivery with minimal overhead
+- **Unicast Traffic** - *a single destination host*: that host's unique MAC or IP: one-to-one; direct point-to-point delivery with minimal overhead
 
 ### Final Thoughts
 
