@@ -63,7 +63,7 @@ The OSI Model is an industry-recommended standard for mapping protocols based on
 +-------+--------------+--------------+-------------------------------------+
 * segment (TCP) or datagram (UDP)
 </pre>
-We can say that each layer "sits on" or "rides on" the one below it (i.e. HTTP sits on TCP, TCP sits on IP, etc.)
+We can say that each layer "sits on" or "rides on" the one below it (i.e. HTTP sits on TCP, TCP sits on IP, etc.).
 
 Another networking model is the Department of Defense (DoD) model, a.k.a. the DARPA or TCP/IP model (elaborated here but not in the book):
 <pre markdown>
