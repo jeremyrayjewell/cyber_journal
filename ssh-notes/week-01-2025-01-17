@@ -1,0 +1,207 @@
+# SSH NOTES WEEK 1 #
+
+## SSH Asymmetric Encryption Types & Strengths 
+
+**SSH** (*Secure Shell*) network protocol enables **secure remote access** over an unsecured network. The original SSH protocol was developed in 1995 by Tatu Ylonen in response to password sniffing attacks over TCP (*Transmission Control Protocol*), the foundational protocol on top of which SSH runs. Since 1998 the first version of SSH has been replaced by SSH-2. **OpenSSH**, developed by the OpenBSD project, is the most widely used open-source implementation of the SSH protocol. Its tools include `ssh`. `sshd`, `scp`, `sftp`, and `ssh-keygen`, and it comes pre-installed on most Linux and macOS systems.
+
+**Asymmetric encryption** is a cryptographic method that uses **two separate but mathematically linked keys**. These key pairs creat **one-way trust**, allowing a public key to be shared among multiple users with private keys held invidually. This allows authentication and confidentiality with **no shared secret needed**. Asymmetric encryption is used in SSH for **authentication**, while symmetric encryption is used for **encrypting the actual data** during a session. This means that asymmetric encryption is *critical*. 
+
+Key strength is governed by the underlying math: RSA relies on large key length, while curve-based keys (ECDSA, Ed25519) get equivalent security from much smaller parameters. Smaller keys mean faster operations and shorter signatures on the wire.
+
+**Some common OpenSSH flags deserve some preliminary explanation:**
+
+- `-o`: use the modern, bcrypt-protected OpenSSH private-key format
+
+- `-a 100`: rounds of key-derivation for the passphrase - crank this up on fast hardware
+
+- `-b`: bit-length (RSA/ECDSA); ignored for Ed25519 because the curve is fixed
+
+- `-c`: comment that shows up in `authorized_keys`
+
+### RSA
+
+*Rivest-Shamir-Adleman* keys rely on the hardness of factoring large integers. They are the most commonly used type of SSH key. It uses a public-key cryptograph system to generate a pair of keys: a public key and a private key. The public key is shared with the server, while the private key is kept secret by the user. When the user tries to connect to the server, the server uses the public key to encrypt a challenge, and the user's SSH client uses the private key to decrypt the challenge. If the decrypted challenge mataches the original challenge, the user is authenticated.
+
+It was invented in 1977 by Ron Rivest, Adi Shamir, and Leonard Adleman of MIT. Coincidentally, Clifford Cocks had developed an equivalent system in 1973 for British intelligence but it remained classified. The RSA algorithm is based on the mathematical properties of large prime numbers and the difficulty of factoring their product. 
+
+<details>
+<summary># **How it works**:</summary>  
+
+1) **Key generation: To generate an RSA key pair, you need to follow these steps:**
+
+- choose two large prime numbers, p and q
+
+- calculate n = p*q
+
+- calculate phi(n) = (p-1)*(q-1)
+
+- choose an integer e such that 1 < e < phi(n) and gcd(e,phi(n)) = 1
+
+- calculate d such that ed ≡ 1(mod phi(n)).
+
+- the public key is (n, e), and the private key is (n, d).
+
+2) **Encryption: To encrypt a mesage using the public key, you need to:**
+
+- convert the message into a number less than n
+
+- raise the message to the power of e modulo n
+
+- the encrypted message is the result
+
+3) **Decryption: To decrypt an encrypted message using the private key, you need to:**
+
+- Raise the encrypted message to the power of d modulo n
+
+- the decrypted message is the result
+</details>
+
+The security of the RSA algorithm relies on the fact that factoring the product of the two large prime numbers is a computationally difficult problem, even for powerful computers. This makes it extremely difficult for an attacker to obtain the private key from the public key, as long as the prime numbers used in the key generation process are large enough.
+
+- **Cryptographic family**: Integer-facotrization
+
+- **Recommended key size/curve**: 3072-4096 bits (2048 min)
+
+- **Typical signature size**: ~ 256-512 bytes
+
+- **First supported in OpenSSH**: v1.0 (1999)
+
+- **How to generate**: `ssh-keygen -t rsa -b 4096 -o -a 100 -f ~/.ssh/id_rsa -C "your@email"`
+
+- **When to choose**: Good for legacy equipment and some more advanced uses; remains relevant for it retro-compatibility, and can still be usable in more modern times when its bits are bumped up
+
+### DSA
+
+*Digital Signature Algorithm* keys rely on discrete logarithms over prime fields.
+
+DSA is the original U.S. federal digital-signature scheme published by NIST (National Institute of Standards anf Technology) in the 1991 Draft DSS and standardized in FIPS (first issued 1994). In SSH you'll see it identified by the algorithm name `ssh-dss`. DSA is primarily used for digital signatures which are used to verify the authenticity and integrity of digital documents and communications. 
+
+The DSA algorithm is based on the mathematical properties of large prime numbers, like the RSA, but also on the difficulty of solving the discrete logarithmic problem in a finite field. Like the RSA, DSA uses two distinct keys, one public and one private.
+
+<details>
+<summary># **How it works**:</summary>  
+
+1) **Key generation: To generate a DSA key pair, you need to follow these steps:**
+
+- choose a large prime number, p
+
+- choose a primitivve root, g, modulo p
+
+- choose a private ket, x, such that 1<x<p-1
+
+- calculate the public key, y, as y ≡ g^x(mod p)
+
+2) **Signing: To sign a message using the private key, you need to:**
+
+- convert the message into a number less than p
+
+- choose a random number, k, such that 1<k<p-1
+
+- calculate r ≡ g^k(mod p)
+
+- calculate s ≡ k^(-1)(mod(p-1))*(hash(message)+xr)(mod(p-1)), where hash(message) is the hash value of the message
+
+- the digital signature is the pair (r,s)
+
+3) **Verification: To verify a digital signature using the public key, you need to:**
+
+- calculate the hash value of the message
+
+- calculate w ≡ s^(-1)(mod(p-1))
+
+- calculte u1 ≡ hash(message)*w(mod(p-1))
+
+- calculate u2 ≡ r*w(mod(p-1))
+
+- calculate v ≡ g^u1*y^u2(modp)
+
+- If v ≡ r(mod p), then the digital signature is valid
+
+</details>
+
+The security of the DSA algorithm relies on the difficulty of solving the discrete logarithm problem in a finite field, which is considered computationally difficult for large prime numbers.
+
+
+- **Cryptographic family**: Integer-mod exponentation
+
+- **Recommended key size/curve**: Exactly 1024 bits (fixed by FIPS-186)
+
+- **Typical signature size**: ~ 70-80 B
+
+- **First supported in OpenSSH**: v2.0 (2000)
+
+- **How to generate**: `ssh-keygen -t dsa -b 1024 -o -a 100 -f ~/.ssh/id_dsa -C "your@email"`
+
+	NOTE: OpenSSH ≥ 7.0 shipd with DSA authentication **disabled at run-time** because the algorithm is locked to a short 1024-bit modulus and SHA-1 hashing.
+
+- **When to choose**: Truly ancient appliances (pre-2010 firmware) that *only* speak `ssh-dss`. ECDSA is a superior evolution of DSA.
+
+### ECDSA
+
+**Elliptic curves** are a type of algebraic curve defined by a quadratic equation of the form y^2 = x^3+ax+b, where a and b are constants. They have unique properties that make them suitable for cryptographic applications, such as the difficulty of finding points on the curve and the ease of adding and multiplying points on the curve.
+
+**Elliptic Curve Cryptograpy** (ECC) is a branch of cryptography that uses elliptic curves over finite fields to provide secure communication and data storage. ECC is considered more efficient than traditional cryptographic algorithms, such as RSA and DSA because it requires fewer computation resources and can provide the same level of security with smaller key sizes.
+
+**Eliptic Curve Digital Signature** keys use the discrete-log problem on carefully chosen elliptic curves. It is a specific application of ECC that is used for digital signatures. The idea behind ECDSA is similar to DSA, but instead of using large prime numbers and the discrete logarithm problem, it uses elliptic curves and the difficulty of finding points on the curve. ECDSA was proposed by Neal Koblitz and Victor S. Miller in the early 1980s, and was selected by the NIST in 1991 as one of the cryptographic algorithms for its Digita Signature Standard (DSS).
+
+<details>
+<summary># **How it works**:</summary>  
+
+1) **Key Generation:** To generate a key pair, ECDSA selects a random point on the elliptic curve and calculates a base point by adding it to itself a certain number of times. The private key is the number of times the base point was added, and the public key is the resulting point on the curve.
+
+2) **Signing:** To sign a message, ECDSA first hashes the message to obtain a fixed-size digest. Then, it uses the private key to calculate a signature, which consists of two integers, r and s. The signature is calculated by performing elliptic curve point addition and scalar multiplication operations.
+
+3) **Verification:** To verify a signature, the recipient first hashes the message and calculates the expected digest. Then, it uses the public key to calculate the expected signate, which is also a pair of integers, r and s. Finally, it checks whether the calculated signature matches the received signature. If they match, the signature is considered valid, and the message has not been tampered with.
+
+</details>
+
+- **Cryptographic family**: Elliptic-curve (NIST P-256/P-384/P-251)
+
+- **Recommended key size/curve**: Curve determines strength
+
+- **Typical signature size**: 70-140 bytes
+
+- **First supported in OpenSSH**: v5.7 (2011)
+
+- **How to generate**: `ssh-keygen -t ecdsa -b 521 -o -a 100 -f ~/.ssh/id_ecdsa -C "your@email"
+
+- **When to choose**: FIPS-inside or strict compliance environments; little advantage over Ed25519, its predecessor
+
+### Ed25519
+
+**Ed25519** is a variant of the ECDSA that was developed in 2011 by a team including (Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe, and Bo-Yin Yang)[https://ed25519.cr.yp.to/ed25519-20110926.pdf]. It is based on **Curve2559**, an elliptic curve first described and implmented by Bernstein. It is one of the fastest curves in ECC, has a large prime order of 2^255-19, and its point addition and scalar multiplication operations can be performed efficiently using a technique called "Montgomery ladder". Ed25519 uses a simple and efficient signature generation and verification algorithm that is based on the Curve25519 curve.
+
+**Ed25519** is highly efficient, both in terms of computational complexity and memory usage. It requires fewer computational resources than traditional cryptographic algorithms, such as RSA and ECDSA, and can provide the same level of security with smaller key sizes. 
+
+<details>
+<summary># **How it works**:</summary>  
+
+1) **Key Generation:** To generate a key pair for Ed25519, you need to generate a random 256-bit private key. This private key is used to generate a corresponding public key. The public key is derived from the private key by performing a series of mathematical operations on the curve point corresponding to the private key.
+
+2) **Signing:** To sign a message using Ed25519, you need to hash the message using a cryptographic hash function, such as SHA-512. The hash value is then combined with the private key to generate a signature. The signature is a pair of integers, r and s, which are calculated using the private key and the hash value
+
+3) **Verification:** To verify a signature, you need to hash the message using the same hash function used during signarture generation. The hash value is then combined with the public key to check whether the calculated signature matches the received signature. If they match, the signature is considered balid, and the message has not been tampered with.
+</details>.
+
+<details>
+
+Ed25519's efficiency comes from its use of the Curve25519 elliptic curve and a simple signature generation and verification algorithm. This efficiency makes Ed25519 a popular choice today for various applications.
+
+- **Cryptographic family**: Elliptic-curve (Curve25519, Edwards form)
+
+- **Recommended key size/curve**: Fixed curve, 256-bit field
+
+- **Typical signature size**: 64 bytes
+
+- **First supported in OpenSSH**: v6.5 (2014) - **default since v9.4**
+
+- **How to generate**: `ssh-keygen -t ed25519 -a 100 -f ~/.ssh/id_ed25519 -C "your@email"`
+
+- **When to choose**: Modern servers, git hosts, CI pipelines, hardware tokens. strict compliance environments
+
+
+---
+
+## Summary author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
