@@ -98,7 +98,7 @@ User preferences may vary, but text manipulation is an indispensable skill for L
 
 ## Exercises
 
-- Navigate to Kali's default wordlists location, and use the `cat`, `more`, `less`, `nl`, `tail, and `head` command to explore the long files there. Specifically, the auhthor recommends `password.lst`.
+- Navigate to Kali's default wordlists location, and use the `cat`, `more`, `less`, `nl`, `tail`, and `head` command to explore the long files there. Specifically, the auhthor recommends `password.lst`.
 
 ---
 
