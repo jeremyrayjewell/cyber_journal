@@ -50,9 +50,9 @@ Piping (`|`) the results of line numbers 507 through the end of the file (`tail 
 
 - `nl /etc/snort/snort.conf | grep output`
 
-- 'tail -n+507 /etc/snort/snort.conf | head -n 6'
+- `tail -n+507 /etc/snort/snort.conf | head -n 6`
 
-- 'head -n+507 /etc/snort/snort.conf | tail -n 6`
+- `head -n+507 /etc/snort/snort.conf | tail -n 6`
 
 
 ## Using sed to Find and Replace
