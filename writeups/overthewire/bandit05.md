@@ -93,6 +93,6 @@ Putting the common negation symbol `!` in front of this flag filters for non-exe
 
 - `find inhere -type f -size 1033c ! -executable`
 
-- `find inhere -type f -size 1033c -exec file {} \; | grep 'text'
+- `find inhere -type f -size 1033c -exec file {} \; | grep 'text'`
 
 - `find inhere -type f -size 1033c ! -executable  -exec file {} \; | grep 'text'` 
