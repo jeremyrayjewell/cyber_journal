@@ -86,7 +86,7 @@ The `more` pager allows us to view the content of a file one screenful at a time
 
 The `less` pager allows us to view the contents of a file one screenful at a time in a bi-directional, backward-and-froward way.
 
--`less /etc/snort/snort.conf`
+- `less /etc/snort/snort.conf`
 
 The **"less is more"** expression refers to the better overall efficiency of using `less` instead of `more`, both in terms of the greater navigational fluidity with the former and in terms of its taking up less memory and processing power. But `less` also allows for searches.
 
