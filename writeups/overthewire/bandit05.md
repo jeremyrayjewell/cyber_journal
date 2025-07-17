@@ -41,9 +41,9 @@ Now in `/inhere` we see 20 subdirectories titles `maybehereXX` with suffixes `00
                      └── spaces file3
 </pre>
 
-We can see this structure by porforming a quick recursive dump with `ls -R`. That is a total of 120 possible password locations. Compared to bandit4, manual searching is much less of an option now. Insted of just being human-readable, this time we are told that it must also fit the following additional criteria: *exactly 133 bytes*, *non-executable*.
+We can see this structure by porforming a quick recursive dump with `ls -R`. That is a total of 120 possible password locations. Compared to bandit4, manual searching is much less of an option now. Instead of just being human-readable, this time we are told that it must also fit the following additional criteria: *exactly 133 bytes*, *non-executable*.
 
-This time we will have to rely on the filesystem's metadata, and as the file structure contains files buried in different subdirectories we will necessarily need to search *recursively*. The `find` utility we used last time is recursive, but we will need more options. Running `find ./inhere -type f -exec file {} \; | grep 'text'` as before returns 118 items (which we can observe by piping to `wc -l`), a very poor reduction.
+This time we will have to rely on more of the filesystem's metadata, and as the file structure contains files buried in different subdirectories we will necessarily need to search *recursively*. The `find` utility we used last time is recursive, but we will need more options. Running `find ./inhere -type f -exec file {} \; | grep 'text'` as before returns 118 items (which we can observe by piping to `wc -l`), a very poor reduction.
 
 If we enter `man find` and either use `/` + `executable` to search or navigate to the `TESTS` section, we see the following regarding the option `-executable`:
 
@@ -63,7 +63,7 @@ Putting the common negation symbol `!` in front of this flag filters for non-exe
        ! expr True if expr is false.  This character will also usually need protection from interpretation by the shell.
 </pre>
 
-`find ./inhere -type f ! -executable` thus returns 60 results, and with grepping for text we get 59. More exploration is needed. Are next criterium is the file's size, decribed as 1033 bytes. Looking through `man `find` again, we find this in the `TESTS` section:
+`find ./inhere -type f ! -executable` thus returns 60 results, and with grepping for text we get 59. More exploration is needed. Our next criterium is the file's size, decribed as 1033 bytes. Looking through `man find` again, we find this in the `TESTS` section:
 
 <pre markdown>
        -size n[cwbkMG]
