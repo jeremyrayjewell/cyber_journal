@@ -20,9 +20,9 @@ The `ifconfig` (*interface configuration*) tool shows interface status and confi
 
 - assigns an alias (secondary address): `ifconfig eth0:1 10.0.0.5`
 
-- changes MAC to MTU, enables promuscuous mode, etc.
+- changes MAC to MTU, enables promiscuous mode, etc.
 
-It is part of the old Berkley `net-tools` suite; largely replaced by the more modern `ip` command (`ip addr show`, `ip link set ...`) onmost current Linux distros. In general, it is still handy for a fast glance.
+It is part of the old Berkeley `net-tools` suite; largely replaced by the more modern `ip` command (`ip addr show`, `ip link set ...`) on most current Linux distros. In general, it is still handy for a fast glance.
 
 The following is a description of what `ifconfig` shows with some expanded examples for contemporary Arch, the distro I am using, that differs from the author's Kali from 2019 or so:
 
@@ -34,7 +34,7 @@ The following is a description of what `ifconfig` shows with some expanded examp
 
 - `inet6` : *IPv6* info
 
-- `netmask` : *network mask* is used to determine what part
+- `netmask` : *network mask* is used to determine which part of the address is the network and which part is the host
 
 - `Bcast` or `broadcast` : *broadcast address* for the subnet; packets sent here reach every host on the local network
  
@@ -54,7 +54,7 @@ We can also see the `Access Point`, if any, to which the interface is currently 
 
 ### Changing Your IP Address
 
-Changing your **IP address** help hide your identity for example during a DoS (Denial of Service) attack, etc.
+Changing your **IP address** helps hide your identity for example during a DoS (Denial of Service) attack, etc.
 
 - `ifconfig eth0 192.168.181.115` changes the `eth0` interface to IP address `192.168.181.115`
 
@@ -62,9 +62,9 @@ Changing your **IP address** help hide your identity for example during a DoS (D
 
 **Network masks** and **broadcast addresses** tell every host *how the IP address should be interpreted inside the local LAN*. The **Netmask** says which bits of the address identify the network and which bits identify the host. The **broadcast address** is an "all-hosts" destination derived from that netmask (every host in the subnet must agree on it).
 
-Changing these has nothing to do with hiding your location the way changin your IP address does. Instead, it's about **shaping the layer-2/3 boundaries of a network**.
+Changing these has nothing to do with hiding your location the way changing your IP address does. Instead, it's about **shaping the layer-2/3 boundaries of a network**.
 
-- `ifconfig eth0 192.168.181.115 netmask 255.255.0.0 broadcast 192.168.1.255`
+- `ifconfig eth0 192.168.181.115 netmask 255.255.0.0 broadcast 192.168.255.255`
 
 Realistic use cases: you might want to shrink a broadcast domain so fewer devices hear every broadcast, allowing ARP storms and chatty protocols to stay local. Alternatively, you may want to grow a LAN without renumbering everything, make point-to-point links/tunnels, create greater segmentation or utilize special protocols which depend on directed broadcast.
 
@@ -80,9 +80,9 @@ An interface has to be "down" before the driver will accept a new MAC address be
 
 - `ifconfig eth0 up`
 
-***!!! If we use the `ip link set` command (not mentioned in the book) instead of `ifconfig` then we do not need to bring the connection down to change the MAC!!!:**
+Also we can use the `ip link set` command (not mentioned in the book) instead of `ifconfig`:
 
-- `ip link set dev eth0 mac address 00:11:22:33:44:55`
+- `ip link set dev eth0 address 00:11:22:33:44:55`
 
 ### Assigning New IP Addresses from the DHCP Server
 
@@ -94,13 +94,13 @@ An interface has to be "down" before the driver will accept a new MAC address be
 
 - **Impersonate a specific host** : Send a DHCP DISCOVER with "*requested IP=192.168.10.254*" IP pf a specific host and some mis-configured server oblige, allowing you to steal traffic or perform MITM (*man in the middle*) attacks.
 
-- **Bypass VLAN/ACL tied to IP ranges** : Some internal apps trust anything from 10.10.0.0/24. By reneweing until the server hands out an address in that subnet, the attacker jumps the fence.
+- **Bypass VLAN/ACL tied to IP ranges** : Some internal apps trust anything from 10.10.0.0/24. By renewing until the server hands out an address in that subnet, the attacker jumps the fence.
 
 - **Blend into log files ("IP churn")** : Rotate leases every few minutes so SOC analysts see dozens of short-lived IPs instead of a single smoking gun.
 
 - **DHCP-Starvation DoS / Rogue DHCP** : Hammer the server with thousands of DISCOVERs, exhausting the pool. Then when legitimate hosts can't get an IP, attacker launches a **rogue DHCP** that answers instead, funneling victims' traffic through a malicious gateway/DNS.
 
-We can request a new IP addres from DHCP by running `dhclient` plus the interface we want the IP assigned to. I.e.:
+We can request a new IP address from DHCP by running `dhclient` plus the interface we want the IP assigned to. I.e.:
 
 - `dhclient eth0`
 
@@ -130,9 +130,9 @@ Linux user nomenclature sometimes refers to DNS as BIND, after the Berkley Inter
 
 ### Changing Your DNS Server
 
-One of my first personal experiences with DNS server changing was discovering that DNS hijacking on the part of my ISP was slowing my video calls to a severe degree. You can point to a public DNS resolver like 1.1.1.1 or 8.8.8.8 to bypass the ISP's DNS resolver. DNS hijacking is done to both collect your navigation history to sell on to others, and also to manage traffic to the ISPs benefit (even if to your detriment.
+One of my first personal experiences with DNS server changing was discovering that DNS hijacking on the part of my ISP was slowing my video calls to a severe degree. You can point to a public DNS resolver like 1.1.1.1 or 8.8.8.8 to bypass the ISP's DNS resolver. DNS hijacking is done to both collect your navigation history to sell on to others, and also to manage traffic to the ISP's benefit (even if to your detriment.
 
-Other reasons to change your DNS Server include: evade local controls, hide reconnaissance queries, use ECS-free resolver which doe not leak partial client IP, and victim resolver changes for certain attacks.
+Other reasons to change your DNS Server include: evade local controls, hide reconnaissance queries, use ECS-free resolver which does not leak partial client IP, and victim resolver changes for certain attacks.
 
 - `leafpad /etc/resolv.conf` to edit your DNS resolver configuration with a line `nameserver 1.1.1.1` or the like
 
@@ -156,7 +156,7 @@ Technically, however, `dnsspoof` could use any hosts-formatted file, and because
 
 ## Summary
 
-Networking skills are vital for reconnaissance, spoofing, and connecting to other sytems.
+Networking skills are vital for reconnaissance, spoofing, and connecting to other systems.
 
 ## Exercises
 
@@ -164,7 +164,7 @@ Networking skills are vital for reconnaissance, spoofing, and connecting to othe
 
 - practice changing your IP with `ifconfig`, `ip addr add` and `dhclient` and your hardware addresses with `ifconfig` and `ip link set`
 
-- use `dig` with `ns` (nameserver) and `mx` (email exchange)on a website of your choosing.
+- use `dig` with `ns` (nameserver) and `mx` (email exchange) on a website of your choosing.
 
 - add Google's DNS server to your `/etc/resolv.conf`. If you are worried about DNS hijacking, you can totally replace your local DNS server. Quad and Cloudflare's DNSes are also pretty good.
 
