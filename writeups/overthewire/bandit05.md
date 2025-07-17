@@ -2,7 +2,7 @@
 
 ## Obfuscated password (ROT13): 
 
-	UJnfaCugd9NIXr0qzx45akl20piHn6RT
+UJnfaCugd9NIXr0qzx45akl20piHn6RT
 
 ## Objective
 
