@@ -42,7 +42,7 @@ The `grep` utility scans one or more input files (or STDIN) for lines matching a
 
 ### Hacker Challenge: Using grep, nl, tail, and head
 
-The `nl command` is used to number lines in a file. The `-n+` option on the `tail` and `head` utilities is used to display a specific number of lines from the end or beginning of a file, respectively. The `+` sign indicates that the count should start from the specified line number, rather than counting from the beginning or end of the file.
+The `nl` command is used to number lines in a file. The `-n+` option on the `tail` and `head` utilities is used to display a specific number of lines from the end or beginning of a file, respectively. The `+` sign indicates that the count should start from the specified line number, rather than counting from the beginning or end of the file.
 
 Piping (`|`) the results of line numbers 507 through the end of the file (`tail -n+507`) to `head -n 6` returns the first 6 lines of that input, therefore resulting in the printing of lines 507-512. The opposite can be achieved by reversing the `tail` and `head` commands' positions.
 
@@ -57,7 +57,7 @@ Piping (`|`) the results of line numbers 507 through the end of the file (`tail 
 
 ## Using sed to Find and Replace
 
-The `sed` or *stream editor* tet processing utility is used to perform basic text transformations on an input stream. The author compares it to the Windows "find and replace" function.
+The `sed` or *stream editor* text processing utility is used to perform basic text transformations on an input stream. The author compares it to the Windows "find and replace" function.
 
 If we wanted to replace every instance in our snort config file of *mysql* with *MySQL*, we could enter the command `sed s/mysql/MySQL/g /etc/snort/snort.conf > snort2.conf` to create a *snort2.conf* file with those changes running `cat` on the two files and piping results to `grep` can help us confirm the results.
 
@@ -72,7 +72,7 @@ If we wanted to replace every instance in our snort config file of *mysql* with 
 - `cat /etc/anort/snort2.conf | grep MySQL` to confirm changes
 
 
-Notice that here we are using `sed` with forward slashes (`/`) between *operands*. The use of a hyphen (`-`) id conventionally to denote flags or options. Any options should go before the operands. Remember that options are related to *how* a program runs, and operands relate to the *thing* it should act on.
+Notice that here we are using `sed` with forward slashes (`/`) between *operands*. The use of a hyphen (`-`) is conventionally to denote flags or options. Any options should go before the operands. Remember that options are related to *how* a program runs, and operands relate to the *thing* it should act on.
 
 ## Viewing Files with more and less
 	
