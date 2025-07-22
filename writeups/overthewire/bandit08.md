@@ -23,7 +23,7 @@ The man page for `sort` clarifies:
 
 <premarkdown>
 
-Write sorted concatenation of all FILE(s) to standard output. 
+	Write sorted concatenation of all FILE(s) to standard output. 
 
 </pre>
 
