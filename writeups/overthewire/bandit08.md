@@ -31,4 +31,4 @@ The man page for `sort` clarifies:
 
 ## Solutions
 
-- sort data.txt | uniq -u
+- `sort data.txt | uniq -u`

@@ -63,8 +63,8 @@ Bandit 6 drives home that ownership metadata combines perfectly with byte-level 
 
 ## Solutions
 
-- find / -group bandit6 -user bandit7 -size 33c
+- `find / -group bandit6 -user bandit7 -size 33c`
 
-- find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+- `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`
 
 

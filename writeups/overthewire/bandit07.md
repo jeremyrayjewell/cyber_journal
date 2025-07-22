@@ -23,4 +23,4 @@ If we run `grep man` we will find the following explanation under the `DESCRIPTI
 
 ## Solutions
 
-- cat data.txt | grep "millionth"
+- `cat data.txt | grep "millionth"`
