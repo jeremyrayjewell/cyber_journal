@@ -39,6 +39,7 @@ If we want to filter these lines out of our `find` results, we can affix our pre
 This would be hard to figure out with having previous skimmed a shell tutorial, so now is a good time to do that. In `man bash` we can search for `REDIRECTION` and find the following:
 
 <premarkdown>
+
        Bash  handles  several filenames specially when they are used in redirections, as described in the following table.  If the
        operating system on which bash is running provides these special files, bash will use them; otherwise it will emulate  them
        internally with the behavior described below.
@@ -57,27 +58,27 @@ This would be hard to figure out with having previous skimmed a shell tutorial, 
               /dev/udp/host/port
                      If host is a valid hostname or Internet address, and port is an integer port number or service name, bash at‐
                      tempts to open the corresponding UDP socket.
+
 </pre>
-Then...
-<premarkdown>
-       Bash  handles  several filenames specially when they are used in redirections, as described in the following table.  If the
-       operating system on which bash is running provides these special files, bash will use them; otherwise it will emulate  them
-       internally with the behavior described below.
 
-              /dev/fd/fd
-                     If fd is a valid integer, file descriptor fd is duplicated.
-              /dev/stdin
-                     File descriptor 0 is duplicated.
-              /dev/stdout
-                     File descriptor 1 is duplicated.
-              /dev/stderr
-                     File descriptor 2 is duplicated.
-              /dev/tcp/host/port
-                     If host is a valid hostname or Internet address, and port is an integer port number or service name, bash at‐
-                     tempts to open the corresponding TCP socket.
-              /dev/udp/host/port
-                     If host is a valid hostname or Internet address, and port is an integer port number or service name, bash at‐
-                     tempts to open the corresponding UDP socket.
+Then...
+
+<premarkdown>
+
+   Redirecting Output
+       Redirection of output causes the file whose name results from the expansion of word to be opened for writing on file  descrip‐
+       tor n, or the standard output (file descriptor 1) if n is not specified.  If the file does not exist it is created; if it does
+       exist it is truncated to zero size.
+
+       The general format for redirecting output is:
+
+              [n]>word
+
+       If  the  redirection operator is >, and the noclobber option to the set builtin has been enabled, the redirection will fail if
+       the file whose name results from the expansion of word exists and is a regular file.  If the redirection operator  is  >|,  or
+       the redirection operator is > and the noclobber option to the set builtin command is not enabled, the redirection is attempted
+       even if the file named by word exists.
+
 </pre>
 
 `/dev/null` is, it should be noted, the **all-purpose discard targer**. Combining all that information together, we come up with `2> /dev/null` to disgard all error messages produced by `find` being unable to access an entry.
