@@ -18,12 +18,16 @@ In the last level we learned to narrow a search by size and executability. Now w
 If we return to `man find` and search for `group` and `user`, we see the following lines within the `TESTS` section:
 	
 <premarkdown>
+
        -group gname
               File belongs to group gname (numeric group ID allowed).
+
 </pre>
 <premarkdown>
+
        -user uname
               File is owned by user uname (numeric user ID allowed).
+
 </pre>
 
 Putting those options together with the size option from last time, `-size` with the `c` unit suffix for bytes, we can find our file within the root, `/`. We may wish to add another snippet, though, as the basic command `find / -group bandit6 -user bandit7 -size 33c` to search throughout the server returns a large number of "Permission denied" messages.
