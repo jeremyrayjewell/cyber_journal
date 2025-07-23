@@ -16,6 +16,6 @@ The man page for the `base64` command tells us that option `-d` is to be used to
 
 ## SOLUTIONS
 
-- `base64 -d data.txt1
+- `base64 -d data.txt1`
 
 - `base64 -d <<< VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==`
