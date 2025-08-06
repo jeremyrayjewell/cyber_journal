@@ -10,7 +10,7 @@
 
 ## PURPOSE
 
-This level is another encryption challenge. Letters having been "rotated by 13" indicates the use of ROT13, a Caesar cipher with a shift of 13. The Caesar cipher is an elementary substitution cipher which works by shifting each letter in a text by a fixed number of position in the alphabet. It is not very secure, but it is easily reversible.
+Whereas the last level was an encoding challenge, this one is an encryption challenge. Letters having been "rotated by 13" indicates the use of ROT13, a Caesar cipher with a shift of 13. The Caesar cipher is an elementary substitution cipher which works by shifting each letter in a text by a fixed number of position in the alphabet. It is not very secure, but it is easily reversible.
 
 The `tr` command (*translate* or *transliterate*) reads from a standard input, replaces (translates) characters found in the first set with the corresponding character in the second set, and writes to standard output. The arguments which we give to `tr` are first the *search* set and second the *replacement* set:
 
