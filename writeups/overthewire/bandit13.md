@@ -10,7 +10,7 @@ ZH4IJeGyWk8EBof1qqmcOCoYh7lQPCvF
 
 ## PURPOSE
 
-This level introduces us to the basics off ssh keys. This is a common way to authenticate GitHub from the terminal, as well as do many other things. SSH key-pairs are a fundamental tool for password-free workflows.
+This level introduces us to the basics of ssh keys. This is a common way to authenticate GitHub from the terminal, as well as do many other things. SSH key-pairs are a fundamental tool for password-free workflows.
 
 To make an ssh key pair, we could just use the `ssh-keygen` command to produce the public key and the private key. In this case, the public key is located in `/home/bandit14/.ssh/authorized_keys` where permissions are restricted to `bandit14`. The private key is located in bandit13's home directory, and we can utilize it to connect to bandit14 via `ssh` with the `-i` *identity file* option.
 
