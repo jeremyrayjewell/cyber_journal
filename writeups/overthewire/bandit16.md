@@ -34,7 +34,7 @@ We may also choose to include Bandit6's `2>/dev/null` before the final `>` to di
 
 - `ss -tnl` or  `ss -tnl '( sport >= :31000 and sport <= :32000 )'` 
 
-- `echo [previous password] | openssl s_client -quiet -connect localhost:[port] -ign_eof 2>/dev/null > /tmp/foo2/rsa.key  	
+- `echo [previous password] | openssl s_client -quiet -connect localhost:[port] -ign_eof 2>/dev/null > /tmp/foo2/rsa.key`  	
 
 - `chmod 400 rsa.key`
 
