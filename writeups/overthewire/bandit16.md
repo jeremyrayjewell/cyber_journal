@@ -11,7 +11,7 @@ RErInirCYSUgSySfwa3ulmZyiFhFNpEQ
 
 ## PURPOSE
 
-`ss` is a modern replacement for `netstat` that lets you inspect sockets. We will use it with the following flags:
+This level allows us to explore SSH key pairs once again, along with discovering unknown services. First thing's first, we must find the correct port. `ss` is a modern replacement for `netstat` that lets you inspect sockets. We will use it with the following flags:
 
 - `-t` "TCP": only show TCP sockets
 
