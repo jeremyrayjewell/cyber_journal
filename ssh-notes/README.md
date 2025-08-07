@@ -2,7 +2,7 @@
 
 A lightweight, automated lab notebook capturing hands-on SSH sessions, key takeaways, and next steps.
 
-Every week, generate concise, reproducible notes of your SSH work, focusing on:
+Every week, I aim to generate concise, reproducible notes of my SSH work, focusing on:
 
 * **Sessions**: Hosts connected, commands/flags used, outcomes, and relevant notes (e.g., negotiated ciphers, log filenames).
 * **Takeaways**: What you learned, patterns spotted, and insights for future sessions.
