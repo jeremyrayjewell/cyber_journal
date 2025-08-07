@@ -1,7 +1,7 @@
 # Linux Basics for Hackers
 
 **Author:** OccupyTheWeb
-**Date:** First Edition
+**Edition:** First Edition
 
 This directory contains chapter-by-chapter summaries for *Linux Basics for Hackers*. Each file captures the key goals, concepts, personal notes, and next steps for that chapter.
 
