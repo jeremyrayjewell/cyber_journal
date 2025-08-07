@@ -4,92 +4,109 @@
 
 ---
 
-# CHAPTER 15: MANAGING THE LINUX KERNEL AND LOADABLE KERNEL MODULES (LKMs)
+# CHAPTER 17: PYTHON SCRIPTING BASICS FOR HACKERS
 
 ---
 
-## What Is a Kernel Module?
+## Adding Python Modules
 
-* The **kernel** is the core of the OS, managing hardware, processes, memory, and I/O.
-* Linux’s **monolithic kernel** allows for **Loadable Kernel Modules (LKMs)**, which can be inserted or removed at runtime without rebuilding the entire kernel.
-* LKMs enable drivers (e.g., for new USB or filesystem support) to be added dynamically—but also open a route for rootkits.
+### Using pip
 
-## Checking the Kernel Version
+* Install Python 3 package manager:  `apt-get install python3-pip`
+* Download modules:  `pip3 install <package>`
+* Locate package:  `pip3 show <package>`
 
-* `uname -a` shows the running kernel version, architecture, and build info:
+### Installing Third‑Party Modules
 
-  ```bash
-  uname -a
-  ```
-* `/proc/version` yields similar details via `cat /proc/version`.
+* Download tarball (e.g., via `wget`).
+* Extract:  `tar -xzf name.tar.gz`
+* Install:  `python setup.py install`
 
-## Kernel Tuning with `sysctl`
+## Getting Started Scripting with Python
 
-* **`sysctl`** reads and sets kernel parameters at runtime.
-* View all tunable parameters:
+### Variables
 
-  ```bash
-  sysctl -a | less
-  ```
-* Example: **IP forwarding** for MITM attacks
+* Dynamically typed: no declaration needed.
+* Common types: string, integer, float, list (`[]`), dictionary (`{'key':value}`).
 
-  ```bash
-  sysctl -w net.ipv4.ip_forward=1
-  ```
-* To persist changes, edit `/etc/sysctl.conf` and uncomment or add lines such as
+### Comments
 
-  ```text
-  net.ipv4.ip_forward=1
-  ```
+* Single line: start with `#`.
+* Multi‑line: enclose in `"""`.
 
-## Managing Kernel Modules
+### Functions
 
-### Listing Loaded Modules
+* Built‑in examples:
 
-* `lsmod` displays all currently loaded modules, their sizes, and dependencies:
+  * `print()`, `len()`, `int()`, `float()`, `sorted()`, `help()`.
+* Importable modules provide extra functions.
 
-  ```bash
-  lsmod
-  ```
+## Lists
 
-### Inspecting Module Info
+* Ordered, iterable collections.
+* Zero‑based indexing: `mylist[0]` is first element.
 
-* `modinfo <module>` reveals metadata, dependencies, author, license, parameters, and compatible kernel versions:
+## Modules
 
-  ```bash
-  modinfo bluetooth
-  ```
+* Code organized in files; import with `import <module>`.
+* Essential for reusing functionality (e.g., `socket`, `ftplib`, `nmap`).
 
-### Inserting and Removing Modules
+## Object‑Oriented Programming (OOP)
 
-* **`modprobe -a <module>`** loads a module and its dependencies safely.
-* **`modprobe -r <module>`** removes a module (if not in use).
-* Older tools: `insmod` and `rmmod` (manual and riskier, no dependency handling).
+* Objects have attributes (properties) and methods (actions).
+* Classes are blueprints; subclasses inherit behavior.
 
-### Verifying Module Actions
+## Network Communications in Python
 
-* After loading, check kernel logs for module messages:
+### Building a TCP Client
 
-  ```bash
-  dmesg | grep <module-name>
-  ```
+* Use `socket.socket()` to create client socket.
+* Connect:  `s.connect((host, port))`.
+* Receive banner:  `s.recv(1024)`.
+* Close socket:  `s.close()`.
+
+### Creating a TCP Listener
+
+* Bind server socket:  `s.bind((IP, port))`.
+* Listen:  `s.listen(1)`, accept connections, then `conn.recv()`.
+
+## Dictionaries, Loops, and Control Statements
+
+### Dictionaries
+
+* Unordered key\:value stores, iterable with `for key in dict`.
+
+### Control Statements
+
+* `if`, `if...else` for branching based on conditions.
+* Indentation defines code blocks.
+
+### Loops
+
+* `for` iterates over iterables.
+* `while` repeats while condition is true.
+
+## Improving Our Hacking Scripts
+
+* Use lists and `for` loops to iterate through ports/services.
+* Example: multi‑port banner grabber using list of ports.
+
+## Exceptions and Password Crackers
+
+* `try/except` to handle errors or invalid inputs.
+* Example: FTP password cracker with nested `try` blocks and wordlist iteration.
 
 ## Summary
 
-* LKMs allow dynamic extension of the Linux kernel but pose security risks if malicious modules are loaded.
-* Knowing how to view (`lsmod`), inspect (`modinfo`), tune parameters (`sysctl`), and safely add/remove modules (`modprobe`) is crucial for both system administration and stealthy hacking.
+Python’s readability, built‑in and third‑party modules, and network libraries make it a powerful choice for automating reconnaissance and brute‑force tasks. You built basic hacking tools: banner grabbers, TCP listeners, and an FTP cracker.
 
 ## Exercises
 
-1. Check your current kernel version with `uname -a` and `cat /proc/version`.
-2. List all loaded modules using `lsmod`.
-3. Enable IP forwarding at runtime:
-
-   ```bash
-   sysctl -w net.ipv4.ip_forward=1
-   ```
-4. Make IP forwarding permanent by editing `/etc/sysctl.conf`, then disable it again.
-5. Select a loaded module and display its details using `modinfo <module>`.
+1. Build and modify the SSH banner grabber for port 21.
+2. Prompt for IP address instead of hardcoding.
+3. Update TCP listener to prompt for listen port.
+4. Enhance FTP cracker to read usernames from a wordlist.
+5. Add exception handling to banner grabber for closed ports (`"no answer"`).
 
 ---
 
