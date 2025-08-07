@@ -14,7 +14,7 @@ The difference between bandit15 and bandit14 is **encryption**. While in bandit1
 
 Like in the previous challenge, we use `echo` to pipe the previous password to another command. This time the command receiving that output will be `openssl` with the `s_client` subcommand, and we will use the option `-connect` to send our input to `localhost:30001`. `openssl` is the OpenSSL commad line program, `s_client` implements a minimal TLS client, and `-connect host:port` tells it where to open the underlying TCP socket.
 
-We will, however, notice a problem: as `openssl s_client` parses the certificate dump, it ends the TLS session before it reads the server's final response. To get around this, we can also add the `-quiet` flag to supress all of the handshake and session-info chatter. Alternatively, we could forgo piping our previous password via `echo` and instead run the `openssl s_client -connect host:port` command with the `-ign_eof` flag at the end to keep the client open and allow us to enter the previous password over the TLS channel yourself.
+We will, however, notice a problem: as `openssl s_client` parses the certificate dump, it ends the TLS session before it reads the server's final response. To get around this, we can also add the `-quiet` flag to supress all of the handshake and session-info chatter. Alternatively, we could forgo piping our previous password via `echo` and instead run the `openssl s_client -connect host:port` command with the `-ign_eof` flag at the end to keep the client open and allow us to enter the previous password over the TLS channel ourselves.
 
 ## SOLUTIONS
 	
