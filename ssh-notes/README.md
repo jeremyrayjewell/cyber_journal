@@ -30,7 +30,8 @@ ssh-week-2025-08-07.md
 │  │   ├── ssh-week-2025-08-07.md
 │  │   └── cipher-reference.md
 │  └── experiments/           # Automation scripts and experiments
-│       └── generate_ssh_summary.py
+│       └── generate_ssh_summary/
+│             └── generate_ssh_summary.py
 └── ssh-logs/              # Raw SSH debug logs (outside the repo)
 ```
 
@@ -39,7 +40,7 @@ ssh-week-2025-08-07.md
 Use the `generate_ssh_summary.py` script to compile all `~/ssh-logs/*.log` into a Markdown table (`~/ssh-summary.md`) with host, command, and outcome.
 
 ```bash
-./experiments/generate_ssh_summary.py
+./experiments/generate_ssh_summary/generate_ssh_summary.py
 cat ~/ssh-summary.md
 ```
 

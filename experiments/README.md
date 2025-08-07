@@ -1,23 +1,29 @@
 # Pen-Testing Experiments & Scripts
 
-- Proof-of-concept scripts
-- Lab exercises
-- Cybersecurity experiments. 
+A quick overview of the tools and scripts used in this repository:
+
+* **cipher-graphs/**: Visualizations of cryptographic algorithms.
+* **generate\_ssh\_summary/**: SSH automation tool that reads `~/ssh-logs` and writes a summary to `~/ssh-summary.md`.
+* **nofiltergpt-chat/**: Records of chatbot experiments.
 
 ---
 
-## File Naming Convention
+## SSH Summary Generator
 
-- **Scripts**:  
-  `port-scan-2025-07-07.sh`
-- **Lab Notes**:   
-  `lab-<topic>-YYYY-MM-DD.md`, e.g.: `lab-ssh-setup-2025-07-08.md`
-- **Proof-of-Concept**:  
-  `exploit-demo-cve-2025-1234.sh`
+A simple utility to turn raw SSH debug logs into a Markdown table.
+
+**To run:**
+
+```bash
+cd experiments/generate_ssh_summary
+chmod +x generate_ssh_summary.py
+./generate_ssh_summary.py
+cat ~/ssh-summary.md
+```
 
 ---
 
-## Author: **Jeremy Ray Jewell**
-[GitHub](https://github.com/jeremyrayjewell)
-[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+## Author
 
+**Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
