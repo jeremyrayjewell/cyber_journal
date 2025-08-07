@@ -1,4 +1,4 @@
-# SSH NOTES WEEK 1 #
+# Cipher Reference #
 
 ## SSH Asymmetric Encryption Types & Strengths
 
