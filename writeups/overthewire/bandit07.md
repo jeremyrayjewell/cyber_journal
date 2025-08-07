@@ -1,4 +1,6 @@
-# BANDIT 7 -> 8
+# Write-up: Bandit 07 → 08  
+**Date:** 2025-07-30  
+
 
 ## Obfuscated password (ROT13): 
 
@@ -24,3 +26,9 @@ If we run `grep man` we will find the following explanation under the `DESCRIPTI
 ## Solutions
 
 - `cat data.txt | grep "millionth"`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

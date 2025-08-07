@@ -1,4 +1,6 @@
-# BANDIT 5 -> 6
+# Write-up: Bandit 05 → 06  
+**Date:** 2025-07-28  
+
 
 ## Obfuscated password (ROT13): 
 
@@ -96,3 +98,10 @@ Putting the common negation symbol `!` in front of this flag filters for non-exe
 - `find inhere -type f -size 1033c -exec file {} \; | grep 'text'`
 
 - `find inhere -type f -size 1033c ! -executable  -exec file {} \; | grep 'text'` 
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+

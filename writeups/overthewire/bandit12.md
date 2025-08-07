@@ -1,4 +1,6 @@
-# BANDIT 12 -> 13
+# Write-up: Bandit 12 → 13  
+**Date:** 2025-08-04
+  
 
 ## Obfuscated password (ROT13): 
 
@@ -60,4 +62,10 @@ Copy to a temporary directory, then:
 	- `gzip -d`, `bzip2 -d`, and `tar -xf` depending on compression type
 
 	- change default bzip2 `.out` suffix where necessary.
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
 

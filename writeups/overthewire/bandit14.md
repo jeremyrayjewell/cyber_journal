@@ -1,4 +1,5 @@
-# BANDIT 14 -> 15
+# Write-up: Bandit 14 → 15  
+**Date:** 2025-08-06  
 
 ## Obfuscated password (ROT13): 
 
@@ -19,3 +20,9 @@ As for the mechanism that causes the response, we can infer that it is an *xinet
 ## SOLUTION
 
 `echo [previous password] | nc localhost 30000`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

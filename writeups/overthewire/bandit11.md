@@ -1,4 +1,5 @@
-# BANDIT 11 -> 12
+# Write-up: Bandit 11 → 12  
+**Date:** 2025-08-03  
 
 ## Obfuscated password (ROT13): 
 
@@ -25,3 +26,9 @@ After these arguments are given, `tr` lines up the characters in the first and s
 ## SOLUTIONS
 
 - `echo "Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4" | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

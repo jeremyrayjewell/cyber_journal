@@ -1,4 +1,6 @@
-# BANDIT 8 -> 9
+# Write-up: Bandit 08 → 09  
+**Date:** 2025-07-31  
+
 
 ## Obfuscated password (ROT13): 
 
@@ -32,3 +34,9 @@ The man page for `sort` clarifies:
 ## Solutions
 
 - `sort data.txt | uniq -u`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

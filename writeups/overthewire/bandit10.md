@@ -1,4 +1,5 @@
-# BANDIT 10 -> 11
+# Write-up: Bandit 10 → 11  
+**Date:** 2025-08-02  
 
 ## Obfuscated password (ROT13): 
 
@@ -19,3 +20,9 @@ The man page for the `base64` command tells us that option `-d` is to be used to
 - `base64 -d data.txt1`
 
 - `base64 -d <<< VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

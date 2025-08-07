@@ -1,4 +1,5 @@
-# BANDIT 15 -> 16
+# Write-up: Bandit 15 → 16  
+**Date:** 2025-08-07  
 
 ## Obfuscated password (ROT13): 
 
@@ -21,3 +22,9 @@ We will, however, notice a problem: as `openssl s_client` parses the certificate
 - `echo [previous password] | openssl s_client -quiet -connect localhost:30001`
 
 - `openssl s_client -connect localhost:30001 -ign_eof`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

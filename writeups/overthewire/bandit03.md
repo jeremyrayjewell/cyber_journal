@@ -1,4 +1,5 @@
-# BANDIT 3 -> 4
+# Write-up: Bandit 04 → 04  
+**Date:** 2025-07-26  
 
 ## Obfuscated password (ROT13): 
 
@@ -19,6 +20,12 @@ In order to see the hidden file, the use must run the `ls` utility with the flag
 - `cd inhere`, `ls -a`, `cat ...Hiding-From-You`
 
 - `-a` flag alternatives: `--all` (same function), `-A`/`--almost-all` (excludes special entries)
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
 
 
 

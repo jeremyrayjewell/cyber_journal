@@ -1,4 +1,6 @@
-# BANDIT 9 -> 10
+# Write-up: Bandit 09 → 10  
+**Date:** 2025-08-01  
+
 
 ## Obfuscated password (ROT13): 
 
@@ -19,3 +21,10 @@ If we run `strings` on `data.txt` we ought to be able to see the password, but i
 - `strings data.txt`
 
 - `strings data.txt | grep "==="`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+

@@ -1,4 +1,6 @@
-# BANDIT 6 -> 7
+# Write-up: Bandit 06 → 07  
+**Date:** 2025-07-29  
+
 
 ## Obfuscated password (ROT13): 
 
@@ -66,5 +68,11 @@ Bandit 6 drives home that ownership metadata combines perfectly with byte-level 
 - `find / -group bandit6 -user bandit7 -size 33c`
 
 - `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
 
 

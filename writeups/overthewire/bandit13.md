@@ -1,4 +1,5 @@
-# BANDIT 13 -> 14
+# Write-up: Bandit 13 → 14  
+**Date:** 2025-08-05  
 
 ## Obfuscated password (ROT13): 
 
@@ -21,3 +22,9 @@ Once we make it to the bandit14 server, we can locate the bandit13 password in t
 - `ssh -i sshkey.private -p 2220 bandit14@bandit.labs.overthewire.org`
 
 - `cat /etc/bandit_pass`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

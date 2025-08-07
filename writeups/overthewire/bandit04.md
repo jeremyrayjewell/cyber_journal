@@ -1,4 +1,6 @@
-# BANDIT 4 -> 5
+# Write-up: Bandit 04 → 05  
+**Date:** 2025-07-27  
+
 
 ## Obfuscated password (ROT13): 
 
@@ -37,3 +39,9 @@ The `file` command exists to read the first bytes of a file and compare them aga
 - `find . -type f -exec file {} \;`
 
 - `find . -type f -exec file {} \; | grep 'text'`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

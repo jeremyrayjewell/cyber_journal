@@ -1,4 +1,5 @@
-# BANDIT 0 -> 1 #
+# Write-up: Bandit 00 → 01  
+**Date:** 2025-07-23  
 
 ## Obfuscated password (ROT13): ##
 

@@ -1,4 +1,5 @@
-# BANDIT 2 -> 3
+# Write-up: Bandit 02 → 03  
+**Date:** 2025-07-25  
 
 ## Obfuscated password (ROT13): 
 
@@ -21,3 +22,9 @@ When a filename contains space, the shell will interpret each space as a separat
 - `cat spaces\ in\ this\ filename`
 
 - TIP: `cat space\` + `TAB` key will often complete the name for you.
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
