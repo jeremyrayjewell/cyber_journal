@@ -1,25 +1,15 @@
 # Book Chapter Summaries
 
-Chapter-by-chapter markdown summaries for 
-cybersecurity and related texts
+Chapter-by-chapter markdown summaries for cybersecurity and related texts. Click a title to view its library of chapter summaries:
 
-Some titles (may not be exhaustive):
-- **Linux Basics for Hackers** by OccupyTheWeb (First Edition)
-- **Hacking: The Art of Exploitation** by Jon Erickson (Second Edition)
-- **Practical Packet Analysis** by Chris Sanders (Third Edition)
-- **Introduction to Algorithms** by Thomas H. Cormen et al (First Edition)
-
----
-
-## File Naming Convention
-
-\`\`\`
-<book-slug>-chapter-<chapter-number>.md
-\`\`\`
+* [Linux Basics for Hackers](linux-basics-for-hackers/README.md) by OccupyTheWeb (First Edition)
+* [Hacking: The Art of Exploitation](hacking-the-art-of-exploitation/README.md) by Jon Erickson (Second Edition)
+* [Practical Packet Analysis](practical-packet-analysis/README.md) by Chris Sanders (Third Edition)
+* [Introduction to Algorithms](introduction-to-algorithms/README.md) by Cormen et al. (First Edition)
 
 ---
 
 ## Author: **Jeremy Ray Jewell**
+
 [GitHub](https://github.com/jeremyrayjewell)
 [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
-
