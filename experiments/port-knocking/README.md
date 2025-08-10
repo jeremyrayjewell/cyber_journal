@@ -13,37 +13,27 @@ Until the correct sequence is received, the SSH port remains closed.
 - **knockd.conf** — Example knock sequence configuration for the server.
 - **ssh_knock_connect.sh** — Sends the knock sequence from a client and connects to SSH.
 - **ssh_knock_disconnect.sh** — Sends the reverse knock to close the SSH port.
+- **verify_server.sh** — Server-side quick checker: interface/IPs, sshd/knockd status, iptables rules, and recent knockd logs.
 
 ## Dependencies
-**Server:**
-- `knockd`
-- `iptables`
-- `systemd` (for service management)
-
-**Client:**
-- `knock` command (part of `knockd` package)
-- `ssh`
+**Server:** knockd, iptables, systemd  
+**Client:** knock (from the knockd package) or nmap, ssh, nc (netcat)
 
 ---
 
 ## Step-by-Step Lab Setup
 
 ### 1️⃣ Install dependencies
-On **server**:
+On **server (Kali)**:
 ```bash
-sudo apt update && sudo apt install knockd iptables -y        # Debian/Ubuntu
-# or
-sudo pacman -S knockd iptables                                 # Arch/Manjaro
+sudo apt update
+sudo apt install -y knockd iptables
 ```
-
-On **client**:
+On **client (BlackArch)**:
 ```bash
-sudo apt update && sudo apt install knock -y                   # Debian/Ubuntu
-# or
-sudo pacman -S knockd                                          # Arch/Manjaro
+sudo pacman -S knockd
+# (provides the 'knock' client)
 ```
-
----
 
 ### 2️⃣ Configure the knock sequence (server)
 Edit `/etc/knockd.conf`:
@@ -54,68 +44,74 @@ Edit `/etc/knockd.conf`:
 [openSSH]
     sequence      = 1111,2222,3333
     seq_timeout   = 15
-    command       = /sbin/iptables -I INPUT -p tcp --dport 443 -j ACCEPT
+    command       = /sbin/iptables -I INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
     tcpflags      = syn
 
 [closeSSH]
     sequence      = 3333,2222,1111
     seq_timeout   = 15
-    command       = /sbin/iptables -D INPUT -p tcp --dport 443 -j ACCEPT
+    command       = /sbin/iptables -D INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
     tcpflags      = syn
 ```
 
----
-
-### 3️⃣ Enable knockd on the server
+### 3️⃣ Ensure knockd uses the right interface (server)
 ```bash
+IFACE=$(ip route show default | awk '/default/ {print $5; exit}')
+echo "START_KNOCKD=1" | sudo tee /etc/default/knockd
+echo "KNOCKD_OPTS=\"-i $IFACE\"" | sudo tee -a /etc/default/knockd
 sudo systemctl enable --now knockd
 ```
 
-For **Debian/Ubuntu**, also edit `/etc/default/knockd`:
-```
-START_KNOCKD=1
-KNOCKD_OPTS="-i eth0"
-```
-Replace `eth0` with your real interface (`ip route show default` to check).
-
----
-
-### 4️⃣ Close SSH port by default (server)
+### 4️⃣ Close SSH by default (server)
+> Make sure this port matches the one in `/etc/knockd.conf` (22 or 443).
 ```bash
-sudo iptables -A INPUT -p tcp --dport 443 -j DROP
+sudo iptables -A INPUT -p tcp --dport 22 -j DROP
 ```
 
----
-
-### 5️⃣ Make scripts executable (client)
+### 5️⃣ Make client scripts executable (client)
 ```bash
 chmod +x ssh_knock_connect.sh ssh_knock_disconnect.sh
 ```
 
----
-
 ### 6️⃣ Open SSH with the knock sequence (client)
 ```bash
-./ssh_knock_connect.sh <server-ip> <ssh-user>
+./ssh_knock_connect.sh <server-ip> <ssh-user> [ssh-port]
 ```
-Example:
-```bash
-./ssh_knock_connect.sh 192.168.1.50 jeremy
-```
-
----
 
 ### 7️⃣ Close SSH with the reverse knock (client)
+> Run this from the **same client IP** that opened the port.
 ```bash
-./ssh_knock_disconnect.sh <server-ip>
+./ssh_knock_disconnect.sh <server-ip> [ssh-port]
 ```
 
 ---
 
-## Safety Notes
-- Port knocking is **security by obscurity** — use it alongside **public key authentication** and other hardening.
-- Keep your knock sequence secret to prevent unauthorized access.
-- Test in **lab environments** before deploying publicly.
+## Server Quick Check
+From the **server (Kali)**, run:
+```bash
+sudo ./verify_server.sh [ssh-port]
+```
+You’ll see:
+- Interface and current IPs
+- `sshd` and `knockd` active/inactive
+- Current **iptables** rules for the SSH port
+- Recent `/var/log/knockd.log` entries
+- Listening sockets for sshd
+
+---
+
+## Troubleshooting
+- **“No route to host”**: fix network reachability (same subnet/bridge, gateway). Confirm from client:
+  - `ping <server-ip>`
+  - `ip route get <server-ip>`
+- **Knock works but SSH still closed**: on Kali, watch logs and ensure an `ACCEPT ... --dport <port>` rule appears *above* the DROP:
+  ```bash
+  sudo tail -f /var/log/knockd.log
+  sudo iptables -L INPUT -n --line-numbers | grep ":<port>"
+  ```
+- **Reverse knock didn’t close**: ensure `closeSSH` uses `-s %IP%`, and send the reverse knock from the **same client IP** that opened it.
+- **Netcat options differ**: use `nc -vz -w 2 -n <ip> <port>` (avoid `-4` if unsupported).
+- **Existing sessions**: closing the port only blocks **new** SSH connections; established sessions remain active.
 
 ---
 
