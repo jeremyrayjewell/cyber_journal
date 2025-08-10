@@ -8,8 +8,20 @@ A tiny cross-platform Python script that lets you chat with the **NoFilterGPT** 
 - Works on Linux, macOS, and Windows (Python ≥ 3.8).  
 - Colorful prompt/response display and graceful **Ctrl-C** exit.
 
-## Quick Start
+## Dependencies
+- Python 3.8+
+- requests
+- python-dotenv
+- colorama
 
+Install dependencies with:
+```bash
+pip install -r requirements.txt
+# ── or ──
+pip install requests python-dotenv colorama
+```
+
+## Quick Start
 ```bash
 # Clone repository
 git clone https://github.com/yourname/nofiltergpt-chat.git
