@@ -84,8 +84,23 @@ __ Tip:
 EOF
 chmod 0644 "$INFO_FILE"
 
-# 6) Show it once inside the session (no “typing”, no Enter pressed repeatedly)
-tmux send-keys -t "$TMUX_SESSION":0.0 "clear; cat $INFO_FILE; echo; echo 'Ready.'" C-m
+# 6) Present instructions WITHOUT sending keys into the active pane
+# Prefer a tmux popup (tmux >= 3.2). Fall back to a dedicated INFO window with `less`.
+if tmux display -p '#{version}' | awk -F. '{exit !($1>=3 && $2>=2)}'; then
+  # Popup that the user can close with 'q' or ESC
+  tmux display-popup -t "$TMUX_SESSION" -E "clear; cat $INFO_FILE; echo; echo 'Close this with q or ESC.'; exec sh -c 'read -r -n1 _ 2>/dev/null || true'"
+else
+  # Create/update an INFO window that runs `less` on the file (quit with 'q')
+  if ! tmux list-windows -t "$TMUX_SESSION" -F '#{window_name}' | grep -qx INFO; then
+    tmux new-window -t "$TMUX_SESSION" -n INFO "exec less -S $INFO_FILE"
+  else
+    # If INFO exists, refresh its content by restarting the command
+    tmux respawn-window -t "$TMUX_SESSION":INFO "exec less -S $INFO_FILE"
+  fi
+  # Show the INFO window once, then leave them there; they can press 'q' to return.
+  tmux select-window -t "$TMUX_SESSION":INFO
+fi
+
 
 # 7) Attach *this* terminal into the tmux session
 if [[ -t 1 ]]; then
