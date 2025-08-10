@@ -85,16 +85,13 @@ EOF
 chmod 0644 "$INFO_FILE"
 
 # 6) Register a one-shot hook: when the FIRST client attaches, show instructions
-#    - If popup (tmux ≥ 3.2) is available, use it.
-#    - Otherwise, show a status message telling them to `cat` the file.
-tmux set-hook -t "$TMUX_SESSION" -Q client-attached \
+tmux set-hook -t "$TMUX_SESSION" client-attached \
   "run-shell 'tmux set-hook -t $TMUX_SESSION -u client-attached; \
    (tmux display-popup -t $TMUX_SESSION -E \
      \"clear; cat $INFO_FILE; echo; echo 'Close with q or ESC.'; \
       sh -c \\\"read -r -n1 _ 2>/dev/null || true\\\"\" \
      2>/dev/null) \
    || tmux display-message -t $TMUX_SESSION \"Info: see $INFO_FILE (run: cat $INFO_FILE)\"'"
-
 
 
 # 7) Attach *this* terminal into the tmux session
