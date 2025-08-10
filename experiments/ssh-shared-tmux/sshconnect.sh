@@ -84,14 +84,31 @@ __ Tip:
 EOF
 chmod 0644 "$INFO_FILE"
 
-# 6) Register a one-shot hook: when the FIRST client attaches, show instructions
-tmux set-hook -t "$TMUX_SESSION" client-attached \
-  "run-shell 'tmux set-hook -t $TMUX_SESSION -u client-attached; \
-   (tmux display-popup -t $TMUX_SESSION -E \
-     \"clear; cat $INFO_FILE; echo; echo 'Close with q or ESC.'; \
-      sh -c \\\"read -r -n1 _ 2>/dev/null || true\\\"\" \
-     2>/dev/null) \
-   || tmux display-message -t $TMUX_SESSION \"Info: see $INFO_FILE (run: cat $INFO_FILE)\"'"
+# 6) One-shot "show instructions when a client attaches" using a helper script
+
+HELPER="/tmp/tmux_show_info_once.sh"
+cat > "$HELPER" <<'EOSH'
+#!/usr/bin/env bash
+SESSION="$1"
+INFO_FILE="$2"
+
+# Try popup (tmux >= 3.2); if not available, open an INFO window with less
+tmux display-popup -t "$SESSION" -E \
+  "clear; cat \"$INFO_FILE\"; echo; echo 'Close this with q or ESC.'; sh -c 'read -r -n1 _ 2>/dev/null || true'" 2>/dev/null \
+|| {
+  tmux kill-window -t "$SESSION":INFO 2>/dev/null || true
+  tmux new-window -t "$SESSION" -n INFO "exec less -S \"$INFO_FILE\""
+  tmux select-window -t "$SESSION":INFO
+}
+
+# Unset the hook so it only runs once
+tmux set-hook -t "$SESSION" -u client-attached 2>/dev/null || true
+EOSH
+chmod +x "$HELPER"
+
+# Register the hook (no -Q, compatible with older tmux)
+tmux set-hook -t "$TMUX_SESSION" client-attached "run-shell '$HELPER $TMUX_SESSION $INFO_FILE'"
+
 
 
 # 7) Attach *this* terminal into the tmux session
