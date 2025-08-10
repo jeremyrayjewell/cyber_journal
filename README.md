@@ -11,8 +11,14 @@ A living log of my hands-on journey through CTFs, book summaries, SSH deep-dives
 ## How to Use
 
 1. Browse directories by topic:
-   - `/writeups` → CTF/wargames write-ups  
-   - `/book-summaries` → chapter summaries for Linux Basics for Hackers & more  
-   - `/ssh-notes` → weekly SSH learnings  
-   - `/experiments` → pen-testing scripts and labs  
-2. 📝 Feel free to comment or suggest improvements via **Issues**.
+   - [/writeups](writeups) → CTF/wargame walkthroughs and challenge notes  
+   - [/book-summaries](book-summaries) → chapter breakdowns for *Linux Basics for Hackers* and more  
+   - [/ssh-notes](ssh-notes) → weekly SSH-focused learnings  
+   - [/experiments](experiments) → scripts, tools, and lab setups  
+2. 📝 Share feedback or suggestions via **Issues**.
+
+---
+
+## Author
+**Jeremy Ray Jewell**  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
