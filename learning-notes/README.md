@@ -1,6 +1,7 @@
 # Book Chapter Summaries
 
-Chapter-by-chapter markdown summaries for cybersecurity and related texts. Click a title to view its library of chapter summaries:
+This section of the **learning-notes** repository contains chapter-by-chapter markdown summaries for cybersecurity and related texts.  
+Click a title to view its library of chapter summaries:
 
 * [Linux Basics for Hackers](linux-basics-for-hackers/README.md) by OccupyTheWeb (First Edition)
 * [Practical Packet Analysis](practical-packet-analysis/README.md) by Chris Sanders (Third Edition)
@@ -15,5 +16,5 @@ Chapter-by-chapter markdown summaries for cybersecurity and related texts. Click
 
 ## Author: **Jeremy Ray Jewell**
 
-[GitHub](https://github.com/jeremyrayjewell)
+[GitHub](https://github.com/jeremyrayjewell)  
 [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
