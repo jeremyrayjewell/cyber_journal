@@ -3,10 +3,6 @@
 
 ## Obfuscated password (ROT13)
 `pTJcZnXKIjQHAtCNIWoJLhTUIa9my3w8`  
-Decode with:
-```bash
-echo 'pTJcZnXKIjQHAtCNIWoJLhTUIa9my3w8' | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-```
 
 ## OBJECTIVE
 > “The password for the next level is stored in a file `readme` in the home directory. Unfortunately, someone has modified `.bashrc` to log you out when you log in with SSH.”
