@@ -7,7 +7,7 @@ This repository serves both as a personal knowledge base and as a way to showcas
 
 ## Structure
 
-- **[books](book/README.md)**  
+- **[books](books/README.md)**  
   Chapter-by-chapter summaries of books on cybersecurity, networking, hacking, algorithms, and other relevant technical subjects.
 
 - **[courses](courses/README.md)**  
