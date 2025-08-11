@@ -19,3 +19,9 @@ The `diff` command compares two files line-by-line. The output will show us our 
 ## SOLUTIONS
 
 - `diff passwords.new passwords.old`
+
+___
+
+Writeup author: **Jeremy Ray Jewell**
+[GitHub](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
