@@ -6,14 +6,14 @@
 
 `UJnfaCugd9NIXr0qzx45akl20piHn6RT`
 
-## Objective
+## OBJECTIVE
 
 >"The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
 >- human-readable
 >- 1033 bytes in size
 >- not executable"
 
-## Purpose
+## PURPOSE
 
 Now in `/inhere` we see 20 subdirectories titles `maybehereXX` with suffixes `00`-`19`. Each one contains six files: 3 `-fileX` files where X = `1`-`3` and 3 `spaces fileX` files where X = `1`-`3`. Here is an abbreviated visual representation:
 
@@ -87,7 +87,7 @@ Putting the common negation symbol `!` in front of this flag filters for non-exe
 
 `find ./inhere -type f -size 1033c` actually returns exactly one result, meaning that if we begin our search there we find the solution faster. Herein lies another takeaway from this level: byte count is inherently more selective that the other two criteria, meaning that statistically beginning your filtering with the most selective traits will normally result in faster results. In fact, the file type flag is not even needed here.
 
-## Solutions
+## SOLUTIONS
 
 - `find inhere -size 1033c`
 

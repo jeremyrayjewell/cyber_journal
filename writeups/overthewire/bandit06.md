@@ -6,14 +6,14 @@
 
 `zbeoAGQxFJ6wVyHp0lzBqZnYaBySINnw`
 
-## Objective
+## OBJECTIVE
 
 >"The password for the next level is stored somewhere on the server and has all of the following properties:
 >- owned by user bandit7
 >- owned by group bandit6
 >- 33 bytes in size"
 
-## Purpose
+## PURPOSE
 
 In the last level we learned to narrow a search by size and executability. Now we need to search by size again, but also by ownership metadata. We must find a file that has a byte count of 33, but also user owner `bandit7` and group owner `bandit6`. This time the password is not located inside the user's home directory, so our search must include the whole server. We must therefore begin our search from the root directory.
 
@@ -63,7 +63,7 @@ Then...
 
 Bandit 6 drives home that ownership metadata combines perfectly with byte-level size filters to pinpoint a single file, and that `2> /dev/null` is your friend when traversing system-wide trees.
 
-## Solutions
+## SOLUTIONS
 
 - `find / -group bandit6 -user bandit7 -size 33c`
 

@@ -5,11 +5,11 @@
 
 `MwYwGzZ6SiilEaeo2esAJBMBGn6vc5Vs`
 
-## Objective
+## OBJECTIVE
 
 > "The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game."
 
-## Purpose ##
+## PURPOSE ##
 	
 This first level is a simple introduction. The user must first be able to use `ssh` to connect to the server via port 2220, then be familiar with the basic `ls` (list directory contents) and `cat` (concatenate files and print on the standard output) commands.
 
@@ -19,7 +19,7 @@ This first level is a simple introduction. The user must first be able to use `s
 	
 - The name of the `cat` command is derived from its original Unix purpose: to con*cat*enate one or more files and to print the result to the terminal. `cat` predates all screen-based editors. Thus, while its name reflects its original primary functionality, its use today is very often as a quick pager (or text viewer).	
 
-## Solutions ##
+## SOLUTIONS ##
 	
 - `ssh -p 2220 bandit0@bandit.labs.overthewire.org` This same command format must be used to connect to all subsequent levels.
 - The password for user bandit0 is given as `bandit 0`. User can run `ls` in home directory to reveal readme. `cat readme` reveals the password.

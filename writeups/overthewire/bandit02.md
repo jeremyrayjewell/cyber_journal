@@ -5,15 +5,15 @@
 
 `ZAx8XAU3Hfvvb41CEHRbQSCdskYCyFzk`
 
-## Objective
+## OBJECTIVE
 
 >"The password for the next level is stored in a file called spaces in this filename located in the home directory"
 
-## Purpose
+## PURPOSE
 
 When a filename contains space, the shell will interpret each space as a separator between arguments. You need to either quote or escape the spaces so that `cat` sees it as a single name.
 
-## Solutions
+## SOLUTIONS
 
 - `cat "spaces in this filename"`
 

@@ -6,11 +6,11 @@
 
 `4PXZu1WV91oHVMMCKQdTnany4kiNt0WZ`
 
-## Objective
+## OBJECTIVE
 	
 >"The password for the next level is stored in the file data.txt and is the only line of text that occurs only once"
 
-## Purpose
+## PURPOSE
 
 The `uniq` command allows repeated lines to be reported or ommitted, but it only compares each line with the line *right before it*. Its man page states the following:
 
@@ -31,7 +31,7 @@ The man page for `sort` clarifies:
 
 `sort` + `uniq` is a common pairing. Though `sort` does have a `-u` option itself, this option only removes duplicate *runs* after sorting, still keeping one copy of every distinct line, and thus only reducing the 1001 lines to 101. 
 
-## Solutions
+## SOLUTIONS
 
 - `sort data.txt | uniq -u`
 
