@@ -1,13 +1,13 @@
 # Write-up: Bandit 04 → 04  
 **Date:** 2025-07-26  
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-2JzeQSEzWVd3VCkarNnZTunc0cSuS3AW
+`2JzeQSEzWVd3VCkarNnZTunc0cSuS3AW`
 
 ## OBJECTIVE
 	
-"The password for the next level is stored in a hidden file in the inhere directory."
+>"The password for the next level is stored in a hidden file in the inhere directory."
 
 ## PURPOSE
 

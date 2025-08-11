@@ -1,13 +1,13 @@
 # Write-up: Bandit 14 → 15  
 **Date:** 2025-08-06  
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-8kPwaztbXoTYuUSNMyTR5Gzh4Z2gXWDb
+`8kPwaztbXoTYuUSNMyTR5Gzh4Z2gXWDb`
 
 ## OBJECTIVE
 
-"The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost."
+>"The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost."
 
 ## PURPOSE
 

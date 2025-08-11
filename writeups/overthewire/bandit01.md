@@ -1,13 +1,13 @@
 # Write-up: Bandit 01 → 02  
 **Date:** 2025-07-24  
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-263WTWCstH6YgqRitsJH1KC5lnp29zSk
+`263WTWCstH6YgqRitsJH1KC5lnp29zSk`
 
 ## Objective
 
-"The password for the next level is stored in a file called - located in the home directory"
+>"The password for the next level is stored in a file called - located in the home directory"
 
 ## Purpose
 

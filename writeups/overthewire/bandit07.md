@@ -2,13 +2,13 @@
 **Date:** 2025-07-30  
 
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-qsjimSDv4zH0jsAoSBr9EbJfxZYt7rRp
+`qsjimSDv4zH0jsAoSBr9EbJfxZYt7rRp`
 
 ## Objective
 
-"The password for the next level is stored in the file data.txt next to the word millionth"
+>"The password for the next level is stored in the file data.txt next to the word millionth"
 
 ## Purpose
 

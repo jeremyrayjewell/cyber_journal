@@ -1,13 +1,13 @@
 # Write-up: Bandit 10 → 11  
 **Date:** 2025-08-02  
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-qgE173sMXo0EEfQSFTft2EJacAIw3dEe
+`qgE173sMXo0EEfQSFTft2EJacAIw3dEe`
 
 ## OBJECTIVE
 
-"The password for the next level is stored in the file data.txt, which contains base64 encoded data"
+>"The password for the next level is stored in the file data.txt, which contains base64 encoded data"
 
 ## PURPOSE
 

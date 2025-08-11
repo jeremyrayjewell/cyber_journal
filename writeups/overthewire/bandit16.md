@@ -27,7 +27,7 @@ Once we have found our target port, we can send our previous password to it the 
 
 First, let's create a temporary directory: `mkdir -p /tmp/foo2` or `mktemp -d`. Next, recall Bandit15's `-ign_eof` flag that allows us to keep the client open. We can then use the **stdout redirection operator** `>` to write the output to a file. 
 
-`echo kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx | openssl s_client -quiet -connect localhost:31790 -ign_eof 2>/dev/null > /tmp/foo2/rsa.key`  
+`echo [previous password] | openssl s_client -quiet -connect localhost:31790 -ign_eof 2>/dev/null > /tmp/foo2/rsa.key`  
 
 We may also choose to include Bandit6's `2>/dev/null` before the final `>` to discard error messages. Finally, now that we have out key file, we must change its mode with `chmod 400` (`400` to keep it readable only to us). After that we ought to be able to enter the next level with no issues.
 

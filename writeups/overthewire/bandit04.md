@@ -2,13 +2,13 @@
 **Date:** 2025-07-27  
 
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-4bDLICxkMBBRBB5cGJ81SO8w8ykKTHDj
+`4bDLICxkMBBRBB5cGJ81SO8w8ykKTHDj`
 
 ## Objective
 
-"The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command."
+>"The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command."
 
 
 ## PURPOSE

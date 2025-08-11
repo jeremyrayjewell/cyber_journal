@@ -1,13 +1,13 @@
 # Write-up: Bandit 11 → 12  
 **Date:** 2025-08-03  
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4
+`7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4`
 
 ## OBJECTIVE
 
-"The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions"
+>"The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions"
 
 ## PURPOSE
 

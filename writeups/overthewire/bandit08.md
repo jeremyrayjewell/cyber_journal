@@ -2,13 +2,13 @@
 **Date:** 2025-07-31  
 
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-4PXZu1WV91oHVMMCKQdTnany4kiNt0WZ
+`4PXZu1WV91oHVMMCKQdTnany4kiNt0WZ`
 
 ## Objective
 	
-"The password for the next level is stored in the file data.txt and is the only line of text that occurs only once"
+>"The password for the next level is stored in the file data.txt and is the only line of text that occurs only once"
 
 ## Purpose
 

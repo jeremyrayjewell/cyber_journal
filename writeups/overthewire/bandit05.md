@@ -2,16 +2,16 @@
 **Date:** 2025-07-28  
 
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 
-UJnfaCugd9NIXr0qzx45akl20piHn6RT
+`UJnfaCugd9NIXr0qzx45akl20piHn6RT`
 
 ## Objective
 
-"The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
-- human-readable
-- 1033 bytes in size
-- not executable"
+>"The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+>- human-readable
+>- 1033 bytes in size
+>- not executable"
 
 ## Purpose
 
