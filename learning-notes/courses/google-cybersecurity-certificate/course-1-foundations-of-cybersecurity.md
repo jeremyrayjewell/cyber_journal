@@ -1,91 +1,94 @@
 # Google Cybersecurity Certificate  
-## Course 1 – Foundations of Cybersecurity
+## Course 1 – Foundations of Cybersecurity  
 
 ---
 
-### Overview
-Course 1 introduces the cybersecurity profession, key terminology, historical context, and entry-level career paths. It establishes a foundation of concepts and skills to be built upon in later courses.
+## Overview  
+Course 1 introduces the fundamentals of cybersecurity, its historical context, core concepts, and the responsibilities of professionals in the field. It emphasizes the skills and knowledge required for entry-level cybersecurity roles, explains key frameworks, and introduces essential tools and programming languages used in the industry.  
 
 ---
 
-## Key Learning Objectives
-- Understand the scope of cybersecurity and its role in modern organizations.
-- Learn common cybersecurity terms (confidentiality, integrity, availability, threat, vulnerability, risk).
-- Identify significant historical events that shaped the field.
-- Recognize various entry-level cybersecurity roles and responsibilities.
-- Explore foundational cybersecurity tools and practices.
-- Begin developing a cybersecurity portfolio.
+## Module 1: Welcome to the Exciting World of Cybersecurity  
+This module provides an orientation to the Google Cybersecurity Certificate, including instructor introductions, learning procedures, and course expectations. It defines the field of cybersecurity, outlines the primary responsibilities of security analysts, and highlights essential skills for starting a career in the field.  
+
+**Learning Objectives:**  
+- Explain how the certificate prepares learners for a career in security  
+- Define the field of cybersecurity  
+- Identify entry-level security analyst responsibilities  
+- Recognize core skills and knowledge needed to become a security analyst  
+- Describe how analysts protect networks and information  
+
+**Key Topics:**  
+- Overview of the program and Coursera platform  
+- Introduction to cybersecurity and core terminology  
+- Responsibilities of entry-level analysts  
+- Transferable and technical skills for cybersecurity  
+- The importance of cybersecurity in organizations  
 
 ---
 
-## Major Topics Covered
+## Module 2: The Evolution of Cybersecurity  
+This module examines the history of cybersecurity threats, from early attacks to modern-day incidents, and their impact on business operations. It introduces the CISSP eight security domains and explains how past threats shaped the security field.  
 
-### 1. **Cybersecurity Fundamentals**
-- Cybersecurity is the practice of protecting systems, networks, and data from digital attacks.
-- Core security principles: **CIA Triad**  
-  - **Confidentiality**: Restricting data access to authorized parties.  
-  - **Integrity**: Ensuring data is trustworthy and accurate.  
-  - **Availability**: Ensuring systems and data are accessible when needed.
+**Learning Objectives:**  
+- Identify common past and present attacks  
+- Explain how attacks impact business operations  
+- Recognize how attacks have driven the evolution of the security field  
+- Identify the CISSP eight security domains  
 
-### 2. **Threats, Vulnerabilities, and Risks**
-- **Threat**: Potential cause of an unwanted impact.
-- **Vulnerability**: Weakness that could be exploited.
-- **Risk**: The potential for loss when a threat exploits a vulnerability.
-- Types of threats: insider threats, phishing, malware, ransomware, DDoS attacks.
-
-### 3. **Historical Context**
-- Key events leading to the rise of cybersecurity:
-  - Morris Worm (1988) – one of the first major internet worms.
-  - Growth of commercial internet usage.
-  - Regulations like GDPR, HIPAA, and SOX driving compliance requirements.
-
-### 4. **Cybersecurity Roles**
-- Entry-level roles include:
-  - **Security Analyst**
-  - **SOC Analyst**
-  - **IT Security Specialist**
-  - **Incident Responder**
-- Core responsibilities:
-  - Monitor systems
-  - Investigate alerts
-  - Apply patches
-  - Document incidents
-
-### 5. **Common Cybersecurity Tools**
-- **SIEM** (Security Information and Event Management) tools – aggregate logs and detect threats.
-- **Network protocol analyzers** – inspect network traffic.
-- **Playbooks** – documented response procedures.
-- **Linux** – widely used in cybersecurity for log review and scripting.
-- **SQL** – query databases for security analysis.
-- **Python** – automate repetitive security tasks.
-
-### 6. **Professional Development**
-- **Cybersecurity Portfolio**: Showcase skills, projects, and knowledge for employers.
-- **Professional Statement**:
-  - Includes strengths, values, and interests.
-  - Shows alignment with organizational security goals.
-- Keep the statement updated as skills grow.
+**Key Topics:**  
+- Historical and modern attack methods  
+- Case studies of notable breaches  
+- Methods of attack and attacker motivations  
+- Overview of the CISSP eight domains  
 
 ---
 
-## Skills Gained
-- Identify threats, vulnerabilities, and risks.
-- Explain core cybersecurity concepts and terms.
-- Describe different entry-level cybersecurity roles and their responsibilities.
-- Use and understand the purpose of common cybersecurity tools.
-- Draft a professional statement for a cybersecurity portfolio.
+## Module 3: Protect Against Threats, Risks, and Vulnerabilities  
+This module covers the use of security frameworks and controls to manage organizational risk. It explains the CIA triad (Confidentiality, Integrity, Availability), NIST Cybersecurity Framework (CSF), and the role of ethics in cybersecurity decision-making.  
+
+**Learning Objectives:**  
+- Define security frameworks and controls  
+- Explain the CIA triad and NIST CSF  
+- Discuss how these are applied to mitigate risks and vulnerabilities  
+- Understand security ethics and professional responsibilities  
+
+**Key Topics:**  
+- Security frameworks, compliance, and controls  
+- Secure system design principles  
+- Ethical concepts guiding cybersecurity  
+- Applying frameworks to organizational policies  
 
 ---
 
-## Final Reflection
-Completing this course builds the foundational knowledge for moving into more specialized topics like risk management, network security, and automation. This understanding will be reinforced in Course 2: *Play It Safe: Manage Security Risks*.
+## Module 4: Cybersecurity Tools and Programming Languages  
+This module introduces common tools and languages used by security analysts, including SIEM tools, network protocol analyzers, SQL, and Python. It discusses how these are applied to protect business operations and mitigate risk. Learners also begin building their professional cybersecurity portfolio.  
+
+**Learning Objectives:**  
+- Identify common cybersecurity tools and their purposes  
+- Recognize programming languages relevant to security work  
+- Explain how analysts use tools and languages to reduce risk  
+- Create and refine a cybersecurity portfolio  
+
+**Key Topics:**  
+- Common tools for security operations  
+- Linux basics for analysts  
+- SQL for data querying and analysis  
+- Python for automation and security scripting  
+- Portfolio development: drafting a professional statement  
 
 ---
 
-**Next Steps:**  
-Proceed to **Course 2 – Play It Safe: Manage Security Risks**.
-___
+## Supplementary Projects  
+- **Professional Statement Draft**: Created as part of the portfolio activity in Module 4  
+- **Portfolio Development Exercises**: Hands-on activities to build career-ready materials  
+- **Graded Assignments & Practice Tasks**: Completed across all modules, demonstrating mastery of core concepts  
 
-Writeup author: **Jeremy Ray Jewell**
-[GitHub](https://github.com/jeremyrayjewell)
-[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+---
+
+## Completion Status  
+- All modules completed  
+- All videos, readings, and activities completed  
+- All graded assignments submitted with high scores (97.5%–100%)  
+
+---
