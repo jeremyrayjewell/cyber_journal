@@ -27,7 +27,7 @@ ___
 
 ## UPDATE 2025-08-13
 
-The file name is now `--spaces in this filename--`, adding an additional layer of complexity as the `--` is interepreted by `cat` as a sign to end command option parsing. We must now add an intentional `--` in front of our quotation-mark encapsulation in order to prevent the parsing of our filename as a command option: `cat --   "--spaces in this filename--"`.
+The file name is now `--spaces in this filename--`, adding an additional layer of complexity as the `--` is interepreted by `cat` as a sign to end command option parsing. We must now add an intentional `--` in front of our quotation-mark encapsulation in order to prevent the parsing of our filename as a command option: `cat -- "--spaces in this filename--"`.
 
 ___
 
