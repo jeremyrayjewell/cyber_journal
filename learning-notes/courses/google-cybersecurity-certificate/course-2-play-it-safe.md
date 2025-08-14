@@ -92,3 +92,7 @@ This module details the role of incident response playbooks in cybersecurity ope
 - All graded assignments submitted with high scores (97.5%–100%)  
 
 ---
+
+## Author
+**Jeremy Ray Jewell**  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
