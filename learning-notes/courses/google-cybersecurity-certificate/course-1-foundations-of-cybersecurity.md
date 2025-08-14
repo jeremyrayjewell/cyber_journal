@@ -92,3 +92,8 @@ This module introduces common tools and languages used by security analysts, inc
 - All graded assignments submitted with high scores (97.5%–100%)  
 
 ---
+
+## Author
+**Jeremy Ray Jewell**  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+
