@@ -12,12 +12,10 @@ Course 5 focuses on identifying and classifying assets, recognizing different ty
 ---
 
 ### **Core Structure**
-1. Introduction to Asset, Threat, and Vulnerability Concepts
-2. Asset Management Strategies
-3. Threat Types and Threat Intelligence
-4. Vulnerability Identification and Management
-5. Risk Assessment and Prioritization
-6. Course Wrap-Up and Analyst Responsibilities
+1. Introduction to Asset Security
+2. Protected Organizational Assets
+3. Vulnerabilities in Systems
+4. Threats to Asset Security
 
 ---
 
