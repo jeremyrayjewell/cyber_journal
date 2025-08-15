@@ -1,14 +1,21 @@
-# Google Cybersecurity Certificate – Course 2 of 9  
-**Play It Safe: Manage Security Risks** – Condensed Study Notes  
+# Play It Safe: Manage Security Risks – Notes  
+
+## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 2 of 9) 
+
+[Coursera](https://www.coursera.org/learn/manage-security-risks/home/welcome)
+
+---
+
+### **Course Overview**  
+Course 2 builds on foundational security concepts by introducing **risk management** as the central process in cybersecurity. Learners explore how to **identify**, **assess**, and **prioritize** risks, as well as how to apply **security controls** to reduce them. The course covers frameworks such as **NIST RMF** and **CSF**, the security policies that guide organizational behavior, and the compliance obligations tied to various industries. 
 
 ---
 
 ## Core Structure  
-1. Security Domains and the CISSP Framework  
-2. Risk Management Strategies and Threat Types  
-3. Security Frameworks, Controls, and the CIA Triad  
-4. OWASP Security Principles and Best Practices  
-5. Security Tools: SIEM, SOAR, and Playbooks  
+1. Security Domains  
+2. Security Frameworks and Controls  
+3. Introduction to Cybersecurity Tools 
+4. Use Playbooks to Respond to Incidents 
 
 ---
 
@@ -35,7 +42,7 @@
 - Clear communication of technical risk  
 - Coordinating with cross-functional teams  
 
-**Technical Skills (Conceptual & Introductory):**  
+**Technical Skills:**  
 - Understanding and applying security frameworks (NIST RMF, CISSP domains)  
 - Classifying threats, risks, and vulnerabilities  
 - Identifying and using basic SIEM dashboards (Splunk, Chronicle)  
