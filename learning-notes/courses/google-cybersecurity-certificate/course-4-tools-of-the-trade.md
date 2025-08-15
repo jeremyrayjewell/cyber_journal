@@ -2,7 +2,7 @@
 
 ## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 4 of 9) 
 
-*[Coursera] (https://www.coursera.org/learn/linux-and-sql/home/welcome)
+[Coursera](https://www.coursera.org/learn/linux-and-sql/home/welcome)
 
 ---
 
