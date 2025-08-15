@@ -1,98 +1,106 @@
-# Google Cybersecurity Certificate  
-## Course 2 – Play It Safe: Manage Security Risks  
+# Google Cybersecurity Certificate – Course 2 of 9  
+**Play It Safe: Manage Security Risks** – Condensed Study Notes  
 
 ---
 
-## Overview  
-Course 2 focuses on identifying, assessing, and managing security risks through the application of frameworks, controls, and industry-standard tools. It introduces learners to the CISSP security domains, NIST’s Risk Management Framework, Security Information and Event Management (SIEM) tools, and incident response playbooks. The course emphasizes the real-world application of these concepts in protecting business operations.  
+## Core Structure  
+1. Security Domains and the CISSP Framework  
+2. Risk Management Strategies and Threat Types  
+3. Security Frameworks, Controls, and the CIA Triad  
+4. OWASP Security Principles and Best Practices  
+5. Security Tools: SIEM, SOAR, and Playbooks  
 
 ---
 
-## Module 1: Security Domains  
-This module examines the CISSP’s eight security domains and their role in protecting business operations. Learners identify primary threats, risks, and vulnerabilities, and explore how entry-level security analysts address them. NIST’s Risk Management Framework (RMF) is also introduced as a structured approach to mitigating risks.  
-
-**Learning Objectives:**  
-- Recognize and explain the CISSP’s eight security domains  
-- Identify and define threats, risks, and vulnerabilities to business operations  
-- Understand which threats are most relevant to entry-level analysts  
-- Assess how these factors impact business operations  
-- Identify the steps in risk management  
-
-**Key Topics:**  
-- Overview of CISSP security domains  
-- Threats, risks, and vulnerabilities in cybersecurity  
-- Impact on business continuity  
-- Introduction to NIST RMF  
+## Key Cybersecurity Concepts & Acronyms  
+- **CISSP Security Domains** – 8 areas: Security & Risk Management, Asset Security, Security Architecture & Engineering, Communication & Network Security, IAM, Security Assessment & Testing, Security Operations, Software Development Security  
+- **CIA Triad** – Confidentiality, Integrity, Availability: foundational model for securing data  
+- **NIST RMF** – Risk Management Framework; systematic process for handling risks  
+- **CTF** – Cyber Threat Framework: categorizes and tracks threat activities  
+- **SIEM** – Security Information and Event Management; collects/analyzes logs for suspicious activity  
+- **SOAR** – Security Orchestration, Automation, and Response; automates incident handling workflows  
+- **OWASP Top 10** – Industry-standard list of critical web application risks  
+- **IOC** – Indicator of Compromise; evidence of potential breach  
+- **MFA** – Multi-Factor Authentication; layered login security  
+- **PII** – Personally Identifiable Information  
+- **APT** – Advanced Persistent Threat  
 
 ---
 
-## Module 2: Security Frameworks and Controls  
-This module explores the purpose and structure of security frameworks and controls, and how they interconnect to protect organizations. Learners study the Confidentiality, Integrity, and Availability (CIA) triad, the NIST Cybersecurity Framework (CSF), OWASP principles, and internal security audits.  
+## Core Skills Introduced  
 
-**Learning Objectives:**  
-- Define and describe security frameworks and controls  
-- Apply the CIA triad in organizational contexts  
-- Understand and use NIST frameworks  
-- Identify OWASP security principles  
-- Plan and conduct internal security audits  
+**Transferable Skills:**  
+- Analytical thinking  
+- Prioritization and decision-making under pressure  
+- Clear communication of technical risk  
+- Coordinating with cross-functional teams  
 
-**Key Topics:**  
-- Relationship between frameworks and controls  
-- CIA triad in practice  
-- NIST CSF functions and applications  
-- OWASP security principles  
-- Internal audit process and best practices  
-
-**Portfolio Activity:**  
-- **Conduct a Security Audit**: Learners complete an audit activity to simulate internal assessment procedures.  
+**Technical Skills (Conceptual & Introductory):**  
+- Understanding and applying security frameworks (NIST RMF, CISSP domains)  
+- Classifying threats, risks, and vulnerabilities  
+- Identifying and using basic SIEM dashboards (Splunk, Chronicle)  
+- Understanding SOAR automation for incident workflows  
+- Reading and applying incident response playbooks  
 
 ---
 
-## Module 3: Introduction to Cybersecurity Tools  
-This module focuses on Security Information and Event Management (SIEM) tools and their application in monitoring and protecting business operations. Learners explore SIEM dashboards, log analysis, and the daily workflows of security analysts using these tools.  
+## Common Threats, Risks, and Vulnerabilities Covered  
+**Threat Types:**  
+- Insider threats (malicious or accidental)  
+- APTs (long-term, targeted campaigns)  
+- Hacktivists (politically motivated)  
 
-**Learning Objectives:**  
-- Identify and define SIEM tools  
-- Describe their use in protecting business operations  
-- Explain how analysts use SIEM dashboards to detect threats  
+**Vulnerabilities & Risks:**  
+- Legacy systems  
+- Misconfigured assets  
+- Unpatched zero-day exploits (Log4Shell, ZeroLogon)  
 
-**Key Topics:**  
-- Logs and SIEM fundamentals  
-- Dashboard navigation and use cases  
-- Scenario-based SIEM analysis for threat identification  
-
----
-
-## Module 4: Use Playbooks to Respond to Incidents  
-This module details the role of incident response playbooks in cybersecurity operations. Learners explore the phases of an incident response plan and how to use playbooks in conjunction with SIEM and SOAR tools to address threats.  
-
-**Learning Objectives:**  
-- Define the purpose of an incident response playbook  
-- Use playbooks to respond to threats, risks, or vulnerabilities  
-- Integrate playbooks with SIEM and SOAR tools  
-
-**Key Topics:**  
-- Phases of an incident response playbook  
-- Practical response exercises  
-- Diversity of perspective in security team decision-making  
+**Attack Examples:**  
+- Phishing (BEC, spear phishing, whaling)  
+- Credential attacks (brute force, password spraying)  
+- Supply chain compromises  
+- IoT device exploitation  
 
 ---
 
-## Supplementary Projects  
-- **Portfolio: Conduct a Security Audit** – Practical internal audit simulation (Module 2)  
-- **Scenario-Based SIEM Analysis** – Identifying threats from simulated log data (Module 3)  
-- **Incident Response Playbook Practice** – Applying structured responses to simulated incidents (Module 4)  
-- **Graded Assignments & Practice Tasks** – Completed across all modules with scores ranging from 97.5% to 100%  
+## Security Frameworks & Controls  
+**Frameworks:** NIST RMF, CTF, ISO/IEC 27001, CIS Controls  
+**Control Types:**  
+- **Physical** – Locks, CCTV  
+- **Technical** – Firewalls, encryption, MFA  
+- **Administrative** – Policy enforcement, separation of duties  
 
 ---
 
-## Completion Status  
+## Ethics in Cybersecurity  
+- Adhere to laws like CFAA; no unauthorized counterattacks  
+- Ensure proportional, reversible, and targeted actions if responding (per international rules)  
+- Maintain transparency, privacy, and unbiased decision-making  
+
+---
+
+## Portfolio Development in Course 2  
+- **Incident Response Playbook Outline** – Created as an applied example  
+- **SIEM Walkthrough Notes** – Recorded observations on dashboard functions  
+- **Framework Mapping Exercise** – Linked CISSP domains to real-world controls  
+
+---
+
+## Key Takeaways from Course 2  
+- Understand the **CISSP 8 domains** and how they structure security work  
+- Apply **risk management strategies**: accept, avoid, transfer, mitigate  
+- Recognize the role of **frameworks and controls** in maintaining security posture  
+- Learn how **SIEM** and **SOAR** tools aid in detection, analysis, and response  
+- Begin integrating playbooks into portfolio to show procedural knowledge  
+
+---
+
+**Completion Status:**  
 - All modules completed  
-- All videos, readings, and activities completed  
+- All videos, readings, and activities finished  
 - All graded assignments submitted with high scores (97.5%–100%)  
 
 ---
 
-## Author
-**Jeremy Ray Jewell**  
-[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+**Author:** Jeremy Ray Jewell  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)  
