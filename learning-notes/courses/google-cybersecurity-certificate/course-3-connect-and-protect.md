@@ -1,5 +1,8 @@
-## Google Cybersecurity Certificate – Course 3 Summary  
-**Title:** *Connect and Protect: Networks and Network Security*  
+# Connect and Protect: Networks and Network Security – Notes  
+
+## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 3 of 9) 
+
+[Coursera](https://www.coursera.org/learn/networks-and-network-security/home/welcome)
 
 ---
 
@@ -8,15 +11,15 @@ Course 3 focuses on **network fundamentals, operations, threats, and security ha
 
 ---
 
-### **Core Structure**  
+## **Core Structure**  
 1. Network Architecture  
 2. Network Operations  
-3. Network Intrusion Tactics  
-4. Security Hardening Practices  
+3. Secure Against Network Intrusions 
+4. Security Hardening  
 
 ---
 
-### **Key Cybersecurity Concepts & Acronyms**  
+## **Key Cybersecurity Concepts & Acronyms**  
 - **LAN** – Local Area Network  
 - **WAN** – Wide Area Network  
 - **TCP/IP** – Transmission Control Protocol / Internet Protocol  
@@ -34,7 +37,7 @@ Course 3 focuses on **network fundamentals, operations, threats, and security ha
 
 ---
 
-### **Core Skills Introduced**  
+## **Core Skills Introduced**  
 
 **Transferable Skills:**  
 - Communication of technical concepts  
@@ -52,7 +55,7 @@ Course 3 focuses on **network fundamentals, operations, threats, and security ha
 
 ---
 
-### **Common Network Attacks Covered**  
+## **Common Network Attacks Covered**  
 **Denial-of-Service Attacks:** SYN flood, ICMP flood, Ping of Death  
 **Packet Sniffing:** Passive (reading packets), Active (altering packets)  
 **IP Spoofing Attacks:** On-path, replay, Smurf attacks  
@@ -60,7 +63,7 @@ Course 3 focuses on **network fundamentals, operations, threats, and security ha
 
 ---
 
-### **Security Hardening Practices**  
+## **Security Hardening Practices**  
 - **General:** Reduce attack surface, apply updates, disable unused ports/services, strong password policies, penetration testing  
 - **OS Hardening:** Baseline configurations, MFA, secure software/hardware disposal  
 - **Network Hardening:** Firewall rule maintenance, network segmentation, SIEM log review, encryption standards  
@@ -68,7 +71,7 @@ Course 3 focuses on **network fundamentals, operations, threats, and security ha
 
 ---
 
-### **Key Takeaways from Course 3**  
+## **Key Takeaways from Course 3**  
 - Understand the role of devices, architectures, and protocols in secure communications  
 - Recognize and defend against common network intrusion tactics  
 - Apply layered security with tools like firewalls, VPNs, and proxy servers  
