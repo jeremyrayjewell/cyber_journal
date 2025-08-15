@@ -96,10 +96,9 @@ Course 1 introduces the **cybersecurity field**, its core principles, and its ro
 
 ---
 
-**Completion Status:**  
-- All modules completed  
-- All videos, readings, and activities finished  
-- All graded assignments submitted with high scores (97.5%–100%)  
+**Completion Status:**
+- All modules, readings, and videos completed.
+- All graded assignments passed with high scores.
 
 ---
 
