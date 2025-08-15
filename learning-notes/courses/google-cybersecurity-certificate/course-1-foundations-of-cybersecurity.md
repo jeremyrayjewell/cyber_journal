@@ -1,11 +1,15 @@
-# Cybersecurity Foundations – Condensed Study Notes  
+# Cybersecurity Foundations – Notes  
 
-## Program Context  
-# Google Cybersecurity Certificate – Cybersecurity Foundations (Course 1 of 9) – Condensed Study Notes
+## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 1 of 9) 
+
+*[Coursera] (https://www.coursera.org/learn/foundations-of-cybersecurity/home/welcome)
 
 ---
 
-## Course 1: Foundations of Cybersecurity  
+### **Course Overview**  
+Course 1 introduces the **cybersecurity field**, its core principles, and its role in protecting people, organizations, and systems. Learners gain an understanding of **key terminology**, **types of threats**, and the **importance of security frameworks** in guiding professional practice. 
+
+---
 
 ### Core Structure  
 1. Welcome to the Exciting World of Cybersecurity  
