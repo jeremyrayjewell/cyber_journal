@@ -12,13 +12,10 @@ Course 4 introduces **Linux command-line operations** and **SQL database queries
 ---
 
 ## **Core Structure**  
-1. Introduction to the Linux Operating System  
-2. Navigating and Managing Files in Bash  
-3. User Accounts, Permissions, and Processes  
-4. Searching and Filtering Text in Linux  
-5. Introduction to SQL and Relational Databases  
-6. Querying, Filtering, and Aggregating Data in SQL  
-7. Applying Linux and SQL in Cybersecurity Contexts  
+1. Introduction to Operating System  
+2. The Linux Operating System
+3. Linux Commands in the Bash Shell
+4. Databases and SQL
 
 ---
 
