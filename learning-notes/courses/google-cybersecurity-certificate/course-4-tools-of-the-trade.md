@@ -1,5 +1,8 @@
-## Google Cybersecurity Certificate – Course 4 Summary  
-**Title:** *Tools of the Trade: Linux and SQL*  
+# Tools of the Trade: Linux and SQL – Notes  
+
+## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 4 of 9) 
+
+*[Coursera] (https://www.coursera.org/learn/linux-and-sql/home/welcome)
 
 ---
 
@@ -8,7 +11,7 @@ Course 4 introduces **Linux command-line operations** and **SQL database queries
 
 ---
 
-### **Core Structure**  
+## **Core Structure**  
 1. Introduction to the Linux Operating System  
 2. Navigating and Managing Files in Bash  
 3. User Accounts, Permissions, and Processes  
@@ -19,7 +22,7 @@ Course 4 introduces **Linux command-line operations** and **SQL database queries
 
 ---
 
-### **Key Cybersecurity Concepts & Acronyms**  
+## **Key Cybersecurity Concepts & Acronyms**  
 - **Bash** – Bourne Again Shell, a command-line interface for Linux  
 - **CLI** – Command-Line Interface  
 - **Permissions** – Read (r), Write (w), Execute (x) for users, groups, others  
@@ -33,7 +36,7 @@ Course 4 introduces **Linux command-line operations** and **SQL database queries
 
 ---
 
-### **Core Skills Introduced**  
+## **Core Skills Introduced**  
 
 **Transferable Skills:**  
 - Logical thinking and structured problem-solving  
@@ -51,7 +54,7 @@ Course 4 introduces **Linux command-line operations** and **SQL database queries
 
 ---
 
-### **Common Linux Commands Covered**  
+## **Common Linux Commands Covered**  
 - **Navigation & File Management:** `pwd`, `ls`, `cd`, `mkdir`, `touch`, `cp`, `mv`, `rm`  
 - **Permissions:** `chmod`, `chown`, `ls -l`  
 - **Processes:** `ps`, `top`, `kill`  
@@ -60,7 +63,7 @@ Course 4 introduces **Linux command-line operations** and **SQL database queries
 
 ---
 
-### **Common SQL Syntax Covered**  
+## **Common SQL Syntax Covered**  
 - **Basic Query:** `SELECT column FROM table;`  
 - **Filtering:** `WHERE`, `BETWEEN`, `LIKE`, `IN`  
 - **Sorting:** `ORDER BY`  
@@ -70,7 +73,7 @@ Course 4 introduces **Linux command-line operations** and **SQL database queries
 
 ---
 
-### **Key Takeaways from Course 4**  
+## **Key Takeaways from Course 4**  
 - Linux and SQL are critical analyst tools for accessing, managing, and analyzing data  
 - Bash scripting and command chaining allow for efficient, repeatable workflows  
 - Permissions management in Linux is fundamental to system security  
