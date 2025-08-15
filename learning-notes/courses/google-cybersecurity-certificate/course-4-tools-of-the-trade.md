@@ -85,7 +85,7 @@ Course 4 introduces **Linux command-line operations** and **SQL database queries
 **Completion Status:**  
 - All modules completed  
 - All hands-on labs, readings, and activities finished  
-- All graded assignments submitted with high scores  
+- All graded assignments submitted with high scores (100%) 
 
 ---
 
