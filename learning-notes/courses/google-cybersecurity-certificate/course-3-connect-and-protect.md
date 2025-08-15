@@ -83,7 +83,7 @@ Course 3 focuses on **network fundamentals, operations, threats, and security ha
 **Completion Status:**  
 - All modules completed  
 - All videos, readings, and activities finished  
-- All graded assignments submitted with high scores  
+- All graded assignments submitted with high scores (100%) 
 
 ---
 
