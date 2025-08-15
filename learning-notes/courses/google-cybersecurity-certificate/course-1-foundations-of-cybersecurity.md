@@ -11,7 +11,7 @@ Course 1 introduces the **cybersecurity field**, its core principles, and its ro
 
 ---
 
-### Core Structure  
+## Core Structure  
 1. Welcome to the Exciting World of Cybersecurity  
 2. The Evolution of Cybersecurity  
 3. Protect Against Threats, Risks, and Vulnerabilities  
