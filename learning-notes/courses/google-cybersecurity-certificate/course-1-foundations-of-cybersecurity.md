@@ -1,6 +1,6 @@
 # Cybersecurity Foundations – Notes  
 
-## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 1 of 9) 
+## Google Cybersecurity Certificate (Course 1 of 9) 
 
 [Coursera](https://www.coursera.org/learn/foundations-of-cybersecurity/home/welcome)
 
