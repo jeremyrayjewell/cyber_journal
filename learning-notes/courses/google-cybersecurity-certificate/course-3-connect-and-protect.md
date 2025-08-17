@@ -1,6 +1,6 @@
 # Connect and Protect: Networks and Network Security – Notes  
 
-## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 3 of 9) 
+## Google Cybersecurity Certificate (Course 3 of 9) 
 
 [Coursera](https://www.coursera.org/learn/networks-and-network-security/home/welcome)
 
