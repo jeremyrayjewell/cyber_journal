@@ -1,6 +1,6 @@
 # Tools of the Trade: Linux and SQL – Notes  
 
-## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 4 of 9) 
+## Google Cybersecurity Certificate (Course 4 of 9) 
 
 [Coursera](https://www.coursera.org/learn/linux-and-sql/home/welcome)
 
