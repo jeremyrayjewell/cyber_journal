@@ -1,44 +1,66 @@
-# SSH Summary Generator
+# SSH Summary Generators
 
-A Python utility that turns raw SSH debug logs into a Markdown table for quick review and analysis.
+Python utilities that turn raw SSH debug logs into Markdown tables for quick review and analysis.  
+They help track experiments on port-knocking, authentication scenarios, and algorithm negotiation.
+
+---
 
 ## Features
-- Reads `~/ssh-logs/` for SSH debug log files.
-- Extracts key session details (host, command, outcome, notes).
-- Outputs a `~/ssh-summary.md` file formatted as a Markdown table.
+
+### `generate_ssh_summary.py`
+- Parses logs from **scenario-based experiments** (e.g., preknock, postknock, postclose).
+- Extracts key session details:
+  - Host
+  - Scenario
+  - Timestamp
+  - Outcome
+  - Notes
+  - Optional timing fields (`elapsed`, `exit code`).
+- Outputs a Markdown table (`~/ssh-summary.md`) for your weekly notes.
+
+### `generate_ssh_algos_summary.py`
+- Parses logs from **algorithm negotiation experiments** (created with `ssh -vvv`).
+- Extracts negotiated algorithms:
+  - KEX (Key Exchange)
+  - HostKey type
+  - Client→Server cipher/MAC
+  - Server→Client cipher/MAC
+  - (Optional) elapsed/exit if present in logs.
+- Outputs a Markdown table you can paste under **Results** in weekly SSH notes.
+
+---
 
 ## Dependencies
-- Python 3.6+
-- pandas
-- pathlib (Python 3.4+ has this in the standard library, but older versions may need to install `pathlib2`)
 
-Install dependencies with:
-```bash
-pip install pandas
-```
+- Python 3.6+
+- Standard library (`pathlib`, `re`, `argparse`, `os`)
+- No third-party packages required
+
+*(Earlier versions of this project used `pandas`, but the current scripts no longer require it.)*
+
+---
 
 ## Requirements
-- SSH debug logs located in `~/ssh-logs/`
-- `chmod +x` permission on the script
+
+- SSH debug logs located under `~/ssh-logs/` by default
+- Filenames that identify the profile/scenario, e.g.:
+  - `kali-preknock-ssh-2025-08-10.log`
+  - `baseline-2025-08-18T12:34:56.log`
+- `chmod +x` permission on the scripts if run directly
+
+---
 
 ## Usage
-From the `generate_ssh_summary` directory:
+
+From the `experiments/generate_ssh_summary` directory:
+
+### Scenario / Port-Knocking Experiments
 ```bash
-cd experiments/generate_ssh_summary
 chmod +x generate_ssh_summary.py
 ./generate_ssh_summary.py
 cat ~/ssh-summary.md
-```
 
-## Example Output
-| Host      | Command/Flags        | Outcome           | Notes                   |
-|-----------|----------------------|-------------------|-------------------------|
-| bandit0   | ssh -v bandit0 ...   | Auth succeeded    | Used password auth ...  |
-| kali-lab  | ssh -vvv kali@...    | Auth succeeded    | Verified host keys ...  |
-
-## Notes
-- Works best with SSH logs generated using `ssh -v`, `ssh -vv`, or `ssh -vvv`.
-- Script overwrites `~/ssh-summary.md` each run.
+---
 
 ## Author
 Jeremy Ray Jewell  
