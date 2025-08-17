@@ -1,6 +1,6 @@
 # Sound the Alarm: Detection and Response – Notes  
 
-## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 6 of 9) 
+## Google Cybersecurity Certificate (Course 6 of 9) 
 
 [Coursera](https://www.coursera.org/learn/detection-and-response/home/welcome)
 
