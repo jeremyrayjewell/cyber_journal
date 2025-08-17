@@ -1,10 +1,48 @@
-Automate Cybersecurity Tasks with Python
+# Automate Cybersecurity Tasks with Python – Notes  
 
-# Course 7 – Python Programming & Cybersecurity Automation (Consolidated Notes)
+## Google Cybersecurity Certificate – Python Programming & Cybersecurity Automation (Course 7 of 9) 
 
-## Why Python for Security
-- **Python**: readable, batteries-included, huge ecosystem.
-- Common SOC use cases: parse/search logs, investigate logins, manage allow/deny lists, update devices, automate repetitive workflows.
+[Coursera](https://www.coursera.org/learn/automate-cybersecurity-tasks-with-python/home/welcome)
+
+---
+
+### **Course Overview**  
+This course teaches how to use **Python** to automate common cybersecurity tasks. It begins with foundational programming concepts (data types, variables, conditionals, and loops), then moves into **functions**, **modules/libraries**, and **readability** practices. You then work with **strings** and **lists** (including **regular expressions** for pattern matching), and finish by **opening/reading/parsing files** and **debugging** to put Python into practice for security workflows.
+
+---
+
+## Core Structure  
+1. Introduction to Python  
+2. Write effective Python code  
+3. Work with strings and lists  
+4. Put Python into practice (files, parsing, debugging)
+
+---
+
+## Key Cybersecurity Concepts & Acronyms  
+- **Regex** – Regular expressions for pattern matching in logs/text  
+- **PEP 8** – Python style guidelines for readable, maintainable code  
+- **I/O** – Input/Output; reading from and writing to files  
+- **PSL** – Python Standard Library (e.g., `re`, `csv`, `os`, `datetime`, `statistics`)  
+- **SOC** – Security Operations Center; Python aids detection/analysis/response automation  
+- **CLI** – Command-line interface (Linux shell usage alongside Python)
+
+---
+
+## Core Skills Introduced  
+
+**Transferable Skills:**  
+- Analytical problem-solving with programmatic logic  
+- Clear documentation (comments, docstrings, naming conventions)  
+- Workflow design and reproducibility for team handoffs  
+
+**Technical Skills:**  
+- Writing basic Python scripts and using built-in functions  
+- Creating reusable **functions** with parameters and return values  
+- Importing and using **modules/libraries**  
+- Applying **regular expressions** to extract indicators from text/logs  
+- **File handling** (read/write/append) and basic parsing strategies  
+- **Debugging** techniques and error handling
 
 ---
 
@@ -355,3 +393,8 @@ Automate Cybersecurity Tasks with Python
 - Import PSL modules (`re`, `csv`, `os`, `glob`, `time`, `datetime`, `statistics`) and external libs (install first with `%pip install ...`).
 - Follow **PEP 8**: 4-space indentation, helpful comments/docstrings, clear names, lines ≤ 79 chars.
 - **Regex** + **file I/O** are essential for parsing/searching logs and writing results.
+
+---
+
+**Author:** Jeremy Ray Jewell  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
