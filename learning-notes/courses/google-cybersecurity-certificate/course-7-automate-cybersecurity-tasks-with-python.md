@@ -1,6 +1,6 @@
 # Automate Cybersecurity Tasks with Python – Notes  
 
-## Google Cybersecurity Certificate – Cybersecurity Foundations (Course 7 of 9) 
+## Google Cybersecurity Certificate (Course 7 of 9) 
 
 [Coursera](https://www.coursera.org/learn/automate-cybersecurity-tasks-with-python/home/welcome)
 
