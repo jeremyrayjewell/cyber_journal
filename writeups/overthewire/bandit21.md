@@ -30,15 +30,6 @@ cat /etc/bandit_pass/bandit22 > /tmp/
 We see that this script is performing two actions: `chmod` sets permissions on the file and then `cat` copies the next password to it. We can then cat that file to receive the next password.
 
 
-bandit21@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit22.sh
-#!/bin/bash
-chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-bandit21@bandit:/etc/cron.d$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
-bandit21@bandit:/etc/cron.d$ 
-
-
 ## SOLUTIONS
 
 - `ls -l /etc/cron.d`
