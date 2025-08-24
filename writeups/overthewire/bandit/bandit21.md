@@ -1,7 +1,7 @@
 # Write-up: Bandit 21 → 22
 **Date:** 2025-08-13
 
-## Obfuscated password (ROT13): 
+## Obfuscated password (ROT13) 
 `gEnr0HsO9i0HmoPqa9pL0tDaqf9TS58D`
 
 ## OBJECTIVE
@@ -12,7 +12,7 @@ This level teaches you to read **system cron jobs** (`/etc/cron.d/...`), trace t
 
 A **cron job** is a scheduled task on Unix/Linux that runs **automatically** at times you specify. It's handled by the **cron daemon** (`cron`), which wakes up every minute, checks its schedules, and launches any jobs that are due. Trivia: its named is derived from rhe Greek *chronos*, meaning "time". While some systems now favor **systemd timers** for scheduling (unit files + `systemd`), **cron** remains ubiquitous for its simplicity and portability.
 
-We need to inspect the cron entry that is running. Normayll we would first need to find out where it lives, but our objective tells us it it `/etc/cron.d`. Once we navigate there we can run `ls -l` to see `cronjob_bandit22`. Running cat on that gives us the following:
+We need to inspect the cron entry that is running. Normally we would first need to find out where it lives, but our objective tells us it it `/etc/cron.d`. Once we navigate there we can run `ls -l` to see `cronjob_bandit22`. Running cat on that gives us the following:
 
 ```
 @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
