@@ -94,4 +94,9 @@ The final module integrates course content into practical application. Learners 
 ## Completion Status  
 - All modules completed  
 - All videos, readings, and hands-on labs completed  
-- All graded assignments submitted with perfect scores (100%)  
+- All graded assignments submitted with perfect scores (100%)
+
+---
+
+**Author:** Jeremy Ray Jewell  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
