@@ -1,5 +1,5 @@
 # Write-up: Bandit 27 → 28
-**Date:** 2025-08-25
+**Date:** 2025-08-19
 
 ## Obfuscated password (ROT13) 
 `Lm9VcY0fOpPrhT7z9hDSg8MAcF4UMEpA`
