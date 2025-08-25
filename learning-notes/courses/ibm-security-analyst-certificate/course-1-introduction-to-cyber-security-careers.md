@@ -89,3 +89,6 @@ The final module consolidates course learning and guides learners through develo
 - All graded assignments submitted with perfect scores (100%)  
 
 ---
+
+**Author:** Jeremy Ray Jewell  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
