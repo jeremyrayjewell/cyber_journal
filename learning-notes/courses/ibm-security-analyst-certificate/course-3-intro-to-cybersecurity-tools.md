@@ -116,6 +116,8 @@ The final project consolidates knowledge through a scenario-based assignment. Le
 
 ---
 
+**Author:** Jeremy Ray Jewell  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
 ## Completion Status  
 - All modules completed  
 - All videos, readings, and labs completed  
