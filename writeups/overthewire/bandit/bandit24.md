@@ -1,17 +1,22 @@
-# BANDIT 24 -> 25
+# Write-up: Bandit 24 → 25
+**Date:** 2025-08-16
 
-## Obfuscated password (ROT13): 
-
-	vPv86ggG4XFAr1nezXvjoDAzO3LWC3d4
+## Obfuscated password (ROT13) 
+`vPv86ggG4XFAr1nezXvjoDAzO3LWC3d4`
 
 ## OBJECTIVE
+>"A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
 
-	"A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
-
-	You do not need to create new connections each time"
+>You do not need to create new connections each time"
 
 
 ## PURPOSE
+We must brute-force a **4-digit PIN (0000–9999)**, but do it **over a single TCP connection** to `localho
+```
+<bandit24_password> <4-digit_pin>
+```
+The server replies “Wrong!” for bad guesses and prints the bandit25 password for the correct one. We’ll stream all guesses through
+
 
 
 ## SOLUTIONS
@@ -65,3 +70,8 @@
 	~END~
 
 	echo "[previous password] 2219" | nc localhost 30002
+
+---
+
+Writeup author: **Jeremy Ray Jewell**  
+[GitHub](https://github.com/jeremyrayjewell) • [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
