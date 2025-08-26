@@ -59,7 +59,7 @@ SUMMARY OF
 	├──/dev	 ["Devices"; special device files]
 	├──/bin  [Binaries]
 	├──/sbin [Binaries]
-	├──/lib  [Libraries[
+	├──/lib  [Libraries]
 	└──/usr  ["Second tier" for shareable, read-only userland programs/files]
 	    ├──/bin  [Binaries]
 	    ├──/sbin [Binaries]
