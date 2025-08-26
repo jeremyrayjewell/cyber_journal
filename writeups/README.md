@@ -2,15 +2,12 @@
 
 Markdown write-ups stored here.
 
-OverTheWire: [OTW index](./overthewire/README.md)
+OverTheWire: [OTW index](./overthewire/README.md)  
+   ├── [Bandit](./overthewire/bandit/README.md)     
+   └── [Natas](./overthewire/natas/README.md)  
 
-   ├── [Bandit](./overthewire/bandit/README.md)
-   
-   └── [Natas](./overthewire/natas/README.md)
-
-OWASP: [OWASP index](./owasp/README.md)
-
-   └── [Juice Shop](./owasp/juice_shop/README.md)
+OWASP: [OWASP index](./owasp/README.md)  
+   └── [Juice Shop](./owasp/juice_shop/README.md)  
   
 ---
 
