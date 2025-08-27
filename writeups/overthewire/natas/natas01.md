@@ -1,5 +1,5 @@
 # Write-up: Natas 01 → 02  
-**Date:** 2025-08-27  
+**Date:** 2025-08-25  
 
 ## Obfuscated password (ROT13)
 
