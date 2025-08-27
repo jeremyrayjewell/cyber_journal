@@ -1,6 +1,6 @@
-# Pen-Testing Experiments & Scripts
+# Experiments & Scripts
 
-This directory contains a collection of small, self-contained experiments, utilities, and scripts related to penetration testing, cryptography, and automation.
+This directory contains a collection of small, self-contained experiments, utilities, and scripts related to penetration testing, cryptography, automation, and more. 
 
 ## Contents
 
@@ -18,6 +18,9 @@ Bash scripts to open an SSH port, start an SSH server, and create a shared `tmux
 
 ### [port-knocking/](port-knocking/README.md)
 Stealth SSH access using a knock sequence to temporarily open the SSH port; includes client knock scripts and a sample `knockd` configuration.
+
+### [directory-enumerator/](directory-enumerator/README.md)
+A Python-based HTTP directory enumeration tool (`dir_enum.py`). Supports Basic Auth, built-in common paths, custom wordlists, directory listing detection, colorized output, and verbose mode for headers and body previews. Useful for quickly identifying exposed directories and files during assessments.
 
 ---
 
