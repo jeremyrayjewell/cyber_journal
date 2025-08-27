@@ -42,7 +42,7 @@ This level teaches that an “empty” page can still leak data via supporting a
 - Retrieve the credentials file:
     
     `curl -u natas2:<password-for-natas2> http://natas2.natas.labs.overthewire.org/files/users.txt`
-- The line for `natas3` contains the password; store it securely and record its ROT13 in the header.
+- The line for `natas3` contains the password.
 
 ___
 
