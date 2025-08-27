@@ -44,6 +44,17 @@ This level teaches that an “empty” page can still leak data via supporting a
     `curl -u natas2:<password-for-natas2> http://natas2.natas.labs.overthewire.org/files/users.txt`
 - The line for `natas3` contains the password.
 
+### Automated Enumeration Script
+For larger or more complex cases, manual inspection may miss hidden directories. An automated script can streamline discovery.  
+
+I built a Python-based tool called **dir_enum.py**, included in my [`directory-enumerator/`](../../experiments/directory-enumerator/README.md) project. It supports Basic Auth, built-in common paths, custom wordlists, and detection of directory listings.  
+
+Example usage against this level:  
+```bash
+./dir_enum.py http://natas2.natas.labs.overthewire.org -u natas2 -p '<password-for-natas2>' --common
+```
+This automatically flags /files/ as a DIR-LISTING and previews pixel.png and users.txt.
+
 ___
 
 Writeup author: **Jeremy Ray Jewell**  
