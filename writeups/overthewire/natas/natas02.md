@@ -47,7 +47,7 @@ This level teaches that an “empty” page can still leak data via supporting a
 ### Automated Enumeration Script
 For larger or more complex cases, manual inspection may miss hidden directories. An automated script can streamline discovery.  
 
-I built a Python-based tool called **dir_enum.py**, included in my [`directory-enumerator/`](../../experiments/directory-enumerator/README.md) project. It supports Basic Auth, built-in common paths, custom wordlists, and detection of directory listings.  
+I built a Python-based tool called **dir_enum.py**, included in my [`directory-enumerator/`](../../../experiments/directory-enumerator/README.md) project. It supports Basic Auth, built-in common paths, custom wordlists, and detection of directory listings.  
 
 Example usage against this level:  
 ```bash
