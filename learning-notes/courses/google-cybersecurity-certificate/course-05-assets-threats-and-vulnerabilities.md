@@ -1,6 +1,6 @@
 # Assets, Threats, and Vulnerabilities – Notes  
 
-## Google Cybersecurity Certificate (Course 5 of 9) 
+## Google Cybersecurity Certificate (Course 5) 
 
 [Coursera](https://www.coursera.org/learn/assets-threats-and-vulnerabilities/home/welcome)
 

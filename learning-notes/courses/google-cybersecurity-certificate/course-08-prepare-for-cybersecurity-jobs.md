@@ -1,6 +1,6 @@
 # Put It to Work: Prepare for Cybersecurity Jobs – Notes  
 
-## Google Cybersecurity Certificate – Career Preparation (Course 8 of 9)  
+## Google Cybersecurity Certificate – Career Preparation (Course 8)  
 
 [Coursera](https://www.coursera.org/learn/prepare-for-cybersecurity-jobs/home/welcome)
 

@@ -1,6 +1,6 @@
 # Play It Safe: Manage Security Risks – Notes  
 
-## Google Cybersecurity Certificate (Course 2 of 9) 
+## Google Cybersecurity Certificate (Course 2) 
 
 [Coursera](https://www.coursera.org/learn/manage-security-risks/home/welcome)
 
