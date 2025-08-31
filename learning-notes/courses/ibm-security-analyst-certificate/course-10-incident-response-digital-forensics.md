@@ -78,3 +78,8 @@ Course 10 focuses on incident response (IR) and digital forensics (DFIR). Learne
 - All modules completed  
 - All videos, readings, labs, and case studies completed  
 - All graded assignments and final project submitted with perfect scores (100%)  
+
+---
+
+**Author:** Jeremy Ray Jewell  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)

@@ -117,3 +117,8 @@ Course 9 introduces penetration testing (ethical hacking), threat hunting, and c
 - All modules completed  
 - All videos, readings, labs, and glossary reviewed  
 - All graded assignments and final project submitted with high scores (90-100%)  
+
+---
+
+**Author:** Jeremy Ray Jewell  
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
