@@ -44,7 +44,7 @@ The following is a description of what `ifconfig` shows with some expanded examp
 
 ## Checking Wireless Network Devices with iwconfig
 
-While `ifconfig` is part of the *net-tools* suite (1980s), `iwconfig` is part of the *wireless-tools* suite (late 1990s). `iwconfig` was conceived as a companion program to `ifconfig` when Wi-Fi first appeared and wireless radio control was needed. Just like `ifconfig` has a newer counterpart in `ip`, `iwconfig has a new counterpart in `iw`.
+While `ifconfig` is part of the *net-tools* suite (1980s), `iwconfig` is part of the *wireless-tools* suite (late 1990s). `iwconfig` was conceived as a companion program to `ifconfig` when Wi-Fi first appeared and wireless radio control was needed. Just like `ifconfig` has a newer counterpart in `ip`, iwconfig has a new counterpart in `iw`.
 
 When we run `iwconfig` we will see our interface names followed by their radio specifications, usually `IEEE 802.11` possibly followed by some additional letters.
 
