@@ -29,6 +29,7 @@ Click a course title to view its summary and notes:
 * [Course 7: Cybersecurity Architecture](ibm-security-analyst-certificate/course-07-cybersecurity-architecture.md)  
 * [Course 8: Cybersecurity Compliance Framework & System Administration](ibm-security-analyst-certificate/course-08-cybersecurity-compliance.md)  
 * [Course 9: Penetration Testing, Threat Hunting, and Cryptography](ibm-security-analyst-certificate/course-09-penetration-testing.md)  
+* [Course 10: Cybersecurity Incident Response and Digital Forensics](ibm-security-analyst-certificate/course-10-incident-response-digital-forensics.md)  
 
 ---
 
