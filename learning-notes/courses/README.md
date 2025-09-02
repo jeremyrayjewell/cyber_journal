@@ -31,6 +31,9 @@ Click a course title to view its summary and notes:
 * [Course 9: Penetration Testing, Threat Hunting, and Cryptography](ibm-security-analyst-certificate/course-09-penetration-testing.md)  
 * [Course 10: Cybersecurity Incident Response and Digital Forensics](ibm-security-analyst-certificate/course-10-incident-response-digital-forensics.md)
 * [Course 11: Cybersecurity Case Studies and Capstone Project](ibm-security-analyst-certificate/course-11-case-studies-and-capstone.md)
+* [Course 12: Cybersecurity Assessment: CompTIA Security+ and CySA+](ibm-security-analyst-certificate/course-12-cybersecurity-assessment.md)
+* [Course 13: Generative AI: Boost Your Cybersecurity Career](ibm-security-analyst-certificate/course-13-generative-ai.md)
+* [Course 14: Cybersecurity Job Search, Resume, and Interview Preparation](ibm-security-analyst-certificate/course-14-cybersecurity-job-search.md)
 
 ---
 
