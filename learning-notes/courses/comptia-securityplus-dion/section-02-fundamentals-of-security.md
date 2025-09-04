@@ -76,9 +76,11 @@ Section 2 introduces the foundational principles of security. Learners study the
 **Key Topics:**  
 - **Non-repudiation:** ensures actions cannot be denied (e.g., digital signatures)  
 - **Authentication:** verifying identity (passwords, biometrics, MFA)  
-- **Authorization:** permissions granted after authentication
+- **Authorization:** permissions granted *after* authentication
 	- role-based, rule-based, attribute-based  
-	- protect sensitive data, maintain system integrity in organizations, create more streamlined user experiences 
+	- protect sensitive data, maintain system integrity in organizations, create more streamlined user experiences
+ 	- set of rules and policies that are used to dictate what actions users can perform once verified
+	- serves as the gatekeeper to ensure that the right people have access for the right things
 - **Accounting:** logs, audit trails, SIEM for tracking use of resources
 	- Actions to monitor and log:
 		- logging into the system
@@ -106,12 +108,26 @@ Section 2 introduces the foundational principles of security. Learners study the
 
 **Key Topics:**  
 - **Categories:**  
-  - Technical (firewalls, encryption, IDS/IPS)  
+  - Technical (firewalls, encryption, IDS/IPS)
+	- The technologies, hardware, and software mechanisms that are implemented to manage and reduce risks
+	- IDS = Intrusion Detection Systems
   - Managerial (policies, risk assessments, governance)  
+	- a.k.a. administrative controls
+	- involve the strategic planning and governance side of security
+	- also encompass security policies, training programs, and incident response strategies 
   - Operational (incident response, change management)  
-  - Physical (locks, guards, surveillance)  
-- **Types:** preventive, deterrent, detective, corrective, compensating, directive 
-
+	- procedures and measures that are designed to protect data on a day-to-day basis and are mainly governed by internal processes and human actions
+	- backup procedures, account reviews, user training programs
+  - Physical (locks, guards, surveillance) 
+	- tangible, real-world measures taken to protect assets
+	- shredding of sensitive documents, security guards, locking the doors 
+- **Types of security controls:** 
+	- *preventive*: proactive measures implemented to thwart potential security threats or breaches (i.e. firewalls)
+	- *deterrent*: aim to discourage potential attackers by making the effort seem less appealing or more challenging (i.e. warning signs or banners)
+	- *detective*: monitor and alert organizations to malicious activities as they occue or shortly thereafter (i.e. IDS [Intrusion Detection System])
+	- *corrective*: mitigate any potential damage and restore the systems to their normal state (i.e. antivirus quarantine features)
+	- *compensating*: alternative measures that are implemented when primary security controls are not feasible or effective (i.e. using a VPN on top of WPA2 for lack of WPA3)
+	- *directive*: often rooted in policy or documentation and set the standards for behavior within an organization (i.e. AUP [Acceptable Use Policy] + most other policies) 
 ---
 
 ## Module 2.5: Gap Analysis  
@@ -120,9 +136,12 @@ Section 2 introduces the foundational principles of security. Learners study the
 - Use analysis to compare current vs. desired state  
 
 **Key Topics:**  
-- Steps: define scope, gather data, compare to objectives, plan remediation  
+*Gap Analysis* is the process of evaluating the differences between an organization's current performance and its desired performance
+**current state - desired state = difference between the two**
+- Steps: define scope, gather data on current state, analyze the data to identify the gaps (compare to objectives), develop a plan to bridge the gap (remediation)  
 - Variants: technical vs. business gap analysis  
-- Tool: Plan of Action & Milestones (POA&M) 
+	- technical gap analysis: evaluating an organization's current technical infrastructure and idnetifying any areas where it falls short of the technical capabilities required to fully utilize their security solutions
+	- business gap analysis: evaluating an organization's current business processes and idnetifying any areas where they fall short of the capabilities required to fully utilize cloud-based solutions
 
 ---
 
@@ -132,9 +151,20 @@ Section 2 introduces the foundational principles of security. Learners study the
 - Differentiate between control plane and data plane functions  
 
 **Key Topics:**  
-- Principle: “Never trust, always verify”  
-- **Control Plane:** adaptive identity, policy-driven access, secured zones  
-- **Data Plane:** enforcement through policy engine, administrator, enforcement points 
+*Zero Trust*: a best practice
+- Principle: “Never trust, always verify” - threats can emerge from both inside and outside
+- no user or system is trusted by default; they require continuous verification for access to organizational resources 
+- **Control Plane:** the overarching framework and set of components responsible for defining, managing, and enforcing the policies related to user and system access within an organization
+	- adaptive identity: use adaptive identities that rely on real-time validation that takes into account the user's behavior, device, location, and other factors like that
+	- threat scope reduction: limit the user's access to only what they need for their work tasks because thos drastically reduces the network's potential attack surface
+	- policy-driven access: developing, managin, and enforcing user access policies based on their roles and responsibilities
+	- secured zones: isolated enviornments within a network that are designed to house sensitive data  
+- **Data Plane:** ensures that the policies and procedures are properly executed
+	- subject/system: the individual or entity attempting to gain acces
+	- policy engine: cross-references the access request with its predefined policies
+	- policy administrator: used to establish and manage the access policies
+	- policy enforcement point: allow or restrict access, and it will effectively act as a gatekeeper to the senstiive areas of the systems or networks
+
 
 ---
 
