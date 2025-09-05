@@ -15,9 +15,11 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Explain motivations for different types of attacks  
 
 **Key Topics:**  
-- Threat actors: nation-states, organized crime, hacktivists, insiders, unskilled attackers  
-- Motivations: financial gain, data theft, espionage, revenge, ideology, chaos, cyber warfare  
+*Threat Actor*: individual or entity responsible for incidents that impact security and data protection
+- Threat actors: nation-states, organized crime, hacktivists, insider threats, unskilled attackers  
+- Motivations: financial gain, data exfiltration, blackmail, service disruption, espionage, revenge, philosophical or political beliefs, ethical reaons, disruption or chaos, war  
 - Internal vs. external threats and their relative risk
+- Threat vectors and attack surfaces: message-based, image-based, file-based, voice calls, removable devices, use of unsecured networks
 
 ---
 
