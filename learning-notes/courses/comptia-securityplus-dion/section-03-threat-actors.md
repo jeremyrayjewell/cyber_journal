@@ -66,10 +66,23 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 	- *internal threat actors*: individuals or entities within an organization who pose a threat to its security
 		- angry employees, contractors, business associates
 		- have legitimate access but use it in an unauthorized way
-- Resources and funding
-- Level of sophistication and capacity
+		- may be motivated by revenge, financial gain, or coercion by external entitites
+	- *external threat actors*: individuals or groups outside an organization who attempt to breach its cybersecurity defenses
+		- cyber criminals, hacktivists, competitors, state-sponsored actors
+		- tpically do *not* have authorized access, use malware or social engineering to gain access
+- Resources and funding: the tool, skills, and personnel at the disposal of a given threat actor
+	- can influence scale, frequency, and sophistication
+- Level of sophistication and capability: technical skill, the complexity of the tools and techniques used, and the ability to evade detection and countermeasures
+	- low level of sophistication and capability: use widely available tools and techniques, such as common malware or phishing attacks
+		- "Script Kiddies"
+	- high level of sophistication and capability: possess advanced technical skills and use sophisticated tools and techniques, like custom-developed malware, zero day exploits, and advanced evasion techniques
+		- APT (advanced persistent threats)
 
-- Unskilled attackers (“script kiddies”): limited technical skills, reliance on tools  
+- Unskilled attackers (“script kiddies”): limited technical skills, reliance on tools 
+	- script kiddie (unskilled attacker): an individual who lacks the technical knowledge to develop their own hacking tools or exploits
+	- can still cause significant damage using readily available toold and exploits to victimize systems with unpatched, known vulnerabilites
+	- many are motivated by a desire for recognition or the thrill of causing disruption to an organization's network
+	- less likely to be motivated by financial gain or political ideologies 
 - Advanced actors: well-funded, custom malware, long-term campaigns  
 - Attributes: resources, stealth, persistence, access, sophistication
 
