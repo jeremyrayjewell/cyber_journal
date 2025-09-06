@@ -16,9 +16,42 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 
 **Key Topics:**  
 *Threat Actor*: individual or entity responsible for incidents that impact security and data protection
+*Intent* (specific objective) vs *Morivation* (underlying reasons)
 - Threat actors: nation-states, organized crime, hacktivists, insider threats, unskilled attackers  
-- Motivations: financial gain, data exfiltration, blackmail, service disruption, espionage, revenge, philosophical or political beliefs, ethical reaons, disruption or chaos, war  
-- Internal vs. external threats and their relative risk
+- Motivations: 
+	- *financial gain*: one of the most common motivations for cybercriminals
+		- ransomeware attacks
+		- banking trojans
+	- *data exfiltration*: the unauthorized transfer of data from a computer
+		- selling it on the dark web
+		- using it for identity theft
+		- leveraging it for a competitive advantage
+	- *blackmail*: attacker obtains sensitive or compromising information about an individual/organization and threatens to release this information to the public unless certain demands are met
+		- reputational damage, legal repercussions, financial loss
+		- ransomware, doxxing, sextortion
+	- *service disruption*: often achieved by conducting a Distributed Denial of Service (DDoS) attack to overwhelm a network, service, or server with excessive amounts of traffic so that it becomes unavailable to its normal users
+		- financial and reputational damage
+	- *espionage*: spying on individuals, organizations, or nations to gather sensitive or classified information
+		- motivated by national security reasons or for strategic advantage when conducted by a nation state
+		- to gain competitive advantage when conducted by a rival company
+		- to gain political advantage when conducted by hacktivists or nation-state actors
+	- *revenge*: an employee who is disgruntled, or one who has recently been fired or laid off, might want to harm their current or former employer by causing a data breach, disrupting services, or leaking sensitive information
+		- causing data breach, distrupting services, leaking sensitive information
+		- former or current employee, or anyone who believed a targeted entity has wronged them in some way 
+	- *philosophical or political beliefs*: individuals or groups use hacking to promote a political agenda, social change, or to protst against organizations they perceive as unethical
+		- "hacktivist" motivation
+		- website defacement, data leaks
+		- targets political, financial, and media industries
+	- *ethical reaons*: ethical hackers, also known as *authorized hackers*, are motivated by a desire to improve security
+		- pen testers, bounty hunters
+	- *disruption or chaos*: often referred to as *unauthorized hacker*, these actors engage in malicious activities for the thrill of it, to challenge their skills, or simply to cause harm
+		- for thrill, to challenge their skills, or simply to cause harm
+		- creating/spreading malware, launching sophisticated cyber attacks against critical infrastrucre
+	- *war*:  cyberattacks have increasingly become a tool for nations to attack each other both on and off the battlefield
+		- disrupt a country's infrastructure, compromise national security, and to cause economic damage
+		- most common actor behind attacks with geopolitical objectives
+
+
 - Threat vectors and attack surfaces: message-based, image-based, file-based, voice calls, removable devices, use of unsecured networks
 
 ---
@@ -29,6 +62,13 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Assess relative sophistication and capability  
 
 **Key Topics:**  
+- Internal vs. external threats and their relative risk
+	- *internal threat actors*: individuals or entities within an organization who pose a threat to its security
+		- angry employees, contractors, business associates
+		- have legitimate access but use it in an unauthorized way
+- Resources and funding
+- Level of sophistication and capacity
+
 - Unskilled attackers (“script kiddies”): limited technical skills, reliance on tools  
 - Advanced actors: well-funded, custom malware, long-term campaigns  
 - Attributes: resources, stealth, persistence, access, sophistication
