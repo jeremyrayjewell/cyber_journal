@@ -94,6 +94,10 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Identify tactics used by hacktivists  
 
 **Key Topics:**  
+- Hacktivitsts: individuals or groups that use their technical skills to promote a cause or drive social change instead of for personal gain
+	- fairly high levels of sophistication
+	- target organiations or individuals that they perceive as acting out against their cause
+	- Anonymous, LulzSec
 - Politically or ideologically motivated attackers  
 - Techniques: DDoS, defacement, data leaks, doxing  
 - Aim: visibility for a cause, disruption of targets
@@ -105,7 +109,16 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Explain how organized crime groups operate  
 - Recognize financially motivated attacks  
 
-**Key Topics:**  
+**Key Topics:**
+- Organized Cyber Crime Groups: sophisticated and well-structured entities that leverage resources and technical skills for illicit gain
+	- typically well-structured, with members having specific roles based on skills/expertise
+	- transnational nature can create increased complexity for law enforcement
+	- possess a very high level of technical capability, often emplying custom malware, ransomware, sophisticated phishing campaigns
+	- known to exploit emerging technologies like cryptocurrencies, dark web, cellular collection devices
+	- motivation is almost always financial gain, using data breaches, identity theft, online fraud, ransomware attacks
+	- targets: small- to medium-sized business and high net worth individuals
+	- though not ideologically motivated, they may be hired by other entities, including governments
+	- FIN7, Carbanak  
 - Structured criminal groups engaging in cyberattacks  
 - Common activities: ransomware, phishing, identity theft, fraud  
 - Goal: financial profit, sometimes outsourcing capabilities
@@ -118,6 +131,13 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Recognize tactics and strategies used  
 
 **Key Topics:**  
+- Nation-State Actors: Groups that are sponsored by a government to conduct cyber operations against other nations, organizations, or individuals
+	- false flag attack: orchestrated in such a way that it appears to rogiinate
+	- some of the most highly sophisticated and capable
+	- techniques: creating custom malware, using zero-day exploits, becoming an advanced persistent threat
+	- Advanced Persistent Threat (**APT**): once synonymous with nation-state actor because of their long-term persistence and stealth
+	- motivated to achieve long-term strategic goals: gathering intelligence, disrupting critical infrastructure, influencing political processes
+	- North Korea, Stuxnet Worm (US/Israel), Russia (US elections)
 - State-sponsored operations against organizations or countries  
 - Use of APT campaigns, zero-day exploits, long-term infiltration  
 - Motivations: espionage, disruption, geopolitical advantage  
