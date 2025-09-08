@@ -151,6 +151,13 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Differentiate malicious and unintentional insiders  
 
 **Key Topics:**  
+- Insider Threats: cybersecurity threats that originate from within the organization
+	- have an intimate knowledge of infrastructure
+	- have varying levels of capabilities, largely determined by role and level of access
+	- forms: data theft, sabotage, misuse of access privileges
+	- can also help to facilitate external attack, installing malware or backdoors
+	- financial gain, revenge, unintentional (result of carelessness or lack of awareness)
+	- Edward Snowden, Twitter attack of 2020
 - Malicious insiders: data theft, sabotage, revenge  
 - Unintentional insiders: negligence, poor training  
 - Mitigation: monitoring, access controls, user training 
@@ -163,8 +170,13 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Understand risks created by unauthorized systems  
 
 **Key Topics:**  
+- Shadow IT: the use of information technology systems, devices, software, applications, and services without explicit organizational approval (a.k.a . "stealth IT", "client IT")
+	- use of personal devices for work purposes, installation of unapproved software, use of cloud services that have not been approved by the organization
+	- exists because a security posture is too high/complex, when employees want to gain efficiency
+	- USB drive, external hard drive, keyboard, wired mouse, network adapter, cloud services
+	- leads to a lack of standardization
 - Unapproved apps, services, or devices used without IT approval  
-- BYOD as a common source of Shadow IT  
+- BYOD (Bring Your Own Device) as a common source of Shadow IT  
 - Causes: overly strict policies, desire for convenience  
 - Risks: data leakage, unmanaged vulnerabilities 
 
