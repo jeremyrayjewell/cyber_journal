@@ -188,9 +188,20 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Identify common vectors and methods of exploitation  
 
 **Key Topics:**  
-- Vectors: phishing, smishing, vishing, malicious files, removable media, unsecured Wi-Fi, Bluetooth exploits  
+*Threat vector*: THE HOW. means or pathway by which an attacker can gain unauthorized access to a computer or network to deliver a malicious payload or carry out an unwanted action
+*Attack surface*: THE WHERE. all the various points where an unauthorized user can try to enter data to or extract data from an environment
+- Vectors: phishing, smishing, vishing, malicious files, removable media, unsecured Wi-Fi, Bluetooth exploits
+  	- Messages: include threats delivered via email, simple message service or SMS, or other forms of instant messagin
+  	- Images: involve the embedding of malicious code inside of an image file by the threat actor
+  	- Files: involve the use of malicious files to deliver a cyber threat
+  	- Voice calls: involve the use of voice calls to trick victims into revealing their sensitive information (vishing)
+  	- Removable devices: threats delivered via removable devices such as USB
+  	- Unsecure networks: the lack of appropriate security measures to protect networks
+- Bluetooth:
+  	- BlueBorne: set of vulnerabilites that can allow an attacker to take over devices or spread malware
+  	- BlueSmack: type of Denial of Service attack that targets Bluetooth-enabled devices by sending a specially crafted Logical Link Control and Adaptation Protocol packet to a target device
 - Attack surfaces: exposed services, unpatched systems, misconfigurations  
-- Reduction: patching, disabling unused services, limiting access 
+- Reduction: restricting access, removing unnecessary software, disabling unused protocols, patching 
 
 ---
 
