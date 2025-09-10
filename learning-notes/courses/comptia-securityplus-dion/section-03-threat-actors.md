@@ -211,8 +211,20 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 - Recognize common deception tools  
 
 **Key Topics:**  
-- Honeypots, honeynets, honeyfiles, honeytokens  
-- Bogus DNS entries, decoy directories, fake telemetry  
+- Honeypots: decoy system or network set up to attract potential hackers
+	- to install a honeypot in an enterprise network, place it within a screened subnet or isolated segment that is easily accessed by potential attackers 
+- Honeynets: network of honeypots to create a more complex system that is designed to mimic an entire network of systems, including servers, routers, and switches 
+	- honeynet logs all activities to provide a wealth of data about both successful and unsuccessful attacks
+- Honeyfiles: decoy file placed within a system to lure in potential attackers
+	- word-processing documents, spreadsheets, presentation files, images, database files, executable 
+- Honeytokens: piece of data or a resource that has no legitimate value or use but is monitored for access or use
+	- using bogus DNS entries: fake DNS entries introduced into a system's DNS server 
+	- creating decoy directories: fake folders and files places within a system's storage 
+	- generating dynamic page: use in websites to present ever-changing content to web crawlers to confuse and slow down the threat actor
+	- port triggering: security mechanism where specific services or ports on a network device remain closed until a specific outbound traffic pattern is detected
+	- fake telemetry data: system can respond to an attacker's network scan attempt by sending out fake telemetry or network
+- TTPs(Tactics, Techniques, and Procedures): specific methods and patterns of activities or behaviors associated with a particular threat actor or group of threat actors  
+- Deceptive and Disruption Technologies: designed to mislead, confuse, and divert attackers from critical assets while simultaneously detecting and neutralizing threats
 - Goal: mislead adversaries, collect intelligence, slow attacks 
 
 ---
