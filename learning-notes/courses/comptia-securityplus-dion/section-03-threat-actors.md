@@ -231,7 +231,7 @@ Section 3 examines the types of threat actors, their attributes, and the motivat
 
 ## Completion Status  
 - All Section 3 materials reviewed  
-- Flashcards created for threat actor types, motivations, attributes, and vectors  
+- [Flashcards created for threat actor types, motivations, attributes, and vectors](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=3)  
 
 ---
 
