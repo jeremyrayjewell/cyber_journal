@@ -15,8 +15,9 @@ Section 4 examines physical security measures used to deter, delay, and prevent 
 - Identify categories of physical controls  
 
 **Key Topics:**  
-- Physical security protects people, facilities, and information  
-- Examples: locks, fencing, bollards, access badges, guards, lighting, sensors  
+- Physical security: measures taken to protect tangible assets, like buildings, equipment, and people, from harm or unauthorized access 
+	- protects people, facilities, and information  
+- Examples: fencing and bollards, attacking with brute force, surveillance systems, bypassing surveillance systems, access control vestibules  
 - Complements technical and administrative controls
 
 ---
