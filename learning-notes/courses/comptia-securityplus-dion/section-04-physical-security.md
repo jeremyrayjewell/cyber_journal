@@ -28,8 +28,14 @@ Section 4 examines physical security measures used to deter, delay, and prevent 
 - Identify situations where each is appropriate  
 
 **Key Topics:**  
-- **Fencing:** defines boundaries, deters casual intruders, delays attackers  
-- **Bollards:** prevent vehicle-based attacks or forced entry  
+- **Fencing:** structure that encloses an area using interconnected panels or posts 
+	- defines boundaries, deters casual intruders, delays attackers  
+	- trespassing, theft, vandalism, unauthorized access
+- **Bollards:** robust, short vertical posts, made of steel or concrete, that are designed to manage or redirect vehicular traffic 
+	- prevent vehicle-based attacks or forced entry  
+	- used to keep vehicles away from buildings so that if an IED explodes nearby, the building and people are safe
+	- clear visual reminder of where vehicles are not permitted
+	- ASTM F2656-07 M30 P1: can stop a 15,000-pound vehicle traveling at 30 mph and not allow a vehicle to move for more than 1m after hitting
 - Often used together with surveillance and patrols
 
 ---
