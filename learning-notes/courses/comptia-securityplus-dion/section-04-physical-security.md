@@ -36,7 +36,17 @@ Section 4 examines physical security measures used to deter, delay, and prevent 
 	- used to keep vehicles away from buildings so that if an IED explodes nearby, the building and people are safe
 	- clear visual reminder of where vehicles are not permitted
 	- ASTM F2656-07 M30 P1: can stop a 15,000-pound vehicle traveling at 30 mph and not allow a vehicle to move for more than 1m after hitting
-- Often used together with surveillance and patrols
+- **Attacking with Brute Force:**
+	- forcible entry: gaining unauthorized access to a space by physically breaking or bypassing its barriers, such as windows, doors, or fences
+		- use reinforced or laminated windows to provide resistance against brute force attacks
+		- use high-strength doors with deadbolt locks, metal frames, or a solid core
+	- tampering with security devices: involves manipulating security devices to create new vulnerabilities that can be exploited
+		- to protect against tampering with security devices, have redundancy in physical security measures
+	- confronting security personnel: involves the direct confrontation or attack of security personnel
+		- seucirty personnel undergo rigorous conflict resolution and self-defense training to mitigate risks
+	- ramming a barrier with a vehicle: brute force attack that uses a car, truck, or other motorized vehicle to ram into the organization's physical security barriers
+		- brute force attacks on physical security are a direct, often violent approach to bypassing security measures
+- **Surveillance Systems:**
 
 ---
 
