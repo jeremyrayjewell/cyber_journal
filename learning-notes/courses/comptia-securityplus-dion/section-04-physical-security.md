@@ -102,7 +102,7 @@ Section 4 examines physical security measures used to deter, delay, and prevent 
 
 ## Completion Status  
 - All Section 4 materials reviewed  
-- Flashcards created for physical controls and bypass techniques  
+- [Flashcards created for physical controls and bypass techniques]() 
 
 ---
 
