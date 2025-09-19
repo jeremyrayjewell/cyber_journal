@@ -113,7 +113,7 @@ Section 5 explores social engineering, where attackers exploit human psychology 
 
 ## Completion Status  
 - All Section 5 materials reviewed  
-- Flashcards created for social engineering types, triggers, and defenses  
+- [Flashcards created for social engineering types, triggers, and defenses]()  
 
 ---
 
