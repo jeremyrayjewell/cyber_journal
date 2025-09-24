@@ -4,7 +4,7 @@
 [![Last Commit](https://img.shields.io/github/last-commit/jeremyrayjewell/cyber_journal)](https://github.com/jeremyrayjewell/cyber_journal/commits/main)  
 [![Issues](https://img.shields.io/github/issues/jeremyrayjewell/cyber_journal)](https://github.com/jeremyrayjewell/cyber_journal/issues)
 
-A living log of my hands-on journey through CTFs, course work, book summaries, and pentesting experiments.
+A living log of my hands-on journey through CTFs, course work, book summaries, and pentesting/automation experiments.
 
 ---
 
