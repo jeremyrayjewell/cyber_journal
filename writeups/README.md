@@ -1,6 +1,6 @@
 # CTF & Wargames Writeups
 
-Markdown write-ups stored here.
+Markdown write-ups for CTFs & wargames stored here.
 
 OverTheWire: [OTW index](./overthewire/README.md)  
    ├── [Bandit](./overthewire/bandit/README.md)     
