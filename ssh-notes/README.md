@@ -10,17 +10,6 @@ Every week, I aim to generate concise, reproducible notes of my SSH work, focusi
 
 ---
 
-## File Naming Convention
-
-`ssh-week-YYYY-MM-DD.md`
-
-* `YYYY-MM-DD` — the Monday (or chosen day) date of the week you’re documenting.
-
-**Example:**
-
-```
-ssh-week-2025-08-07.md
-```
 
 ## Directory Structure
 
