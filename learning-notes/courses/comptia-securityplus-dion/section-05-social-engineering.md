@@ -18,6 +18,22 @@ Section 5 explores social engineering, where attackers exploit human psychology 
 - Manipulating trust, emotions, or authority to achieve malicious goals  
 - Common forms: phishing, impersonation, pretexting, scams  
 - A leading cause of modern breaches
+- **Social Engineering**: manipulative strategy that exploits human psychology to gain unauthorized access to systems, data, or physical spaces
+- Motivational triggers:
+	- Familiarity and Likability
+	- Consensus and Social Proof
+	- Authority and Intimidation
+	- Scarcity and Urgency
+- Techniques:
+	- Impersonation
+	- Brand Impersonation
+	- Typo-squatting
+	- Watering Hole Attacks
+- Pretexting: Bank Official, IT Support, Law Enforcement Officer
+- Different types of phishing: phishing, vishing, smishing, spear phishing, whaling, business email compromise 
+- Provide security awareness training to the users
+- Frauds & Scams, Influence Campaigns
+- Other Social Engineering Attacks: diversion theft, hoaxes, shoulder surfing, dumpster diving, eavesdropping, baiting, piggybacking, tailgaiting
 
 ---
 
