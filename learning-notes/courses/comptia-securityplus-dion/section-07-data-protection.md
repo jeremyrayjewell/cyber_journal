@@ -18,6 +18,8 @@ Section 7 focuses on the protection of data across its types, states, classifica
 - Protecting confidentiality, integrity, and availability of information  
 - Regulatory and compliance drivers  
 - Data lifecycle: creation, storage, use, sharing, archiving, destruction 
+- Data Protection: process of safeguarding important inrofmation from corruption, compromise, or loss
+
 
 ---
 
@@ -30,6 +32,25 @@ Section 7 focuses on the protection of data across its types, states, classifica
 - Public, restricted, confidential, private, critical  
 - Classification informs handling requirements (storage, access, transmission)  
 - Supports risk management and compliance :contentReference
+- Data Classification: category based on the organization's value and the sensitivity of the information if it were to be disclosed
+- Sensitive Data: any information that can result in a loss of security or a loss of advantage to a company if accessed by an unauthorized person
+- *Overclassifying data leads to protecting all data at a high level*
+- Classification schemes:
+	- Commerical Business
+		- Public: has no impact on the company if released and is often posted in an open-source environment
+		- Sensitive: has minimal impact if released (organization's financial data)
+		- Private: contains data that should only be used within the organization; is information that relates to an individual entity
+		- Confidential: contains items such as trade secrets, intellectual property data, and source code that affect the business if disclosed
+		- Critical: contains valuable information
+	- Government
+		- Unclassified: data that can be released to the public or under the Freedom of Information Act
+		- Sensitive but Unclassified: data that would not hurt national security if released but could impact those whose data was being used
+		- Confidential: data that could seriously affect the government if unauthorized disclosures happen; *serious effect*
+		- Secret: data that could seriously damage national security if disclosed
+		- Top Secret: data that would damage national security if disclosed
+- the life cycle of data: collect, retain, dispose
+	- the life cycle of the data should be defined in policies
+	- follow the local, state, and national laws and regulations for data retention time requirements
 
 ---
 
