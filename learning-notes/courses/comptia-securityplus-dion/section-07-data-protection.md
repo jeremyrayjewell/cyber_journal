@@ -64,6 +64,16 @@ Section 7 focuses on the protection of data across its types, states, classifica
 - **Custodian:** enforces policies and manages storage/security  
 - **User:** responsible for compliant use  
 - Ownership ensures accountability for compliance and protection
+- Data Ownership: process of identifying the person responsible for the confidentiality, integrity, availability, and privacy of the information assets
+- Enterprise roles:
+	- Data Owner: senior executive role that has the responsibility for maintaining the confidentiality, integrity, and availability of the information asset
+	- Data Controller: entity that holds responsibility for deciding the purposes and methods of data storage, collection, and usage, and for guaranteeing the legality of processes
+	- Data Processor: group or individual hired by the data controller to help with tasks like collecting, storing, or analyzing data
+	- Data Custodian: responsible for handling the management of the system on which the data assets are stored; i.e. system administrator
+	- Data Steward: focused on the quality of the data and the associated metadata
+	- Data Privacy Officer: responsible for the oversight of any kind of privacy-related data, like PII, SPI, or PHI
+- The *data owner* should be a business entity responsible for creating this information, with each owner being assigned to their own department
+- IT people should *not* be the data owners, but rather those who know more about the data based on the content of the company
 
 ---
 
