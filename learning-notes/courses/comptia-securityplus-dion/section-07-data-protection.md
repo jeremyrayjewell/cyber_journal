@@ -77,7 +77,35 @@ Section 7 focuses on the protection of data across its types, states, classifica
 
 ---
 
-## Module 7.4: Data Types  
+## Module 7.4: Data States  
+**Learning Objectives:**  
+- Explain the three states of data  
+- Identify protections for each state  
+
+**Key Topics:**  
+- **At rest:** stored on drives or media → protect with encryption, access controls  
+	- a prime target for threat actors
+	- encryption methods:
+		- Full Disk Encryption: encrypts the entire hard drive
+		- Partition Encryption: encrypts specific partitions of a hard drive, leaving other partitions unencrypted
+		- File Encryption: encrypts individual files
+		- Volume Encryption: encrypts a set of selected files or directories
+		- Database Encryption: encrypts data stored in a database
+		- Record Encryption: encrypts specific fields within a database record
+- **In transit/in motion:** moving across networks → protect with TLS, VPNs, IPSec  
+	- Secure Socket Layer (SSL): cryptogrphic protocol to secure over a network
+	- Transport Layer Security (TLS): cryptogrphic protocol to secure over a network
+	- Virtual Priate Network (VPN): creates secure connetion over a less secure network (internet)
+	- Internet Protocol Security (IPSec): Protocol suite used to secure IP communications by authenticating and encrpyting each IP packet in a data stream
+- **In use:** actively processed → protect with memory protections, secure enclaves
+	- Application level
+	- Access controls
+	- Secure enclaves
+	- Intel software guards
+
+---
+
+## Module 7.5: Data Types  
 **Learning Objectives:**  
 - Recognize categories of data requiring protection  
 - Differentiate regulated, proprietary, and personal data  
@@ -87,18 +115,19 @@ Section 7 focuses on the protection of data across its types, states, classifica
 - Proprietary data: trade secrets, intellectual property  
 - Personal and sensitive personal data: PII, PHI  
 - Critical data: mission-essential systems and processes
-
----
-
-## Module 7.5: Data States  
-**Learning Objectives:**  
-- Explain the three states of data  
-- Identify protections for each state  
-
-**Key Topics:**  
-- **At rest:** stored on drives or media → protect with encryption, access controls  
-- **In transit:** moving across networks → protect with TLS, VPNs, IPSec  
-- **In use:** actively processed → protect with memory protections, secure enclaves
+- Types:
+	- Regulated Data: information controlled by laws, regulations, or industry standards
+		- General Data Protection REgularion (GDPR): EU data protection law
+		- Personal Identification Information (PII): any information that can be used to identify an individual
+		- Protected Health Information (PHI): (protected by HIPAA) any information about health status, provision of healthcare, or payment for healthcare that can be linked to a specific individual
+	- Trade secrets: type of confidential business information that provides a company with a competitive edge
+	- Intellectual property (IP): creations of the mind, such as inventions, literary and artistic works, designs, and symbols
+		- unauthorized use of IP can lead to legal action
+	- Legal information: includes any data related to legal proceedings, contracts, or regulatory compliance
+	- Financial information: includes data related to an organization's financial transactions, such as sales records, invoices, tax documents, and bank statements
+		- Payment Card Industry Sata Security Standard (PCI DSS): set of security standards designed to ensure that all companies that accept, process, store, or transmit credit card information maintain a secure environment
+	- Human-readable: information that can be understood by humans without the need for a machine or software
+	- Non-human readable data: information that requires a machine or software to interpret
 
 ---
 
@@ -112,6 +141,14 @@ Section 7 focuses on the protection of data across its types, states, classifica
 - Issues: compliance with GDPR, HIPAA, local regulations  
 - Risks: conflicting jurisdictions, legal exposure  
 - Mitigation: clear data storage policies, local compliance checks
+- Data Sovereignty: the concept that digital information is subject to the laws of the country in which it is located
+- Geographical considerations: the geographical location of sata storage and processing can significantly impact businesses
+- information is subject to the laws of the nation where it is collected or processed
+- General Data Protection REgularion (GDPR): stringent rules for data protection and grants individuals strong rights over their personal data
+- China and Russia have strict data sovereignty laws that require companies to store and process data within their national borders
+- understanding:
+	- know the physical locations of data centers
+	- ensure that information is not illegally transferered
 
 ---
 
@@ -121,10 +158,14 @@ Section 7 focuses on the protection of data across its types, states, classifica
 - Explain obfuscation and segmentation techniques  
 
 **Key Topics:**  
-- **Encryption:** symmetric/asymmetric, full-disk, file-level  
-- **Hashing & digital signatures:** ensure integrity and authenticity  
-- **Tokenization & masking:** limit exposure of sensitive values  
-- **Segmentation:** isolating critical data sets
+- **Geographic restrictions (Geofencing):** virtual boundaries to restrict data access based on geographic location
+- **Encryption:** transforms readable data (plaintext) into unredable data (ciphertext) using an algorithm and an encryption key; symmetric/asymmetric, full-disk, file-level  
+- **Hashing:** converts data into a fixed size of numerical or alphanumeric characters, known as a hash value; often used to store sensitive data, like passwords
+- **Tokenization:** replaces sensitive data with non-sensitive substitutes, known as tokens
+- **Masking:** replacing some or all of the data in a field with a placeholder; limit exposure of sensitive values  
+- **Segmentation:** dividing a network into separate segments, each with its own security controls; isolating critical data sets
+- **Obfuscation:** involves making data unclear or unintelligible, making it difficult for unauthorized users to understand
+- **Permission restrictions:** defining who has access to specific data and what they can do with it; often involve access control lists or Role-based Access Control (RBAC)
 
 ---
 
@@ -137,10 +178,16 @@ Section 7 focuses on the protection of data across its types, states, classifica
 - DLP prevents unauthorized sharing or exfiltration of data  
 - Types: endpoint DLP, network DLP, cloud DLP  
 - Capabilities: content inspection, contextual analysis, enforcement of policies 
+- **Data Loss Prevention (DLP):** set up to monitor the data of a system while it's in use, in transit, or at rest in order to detect any attempts to steal the data
+- software or hardware
+- **Endpoint DLP System:** software that's installed on a workstation or a laptop, and it's going to monitor the data that's in use on that computer
+- **Network SLP System:** piece of software or hardware that's a solution placed at the perimeter of the network to detect data in transit
+- **Storage DLP:** software that is installed on a server in the data center and inspects the data while it's at rest on the server
+- **Cloud-based CLP System:** usually offered as software-as-a-service, and it's part of the cloud service and storage needs
 
 ---
 
-## Module 7.9: Configuring DLP  
+## Module 7.9: Configuring a DLP  
 **Learning Objectives:**  
 - Describe key steps in deploying and tuning DLP  
 - Explain challenges of configuration  
@@ -155,7 +202,7 @@ Section 7 focuses on the protection of data across its types, states, classifica
 
 ## Completion Status  
 - All Section 7 materials reviewed  
-- Flashcards created for data classifications, states, sovereignty, and DLP concepts  
+- [Flashcards created for data classifications, states, sovereignty, and DLP concepts] (jttps://jeremyrayjewell.neocities.org/security-plus-dion#deck-6)  
 
 ---
 
