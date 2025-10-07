@@ -202,7 +202,7 @@ Section 7 focuses on the protection of data across its types, states, classifica
 
 ## Completion Status  
 - All Section 7 materials reviewed  
-- [Flashcards created for data classifications, states, sovereignty, and DLP concepts](https://jeremyrayjewell.neocities.org/security-plus-dion#deck-6)  
+- [Flashcards created for data classifications, states, sovereignty, and DLP concepts](https://jeremyrayjewell.neocities.org/security-plus-dion#deck-7)  
 
 ---
 
