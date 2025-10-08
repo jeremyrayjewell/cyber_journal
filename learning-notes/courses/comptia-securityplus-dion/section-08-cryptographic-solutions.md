@@ -17,6 +17,24 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 **Key Topics:**  
 - Confidentiality, integrity, authenticity, non-repudiation  
 - Applications: secure communication, digital signatures, certificates 
+- **Cryptography:** practice and study of writing and solving codes to hide the true meaning of the information
+- **Encryption:** process of converting ordinary information (plaintext) into an unintelligible form (ciphertext)
+- data at rest: inactive data that is being archived
+- data in transit: data that moves across the network, resides inside RAM, or moves to and from the processor
+- data in use: data undergoing a current constant state of change
+- ROT13
+- A cipher is an algorithm that performs the cnryption or decryption
+- Algorithms: mathematical function
+- Encryption strength comesf rom the key, not the algorithm
+- Key: essential piece of information that determines the output of a cipher; the 'key' to security inside encryption is the actual key itself
+	- use larger key lengths and rotate keys frequently
+	- the length of a key is proportional to the level of security it provides
+	- regularly changing cryptographic keys is a best practice
+	- most encryption algorithms are open-source and publicly accessible
+	- store in secure hardware modules, encrypt keys when at rest, transmit keys securely when used
+	- limit key access to regular audits and monitoring
+- asymmetric algorithms: use a pair of keys, a public key for encryption and a private key for decryption
+- symmetric algorithms: use the same key for both encryption and decryption
 
 ---
 
@@ -27,8 +45,17 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 
 **Key Topics:**  
 - **Symmetric:** single shared key; fast, but requires secure key distribution  
-- **Asymmetric:** public/private key pairs; enables key exchange, slower performance  
+- **Asymmetric:** public/private key pairs (different than one another); enables key exchange, slower performance  
 - Use together in hybrid solutions (e.g., SSL/TLS) 
+- **Symmetric Algorithm (Private Key):** encryption algorithm in which both the sender and the receiver must know the same shared secret using a privately held key
+- **Asymmetric Algorithm (Public Key):** encryption algorithm where different keys are used to encrypt and decrypt the data	
+	- Diffie-Hellman
+	- RSA (Ron Rivest, Adi Shamir, and Leonard Adleman)
+	- Elliptic Curve Cryptography (ECC)
+- **Hybrid Implementation:** utilizes asymmetric encryption to securely transfer a private key that can then be used with symmetric encryption
+- algorithms can also be classified as **stream cipher** or **block cipher**:
+	- stream cipher: utilizes a keystream generator to encrypt data bit by bit using a mathematical XOR function to create the ciphertext
+	- block cipher: breaks the input into fixed-length blocks of data and performs the encryption on each block; typically of 64, 128, or 256 bits, rather than one bit at a time
 
 ---
 
@@ -40,6 +67,17 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 **Key Topics:**  
 - Examples: AES, DES, 3DES, RC4  
 - Applications: disk encryption, VPNs, bulk data encryption 
+- **Symmetric Algorithm:** method of encryption where the same key is used for both encryption and decryption of data
+	- **Data Encryption Standard (DES):** breaks the input into 64-bit blocks and uses transposition and substitution to create ciphertext using an effective key strength of only 56-bits
+	- **Triple DES (3DES):** uses three se[arate symmetric keys to encrypt, decrypt, then encrypt the plaintext into ciphertext in order to increase the strength of DES
+	- **International Data Encryption Algorithm (IDEA):** symmetric block cipher which uses 64-bit blocks to encrypt plaintext into ciphertext
+	- **Advanced Encryption Standard (AES):** symmetric block cipher that uses 128-bit, 192-bit, or 356-bit blocks and a matching encryption key size to encrypt plaintext into ciphertext 
+	- **Blowfish:** symmetric block cipher that uses 64-bit blocks and a variable length encryption key to encrypt plaintext into ciphertext
+	- **Twofish:** provides the ability to use 128-bit blocks in its encryption algorithm and uses 128-bit, 192-bit, or 256-bit encryption keys
+	- **Rivest Ciphers (RC4, RC5, RC6):** RC Cipher Suite created by Ron Rivest, a cryptographer who's created six algorithms under the name RC which stands for the Rivest Cipher
+		- **RC4:** symmetric stream cipher using a variable key size from 40-bits to 2048-bits that is used in SSL and WEP
+		- **RC5:** symmetric block cipher that uses key sizes up to 2048-bits
+		- **RC6:** symmetric block cipher that was introduced as a replacement for DESs but AES was chosen instead
 
 ---
 
@@ -125,7 +163,11 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 
 ---
 
-## Module 8.11: Obfuscation  
+## Module 8.11: Encrption Tools  
+
+---
+
+## Module 8.12: Obfuscation  
 **Learning Objectives:**  
 - Define obfuscation as a security method  
 - Recognize use cases  
@@ -134,6 +176,10 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - Hiding data or making code harder to interpret  
 - Examples: code obfuscation, data masking, steganography  
 - Adds complexity to delay attackers
+
+---
+
+## Module 8.13: Crpyotgraphic Attacks  
 
 ---
 
