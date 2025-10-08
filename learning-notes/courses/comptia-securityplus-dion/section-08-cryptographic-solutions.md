@@ -89,6 +89,14 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 **Key Topics:**  
 - Examples: RSA, ECC, Diffie-Hellman, ElGamal  
 - Use in key exchange, digital signatures, email encryption 
+- **Asymmetric Algorithm:** does not require a shared secret key, often referred to as public ket cryptography since their key is considered to be freely and openly available to the public
+	- Confidentiality, Integrity, Authentication, Non-repudiation
+	- **Digital Signature:** a hash digest of a message encrypted with the sender's private key to let the recipient know the document was created and sent by the person claiming to have sent it
+- **Specific asymmetric algorithms:**
+	- **Diffie-Hellman (DH):** used to conduct key exchanges and secure key distribution over an unsecure network; used for the key exchange inside of creating a VPN tunnel establishment as part of IPSec
+	- **Rivest-Shamir-Adleman (RSA):** asymmetric algorithm that relies on the mathematical difficulty of factoring large prime numbers; can support key sizes between 1024-bits and 4096-bits
+	- **Elliptic Curve Cryptography (ECC):** heavily used in mobile devices and it's based on the algebraic structure of elliptical curves over finite fields to define its keys; ECC with a 256-bit key is just as secure as RSA with a 2048-bit key; ECC is most commonly used for mobile devices and low-power computing devices
+	- **Elliptic Curve Diffie-Hellman Ephemeral (ECDHE):** uses a different key for each portion of the key establishment process inside the Diffie-Hellman key exchange
 
 ---
 
@@ -101,6 +109,23 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - Produces fixed-length digest from input data  
 - Ensures data integrity  
 - Algorithms: MD5, SHA-1, SHA-2, SHA-3 
+- **Hashing:** one-way cryptographic function that takes an input and produces a unique message digest as its output; another unique thing about a hash digest is that they are always the same length
+	- **MD5:** creates a 128-bit hash value that is unique to the input file
+		- **collision:** two files having the exact same resulting hash digest becaue the MD5 output is only 128 bits long
+	- **Secure Hash Algorithm (SHA) families:** each version of SHA performs a different number of rounds of mathematical computations to create the hash digest (~64-80 rounds in SHA-1 and SHA-2)
+		- **SHA-1:** creates a 160-bit hash digest, which significantly reduces the number of collisions that occur
+		- **SHA-2:** functions that contain longer hash digests
+			- **SHA-224, SHA-256, SHA-348, SHA-512**
+		- **SHA-3:** newer (fundamentally different!) family of hash functions, and its hash digest can go between 224 bits and 512 bits (like SHA-2), but it uses 120 rounds of computations to provide more security
+	- **RACE Integrity Primitive Evaluation Message Digest (RIPEMD):** comes in 160-bit (most common: *RIPEMD-160*), 256-bit, nd 320-bit versions	
+		- **RIPEMD-160:** open-source hashing algorithm that was created as a competitor to the SHA family, but not as poopulat
+	- **Hash-based Message Authentication Code (HMAC):** used to check the integrity of a message and provide some level of assurance that its authenticity is real; *paired with other algorithms*
+		- **HMAC-MD5, HMAC-SHA1, HMAC-SHA256**
+- **Digital Signature:** created by hashing a file and then taking that resulting hash digest and encrypting it with a private key; *creates non-repudiation*
+	- to practically use digital signatures, we will use either DSA, RSA, or an elliptic curve cryptogtaphy version of either DSA or SHA
+- **Digital Security Standard (DSS):** used by the US federal government; relies upon a 160-bit message digest created by the Digital Security Algorithm
+	- most commerical entities will rely in RSA instead because it tends to be faster and multi-use
+- **Code Signing:** the process of digitally signing software or code using a cryptographic certificate to verify two things: authenticity and integrity
 
 ---
 
