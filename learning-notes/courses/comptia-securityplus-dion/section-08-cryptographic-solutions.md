@@ -138,6 +138,8 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - **Salting:** adding random values to inputs  
 - **Key stretching:** PBKDF2, bcrypt, scrypt, Argon2  
 - Prevents rainbow table and brute force attacks 
+- Hashing is a common method of storing passwords inside systems
+- **Pass the Hash Attack:** hacking technique that allows the attacker to authenticate to a remote server or service by using the underlying hash of a user's password instead of requiring the associated plaintext password
 
 ---
 
