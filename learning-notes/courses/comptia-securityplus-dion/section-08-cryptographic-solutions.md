@@ -217,6 +217,16 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - Distributed ledger with chained blocks  
 - Provides integrity, transparency, tamper resistance  
 - Applications: cryptocurrency, smart contracts, supply chain tracking 
+- **Blockchain:** a shared immutable ledger for recording transactions, tracking assets, and building trust
+	- really long series of information with each block containing information
+	- each block also contains the hash for the block before it
+- **Public Ledger:** a record-keeping system that maintains participants' identities in a secure and anonymous format
+- **Smart Contracts:** self-executing contracts where the terms of agreement or conditions are written directly into lines of code
+	- the decentralized and transparent nature of the blockchain ensures that once a smart contract is deployed, it cannot be altered, making the agreement tamper-proof and trustworthy
+- **IBM:** focused on getting the blockchain into use inside of the commercial environment
+- **Permissioned Blockchain:** used for business transactions and it promotes new levels of trust and transparency using this immutable public ledgers
+	- because it's inside the immutable public ledger, nobody can modify it and we all know exactly where everything has been located and what has been done to it
+- *Blockchain technology* is not limited to just the financial sector or cryptocurrencies; its applications and potential span a wide array of industries
 
 ---
 
