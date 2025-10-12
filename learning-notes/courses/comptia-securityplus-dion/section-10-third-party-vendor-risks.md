@@ -123,7 +123,7 @@ Section 10 addresses risks that arise from third-party vendors and supply chains
 
 ## Completion Status  
 - All Section 10 materials reviewed  
-- Flashcards created for vendor risks, supply chain threats, and contract clauses  
+- [Flashcards created for vendor risks, supply chain threats, and contract clauses](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=10)  
 
 ---
 
