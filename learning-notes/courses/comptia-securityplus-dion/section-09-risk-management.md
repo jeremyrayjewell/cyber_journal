@@ -181,7 +181,7 @@ Section 9 introduces risk management processes used to identify, assess, and res
 
 ## Completion Status  
 - All Section 9 materials reviewed  
-- [Flashcards created for risk analysis methods, formulas, and strategies]  
+- [Flashcards created for risk analysis methods, formulas, and strategies](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=9)  
 
 ---
 
