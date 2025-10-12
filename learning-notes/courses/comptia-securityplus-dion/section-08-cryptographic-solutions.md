@@ -230,7 +230,19 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 
 ---
 
-## Module 8.11: Encrption Tools  
+## Module 8.11: Encryption Tools  
+**Learning Objectives:** 
+- Define encryption tools
+- Know which tools are best to protect your system and networks
+
+**Key Topics:** 
+- TPM, HSM, Key Management Systems, Secure Enclave
+- **Trusted Platform Module (TPM):** dedicated microcontroller designed to secure hardware through integrated cryptographic keys
+- **Hardware Security Module (HSM):** physical device that safeguards and manages digital keys, primarily used for mission-critical situations like financial transactions
+	- not only does an HSM securely generate cryptographic keys, but it also provides accelerated cryptographic operations
+- **Key Management System:** integrated approach for generating, distributing, and managing cryptographic keys for devices and applications
+- **Secure Enclave:** co-processor integrated into the main processor of some devices, designed with the sole purpose of ensuring data protection
+	- by keeping this data separate from the main processor, even if a device gets compromised, the data within the Secure Enclave remains untouched
 
 ---
 
@@ -243,10 +255,46 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - Hiding data or making code harder to interpret  
 - Examples: code obfuscation, data masking, steganography  
 - Adds complexity to delay attackers
+- **Steganogrpahy:** derived from Greek words that mean "covered writing," and it is all about concealing a message within another so that the very existence of the message is hidden
+	- the primary goal here isn't just to prevent unauthorized access to the data, but to prevent the suspicion that there's any hidden data at all
+	- steganography is frequently used alongside encryption for an extra layer of security
+- **Tokenization:** transformative technique in data protection that involves substitutiong sensitive data elements with non-sensitive equivalents, called tokens, which have no meaningful value
+- **Data Masking:** used to protect data by ensuring that it remains recognizable but does not actually include sensitive information
+	- data masking is also really prevalent in industries that handle vast amounts of personal data
 
 ---
 
 ## Module 8.13: Crpyotgraphic Attacks  
+**Learning Objectives:** 
+- Understand cryptographic attacks
+- Know about quantum computing's cryptographic challenges
+
+**Key Topics:** 
+- **Cryptographic Attacks:** techniques and strategies that adversaries employ to exploit vulnerabilities in cryptographic systems with the intent to compromise the confidentiality, integrity, or authenticity of data
+	- **Downgrade Attacks:** aims to force a system into using a weaker or older cryptographic standard or protocl than what it's currently utilizing
+		- **Padding Oracle On Downgraded Legacy Encryption (POODLE):** targeted SSL version 3.0
+		- these downgrade attacks are dangerous because they turn the very nature of evolving security, such as the development of stronger, more robust cryptographic protocols, against itself
+		- many systems have phased out support for legacy protocols that are known to be insecure, even if it means sacrificing backward compatibility
+	- **Collision Attacks:** aims to find two different inputs that produce the same hash output
+		- **Message Digest Algorithm 5 (MD5):** *was* a popular hashing function
+		- collisions undermine trust and reliability on cryptographic tools, and they can potentially allow malicious actors to impersonate trusted entities, forge digitl signatures, or distribute tampered data while appearing genuine
+		- **Birthday Paradox** or **Birthday Attack:** the paradox itself posits that in a group of just 23 people, there's a better than even chance that two of them share the same birthday
+			- the proabability that two distinct inputs, when processed through a hashing function, will produce the same output, or a collision
+	- **Quantum Computing:** a computer that uses quantu, mechanics to generate and manipulate bit (qubits) in order to access enormous processing powers
+		- with quantum computing, instead of using ones and zeros, it uses quantum bit or qubits
+		- **Quantum Communication:** a communication network that relies on qubits made of photons (light) to send multiple combinations of ones and zeros simultaneously which results in tamper resistant and extremely fast communications
+		- **Qubit:** a quantum bit composed of electrons or photons that can represent numerous combinations of ones and zeros at the same time through superposition
+		- designed for very specific use cases, such as very complex math problems or trying to do something like the modeling of an atom or some kind of atomic structure
+- Cryptopgraphy is used to secure communications and data by relying on how difficult a math problem is to compute with traditional computers, that's what gives the strength in cryptography
+	- we rely heavily on key exchange using asymmetric communication, which can be much weaker against quantum computing
+- **Post-quantum Cryptography:** a new kind of cryptographic algorithm that can be implemented using today's classical computers but is also impervious to attacks from future quantum computers
+	- the first method is just to increase the key size, to increase the number of permutations that are needed to be brute-forced
+	- researchers are working on a wide range of approaches, including lattice-based cryptography and super singular isogeny key exchange
+- *for general encryption needs, NIST has selected the CRYSTALS-Kyber algorithm*
+- *for digital signatures, NIST recommends:*
+	- **CRYSTALS-Dilithium**
+	- **FALCON**
+	- **SPHINCS+**
 
 ---
 
