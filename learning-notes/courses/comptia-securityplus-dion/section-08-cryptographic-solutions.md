@@ -179,20 +179,21 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - Used in authentication, encryption, integrity checks 
 - **Digital Certificate:** digitally signed electronic document that binds a public key with a user's identity
 	- **Wildcard Certificates:** allows all of the subdomains to use the same public key certificate and have it dispayed as valid
-	- **Single-Sided Certificates:**
-	- **Dual-sided Certificates:**
-	- **Self-Signed Certificates:**
-	- **Third-Party Certificates:**
-	- **Root of Trust:**
-	- **Certificate Authority:**
-	- **Registration Authority:**
-	- **Certificate Signing Request:**
-	- **Certificate Revocation List:**
-	- **Online Certificate Status Protocol:**
-	- **OSCP Stapling:**
-	- **Public Key Pinning:**
-	- **Key Escrow Agents:**
-	- **Key Recovery Agents:**
+		- **Subject Alternate Name (SAN) fiels:** certificate that specifies what additional domains and IP addresses are going to be supported
+	- **Single-Sided Certificates:** only requires the server to be validated
+	- **Dual-sided Certificates:** requires both the server and the user to be validated
+	- **Self-Signed Certificates:** digital certificate that is signed by the same entity whose identity it certifies
+	- **Third-Party Certificates:** digital certificate issued and signed by a trusted certificate authority (CA)
+	- **Root of Trust:** each certificate is validated using the concept of a root of trust or the chain of trust
+	- **Certificate Authority:** trusted third party who is going to issue these digital certificates
+	- **Registration Authority:** requests identifying information from the user and forwards that certificate request up to the certificate authority to create the digital certificate
+	- **Certificate Signing Request:** a block of encoded text that contains information about the entity requesting the certificate
+	- **Certificate Revocation List:** serves as an online list of digital certificates that the certificate authority has already revoked
+	- **Online Certificate Status Protocol (OCSP):** allows to determine the revocation status of any digital certificate using its serial number 
+	- **OSCP Stapling:** allows the certificate holder to get the OCSP record from the server at regular intervals
+	- **Public Key Pinning:** allows an HTTPS website to resist impersonation attacks from users who are trying to present fraudulent certificates
+	- **Key Escrow Agents:** occurs when a secure copy of a user's private key is being held
+	- **Key Recovery Agents:** specialized type of software that allows the restoriation of a lost or corrupted key to be performed
 
 ---
 
