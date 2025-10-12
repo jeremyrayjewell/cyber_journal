@@ -300,7 +300,7 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 
 ## Completion Status  
 - All Section 8 materials reviewed  
-- Flashcards created for algorithms, PKI components, certificate fields, and hash hardening techniques  
+- [Flashcards created for algorithms, PKI components, certificate fields, and hash hardening techniques](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=8)    
 
 ---
 
