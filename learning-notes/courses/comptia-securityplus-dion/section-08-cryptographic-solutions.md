@@ -140,7 +140,15 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - Prevents rainbow table and brute force attacks 
 - Hashing is a common method of storing passwords inside systems
 - **Pass the Hash Attack:** hacking technique that allows the attacker to authenticate to a remote server or service by using the underlying hash of a user's password instead of requiring the associated plaintext password
--
+- **Mimikatz:** provides ability to automate the process of harvesting the hashes and consucting the attack
+- **Birthday Attack:** occurs when an attacker is able to send two different messages through a hash algorithm and it results in the same identical hash digest, referred to as a collision
+	- *Birthday Paradox:* "If you have a random group of people, the chances are you are going to have two people in that group with the same birthday"
+- In the world of hashes, two identical hash digests would result in a collision
+- **Key Stretching:** technique that is used to mitigate a weaker key by increasing the time needed to crack it
+- **Salting:** adding tandom data into a one-way cryptographic hash to help protect against password cracking techniques
+- **Dictionary Attack:** when an attacker tries every word from a predefined list
+- **Rainbow Tables:** precomputed tables for reversing cryptographic hash functions
+- **Nonce:** stands for "number used once", is a unique, often random number that is added to password-based authentication process
 
 ---
 
@@ -153,6 +161,10 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - Certificate Authorities (CAs), Registration Authorities (RAs), certificate revocation  
 - Hierarchical vs. web-of-trust models  
 - Used in SSL/TLS, VPNs, secure email 
+- **Public Key Infrastructure (PKI):** an entire system of hardware, software, policies, procedures, and people that is based on asymmetric encryption; framework for managing digital keys and certificates that facilitate secure data transfer, authentication, and encrypted communications over networks
+- **Public Key Cryptography:** this encryption and decryption process is just one small part of the overall PKI architecture
+- **Key Escrow:** process where cryptographic keys are stored in a secure, third-party location, which is effectively an "escrow"
+- *PKI is pivotal in ensuring secure communication and data exchange on the Internet*
 
 ---
 
@@ -165,6 +177,22 @@ Section 8 introduces cryptographic solutions that ensure confidentiality, integr
 - Certificates bind identities to public keys  
 - Contain subject, issuer, validity dates, public key, signature  
 - Used in authentication, encryption, integrity checks 
+- **Digital Certificate:** digitally signed electronic document that binds a public key with a user's identity
+	- **Wildcard Certificates:** allows all of the subdomains to use the same public key certificate and have it dispayed as valid
+	- **Single-Sided Certificates:**
+	- **Dual-sided Certificates:**
+	- **Self-Signed Certificates:**
+	- **Third-Party Certificates:**
+	- **Root of Trust:**
+	- **Certificate Authority:**
+	- **Registration Authority:**
+	- **Certificate Signing Request:**
+	- **Certificate Revocation List:**
+	- **Online Certificate Status Protocol:**
+	- **OSCP Stapling:**
+	- **Public Key Pinning:**
+	- **Key Escrow Agents:**
+	- **Key Recovery Agents:**
 
 ---
 
