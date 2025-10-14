@@ -15,9 +15,16 @@ Section 11 introduces governance and compliance as essential elements of an orga
 - Explain their role in organizational security  
 
 **Key Topics:**  
-- **Governance:** establishing frameworks, structures, and policies for decision-making  
-- **Compliance:** meeting legal, regulatory, and contractual requirements  
+- **Governance:** overall management of the organization's IT infrastructure, policies, procedures, and operations ; establishing frameworks, structures, and policies for decision-making  
+	- **Strategic Alignment:** governance ensures that the organization's IT strategy aligns with its business objectives
+	- **Resource Management:** governance helps in the efficient and effective use of IT resources
+	- **Performance Measurement:** governance provides the mechanisms for measuring and monitoring IT performance processes
+- **Compliance:** adherence to laws regulations, standards, and policies that apply to the operations of the organization; meeting legal, regulatory, and contractual requirements  
+	- **Legal Obligations:** non-compliance can lead to legal penalities, including fines and sanctions
+	- **Data Protection:** compliance can help prevent data breaches and protect the privacy of customers' and employees' data
+
 - Together: ensure accountability, alignment, and adherence to standards  
+
 
 ---
 
