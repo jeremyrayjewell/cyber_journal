@@ -208,7 +208,7 @@ Section 11 introduces governance and compliance as essential elements of an orga
 
 ## Completion Status  
 - All Section 11 materials reviewed  
-- Flashcards created for governance structures, compliance requirements, and consequences  
+- [Flashcards created for governance structures, compliance requirements, and consequences](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=11)  
 
 ---
 
