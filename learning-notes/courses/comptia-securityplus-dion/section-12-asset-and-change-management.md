@@ -80,6 +80,16 @@ Section 12 covers asset and change management practices that ensure IT resources
 - Assigning ownership and accountability  
 - Supports patching, auditing, and lifecycle management  
 - **Asset Management:** refers to the systematic approach to governing and maximizing the value of items an entity is responsible for throughout their lifecycle
+- **Assignment/Accounting:** every organization should designate individuals or groups as owners for each of its assets
+- **Classificiation:* involves categorizing assets based on criteria like function, value, or other relevant parameters as determined by the organization
+- **Monitoting/Tracking:** ensures proper accountability and optimal use of each asset
+- **Asset Tracking:** involves maintaining a comprehensive inventory with asset specifications, locations, assigned users, and relevant details
+- **Enumeration:** involves identifying and counting assets, especially in large organizations or during times of asset procurement or retirement
+	- maintains accurate inventory, detects unauthorized devices, informs software update decisions, addresses security vulnerabilities
+- **Mobile Device Management (MDM):** lets organizations securely oversee employee devices, ensuring policy enforcement, software consistency, and data protection
+	- MDM's centralization boosts security by ensuring all devices comply with the latest standards and protocols
+	- MDM lowers risks tied to unsecured or outdated devices
+- Asset Management guarantees the organization's assets are optimally utilized, delivering maximum value and security
 
 ---
 
