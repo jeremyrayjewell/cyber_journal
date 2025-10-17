@@ -102,6 +102,25 @@ Section 12 covers asset and change management practices that ensure IT resources
 - Wiping, degaussing, or physically destroying drives/media  
 - Sanitization to prevent data recovery  
 - Ensure compliance with regulations and industry standards  
+- **Special Publication 800-88**, commonly referred to as the "Guidelines for Media Sanitization"
+	- **Sanitization:** the thorough process of making data inaccessible and irretrievable from a storage medium using traditional forensic methods
+		- **Overwriting:** replacing the existing data on a storage device with random bits of information to ensure that the original data is obscured
+			- single pass, 7 passes, 35 passes
+			- each overwrite makes it increasingly difficult for potential adversaries to retrieve any meaningful data using forensic tools
+		- **Degaussing:** involves using a machine called a degausser to produce a strong magnetic field that can disrupt the magnetic domains on storage devices like hard drives or tapes
+			- after degaussing, a device loses its data storage capability
+		- **Secure Erase:** completely deletes data from a storage device while ensuring that it can't be recovered using traditional recovery tools
+			- **Cryptographic Erase** was introduced to replace the Secure Erase technique in most modern storage devices
+				- one significant advantage of cryptographic erase over traditional erasure methods is speed
+		- **Destruction:** ensures the physical device itself is beyond recovery or reuse
+			- shredding, pulverizing, melting, incinerating
+		- **Certification:** an act of proof that the data or hardware has been securely disposed of
+			- organizations should prioritize data security by documenting the sanitization, disposal, or destruction of data
+			- data retention is focused on strategically deciding what to keep and for how long
+			- regulations may require specific data, such as financial transactions or medical records, to be retained for a set duration
+- *The more you store, the more you must secure:* every piece of data, no matter how trivial, needs protection from potential data breaches
+	- asset disposal and decommissioning is an important process that must be considered
+	- guidelines presented by the National Institute of Standards and Technology
 
 ---
 
@@ -114,6 +133,20 @@ Section 12 covers asset and change management practices that ensure IT resources
 - Prevent untested or unauthorized changes  
 - Ensure accountability and minimize service disruption  
 - Align changes with business and compliance needs  
+- **Change Management:** an organization's orchestrated strategy to transition from its existing state to a more desirable future state
+	- disruption of existing processes by any kind of change will affect its efficiency and effectiveness
+	- change management ensures seamless integration of changes into existing architecture and processes
+- **Change Advisory Board (CAB):** body of representatives from various parts of an organization that is responsible for evaluation of any proposed changes
+- **Change Owner:** an individual or a team that initiates the change request
+- **Stakeholder:** a person who has a vested interest in the proposed change
+	- technical stakeholders, business stakeholders, end user-based stakeholders
+- **Impacy Analysis:** an integral part of change management process that ivolves understanding of change's potential fallout
+	- What could go wrong?
+	- What would be the immediate effects?
+	- How would the long-term operations be impacted?
+	- Are there unforeseen challenges that might cause an issue?
+- Change management is a critical process that guides organizations safely through any changes or transformations needed
+	
 
 ---
 
@@ -125,7 +158,22 @@ Section 12 covers asset and change management practices that ensure IT resources
 **Key Topics:**  
 - Request → Impact assessment → Approval → Implementation → Review  
 - Documenting changes for traceability and accountability  
-- CABs (Change Advisory Boards) for approval and oversight  
+- CABs (Change Advisory Boards) for approval and oversight
+- **Preparation:** involves assessing the current state and recognizing the need for transition
+	- gather necessary resources, engage stakeholders, ensure preparedness
+- **Vision for Change:** a clear, compelling description of the desired future state that is guiding the transformation process within an organization
+	- define future state, explain reasons for change, ensure vivid vision
+- **Implementation:** putting the plan into action
+	- training, restructuring teams, introducing new technologies, continuous communication
+- **Verification:** measuring the change's effectiveness by comparing it to the inittial objectives
+	- surveys, performance metrics analysis, stakeholder interviews
+- **Documentation:** creating a thorough record of the entire change process
+	- reflect on past initiatives, understand decisions, improve practices
+- **areas to be considered throughout the change management process:**
+	- *use of scheduled maintenance windows:* a scheduled maintenance window does not restrict change implementation as emergencies may require immediate action
+	- *creation of a Backout Plan:* predetermined strategy for restoring systems to their intiial state in case a change does not go as expected
+	- *testing of results*
+	- *use of Stadard Operating Procedures (SOPs):* a step-by-step instruction that guides the carrying out of a specific task to maintain consistency and efficiency 
 
 ---
 
@@ -138,6 +186,15 @@ Section 12 covers asset and change management practices that ensure IT resources
 - Possible impacts: downtime, incompatibility, vulnerabilities  
 - Importance of testing, rollback plans, and monitoring  
 - Technical changes must align with security controls and business goals  
+- allow and deny lists, restricted activities, complex applications interplay, dependencies
+- **Allow List:** permitted entities
+- **Deny List:** prevented entities
+- **Restricted Activities:** knowing restrictions can prevent data breaches and operational problems
+- **Downtime**
+- **Service and Application Restarts:** data may be lost in transit and backlog may be created during the associated downtime
+- **Legacy Application:** older software or system that is still being used and meets the needs of users; can malfunction or crash from even minor updates in other parts of the system
+- **Dependencies:** prior to implementing proposed changes, it is crucial to map existing dependencies to prevent minor tweaks
+- technical implications of proposed changes involve understanding and grasping potential impact of changes
 
 ---
 
@@ -150,12 +207,23 @@ Section 12 covers asset and change management practices that ensure IT resources
 - Records: what changed, when, by whom, approval path, test results  
 - Enables audits, compliance checks, troubleshooting  
 - Ensures accountability and historical tracking  
+- Documenting changes provides a clear history of the what, when, and why for accountability and future reference
+- **Version control:** tracks and manages changes in documents and software, enabling collaborative work and reverting to prior versions when needed
+	- version control ensures continuity and stability in the environment beyond preserving history
+	- preoperyl document and record every change
+	- update diagrams
+	- revise policies and procedures
+	- update change requests
+	- maintain associated trouble tickets
+- updating diagrams, like flowcharts or network diagrams, offers a visual snapshot of the system's architecture
+- when encountering implementation issues, revise policies and procedures to prevent future occurrences
+- after implementing a change, update the related change request or trouble ticket to indicate completion
 
 ---
 
 ## Completion Status  
 - All Section 12 materials reviewed  
-- Flashcards created for asset lifecycle, disposal methods, and change management processes  
+- [Flashcards created for asset lifecycle, disposal methods, and change management processes]()  
 
 ---
 
