@@ -223,7 +223,7 @@ Section 12 covers asset and change management practices that ensure IT resources
 
 ## Completion Status  
 - All Section 12 materials reviewed  
-- [Flashcards created for asset lifecycle, disposal methods, and change management processes]()  
+- [Flashcards created for asset lifecycle, disposal methods, and change management processes](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=12)  
 
 ---
 
