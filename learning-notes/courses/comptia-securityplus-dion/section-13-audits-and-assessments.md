@@ -173,6 +173,7 @@ Section 13 covers the processes of audits and assessments, both internal and ext
 - Exploiting vulnerabilities after recon and scanning  
 - Use of tools like Metasploit, Nmap, Wireshark  
 - Controlled execution with safeguards and defined rules of engagement  
+- **Metaspoloit:** multi-purpose computer security and penetration testing framework that encompasses a wide array of powerful tools, enabling the execution of penetration tests
 
 ---
 
@@ -184,7 +185,16 @@ Section 13 covers the processes of audits and assessments, both internal and ext
 **Key Topics:**  
 - Reports summarize scope, methodology, vulnerabilities, and recommendations  
 - Attestation confirms accuracy, integrity, and accountability  
-- Provides actionable guidance for remediation and compliance reporting  
+- Provides actionable guidance for remediation and compliance reporting 
+- **Attestation:** process that involves the formal validation or confirmation provided by an entity that is used to assert the accuracy and authenticity of specific information
+	- GLBA, HIPAA, Sarbanes-Oxley, PCI DSS
+	- ensure providing a summary of the assessment findings along with evidence of its completion
+	- letter of attestation is discussed to provide proof of a conducted penetration test
+	- software attestation, hardware attestation, system attestation
+- **software attestation:** involves validating the integrity of software by checking that it hasb't been tampered with or altered maliciously 
+	- accuracy of financial records, effectiveness of risk management strategies, adherence to internal policies and procedures
+- strengthening trust, enhancing transparency, ensuring accountability
+- build confidence among stakeholders, promote transparency in business operations, ensure that the organiztion is held accountable for its actions
 
 ---
 
