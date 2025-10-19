@@ -200,7 +200,7 @@ Section 13 covers the processes of audits and assessments, both internal and ext
 
 ## Completion Status  
 - All Section 13 materials reviewed  
-- Flashcards created for audit types, pen test phases, and reporting requirements  
+- [Flashcards created for audit types, pen test phases, and reporting requirements](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=13)
 
 ---
 
