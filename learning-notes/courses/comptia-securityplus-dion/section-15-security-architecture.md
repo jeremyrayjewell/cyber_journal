@@ -98,6 +98,24 @@ Section 15 explores security architecture models and technologies across on-prem
 - Virtualization: multiple VMs on one host, hypervisor security critical  
 - Containerization: lightweight, shares host OS, isolation risks  
 - Security: patching, segmentation, image scanning, runtime monitoring  
+- **Virtualization:** technology that allows for the emulation of servers
+- **Containerization:** lightweight alternative to full machine virtualization
+- **Type 1:** known as a bare metal or native hypervisor, it runs directly on the host hardware and functions similarly to an operating system
+	- Microsoft's Hyper-V, Citrix's XenServer, VMware's ESXi, VMware's vSphere
+- **Type 2:** operates within a standard operating system, such as Windows, Mac, or Linux
+	- *Type 1* hypervisor is faster and more efficient than a *Type 2* hypervisor
+- efficiency, speed, portability, scalability, isolation, consistency
+- Docker, Kubernetes, Red Hat OpenShift
+- virtual machines are segmented a separated by default
+- **Virtual Machine Escape:** occurs when an attacker is able to break out of one of these normally isolated virtual machines
+- **Privilege Elevation:** occurs when a user is able to gain the ability to run functions as a higher level user
+- **Live Migration of Virtual Machines:** when a virtual machine needs to move from one physical host to another
+- **Resource Reuse:** concept in computing where system resources like memory or processing power are reused
+- update the operating system in the applications, ensure that each virtual machine has a good antivirus solution installed, good strong passwords and good policies
+- remember that a hypervisor needs to be updated and secured
+- limit the connections between VMs and the physical machines
+- minimize and remove any unneeded features to support operations
+- *Be aware of Virtualization Sprawl*
 
 ---
 
@@ -110,6 +128,9 @@ Section 15 explores security architecture models and technologies across on-prem
 - No infrastructure management, event-driven execution  
 - Risks: vendor lock-in, limited visibility, function abuse  
 - Best practices: monitoring, secure coding, IAM controls  
+- **Serverless:** model where the responsibility of managing servers, databases, and some application logic is shifted away from developers
+- serverless offers automatic scaling
+- **Vendor Lock-in:** one of the most significant risks of serverless computing
 
 ---
 
@@ -123,6 +144,12 @@ Section 15 explores security architecture models and technologies across on-prem
 - Benefits: scalability, flexibility, resilience  
 - Risks: increased attack surface, API security concerns  
 - Requires monitoring, authentication, and segmentation  
+- **Microservices:** a software architecture where large applications are broken down into smaller and independent services
+	- unlike monolithic architecture, each service in microservice architecture is self-contained and able to run independently
+	- microservices offer several advantages over traditional monolithic architectures
+	- scalability, flexibility, resilience, faster deployment and updates
+	- microservices is not without challenges
+	- complexity, data management, network latency, security
 
 ---
 
@@ -135,6 +162,10 @@ Section 15 explores security architecture models and technologies across on-prem
 - Core, distribution, and access layers  
 - Security zones, segmentation, DMZs  
 - Resilient design with redundancy and monitoring  
+- **Physical Separation / Air Gapping:** isolation of a network by removing any direct or indirect connections from other networks
+	- physical separation is one of the most secure method of security but it is still vulnerable to sophisticated attacks
+- **Logical Separation:** creates boundaries within a network, restricting access to certain areas
+	- logical separation should be properly condifugred to be more effective in network security
 
 ---
 
@@ -148,6 +179,10 @@ Section 15 explores security architecture models and technologies across on-prem
 - Benefits: agility, centralized management  
 - Risks: centralized attack targets, misconfiguration impact  
 - Requires controller security and segmentation  
+- **Software-Defined Networking (SDN):** enables efficient network configuration to improve performance and monitoring
+- **Data Plane:** also called the forwarding plane that is responsible for handling packets and makes decisions based on protocols
+- **Control Plane:** the brain of the network that decides where traffic is sent and is centralized in SDN
+- **Application Plane:** the plane where all network applications interacting with the SDN controller reside
 
 ---
 
@@ -161,6 +196,13 @@ Section 15 explores security architecture models and technologies across on-prem
 - Improves consistency, reduces manual errors  
 - Risks: compromised scripts, misconfigurations at scale  
 - Defenses: version control, code reviews, automated testing  
+- **Infrastructure as Code (IaC):** a method in which IT infrastructures are defined in code files that can be versioned, tested, and audited
+	- **YAML, JSON, HashiCorp Configuration Language (HCL)**
+- **Snowflake System:** a configuration that lacks consistency that might introduce risks, so it has to eliminated
+- **Idempotence:** the ability of an operation to produce the same results as many times as it is executed
+- IaC offers significant benefits:
+	- speed and efficiency, consistency and standardization, scalability, cost savings, auditability and compliance
+	- learning curve, complexity, security risks
 
 ---
 
@@ -173,6 +215,15 @@ Section 15 explores security architecture models and technologies across on-prem
 - Centralized: easier control, single points of failure  
 - Decentralized: resilience, but harder to manage  
 - Hybrid approaches balance risks  
+- **Centralized:** all the computing functions are coordinated and managed from a single location or authority
+	- efficiency and control, consistency, cost and effectiveness
+	- there are risks involed in centralized syste, architectures
+	- single point of failure, scalability issues, security risks
+- **Decentralized:** computing functions are distributed across multiple systems or locations
+	- resiliency, scalability, flexibility
+	- decentralized architectures also come with risks
+- security risks,management challenges, data inconsistency
+- the choice between the two system architectures depends on the specific needs of the organization
 
 ---
 
@@ -185,6 +236,12 @@ Section 15 explores security architecture models and technologies across on-prem
 - Devices interconnected via networks  
 - Risks: weak authentication, lack of updates, physical exposure  
 - Defenses: segmentation, firmware updates, monitoring  
+	- **Internet of Things (IoT):** refers to the network of physical items with embedded systems that enables connection and data exchange
+	- **Hub:** the central point connecting all IoT devices and sends commands to them
+	- **Smart Devices:** everyday objects enhanced with computing capabilities and Internet connectivity
+	- **Wearbles:** subset of smart devices designed to be worn on the body
+	- **Sensors:** detect changes in the environment and transform them into analyzable data
+- weak defaults, poorly configured network services
 
 ---
 
@@ -198,6 +255,14 @@ Section 15 explores security architecture models and technologies across on-prem
 - Historically designed for availability, not security  
 - Risks: legacy protocols, lack of patching, remote access abuse  
 - Mitigation: segmentation, compensating controls, monitoring  
+- **Industrial Control Systems (ICS):** control systems used to monitor and control industrial processes ranging from simple systems to complex systems
+	- **Distributed Control Systems (DCS), Programmable Logic Controllers (PLCs)**
+- **Supervisory Control and Data Acquisition (SCADA):** a type of ICS used to monitor and control geographically dispersed industrial processes
+	- electric power generation, transmission, and distribution systems
+	- water treatment and distribution systems
+	- oil and gas pipeline monitoring and control systems
+- unauthorized access, malware attacks, lack of updates, physical threats
+- strong access controls, regular updates and system patches, firewall and intrusion detection systems, regular security audits, employee training
 
 ---
 
@@ -210,6 +275,15 @@ Section 15 explores security architecture models and technologies across on-prem
 - Specialized devices with dedicated functions (medical, automotive, appliances)  
 - Risks: proprietary code, long lifecycles, patching difficulties  
 - Best practices: secure design, firmware validation, physical protections  
+- **Embedded System:** specialized computing component designed to perform dedicated functions within a larger structure
+- **Real-Time Operating System (RTOS):** ensures data processing in real-time and is crucial for time-sensitive applications
+	- embedded systems also have vulnerabilities
+	- hardware failure, software bugs, security vulnerabilities, outdated systems
+	- there are four key strategies in securing embedded systems
+- **Network Segmentation:** divides a network into multiple segments or subnets, limiting potential damage in case of a breach
+- **Wrappers:** show only the entry and exit points of the data hen traveling between networks
+- **Firmware Code Control:** this can be achieved through secure coding practices, code reviews, and automated testing
+- **Inability to Patch:** strategies like over-the-air (OTA) updates, where patches are delivered and installed remotely, can be applied
 
 ---
 
