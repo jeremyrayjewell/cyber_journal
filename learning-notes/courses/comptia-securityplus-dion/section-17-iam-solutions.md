@@ -77,7 +77,7 @@ Section 17 focuses on Identity and Access Management (IAM), which governs how us
 
 ## Completion Status  
 - All Section 17 materials reviewed  
-- Flashcards created for IAM concepts, MFA categories, password best practices, and attack defenses  
+- [Flashcards created for IAM concepts, MFA categories, password best practices, and attack defenses](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=17)     
 
 ---
 

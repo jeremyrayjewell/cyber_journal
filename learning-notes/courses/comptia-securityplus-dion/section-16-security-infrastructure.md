@@ -322,6 +322,12 @@ Section 16 covers security infrastructure technologies, protocols, and controls 
 - Supports cloud adoption and secure remote access  
 - **Software-Defined Wide Area Network (SD-WAN):** virtualized approach to managing and optimizing wide area network connections to efficiently route traffic between remote sites, data centers, and cloud environments
 - **Secure Access Service Edge (SASE):** used to consolidate numerous networking and security functions into a single cloud-native service to ensure that secure and access for end-users can be achieved
+- **MPLS, cellular connection, microwave link, broadband internet**
+- SD-WAN employs a centralized control function to securely and intelligently route traffic across the wide area network (WAN)
+- firewalls, VPNs, zero-trust network access, CASBs
+- SASE ensures secure and efficient user-device connections to applications and services
+- Amazon Web Services (AWS)
+- secure, flexible, global
 
 ---
 
@@ -334,6 +340,29 @@ Section 16 covers security infrastructure technologies, protocols, and controls 
 - Performance, scalability, security, and cost must be balanced  
 - Redundancy, monitoring, and manageability influence design  
 - Business goals shape infrastructure choices  
+- correct placement of devices
+- security zones and screened subnets
+- understanding attack surface
+- determining connectivity methods
+- understanding device attributes
+- configuring the failure mode
+- routers, switches, access points
+- optimal data flow, minimalized latency, robust defense
+- network bottlenecks, vulnerability points, areas without connectivity
+- **Security Zone:** distinct segment within a network, often created by logically isolating the segment using a firewall or other security device
+- public-facing services, internal employee resources, sensitive data storage
+- remember the term **screened subnet**!!!
+- **Screened Subnet:** hosts public-facing services such as web servers, email servers, and DNS servers and safeguards against security breaches by preventing attackers from gaining direct access to the sensitive core internal network
+- **Attack Surface of a Network:** refers to all the points where an unauthorized user can try to enter data to or extract data from an environment
+- **Connectivity:** refers to how different components of a network communicate with each other and with other external networks
+- Wi-Fi, microwave links, satellite connections
+- fiber optics excel in speed, reliability, and signal quality for robust connectivity
+- scalability, speed requirements, security considerations, budgetary contraints
+- an inline device sits in the network traffic path, and is able to control or block traffic as it passes through this device
+- taps and monitors operate dsicreetly outside the network path, capturing data for analysis without impacting traffic
+- health, performance, security
+- *Fail-open** mode allows all traffic in the event of a failure
+- *Fail-closed** mode blocks all traffic in the event of a failure
 
 ---
 
@@ -346,7 +375,27 @@ Section 16 covers security infrastructure technologies, protocols, and controls 
 - Controls should address identified risks and compliance obligations  
 - Defense-in-depth: multiple overlapping controls for resilience  
 - Selection based on effectiveness, feasibility, and cost-benefit analysis  
-
+- **Control:** a protective measure put in place to reduce potential risks and safeguard an organization's assets
+- key principles:
+	- **Least Privilege:** users or systems are granted only the necessary access rights to perform their duties, reducing the attack surface
+	- **Defense in Depth:** emphasiizes the use of multiple layers of security to mitigate threats even if one control fails
+	- **Risk-based Approach:** prioritizing controls based on potential risks and vulnerabilities specific to the infrastructure to make efficient use of resources
+	- **Lifecycle Management:** regularly reviewing, updating, and retiring controls to adapt to evolving threat landscapes
+	- **Open Design Principle:** ensuring transparency and accountability through rigorous testing and scrutiny of infrastructure and controls 
+- methodologies:
+	- assessing the current state
+	- conducting gap analysis
+	- setting clear objectives
+	- benchmarking
+	- conducting cost-benefit analysis
+	- ensuring stakeholder involvement
+	- implementing monitoring and feedback loops
+- best practices
+	- conduct a comprehensive risk assessment
+	- align control selection with established frameworks
+	- customize framework controls
+	- emphasize stakeholder engagement and training
+- control selection must be regularly reviewed and updated to keep enterprise infrastructure secure
 ---
 
 ## Completion Status  
