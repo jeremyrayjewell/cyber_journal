@@ -120,6 +120,16 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 - Malicious apps, insecure Wi-Fi usage  
 - Risks of lost or stolen devices  
 - Defenses: MDM, strong authentication, app vetting  
+- **Sideloading:** the practice of installing applications on a device from unofficial sources which actually bypasses the device's default app store
+	- always download apps from an official and trusted source
+- **Jailbreaking/Rooting:** process that gives users escalated privileges on the devices and allows users to circumvent the built-in security measures provided by the devices
+	- avoid opening Wi-Fi and unknown Bluetooth pairings for security
+	- long, strong, and complex password
+	- 802.1x authentication methods
+- **Mobile Device Management (MDM) Solution:** used to conduct patching of the devices by pushing any necessary updates to the devices to ensure that they are always equipped with the latest security patches
+	- disable a device's ability to sideload programs
+	- detect if a device has been jailbroken or rooted
+	- force each device to use a VPN connection
 
 ---
 
