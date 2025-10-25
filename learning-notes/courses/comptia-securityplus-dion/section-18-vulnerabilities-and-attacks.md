@@ -15,9 +15,26 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 - Recognize their role in security risks  
 
 **Key Topics:**  
-- **Vulnerability:** weakness exploitable by a threat actor  
+- **Vulnerability:** weakness or flaw in hardware, software, configurations, or processes within a computer system, network, or application 
 - **Attack:** active exploitation of vulnerabilities  
 - Categories: hardware, software, mobile, network, human factors  
+- unauthorized access, data breaches, system disruptions, data theft, malware infections, denial of service attacks, social engineering
+- **Attacks:** deliberate actions or activities carried out by threat actors with the intent to exploit vulnerabilities
+- hardening the system, patching, enforcing baseline configurations, decommissioning old and insecure assets, creating isolation or segmentation for devices
+- servers, workstations, laptops, switches, routers, network appliances, mobile devices, internet of things
+- bluesnarfing, bluejacking, bluebugging, bluesmark, bluehorns
+- side loading, jailbreaking, insecure connection methods
+- patch management, mobile device management solutions, preventing sideloading and rooting of devices
+- **Zero-Day Vulnerability:** type of software or hardware vulnerability that is discovered and exploited by malicious actors before a patch is released
+- unpatched systems, zero-days, misconfigurations, data exfiltration, malicious updates
+- patching, configuration management, encryption of data, installing endpoint protection, utilizing host-based firewalls, implementing host-based IPS, configuring access controls and permisions, requiring the use of application allow lists
+- **SQL Injection:** type of cyberattack that exploits vulnerabilities in web applications or data bases
+- **XML Injection:** security vulnerability that targers web applications that process XML data
+- **Cross-Site Scripting (XSS):** web security vulnerability where malicious scripts are injected into web pages viewed by other users
+- **Cross-Site Request Forgery (XSRF):** webs ecurity exploit that focuses on an attacker who attempts to trick a user
+- **Buffer Overflow:** software vulnerability that occurs when a program writes more data to a memory buffer
+- **Race Condition:** software vulnerability that occurs when multiple processes or threads in a concurrent system access shared resources or data simultaneously
+- time of check, target of evaluation, time of use
 
 ---
 
@@ -29,7 +46,41 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 **Key Topics:**  
 - Firmware flaws, insecure chips, malicious hardware implants  
 - Side-channel attacks (e.g., Meltdown, Spectre)  
-- Supply chain issues affecting hardware integrity  
+- Supply chain issues affecting hardware integrity
+- **Hardware Vulnerabilities:** security flaws or weaknesses inherent in a device's physical components or design that can be exploited to compromise the integrity, confidentiality, or availability of the system and its data
+- kinds of vulnerabilties:
+	- device's firmware
+	- end-of-life hardware
+	- legacy hardware
+	- unsupported systems and applications
+	- unpatched systems
+	- hardware misconfigurations
+ - kind of hardware:
+	- servers
+	- workstations
+	- laptops
+	- swtiches
+	- routers
+	- network appliances
+	- mobile devices
+	- IoT devices
+- **Firmware:** specialized form of software stored on hardware device, like a router or a smart thermostat, that provides low-level control for the device's specific hardware
+	- vulnerabilities: without security, outdated security
+	- mitigation: regular updates, security audits, device hardening
+- **End-of-Life Systems:** hardware or software products that have reached the end of their life cycle
+- **Legacy Systems:** outdated computing software, hardware, or technologies that have been largely superseded by newer and more efficient alternatives
+- **Unsupported Systems:** hardware or software products that no longer receive official technical support, security updates, or patches from their respective vendors or developers
+- **Unpatched System:** device, application, or piece of software that has not been updated with the latest security patches so that it remains vulnerable to known exploits and attacks
+	- unauthorized access, data compromise, service disruption
+	- regularly monitoring for updates, assessing the relevance and impact of patches, deploying patches in a timely manner
+- **Hardware Misconfiguration:** occurs when a device's settings, parameters, or options are not optimally set up, and this can cause vulnerabilities to exist, a decrease in performance or unintended behavior of devices or systems
+	- conduct regular audits, enforce good configuration management practices, implement automated tools, provide training to the personnel
+- *hardening:* involves tightening the security of a system
+- *patching:* involves the regular updating of the software, formware, and applications with the latest security patches
+- *configuration enforcement:* used to ensure that all devices and systems adhere to a standard secure configuration
+- *decommissioning:* means that the system is retired and removed from the network
+- *isolation:* used to limit the potential damage that might occur from a potential security breach
+- *segmentation:* used to divide the network into segments
 
 ---
 
@@ -42,6 +93,20 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 - Exploits: Bluejacking (spam), Bluesnarfing (data theft), Bluebugging (device control)  
 - Risks from insecure pairing and weak encryption  
 - Mitigation: disable unused Bluetooth, update devices, enforce policies  
+- **Bluetooth:** wireless technology standard used for exchanging data between fixed and mobile devices over short distances without the need for an Internet connection
+	- **Insecure Device Pairing:** occurs when Bluetooth devices establish a connection without proper authentication
+	- **Device Spoofing:** occurs when an attacker impersonates a device to trick a user into connecting
+	- **On-Path Attack:** exploits Bluetooth protocol vulnerabilities to intercept and alter communications between devices without either party being aware
+- Bluejacking, Bluesnarfing, Bluebugging, Bluesmack, Blueborne
+- make calls, send text messages, access the internet
+- best practicies:
+	- turning off Bluetooth
+	- ensuring that devices are set to "non-discoverable" mode
+	- regularly updating devices
+	- only pairing with known and trusted devices
+	- always using unique PINs or passkeys
+	- always being cautious of unsolicited connection requests
+	- using encryption for sensitive data transfers
 
 ---
 
@@ -144,7 +209,7 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 
 ## Completion Status  
 - All Section 18 materials reviewed  
-- Flashcards created for injection types, OS vulnerabilities, mobile threats, and memory-based attacks  
+- [Flashcards created for injection types, OS vulnerabilities, mobile threats, and memory-based attacks](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=18)       
 
 ---
 
