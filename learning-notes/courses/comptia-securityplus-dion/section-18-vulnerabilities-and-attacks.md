@@ -141,7 +141,17 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 **Key Topics:**  
 - Exploits unknown to vendor and unpatched  
 - Highly valuable to attackers  
-- Defenses: patch management, threat intelligence, layered defenses  
+- Defenses: patch management, threat intelligence, layered defenses
+- **Zero-Day Vulnerability:** any vulnerability that's discovered or exploited before the vendor can issue a patch for it (original definition of "zero-day")
+- **Zero-Day Exploit:** any unknown exploit in the wild that exposes a previously unknown vulnerability in the software or hardware
+- **Zero-Day Attack**
+- on exam, **Zero-Day** ,ay fer to vulenrability, exploit, *or* malware
+- Zero-day malware is a *major threat*
+- identify, patch, fix
+- government agencies, law enforcement agencies, criminals
+- Zero-Day vulnerabilities and exploits are *big business*
+- akways keep antivirus software up-to-date
+
 
 ---
 
@@ -154,6 +164,11 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 - Outdated patches, misconfigurations, privilege escalation  
 - Kernel exploits, insecure services  
 - Mitigation: patching, secure baselines, least privilege  
+- **Unpatched Systems:** operating systems that have not been updated with the latest security patches or fixes
+- **Zero-Day Vulnerabilities:** represent vulnerabilities in software or hardware that are unknown to the developer and in essence, they are newly discovered vulnerabilities that have not been publicaly disclosed yet
+- **Misconfiguration:** occurs when the system's settings are not properly configured and this leaves the system vulnerable to exploitation
+- **Data Exfiltration:** unauthorized data transfers from within an organization to an external location
+- **Malicious Updates:** occur when an attacker has been able to craft a malicious update to a well-known and trusted program in order to compromise the systems of the program's end users
 
 ---
 
@@ -166,6 +181,57 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 - SQL injection: manipulating queries to extract/modify data  
 - XML injection: altering XML structures to manipulate logic  
 - Defenses: parameterized queries, input validation, sanitization  
+- **Code Injection:** the insertion of additional information or code through a data input form from a client to an application
+- **SQL (Structured Query Language) Injection:** Select, Insert, Delete, Update
+	- `Select * from Users where user_id = 'Jason' and password = 'Pass123'`
+	- `SELECT * FROM users WHERE login = $name AND password = $pwd`
+	- `Select * from Users where user_id = 'Jason' and password = ''OR 1=1;'`
+	- URL parameter, entering data, modifying cookies, changing POST data, using HTTP headers
+	- use input validation, sanitize data
+	- use web application firewall
+	- databases use SQL as the way to read and write information
+- **Extensivle Markup Language (XML):** used by web applications for authentication, authorization, and other types of data exchange
+	- input validation, input sanitization
+	- snooping, spoofing, request forgery, injection of arbitrary code
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<question>
+	<id>SECURITY-002-0001</id>
+	<title>Is this an XML vulnerability?</title>
+	<choice1>Yes</choice1>
+	<choice2>No</choice2>
+</question>
+</xml>
+```
+- **XML Bomb (Billion Laughs Attack):** XML encodes entities that expand to exponential sizes, consuming memory on the host and potentially crashing it
+```
+<?xml version="1.0"?>
+<!DOCTYPE lolz [
+ <!ENTITY lol "lol">
+ <!ELEMENT lolz (#PCDATA)>
+ <!ENTITY lol1 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
+ <!ENTITY lol2 "&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;">
+ <!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;">
+ <!ENTITY lol4 "&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;">
+ <!ENTITY lol5 "&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;">
+ <!ENTITY lol6 "&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;">
+ <!ENTITY lol7 "&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;">
+ <!ENTITY lol8 "&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;">
+ <!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
+]>
+<lolz>&lol9;</lolz>
+```
+- **XML External Entity (XXE):** an attack that embeds a request for a local resource
+```
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [
+	<!ELEMENT foo ANY>
+	<!ENTITY xxe SYSTEM "file:///etc/shadow">]>
+<foo>&xxe;</foo>
+```
+- *input validation prevents a lot of security issues*
+- XML vulnerability, XML exploitation, XML injection
+- on the exam, determine if a code sample is HTML, JavaScript, of XML
 
 ---
 
@@ -190,7 +256,33 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 - **XSS:** injects malicious scripts into web apps (stored, reflected, DOM-based)  
 - **XSRF/CSRF:** tricks authenticated users into executing unwanted actions  
 - Defenses: input/output validation, CSRF tokens, same-site cookies  
-
+- **Cross-Site Scripting (XSS):** injects a malicious script into a trusted site to compromise the site's visitors
+	- attacker identifies an input validation vulnerability within a trusted website
+	- attacker crafts a URL to perform code injection against the trusted website
+	- the trusted siite returns a page containing the malicious code injected
+	- malicious code runs in the client's browser with permission level as the trusted site
+		- defacing the trusted website
+		- stealing the user's data
+		- intercepting the data or communications
+		- installing malware on client's system
+- **XSS** breaks the browsers security and trust model
+	- `https://www.diontraining.com/search?q=<script%20type='application/javascript'> alert ('xss')</script>`
+	- **Non-Persistent XSS:** this type of attack only occurs when it's launched and happens once
+	- **Persistent XSS:** allows an attacker to insert code into the backend database used by that trusted website
+	- **Document Object Model (DOM) XSS:** exploits the client's web browser using client-side scripts to modify the content and layout of the web page
+		- `https://diontraining.com/index.html# default<script>alert(document.cookie)</script>
+		- document.write, document.location
+- **Session Management:** enables web applications to uniquely identify a user across several different actions and requests
+- **Cookie:** text file used to store information about a user when they visit a website
+	- **Non-Persistent:** known as a session cookie, which resides in memory and is used for a very short period of time
+	- **Persistent:** stored in the browser cache until either deleted by a user or expired
+- **Session Hijacking:** type of spoofing attack where the attacker diconnects a host and then replaces it with his or her own machine by spoofing the original host IP
+	- session tokens need to be generated using a non-predictable algoritm
+- **Cross-Site Request Forgery (XSRF):** malicious script is used to exploit a session started on another site within the same web browser
+	- how to prevent cross-site request forgery:
+		- use user-specific tokens in all form submissinos
+		- add randomness and prompt for additional information
+		- require users to enter their current password when changing their password
 ---
 
 ## Module 18.10: Buffer Overflow  
@@ -202,6 +294,13 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 - Occurs when data exceeds allocated memory buffer  
 - Can overwrite adjacent memory, execute arbitrary code  
 - Defenses: input validation, safe coding, DEP/ASLR protections  
+- **Buffer Overflow:** occurs when data exceeds allocated memory, potentially enabling unauthorized access or code execution
+	- **Buffer:** a temporary storage area where a program stored its data
+	- Buffer overflow attacks in IT are being used as the initial vector, causing 85% of data breaches
+	- there is a sequence of memory buffers after Buffer A in the contact list application
+- **Stack:** a memory region where a program stores the return addresses from function calls
+	- **"Smashing the Stack":** occurs when an attacker can execute their malicious code by overwriting the return address
+- **Address Space Layout Randomization (ASLR):** a security measure that randomizes memory addresses, making buffer overflow attacks harder for attackers
 
 ---
 
@@ -214,6 +313,17 @@ Section 18 introduces common vulnerabilities and attack methods across hardware,
 - Occur when processes depend on timing or order of operations  
 - Exploited to gain elevated privileges or bypass checks  
 - Mitigation: synchronization, secure coding, testing  
+- **Race Condition:** software vulnerability where the outcome depends on the timing of events not matching the developer's intended order
+	- race conditions occur when multiple threads write to the same variable or object in the same memory location simultaneously
+- **Dereferencing:** software vulnerability that occurs when the code attempts to remove the relationship between a pointer and the thing that pointer was pointing to in the memory
+- **Dirty Cow:** popular 2016 exploit, showcasing a race condition exploitation
+	- **COW:** Copy On Write
+- **Time-of-Check (TOC):** type of race condition where an attacker can alter a system resource after an application checks its state but before the operation is performed
+- **Time-of-Use (TOU):** type of race condition that occurs when an attacker can change the state of a system resource between the time it is checked and the time it is used
+- **Time-of-Evaluation (TOE):** type of race condition that involves the manipulation of data or resources during the time window when a system is making a decision or evaluations
+- *to protect against a race condition, users can use locks and mutexes to lock resources while a process is being run*
+- **Mutex:** mutually exclussive flag that acts as a gatekeeper to a section of code so that onl one thread an be processed at a time
+_ **Deadlock:** occurs when a lock remains in place because the process it's waiting for is terminated crashes, or doesn't finish properly, despite the processing being complete
 
 ---
 
