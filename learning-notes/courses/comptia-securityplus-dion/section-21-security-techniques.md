@@ -136,7 +136,7 @@ Section 21 covers practical security techniques applied across networks, wireles
 
 ## Completion Status  
 - All Section 21 materials reviewed  
-- Flashcards created for wireless settings, NAC types, filtering methods, EDR/UBA, and secure protocols  
+- [Flashcards created for wireless settings, NAC types, filtering methods, EDR/UBA, and secure protocols](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=21)    
 
 ---
 
