@@ -143,7 +143,7 @@ Section 20 covers hardening practices that strengthen systems, networks, and app
 
 ## Completion Status  
 - All Section 20 materials reviewed  
-- Flashcards created for patching, group policies, SELinux, and baseline management  
+- [Flashcards created for patching, group policies, SELinux, and baseline management](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=20)   
 
 ---
 
