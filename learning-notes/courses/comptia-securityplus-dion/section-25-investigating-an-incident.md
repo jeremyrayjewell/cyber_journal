@@ -167,7 +167,7 @@ Section 25 covers the tools, data sources, and methods used when investigating a
 
 ## Completion Status  
 - All Section 25 materials reviewed  
-- Flashcards created for log types, packet capture use cases, and metadata analysis  
+- [Flashcards created for log types, packet capture use cases, and metadata analysis](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=25)  
 
 ---
 
