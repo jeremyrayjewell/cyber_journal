@@ -169,6 +169,15 @@ Section 23 covers the tools and practices for alerting and monitoring in cyberse
 - Sources: IDS/IPS, firewalls, endpoint tools, vulnerability scanners  
 - Logs, telemetry, metrics aggregated into SIEM or monitoring systems  
 - Correlation improves detection accuracy  
+- **Security Information and Event Management System (SIEM):** the central hub for the consolidation to provide a holistic vieww of an organization's security landscape
+- **Antivirus Software:** fundamental security tool that protects systems against malware, including viruses, worms, trojans, ransomwware, and spyware
+- **Data Loss Prevention Systems:** used to monitor and control data endpoint, network traffic, and data stored in the cloud to prevent potential data breaches from occuring
+- **Network Intusion Detection Systems (NIDS):** passively identifies any potential threats
+- **Network Intrusion Prevention Systems (NIPS):** actively blocks or pprevents these potential threats
+- **Firewalls:** serve as a barrier between a trusted internal network and an untrusted external network
+	- firewalls can generate logs that contain data about allowed and blocked traffic, rule changes, and any detected potential threats
+- **Vulnerability Scanners:** tools that identify security weaknesses in a system, including missing patches, incorrect configurations, and other types of known vulnerabilities
+- by consolidating data from these diverse seucirty tools into a SIEM, organizations can gain a comprehensive view of their security posture
 
 ---
 
@@ -181,6 +190,32 @@ Section 23 covers the tools and practices for alerting and monitoring in cyberse
 - Framework for automating vulnerability management and compliance checks  
 - Standardizes vulnerability definitions (CVE, CVSS, OVAL)  
 - Ensures consistency across security tools  
+- **Security Content Automation Protocol (SCAP):** open standards that automate vulnerability management, measurement, and policy compliance for systems in an organization
+	- SCAP was developed by the National Institute of Standards and Technology (NIST)
+	- vulneraability scanning, configuration checking, software inventory
+	- SCAP is also heavily used with internal and external compliance requirements
+- **Open Vulnerability and Assessment Language (OVAL):** XML schema for describing system security states and querying vulnerability reports and information
+- **Extensible Configuration Checklist Description Format (XCCDF):** XML schema for developing and auditing best-practice configuration checklists and rules
+- **Asset Reporting Fromat (ARF):** XML schema for expressing information about assets and the relationships between assets and reports
+	- ARF is vendor and technology neutral, it is flexible and is suited for a wwide variety of reporting applications
+- **Common Configuration Enumberation (CCE):** scheme for provisioning secure configuration checks across multiple sources
+- **Common Platform Enumeration (CPE):** scheme for identifying hardware devices, operating systems, and applications
+	- `cpe:/`
+	- `cpe:/part:vendor:product:version:update:edition:language`
+- **Common Vulnerabilities and Exposures (CVE):** list of records where each item contains a unique identifier used to describe a publicly known vulnerability
+	- `CVE-2017-0144`
+	- Eternal Blue is the tool that was used to exploit this SMB vulnerability
+- **Common Vulnerability Scoring System (CVSS):** used to provide a numerical score to reflect the severity of a given vulnerability
+	- `0 = None`
+	- `0.1 - 3.9 = Low`
+	- `4.0 - 6.9 = Medium`
+	- `7.0 - 8.9 = High`
+	- `9.0 - 10.0 = Critical`
+	- it does not account for any mitigation already in place
+- **Benchmark:** set of security configuration rules for some specific set of products to provide a deetailed checklist that can be used to secure systems to a specific baseline
+	- Red Hat Enterprise Linux
+	- Center for Internet Security's Microsoft Windows 10 Enterprise
+	- using benchmarks with SCAP-compliant tools helps organizations automate system security maintenance
 
 ---
 
@@ -193,6 +228,16 @@ Section 23 covers the tools and practices for alerting and monitoring in cyberse
 - Provides metadata on network traffic flows (who talks to whom, how much, when)  
 - Detects anomalies, exfiltration, DDoS patterns  
 - Complements packet capture with high-level visibility  
+- **Full Packet Capture (FPC):** captures the entire packet, including the header and the payload for all traffic entering and leaving a netwwork
+- **Flow Analysis:** relies on a flow collwctor, which records metadata and statistics rather than recording each frame that passes through the network
+	- flow analysis does not provide the actual content
+	- flow analysis rapidly generates visualizations to map network connections, traffic types, and session volumes
+- **NetFlow:** a Cisco-developed means of reporting network flow info to a structured database
+- **IP Flow Information Export (IPFIX):** defines traffic flows based on shared packet characteristics
+	- protocol interface, IP version/type, source/destination IP, source/destination port, IP service type
+- **Zeek:** passively monitors a network like a sniffer, but only logs full packet capture data of potential interest
+	- performs normalization of the data and stores it as a tab-delimited or JSON-formatted text file
+- **Multi Router Traffic Grapher (MRTG):** created graphs showwing traffic flows through the netwwork interfaces of routers and switches by polling the appliances using SNMP
 
 ---
 
@@ -205,6 +250,20 @@ Section 23 covers the tools and practices for alerting and monitoring in cyberse
 - Unified dashboards aggregating multiple security and monitoring tools  
 - Provides centralized visibility and faster decision-making  
 - Reduces alert fatigue by consolidating events  
+- a single pane of glass provides security teams with a unified view for easy access to critical information, aiding informed dedcision-making
+	- simplifies security management, offering a unified view in detecting and responding to threats
+	- security teams can monitor the environment for suspicious signs like unusual traffic or failed logins
+	- security teams can track the progress of incident response, ensuring that all required steps are taken to resolve an incident
+	- a single pane of glass can improve the efficiency of a security operation center
+	- a single pane of glass improves collaboration and communication within the security teams
+	- a single pane of glass simplifies compliance with regulatory requirements for the security team
+	- a single pane of glass can be implemented as software or hardware
+- **Defining the Requirements:** involves identifying the inforrmation, tools, and systems
+- **Identifying and Integrating Data Sources:** involves identifying the data sources that the security team needs to access
+	- APIs, Webhooks, Plugins, Connectors
+- **Customizing the Interface:** involves designing the user interface and configuring panels and views to display information and data
+- **Developing Standard Operating Procedures and Documentation:** ensures that the security teams know hoe to use the single pane of glass and understand the processes and procedures
+- **Continuously Monitoring and Maintaining the Solution:** includes regular reviewing of the data and information
 
 ---
 
