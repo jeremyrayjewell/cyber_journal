@@ -18,6 +18,10 @@ Section 24 covers incident response processes, including threat hunting, forensi
 - Structured approach for detecting, containing, and recovering from incidents  
 - Protects confidentiality, integrity, and availability  
 - Ensures lessons learned to strengthen defenses  
+- **Incident Response Process:** outlines a structured approach to manage and mitigate security incidents effectively
+	- minimize impact, reduce response time, hasten recovery
+	- incident detection and classification, threat containment and eradication, evidence preservation, communication and reporting, lessons learned
+- incident response overview, threat hunting, root cause analysis, incident response training and testing, digital forensic procedures, disk imaging and analysis
 
 ---
 
@@ -30,6 +34,29 @@ Section 24 covers incident response processes, including threat hunting, forensi
 - Common framework: **Preparation → Detection → Containment → Eradication → Recovery → Lessons Learned**  
 - Provides repeatable and structured response  
 - Reduces impact, speeds recovery  
+- **Incident:** act of violating an explicit or implied security policy
+- **Incident Response Procedures:** guidelines for handling security incidents
+	- **Preparation:** involves strengthening systems and networks to resist attacks
+		- the preparation phase is about getting readyy for future incidents
+	- **Detection:** identifies security incidents
+	- **Analysis:** involves a thorough examination and evaluation of the incident
+		- stakeholders are informed, containment begins, and initial response actions are taken
+	- **Containment:** limits the incident's impact by securring data and protecting business operations
+	- **Eradication:** starts after containment and aims to remove malicious activity from the system or network
+	- **Recovery:** restores systems and services to their secure state after an incident
+		- restoring from a known good backup, installing security patches, implementing configuration updates
+		- recovery procedures can involve monitoring for lingering threats to ensure a smooth return to normal operations
+	- **Post-incident activity/Lessons learned:** happens after containment, eradication, and full system recovery
+- **Root Cause Analysis:** idnetifies the incident's source and how to prevent it in the future
+	- define/scope the incident, determine the casual relationships that led to the incident, identify an effective solution, implement and track the solutions
+- **Lessons Learned Process:** documents experiences during incidents in a formalized way
+- **After-action Report:** collects formalized information about what occurred
+	- incident response and recovery are crucial in organizations due to frequent major data breaches in the news
+	- large organizations have full-time incident response teams, while smaller ones form temproary teams for specifc incidents
+	- leader, subject-matter experts, IT support staff, legal counsel, human resources, public relations
+	- leadership and management ensure the incident response team has necessary funding, resources, and expertise
+	- management makes crucial decisions and communicates them during incident response
+		- expensive, unfamiliar
 
 ---
 
@@ -107,7 +134,7 @@ Section 24 covers incident response processes, including threat hunting, forensi
 
 ## Completion Status  
 - All Section 24 materials reviewed  
-- Flashcards created for IR process stages, forensic procedures, and RCA methods  
+- [Flashcards created for IR process stages, forensic procedures, and RCA methods](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=24)          
 
 ---
 
