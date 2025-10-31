@@ -108,7 +108,7 @@ Section 26 introduces automation and orchestration as methods to improve efficie
 
 ## Completion Status  
 - All Section 26 materials reviewed  
-- Flashcards created for automation vs. orchestration, benefits, and automation use cases  
+- [Flashcards created for automation vs. orchestration, benefits, and automation use cases](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=26)  
 
 ---
 
