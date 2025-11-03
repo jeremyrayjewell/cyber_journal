@@ -35,7 +35,8 @@ Section 28 concludes the course, summarizing key takeaways from the Security+ cu
 
 ## Completion Status  
 - All Section 28 materials reviewed  
-- Course completed in full  
+- Course completed in full
+- [Flashcards prepared](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=28)
 - Ready for final Security+ exam preparation and further career advancement  
 
 ---
