@@ -56,84 +56,71 @@ Section 27 focuses on the human element of cybersecurity: educating users, reinf
 
 ---
 
-## Module 26.3: Benefits of Automation and Orchestration  
+## Module 27.3: Password Management  
 **Learning Objectives:**  
-- Explain advantages of automation and orchestration  
-- Recognize their impact  
+- Apply strong password/passphrase practices  
+- Understand secure storage and reuse risks  
 
 **Key Topics:**  
-- Reduces human error and response times  
-- Improves scalability and resource allocation  
-- Frees analysts for higher-level work  
-- Provides consistency across security operations  
+- Lengthy passphrases, unique per site, manager-assisted  
+- MFA as the default complement to passwords  
+- Guidance for handling compromised credentials
 - **Password Manager:** a specialized tool that is used with a web browser to remember all the different usernames and passwords for all the various sites
 - It's hard to remember a lot of long, strong, and complicated passwords
 
 ---
 
-## Module 26.4: Automating Support Tickets  
+## Module 27.4: Avoiding Social Engineering  
 **Learning Objectives:**  
-- Explain ticket automation  
-- Recognize its use cases  
+- Identify common social-engineering tactics  
+- Practice verification behaviors  
 
 **Key Topics:**  
-- Automates creation, assignment, and routing of support tickets  
-- Reduces delays in incident handling  
-- Integrates with SIEM alerts for rapid response  
+- Phishing, vishing, smishing, pretexting, baiting, tailgating  
+- Verify requests out-of-band; scrutinize links/attachments  
+- Report attempts; no punishment for “over-reporting”
 
 ---
 
-## Module 26.5: Automating Onboarding  
+## Module 27.5: Policy and Handbooks  
 **Learning Objectives:**  
-- Define automation in onboarding  
-- Recognize benefits  
+- Translate policy into daily behaviors  
+- Know where to find authoritative guidance  
 
 **Key Topics:**  
-- Automates account creation, access provisioning, and policy assignment  
-- Ensures new employees meet security requirements from day one  
-- Reduces administrative overhead  
+- Acceptable use, data handling, classification & labeling  
+- Incident reporting, BYOD, travel/security guidelines  
+- Handbooks as the concise, user-friendly front end of policy
 
 ---
 
-## Module 26.6: Automating Security  
+## Module 27.6: Remote and Hybrid Work Environments  
 **Learning Objectives:**  
-- Explain automation of security tasks  
-- Recognize benefits  
+- Apply awareness to off-prem settings  
+- Protect home/roaming devices and networks  
 
 **Key Topics:**  
-- Automates patch deployment, malware removal, log analysis  
-- Supports continuous monitoring and compliance checks  
-- Enables faster containment of incidents  
+- Secure Wi-Fi, VPN by default, device hygiene in shared spaces  
+- Screen privacy, locking, and safe conferencing practices  
+- Separation of personal/work accounts and storage
 
 ---
 
-## Module 26.7: Automating Application Development  
+## Module 27.7: Creating a Culture of Security  
 **Learning Objectives:**  
-- Recognize automation in DevOps/DevSecOps  
-- Explain its role in secure development  
+- Encourage shared responsibility and leadership buy-in  
+- Reinforce behaviors with recognition and transparency  
 
 **Key Topics:**  
-- Automated testing, builds, and deployments  
-- Integrates security checks (static/dynamic analysis) into pipelines  
-- Improves software quality and reduces vulnerabilities  
-
----
-
-## Module 26.8: Integrations and APIs  
-**Learning Objectives:**  
-- Define the role of APIs in automation  
-- Recognize integration benefits  
-
-**Key Topics:**  
-- APIs connect security tools for orchestration  
-- Example: SIEM, ticketing, and endpoint systems sharing data  
-- Enables seamless automation workflows across platforms  
+- Managers model secure behavior; celebrate “near-miss” reporting  
+- Metrics that matter (reporting rates, simulated-phish trends)  
+- Continuous improvement from post-incident lessons learned
 
 ---
 
 ## Completion Status  
-- All Section 26 materials reviewed  
-- [Flashcards created for automation vs. orchestration, benefits, and automation use cases](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=27)    
+- All Section 27 materials reviewed
+- [Flashcards created for security awareness](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=27)    
 
 ---
 
