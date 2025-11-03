@@ -1,35 +1,58 @@
 # CompTIA Security+ (SY0-701) Complete Course & Practice Exam  
-## Section 26 – Automation and Orchestration  
+## Section 27 – Security Awareness  
 
 [Udemy](https://www.udemy.com/course/securityplus/)  
 ---
 
 ## Overview  
-Section 26 introduces automation and orchestration as methods to improve efficiency, consistency, and responsiveness in cybersecurity operations. Learners review benefits, use cases, and integrations of automation across support, onboarding, development, and security functions.  
+Section 27 focuses on the human element of cybersecurity: educating users, reinforcing policy, and building habits that reduce risk. Topics include recognizing insider threats, password hygiene, social-engineering defenses, policy awareness, adapting practices to remote/hybrid work, and cultivating a security-first culture.
 
 ---
 
-## Module 26.1: Automation and Orchestration Overview  
+## Module 27.1: Security Awareness  
 **Learning Objectives:**  
-- Define automation and orchestration  
-- Recognize their differences  
+- Define security awareness and its role in risk reduction  
+- Identify core components of an awareness program  
 
 **Key Topics:**  
-- **Automation:** use of scripts or tools to handle repetitive tasks  
-- **Orchestration:** coordinated use of multiple automated tasks into workflows  
-- Both improve speed, consistency, and resource efficiency  
+- Training cadence, measurable objectives, and role-based content  
+- Reinforcement via just-in-time prompts and micro-learning  
+- Reporting channels and positive feedback loops 
+- **Security Awareness:** refers to the knowledge and understanding of potential threats
+	- understand common threats, recognize potential risks, employ best practices
+	- **Insider Threat:** security risk that originates from individuals within an organization
+	- **Password Management:** practices and tools used to create, store, and manage passwords
+	- **Policies:** guidelines or rules providing framework for consistent decision-making and action
+	- **Handbooks:** comprehensive guides that provide information on specific topics
+	- **Remote Work:** performing job functions outside of the traditional office environment
+	- **Hybrid Work:** combination of remote work setup and in-office setup
+	- **Culture of Security:** an organizational mindset that prioritizes security in tasks and processes
 
 ---
 
-## Module 26.2: When to Automate and Orchestrate  
-**Learning Objectives:**  
-- Recognize when automation is beneficial  
-- Explain orchestration needs  
-
-**Key Topics:**  
-- Automate repetitive, high-volume, rule-based tasks  
-- Orchestrate tasks requiring coordination across multiple systems or tools  
-- Example: automated alert triage vs. orchestrated incident response playbooks  
+## Module 27.2: Recognizing Insider Threats                             
+**Learning Objectives:**                                 
+- Distinguish malicious vs. unintentional insider risk   
+- Spot behavioral and technical indicators          
+                                                                                                          
+**Key Topics:**                                                      
+- Indicators: unusual data access, policy bypass, large transfers    
+- Mitigations: least privilege, monitoring, clear escalation paths    
+- Emphasis on “see something, say something” without blame   
+- personal issues, financial struggles, dissatisfaction with the job
+- it is important to train users on how to recognize anomalous behavior
+- unintentional disclosure, intentional misconduct
+- compromise security, sell goverrnment secrets
+- malicious parties, competitors, nation state actors
+- involving both management and HR is crucial for supporting emotionally distressed employees
+- illicit activities, theft, selling secrets
+- do a discreet investigation before jumping to conclusions
+	- receive a large sum of money from an inheritance, win a large prize at the casino, win a sweepstakes or lottery
+- it is vital that companies have policies in place for handling this kind of scenario
+- establish a robust insider threat program
+- promotes security culture, provides training, implements policies
+- unusual access patterns, extensive copying or downloading, odd working hours
+- cybersecurity professionals must always remain vigiliant, empathetic, and proactive
 
 ---
 
@@ -43,6 +66,8 @@ Section 26 introduces automation and orchestration as methods to improve efficie
 - Improves scalability and resource allocation  
 - Frees analysts for higher-level work  
 - Provides consistency across security operations  
+- **Password Manager:** a specialized tool that is used with a web browser to remember all the different usernames and passwords for all the various sites
+- It's hard to remember a lot of long, strong, and complicated passwords
 
 ---
 
@@ -108,7 +133,7 @@ Section 26 introduces automation and orchestration as methods to improve efficie
 
 ## Completion Status  
 - All Section 26 materials reviewed  
-- Flashcards created for automation vs. orchestration, benefits, and automation use cases  
+- [Flashcards created for automation vs. orchestration, benefits, and automation use cases](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=27)    
 
 ---
 
