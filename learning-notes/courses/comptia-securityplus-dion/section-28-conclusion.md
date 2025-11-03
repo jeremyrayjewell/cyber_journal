@@ -18,6 +18,17 @@ Section 28 concludes the course, summarizing key takeaways from the Security+ cu
 - Review of key Security+ domains: threats, architecture, risk, identity, and operations  
 - Emphasis on continuous practice with exam questions  
 - Reinforcement of practical labs and applied learning  
+- General Security Concepts: 12%
+- Threats, Vulnerabilities, and Mitigations: 22%
+- Security Architecture: 18%
+- Security Operations: 28%
+- Security Program Management and Oversight: 20%
+- *Use a cheat sheet*
+- *Skip the performance-base questions*
+- *Take a guess*
+- *Pick the best time for the exam*
+- *Be confident*
+- Understand why the right answer was right and the wrong answers are wrong
 
 ---
 
