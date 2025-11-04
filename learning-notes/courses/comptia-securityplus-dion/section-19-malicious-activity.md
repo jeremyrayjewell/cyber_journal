@@ -232,7 +232,7 @@ System.out.println(ldapSearch);
 
 ## Completion Status  
 - All Section 19 materials reviewed  
-- [Flashcards created for DDoS, DNS attacks, injection methods, and IoCs](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=19)         
+- [Flashcards created for DDoS, DNS attacks, injection methods, and IoCs](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=19)         
 
 ---
 
