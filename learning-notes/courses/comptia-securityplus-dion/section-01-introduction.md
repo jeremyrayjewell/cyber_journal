@@ -91,7 +91,7 @@ Section 1 introduces the Security+ SY0-701 exam, its structure, objectives, and 
 ## Completion Status  
 - Section 1 materials reviewed  
 - Study plan (30-day or 60-day) selected  
-- [Flashcards](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=1)
+- [Flashcards](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=1)
 
 ---
 
