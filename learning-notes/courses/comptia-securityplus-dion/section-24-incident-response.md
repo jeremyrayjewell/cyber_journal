@@ -230,7 +230,7 @@ Section 24 covers incident response processes, including threat hunting, forensi
 
 ## Completion Status  
 - All Section 24 materials reviewed  
-- [Flashcards created for IR process stages, forensic procedures, and RCA methods](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=24)          
+- [Flashcards created for IR process stages, forensic procedures, and RCA methods](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=24)          
 
 ---
 
