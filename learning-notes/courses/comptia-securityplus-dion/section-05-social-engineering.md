@@ -192,7 +192,7 @@ Section 5 explores social engineering, where attackers exploit human psychology 
 
 ## Completion Status  
 - All Section 5 materials reviewed  
-- [Flashcards created for social engineering types, triggers, and defenses](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=5)  
+- [Flashcards created for social engineering types, triggers, and defenses](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=1)  
 
 ---
 
