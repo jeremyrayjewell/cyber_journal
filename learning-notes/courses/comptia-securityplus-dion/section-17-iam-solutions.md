@@ -231,7 +231,7 @@ ___
 
 ## Completion Status  
 - All Section 17 materials reviewed  
-- [Flashcards created for IAM concepts, MFA categories, password best practices, and attack defenses](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=17)     
+- [Flashcards created for IAM concepts, MFA categories, password best practices, and attack defenses](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=17)     
 
 ---
 
