@@ -289,7 +289,7 @@ Section 15 explores security architecture models and technologies across on-prem
 
 ## Completion Status  
 - All Section 15 materials reviewed  
-- [Flashcards created for cloud models, virtualization vs. containers, SDN, IaC, IoT, ICS, and embedded risks](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=15)  
+- [Flashcards created for cloud models, virtualization vs. containers, SDN, IaC, IoT, ICS, and embedded risks](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=15)  
 
 ---
 
