@@ -177,7 +177,7 @@ Section 27 focuses on the human element of cybersecurity: educating users, reinf
 
 ## Completion Status  
 - All Section 27 materials reviewed
-- [Flashcards created for security awareness](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=27)    
+- [Flashcards created for security awareness](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=27)    
 
 ---
 
