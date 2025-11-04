@@ -400,7 +400,7 @@ Section 16 covers security infrastructure technologies, protocols, and controls 
 
 ## Completion Status  
 - All Section 16 materials reviewed  
-- [Flashcards created for firewalls, IDS/IPS, SD-WAN/SASE, and infrastructure control selection](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=16)   
+- [Flashcards created for firewalls, IDS/IPS, SD-WAN/SASE, and infrastructure control selection](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=16)   
 
 ---
 
