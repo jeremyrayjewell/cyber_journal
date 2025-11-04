@@ -39,6 +39,7 @@ Click a course title to view its summary and notes:
 
 ## CompTIA Security+ (SY0-701) – Dion Training (Udemy)
 
+* [Flashcards](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=29) 
 * [Section 1: Introduction](comptia-securityplus-dion/section-01-introduction.md)  
 * [Section 2: Fundamentals of Security](comptia-securityplus-dion/section-02-fundamentals-of-security.md)  
 * [Section 3: Threat Actors](comptia-securityplus-dion/section-03-threat-actors.md)  
