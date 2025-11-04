@@ -269,7 +269,7 @@ Section 23 covers the tools and practices for alerting and monitoring in cyberse
 
 ## Completion Status  
 - All Section 23 materials reviewed  
-- [Flashcards created for SNMP versions, SIEM capabilities, SCAP standards, and NetFlow use cases](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=23)        
+- [Flashcards created for SNMP versions, SIEM capabilities, SCAP standards, and NetFlow use cases](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=2)        
 
 ---
 
