@@ -163,7 +163,7 @@ Section 4 examines physical security measures used to deter, delay, and prevent 
 
 ## Completion Status  
 - All Section 4 materials reviewed  
-- [Flashcards created for physical controls and bypass techniques](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=4)
+- [Flashcards created for physical controls and bypass techniques](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=4)
 
 ---
 
