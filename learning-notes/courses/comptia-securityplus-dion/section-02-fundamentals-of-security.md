@@ -170,7 +170,7 @@ Section 2 introduces the foundational principles of security. Learners study the
 
 ## Completion Status  
 - All Section 2 materials reviewed  
-- [Flashcards created for CIA triad, AAA, control categories/types, gap analysis, and Zero Trust](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=2)
+- [Flashcards created for CIA triad, AAA, control categories/types, gap analysis, and Zero Trust](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=2)
 
 
 ---
