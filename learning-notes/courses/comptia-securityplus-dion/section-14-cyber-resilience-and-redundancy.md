@@ -276,7 +276,7 @@ Section 14 focuses on ensuring continuity of operations through resilience and r
 
 ## Completion Status  
 - All Section 14 materials reviewed  
-- [Flashcards created for RAID levels, site types, and resilience testing methods](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=14)  
+- [Flashcards created for RAID levels, site types, and resilience testing methods](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=14)  
 
 ---
 
