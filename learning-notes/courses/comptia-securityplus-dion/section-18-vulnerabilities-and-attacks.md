@@ -329,7 +329,7 @@ _ **Deadlock:** occurs when a lock remains in place because the process it's wai
 
 ## Completion Status  
 - All Section 18 materials reviewed  
-- [Flashcards created for injection types, OS vulnerabilities, mobile threats, and memory-based attacks](https://jeremyrayjewell.neocities.org/security-plus-dion#deck=18)       
+- [Flashcards created for injection types, OS vulnerabilities, mobile threats, and memory-based attacks](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=18)       
 
 ---
 
