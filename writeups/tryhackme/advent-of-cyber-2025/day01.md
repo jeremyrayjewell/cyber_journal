@@ -1,30 +1,31 @@
-# Advent of Cyber 2025 – Day 1  
+# Advent of Cyber 2025 – Day 1 , 2025-12-01 
 **Room:** Linux CLI – Shells Bells  
 **Category:** Linux Fundamentals  
-**Skills Practiced:** Basic Linux commands, navigation, reading files, SSH, terminal usage
+**Skills Practiced:** Navigating Linux filesystems, working with hidden files, reading logs, using grep, using find, reading shell scripts, switching users, inspecting /etc/shadow, accessing bash history, SSH tunneling, and interpreting clues.
 
 ---
 
 ## Summary
-This day introduces the Linux command-line interface (CLI) and uses a fictional scenario involving McSkidy and the TBFC team. The goal is to learn to navigate the filesystem, understand simple Linux utilities, and begin uncovering what happened before McSkidy disappeared.
+This challenge introduces the Linux command-line interface in the context of investigating the disappearance of McSkidy. The TBFC team suspects HopSec Island attackers tampered with the Christmas wishlist server (`tbfc-web01`). My goal was to follow McSkidy’s clues, inspect the system, uncover malicious changes, and collect flags along the way.
 
-The room provides a Linux virtual machine where you use common shell tools to explore tbfc-web01, a server that processes Christmas wishlists. The focus is on foundational skills: using `ls`, `cd`, `cat`, understanding file paths, and examining system structure.
+This writeup includes the actual commands I entered, the incorrect attempts and misunderstandings I resolved, and the full investigative process, including the optional Side Quest hidden in McSkidy’s home directory.
 
 ---
 
 ## Walkthrough Notes
 
-### **Connecting to the Machine**
+### Connecting to the Machine
 You can connect in two ways:
-1. Using the THM split-view terminal (automatic when starting the machine)
-2. Using SSH from your own machine:
+
+1. THM split-view terminal (auto-loaded)
+2. SSH from your own machine:
+
 ```bash
 ssh mcskidy@MACHINE_IP
 # password: AoC2025!
 ```
 
-### **Key navigation and inspection commands used**
-Typical commands for this room include:
+Useful commands for this room:
 
 ```bash
 ls -la
@@ -34,37 +35,240 @@ cat filename
 grep -r "keyword" .
 ```
 
-These allow you to:
-- Inspect directories
-- View hidden files
-- Search recursively
-- Read logs or configuration files
+---
 
-### **Goal**
-Explore directories related to wishlist processing to find early clues about McSkidy’s last interactions and King Malhare’s involvement.
+## My Steps
 
-Because this is Day 1, the tasks focus on getting comfortable with:
-- filesystem layout
-- recognizing important directories (`/home`, `/etc`, `/var`)
-- using the CLI to reveal information
+### 1. Connecting to the machine
+I connected via SSH:
+
+```bash
+ssh mcskidy@10.65.130.60
+```
+
+---
+
+## 2. Locating McSkidy’s hidden guide
+Inside the `Guides` directory:
+
+```bash
+cd Guides
+ls
+```
+
+Nothing showed until I listed hidden files:
+
+```bash
+ls -a
+```
+
+I then read the guide:
+
+```bash
+cat .guide.txt
+```
+
+It revealed:
+
+- a hint to check `/var/log/` using `grep`
+- the first flag:
+
+```
+THM{learning-linux-cli}
+```
+
+**Mistakes made:**
+
+I repeatedly attempted invalid syntax such as:
+
+```bash
+ls -grep ...
+cat * -grep ...
+```
+
+and corrected myself using proper piping:
+
+```bash
+ls -la | grep pattern
+```
+
+---
+
+## 3. Inspecting logs for suspicious activity
+
+```bash
+cd /var/log
+grep "Failed password" auth.log
+```
+
+This revealed repeated failed login attempts from HopSec-controlled IPs.
+
+---
+
+## 4. Hunting for “Eggsploit” files
+
+```bash
+find /home/socmas -name *egg*
+```
+
+Result:
+
+```
+/home/socmas/2025/eggstrike.sh
+```
+
+---
+
+## 5. Analyzing the Eggstrike script
+
+```bash
+cat /home/socmas/2025/eggstrike.sh
+```
+
+The script:
+
+- sorted wishlist entries to `/tmp/dump.txt`
+- deleted the original wishlist
+- replaced it with EASTMAS data
+
+And revealed another flag:
+
+```
+THM{sir-carrotbane-attacks}
+```
+
+---
+
+## 6. Exploring system utilities and privilege boundaries
+
+Attempting to read `/etc/shadow`:
+
+```bash
+cat /etc/shadow
+```
+
+returned "Permission denied."
+
+To inspect further:
+
+```bash
+sudo su
+whoami
+```
+
+Now as root, I could read:
+
+```bash
+cat /etc/shadow
+```
+
+---
+
+## 7. Digging through root’s Bash history
+
+Inside `/root`:
+
+```bash
+cat .bash_history
+```
+
+One of the final lines contained:
+
+```
+THM{until-we-meet-again}
+```
+
+This completed the main objective.
+
+---
+
+# Side Quest 1 — Optional Advanced Puzzle
+
+McSkidy left an extra message in her Documents directory:
+
+```bash
+cd /home/mcskidy/Documents
+cat read-me-please.txt
+```
+
+This unlocked a new set of credentials and hinted at three hidden passcode fragments.
+
+### Credentials
+```
+username: eddi_knapp
+password: S0mething1Sc0ming
+```
+
+I logged in:
+
+```bash
+ssh eddi_knapp@10.65.130.60
+```
+
+---
+
+## Side Quest – Egg #1
+
+Clue:
+
+> “I ride with your session… open the little bag your shell carries.”
+
+Meaning: environment variables.
+
+```bash
+env
+```
+
+Found:
+
+```
+PASSFRAG1=3ast3r
+```
+
+---
+
+## Side Quest – Egg #3 (found before #2)
+
+Searching recursively:
+
+```bash
+grep -Ri "frag" ~/
+```
+
+Returned:
+
+```
+/home/eddi_knapp/Pictures/.easter_egg:PASSFRAG3: c0M1nG
+```
+
+---
+
+## Side Quest – Egg #2
+
+Not yet found at this stage. Based on the clue (“older pages”), likely locations include:
+
+- rotated user logs
+- backup configuration files
+- shell history backups
+- previous versions of dotfiles (e.g., `.bashrc.bak`, `.profile.bak`)
+
+I started examining these next.
 
 ---
 
 ## Key Takeaways
-- Linux navigation is essential for both attackers and defenders.
-- The CLI gives deeper visibility and control than any GUI.
-- Knowing how to explore files, read configs, and move through the system is foundational for future challenges.
-- SSH allows remote access to Linux machines exactly like this — a common real-world workflow.
+
+- Hidden files frequently contain relevant clues (`ls -a`)
+- Environment variables can store secrets (`env`)
+- `grep` is essential for triage and searching logs
+- `find` is valuable for locating suspicious files
+- Bash history often reveals attacker behavior
+- Privilege escalation changes visibility drastically
+- Optional side quests reinforce real-world investigative techniques  
+- Understanding users, permissions, and logs is core SOC analyst competency
 
 ---
 
-## Answers
-No answer needed for Task 1 (environment setup).
-
-Other answers (non-proprietary summaries only) will go here after completing the CLI exercises.
-
-___
-
-Writeup author: **Jeremy Ray Jewell**
-[GitHub](https://github.com/jeremyrayjewell)
-[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+Writeup author: **Jeremy Ray Jewell**  
+GitHub: https://github.com/jeremyrayjewell  
+LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
