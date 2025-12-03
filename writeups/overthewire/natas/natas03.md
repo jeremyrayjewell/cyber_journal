@@ -1,3 +1,15 @@
+# Write-up: Natas 03 → 04  
+**Date (written):** 2025-12-03  
+
+## Obfuscated password (ROT13)
+
+`DelMKp2r0mnuHYqUegUkmlLxw59xHkYD`
+
+## OBJECTIVE
+
+> "There is nothing on this page."
+
+## PURPOSE ##
 
 This level teaches why **robots.txt is not a security mechanism**. Although intended for search engine crawlers, it is publicly accessible and often leaks sensitive directories. Attackers—or curious users—can read it exactly like any other file and follow its “Disallow” paths.
 
