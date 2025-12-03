@@ -40,57 +40,16 @@ grep -r "keyword" .
 ## My Steps
 
 ### 1. Connecting to the machine
-I connected via SSH:
-
-```bash
-ssh mcskidy@10.65.130.60
-```
+I connected via SSH: `ssh mcskidy@10.65.130.60`
 
 ---
 
 ## 2. Locating McSkidy’s hidden guide
-Inside the `Guides` directory:
-
-```bash
-cd Guides
-ls
-```
-
-Nothing showed until I listed hidden files:
-
-```bash
-ls -a
-```
-
-I then read the guide:
-
-```bash
-cat .guide.txt
-```
-
-It revealed:
-
-- a hint to check `/var/log/` using `grep`
-- the first flag:
-
-```
-THM{learning-linux-cli}
-```
+`ls` inside the `Guides` directory. Nothing showed until I listed hidden files, `la -a`. I then read the guide with `cat`. It revealed a hint to check `/var/log/` using `grep` the first flag.
 
 **Mistakes made:**
 
-I repeatedly attempted invalid syntax such as:
-
-```bash
-ls -grep ...
-cat * -grep ...
-```
-
-and corrected myself using proper piping:
-
-```bash
-ls -la | grep pattern
-```
+I attempted invalid syntax a few times. Oops!
 
 ---
 
@@ -141,26 +100,7 @@ THM{sir-carrotbane-attacks}
 
 ## 6. Exploring system utilities and privilege boundaries
 
-Attempting to read `/etc/shadow`:
-
-```bash
-cat /etc/shadow
-```
-
-returned "Permission denied."
-
-To inspect further:
-
-```bash
-sudo su
-whoami
-```
-
-Now as root, I could read:
-
-```bash
-cat /etc/shadow
-```
+Attempting to read `/etc/shadow`, returned "Permission denied." To inspect further, changed to root. I
 
 ---
 
@@ -172,13 +112,7 @@ Inside `/root`:
 cat .bash_history
 ```
 
-One of the final lines contained:
-
-```
-THM{until-we-meet-again}
-```
-
-This completed the main objective.
+One of the final lines contained the key for the main objective.
 
 ---
 
@@ -193,66 +127,23 @@ cat read-me-please.txt
 
 This unlocked a new set of credentials and hinted at three hidden passcode fragments.
 
-### Credentials
-```
-username: eddi_knapp
-password: S0mething1Sc0ming
-```
-
-I logged in:
-
-```bash
-ssh eddi_knapp@10.65.130.60
-```
-
----
-
-## Side Quest – Egg #1
+## Egg #1
 
 Clue:
 
 > “I ride with your session… open the little bag your shell carries.”
 
-Meaning: environment variables.
+Meaning: environment variables... `env` returned password fragment #1.
 
-```bash
-env
-```
+## Egg #3 (found before #2)
 
-Found:
-
-```
-PASSFRAG1=3ast3r
-```
+Searching recursively with `grep -Ri "frag" ~/` returned password fragment #3. Oops!
 
 ---
 
-## Side Quest – Egg #3 (found before #2)
+## Egg #2
 
-Searching recursively:
-
-```bash
-grep -Ri "frag" ~/
-```
-
-Returned:
-
-```
-/home/eddi_knapp/Pictures/.easter_egg:PASSFRAG3: c0M1nG
-```
-
----
-
-## Side Quest – Egg #2
-
-Not yet found at this stage. Based on the clue (“older pages”), likely locations include:
-
-- rotated user logs
-- backup configuration files
-- shell history backups
-- previous versions of dotfiles (e.g., `.bashrc.bak`, `.profile.bak`)
-
-I started examining these next.
+Deduced password fragment #2 from the contents of the other two fragments.
 
 ---
 
