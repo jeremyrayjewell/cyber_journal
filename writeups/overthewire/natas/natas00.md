@@ -8,6 +8,7 @@
 ## OBJECTIVE
 
 > "The username is `natas0` and the password is `natas0`. The goal is to log into http://natas0.natas.labs.overthewire.org and find the password for `natas1`. All Natas level passwords are also stored in `/etc/natas_webpass/` but only accessible to the relevant level."
+> "You can find the password for the next level on this page."
 
 ## PURPOSE ##
 
