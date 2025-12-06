@@ -3,7 +3,7 @@
 
 ## Obfuscated password (ROT13)
 
-`Ba35CxttNCz2moRcBH802p0k0Zfa1GbX`
+`0a35CxttNCz2moRcBH802p0k0Zfa1GbX`
 
 ## OBJECTIVE
 
