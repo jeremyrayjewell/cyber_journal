@@ -1,129 +1,177 @@
-# Advent of Cyber 2025 – Day 7 , 2025-12-07
-**Room:** Network Forensics – PCAPing Through the Snow  
-**Category:** Packet Analysis / Incident Response  
-**Skills Practiced:** Reading PCAPs, tracing attacker activity, filtering with Wireshark, identifying credential theft, detecting malware delivery, reconstructing events from network traces.
+# Advent of Cyber 2025 – Day 7, 2025-12-08
+**Room:** Network Enumeration – Where Are the Bunnies Hiding?  
+**Category:** Network Scanning / Service Enumeration  
+**Skills Practiced:** Nmap scanning, TCP/UDP enumeration, banner grabbing, interacting with FTP and custom TCP services, DNS TXT lookups, identifying hidden services, and assembling multi-part keys for privileged access.
 
 ---
 
 ## Summary
-Today’s challenge focused on investigating a suspicious network capture collected from TBFC’s internal monitoring systems. With McSkidy still missing and HopSec attacks escalating, the SOC received a PCAP containing anomalous activity originating from one workstation. My task was to examine the traffic, reconstruct the attacker’s sequence of actions, extract indicators of compromise, and answer several forensic questions.
+This challenge focused on regaining access to a compromised QA server (tbfc-devqa01) by enumerating exposed services. Using Nmap scans, manual banner grabbing, FTP access, and DNS queries, I uncovered three hidden key fragments that together should unlock the server’s admin console. The final step was blocked by a TryHackMe UI bug: the web interface’s "Enter" button does not respond, preventing access to the console and preventing retrieval of the final flag.
 
-This writeup documents exactly how I navigated the PCAP, which filters I used, the attacker’s timeline, and the artifacts uncovered.
+This writeup documents all steps completed successfully and ends where the platform bug halted progress.
 
 ---
 
 ## Walkthrough Notes
 
-### 1. Preparing the environment
-The VM included:
+### 1. Discovering Initial Open Ports
+I started with a simple top-1000 TCP scan:
 
-- Wireshark  
-- the provided `hopsec-network.pcap`  
-- preconfigured analyst desktop  
+```
+nmap 10.66.136.62
+```
 
-I opened the PCAP and immediately switched to **Statistics → Protocol Hierarchy** to get a high-level overview.
+Results:
 
-Suspicious findings:
+```
+22/tcp   open  ssh
+80/tcp   open  http
+```
 
-- Unusual volume of HTTP and FTP traffic  
-- Clear-text credentials visible (expected, since it’s training material)  
-- Outbound connections to non-TBFC IP ranges  
-
----
-
-## 2. Reconstructing the attacker’s entry point
-
-### 2.1 Filtering for suspicious HTTP requests
-I began with:
-`http.request`
-
-This revealed:
-
-- an initial GET request to `/login.php`
-- a POST request containing stolen credentials  
-- repeated attempts using a scripted user-agent (curl/Wget style)
-
-From the POST body I extracted compromised credentials used later in the intrusion.
+Port 80 showed a defaced TBFC QA web page with an "EAST-mas" takeover message.
 
 ---
 
-## 3. Malware delivery via HTTP
+### 2. Full TCP Port Scan With Banner Grabbing
 
-Next, I filtered for file downloads:
-`http.response and frame contains "exe"`
+```
+nmap -p- --script=banner 10.66.136.62
+```
 
-This showed:
+Discovered additional services:
 
-- the workstation downloaded a file named `bunny_loader.exe`  
-- the server hosting it belonged to a HopSec-controlled IP  
-- MIME type: application/octet-stream  
+- **21212/tcp – vsFTPd 3.0.5**
+- **25251/tcp – TBFC maintd v0.2**
 
-I noted the filename, MD5/SHA256 (visible in the PCAP), and host header.
-
----
-
-## 4. Credentials stolen over FTP
-
-The PCAP contained plaintext FTP traffic. Filtering:
-`ftp.request.command == "USER" or ftp.request.command == "PASS"`
-
-yielded immediately leaked credentials for a TBFC internal service account.
-
-The attacker used these to pivot deeper into the network.
+This gave me two hidden footholds to investigate.
 
 ---
 
-## 5. Exfiltration over FTP / Data stage
+## Key Discovery
 
-Using:
-`ftp-data`
+### **Key 1 – FTP (Port 21212)**
+Anonymous FTP login succeeded:
 
-I confirmed a large outbound transfer originating from the compromised host. The filename suggested internal logs were exfiltrated.
+```
+ftp 10.66.136.62 21212
+```
 
-This matched the attacker’s previous steps in Day 3's Splunk investigation.
+Listing showed:
+
+```
+tbfc_qa_key1
+```
+
+Retrieving it:
+
+```
+get tbfc_qa_key1 -
+```
+
+Output:
+
+```
+KEY1:3aster_
+```
 
 ---
 
-## 6. Command-and-control beaconing
+### **Key 2 – TBFC maintd (Port 25251)**
+I used Netcat to interact with the custom service:
 
-I searched for consistent periodic traffic:
-`tcp.flags.syn == 1 and ip.dst == <suspicious_IP>`
+```
+nc -v 10.66.136.62 25251
+```
 
-This revealed regular outbound SYN packets every few seconds — classic beaconing behavior.
+Typed:
 
-Protocol: TCP  
-Port: typically 4444, 8080, or 9001 (varies per challenge), but consistent across the PCAP.
+```
+GET KEY
+```
+
+Response:
+
+```
+KEY2:15_th3_
+```
 
 ---
 
-## 7. Attacker timeline reconstruction
+### **Key 3 – DNS TXT Record (UDP Scan + dig)**
 
-Based on timestamps:
+I performed a UDP scan:
 
-1. **Initial access** – attacker submits stolen credentials via HTTP POST  
-2. **File download** – retrieves HopSec malware (`bunny_loader.exe`)  
-3. **Execution** – internal host begins C2 beaconing  
-4. **Lateral movement** – reused exposed FTP credentials  
-5. **Data exfiltration** – FTP data transfer of internal logs  
-6. **Cleanup attempts** – closing sessions, clearing certain connections  
+```
+nmap -sU 10.66.136.62
+```
+
+UDP port 53 was open.
+
+Queried for TXT records:
+
+```
+dig @10.66.136.62 TXT key3.tbfc.local +short
+```
+
+Response:
+
+```
+"KEY3:c4k3}"
+```
+
+---
+
+## Combined Key
+Concatenating the three discovered parts:
+
+```
+3aster_15_th3_c4k3}
+```
+
+The full combined admin key should be:
+
+```
+3aster_15_th3_c4k3}
+```
+
+(This matches the advertised KEYNAME:KEY pattern.)
+
+---
+
+## 3. Attempt to Access the Secret Admin Console (Blocked by Bug)
+
+The instructions say to:
+
+1. Visit the QA website at `http://10.66.136.62`
+2. Enter all three key parts into the admin panel
+3. Unlock the secret console
+4. Run `ss -tunlp` to enumerate host-local services
+5. Connect to MySQL on port 3306
+6. Retrieve the final flag from the `flags` table
+
+### **But:**  
+The **“Enter” button on the admin panel is currently non-functional**.
+
+- It does not submit the keys.
+- It does not unlock the console.
+- The final steps cannot be accessed on today’s deployment.
+
+This issue has been reported by multiple users and appears to be a temporary TryHackMe UI bug.
+
+Because access to the secret console is required, the challenge cannot currently be completed past this point.
 
 ---
 
 ## Key Takeaways
-
-- PCAP analysis remains one of the fastest ways to reconstruct breaches.  
-- Clear-text protocols (HTTP/FTP) provide immediate forensic visibility.  
-- User-agent anomalies, repeated failed logins, and large outbound transfers are high-signal events.  
-- Consistent beacon intervals strongly indicate C2 activity.  
-- Network forensics reinforces the SOC workflow introduced in Day 3 (Splunk).  
+- Full-range TCP and UDP scans often reveal nonstandard services.
+- Banner grabbing is invaluable for identifying misconfigured or hidden services.
+- Even "anonymous-only" FTP can leak sensitive information.
+- DNS TXT records can be used for covert data storage.
+- Enumeration is often a multi-protocol process: TCP, UDP, FTP, custom TCP applications, DNS, and HTTP in one challenge.
+- Some challenges depend on UI elements functioning correctly—today’s task ends where a TryHackMe bug prevents progression.
 
 ---
 
 Writeup author: **Jeremy Ray Jewell**  
 GitHub: https://github.com/jeremyrayjewell  
 LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
-
-
-
-
-
