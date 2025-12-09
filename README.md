@@ -13,10 +13,9 @@ A living log of my hands-on journey through CTFs, course work, book summaries, a
 1. Browse directories by topic:
    - [/writeups](writeups) → CTF/wargame walkthroughs and challenge notes  
    - [/learning-notes](learning-notes/README.md) → summaries and notes from books, courses, and structured learning  
-   - [/ssh-notes](ssh-notes) → weekly SSH-focused learnings  
    - [/experiments](experiments) → scripts, tools, and lab setups  
 
-2. 📝 Share feedback or suggestions via **Issues**.
+2. Share feedback or suggestions via **Issues**.
 
 ---
 
