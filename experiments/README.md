@@ -7,8 +7,14 @@ This directory contains a collection of small, self-contained experiments, utili
 ### [cipher-graphs/](cipher-graphs/README.md)
 Python-based visualizations of cryptographic algorithms such as RSA, DSA, and Curve25519, using plots and animations to make complex math intuitive.
 
+### [cmd-injector/](cmd-injector/README.md)
+A shell-based command injection tester. 
+
 ### [generate_ssh_summary/](generate_ssh_summary/README.md)
 Parses SSH debug logs from `~/ssh-logs/` and outputs a Markdown summary table (`~/ssh-summary.md`) with key connection details.
+
+### [lfi-enumerator/](lfi-enumerator/README.md)
+A Python-based Local File Inclusion enumerator.
 
 ### [nofiltergpt-chat/](nofiltergpt-chat/README.md)
 CLI client for the **NoFilterGPT** API. Reads API key from `.env`, sends prompts, and prints formatted responses.
