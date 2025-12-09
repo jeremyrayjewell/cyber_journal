@@ -4,28 +4,28 @@ This directory contains a collection of small, self-contained experiments, utili
 
 ## Contents
 
-### [cipher-graphs/](cipher-graphs/README.md)
+### [cipher-graphs/](cipher-graphs/)
 Python-based visualizations of cryptographic algorithms such as RSA, DSA, and Curve25519, using plots and animations to make complex math intuitive.
 
-### [cmd-injector/](cmd-injector/README.md)
+### [cmd-injector/](cmd-injector/)
 A shell-based command injection tester. 
 
-### [generate_ssh_summary/](generate_ssh_summary/README.md)
+### [generate_ssh_summary/](generate_ssh_summary/)
 Parses SSH debug logs from `~/ssh-logs/` and outputs a Markdown summary table (`~/ssh-summary.md`) with key connection details.
 
-### [lfi-enumerator/](lfi-enumerator/README.md)
+### [lfi-enumerator/](lfi-enumerator/)
 A Python-based Local File Inclusion enumerator.
 
-### [nofiltergpt-chat/](nofiltergpt-chat/README.md)
+### [nofiltergpt-chat/](nofiltergpt-chat/)
 CLI client for the **NoFilterGPT** API. Reads API key from `.env`, sends prompts, and prints formatted responses.
 
-### [ssh-shared-tmux/](ssh-shared-tmux/README.md)
+### [ssh-shared-tmux/](ssh-shared-tmux/)
 Bash scripts to open an SSH port, start an SSH server, and create a shared `tmux` session for collaborative terminal access. Includes a disconnect script to stop SSH and close the port.
 
-### [port-knocking/](port-knocking/README.md)
+### [port-knocking/](port-knocking/)
 Stealth SSH access using a knock sequence to temporarily open the SSH port; includes client knock scripts and a sample `knockd` configuration.
 
-### [directory-enumerator/](directory-enumerator/README.md)
+### [directory-enumerator/](directory-enumerator/)
 A Python-based HTTP directory enumeration tool (`dir_enum.py`). Supports Basic Auth, built-in common paths, custom wordlists, directory listing detection, colorized output, and verbose mode for headers and body previews. Useful for quickly identifying exposed directories and files during assessments.
 
 ---
