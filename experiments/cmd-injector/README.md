@@ -10,25 +10,25 @@ It automates sending payloads to a user‑supplied target with optional HTTP Bas
   --target "http://target.url" \
   --auth "username:password" \
   --payload ";sh -c 'cat /etc/passwd'"
-Options
-Flag	Description
---target	Full URL to test (including query string)
---auth	Basic auth in the form username:password
---payload	Command injection payload to test
-Notes
+```
+## Options
+| Flag                   | Description                                    |
+|------------------------|------------------------------------------------|
+| `--target`             | Full URL to test (including query string)      |
+| `--auth`               | Basic auth in the form username:password       |
+| `--payload`            | Command injection payload to test              |
 
-The script currently tests a single payload per execution.
+## Notes
+- The script currently tests a single payload per execution.
+- Injection is performed through a `needle= GET` parameter.
+- Responses are printed directly to `stdout`.
 
-Injection is performed through a needle= GET parameter.
+## License
 
-Responses are printed directly to stdout.
+MIT License
 
-Planned Improvements
+## Author
 
-Support multiple payloads supplied via file.
-
-Pattern matching for known sensitive files.
-
-Support for POST requests.
-
-Blind command injection payloads (sleep, ping, etc.).
+Jeremy Ray Jewell  
+[Github](https://github.com/jeremyrayjewell)
+[LinkedIn](https://www.linkedin.com/in/jeremyyrayjewell
