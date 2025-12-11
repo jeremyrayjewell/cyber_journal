@@ -5,6 +5,12 @@
 
 ---
 
+##Note on Task Completion
+
+*Due to a TryHackMe backend issue specific to this day’s Azure Sentinel environment, the Log Analytics workspace failed to provision correctly. No ingestion tables (e.g., Syslog_CL, Heartbeat, or Process_CL) were created, the query editor did not load, and the lab ultimately returned a 500 error when attempting to rejoin. Because the expected data sources were never deployed, the remaining steps of the challenge could not be completed. A support ticket has been submitted for environment reprovisioning.*
+
+---
+
 ## Summary
 This challenge involved analyzing a suspicious executable recovered from Santa’s compromised workstation. Instead of detonating the sample in a sandbox, the task required static inspection only. By extracting strings, identifying encoded payloads, and decoding the malware’s embedded configuration, I uncovered both the command-and-control (C2) information and the hidden flag stored inside the attacker’s exfiltration routine.
 
