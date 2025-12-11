@@ -100,5 +100,4 @@ On the AttackBox’s browser, I visited `http://MACHINE_IP`. I attempted login a
 ---
 
 Writeup author: **Jeremy Ray Jewell**  
-GitHub: https://github.com/jeremyrayjewell  
-LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
