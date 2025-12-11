@@ -2,15 +2,15 @@
 
 Markdown write-ups for CTFs & wargames stored here.
 
-OverTheWire: [OTW index](./overthewire/README.md)  
-   ├── [Bandit](./overthewire/bandit/README.md)     
-   └── [Natas](./overthewire/natas/README.md)  
+OverTheWire: [OTW index](./overthewire/)  
+   ├── [Bandit](./overthewire/bandit/)     
+   └── [Natas](./overthewire/natas/)  
 
-OWASP: [OWASP index](./owasp/README.md)  
-   └── [Juice Shop](./owasp/juice_shop/README.md)  
+OWASP: [OWASP index](./owasp/)  
+   └── [Juice Shop](./owasp/juice_shop/)  
 
-TryHackMe: [THM index](./tryhackme/README.md)\
-   └── [Advent of Cyber 2025](./tryhackme/advent-of-cyber-2025/README.md)
+TryHackMe: [THM index](./tryhackme/)\
+   └── [Advent of Cyber 2025](./tryhackme/advent-of-cyber-2025/)
   
 ---
 
