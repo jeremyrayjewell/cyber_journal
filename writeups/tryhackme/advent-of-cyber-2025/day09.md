@@ -64,5 +64,4 @@ Because the included log now contained PHP, the server executed the id command. 
 ---
 
 Writeup author: **Jeremy Ray Jewell**  
-GitHub: https://github.com/jeremyrayjewell  
-LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
