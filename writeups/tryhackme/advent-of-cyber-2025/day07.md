@@ -173,5 +173,4 @@ Because access to the secret console is required, the challenge cannot currently
 ---
 
 Writeup author: **Jeremy Ray Jewell**  
-GitHub: https://github.com/jeremyrayjewell  
-LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
