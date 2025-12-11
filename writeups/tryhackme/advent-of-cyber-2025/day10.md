@@ -69,5 +69,4 @@ The flag was embedded directly in the configuration block, typically in a parame
 ---
 
 Writeup author: **Jeremy Ray Jewell**  
-GitHub: https://github.com/jeremyrayjewell  
-LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
