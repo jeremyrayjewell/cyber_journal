@@ -97,8 +97,7 @@ This means an attacker can recreate valid vouchers if they know the exact minute
 ---
 
 Writeup author: **Jeremy Ray Jewell**  
-GitHub: https://github.com/jeremyrayjewell  
-LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
+[GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
 
 
 
