@@ -2,7 +2,7 @@
 **Date:** 2025-12-11  
 
 ## Obfuscated password (ROT13)  
-`?`
+`lMqxwNLMEq3E7gd7G5xKZwZWyBVxmQrO`
 
 ---
 
@@ -77,13 +77,24 @@ The easiest thing to do was to make a script, [so I did.](../../../experiments/x
    ```json
    {"showpassword":"no","bgcolor":"#ffffff"}
    ```
-   This gives us the XOR key.
-3. Replace `"no"` with `"yes"` in the plaintext and re-XOR with the key.
+   This gives us the XOR key. 
+3. Replace `"no"` with `"yes"` in the plaintext and re-XOR with the key: `HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5`
 
 Browser: Base64-encode the result and set it as the new `data` cookie, refresh the page to get the password.
 Bash:
+```
+ curl -s -u natas11:<password> \
+  -b "data=HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5" \
+  "http://natas11.natas.labs.overthewire.org/"
+```
+---
 
-`HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAycJA0c5`
+### [SCRIPT](../../../experiments/xor-cookie-tool)
+
+To solve this challenge, I built a custom Python utility called [`xor_cookie_tool.py`](../../../experiments/xor-cookie-tool) that automates the XOR decryption and re-encryption of the cookie used by the Natas11 level. The script supports both directions: it can decode a Base64-encoded XOR-protected cookie using known plaintext, or encode a new cookie by XORing a modified JSON structure with a repeating key. 
+- `python3 xor_cookie_tool.py decode   --cookie HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GIjEJAydnTRg=   --known '{"showpassword":"no","bgcolor":"#ffffff"}'`
+   - **Note: XOR key must be repeating, so if you notice something is off then there is likely a decoding artifact which you need to clip**
+- `python3 xor_cookie_tool.py encode   --json '{"showpassword":"yes","bgcolor":"#ffffff"}'   --key eDWoeDWoeDWoeDWo`
 
 ---
 
