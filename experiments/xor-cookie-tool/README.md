@@ -1,6 +1,6 @@
 # XOR Cookie Tool 
 
-A small Python utility for decoding and encoding XOR-encrypted cookies, built to solve the [OverTheWire Natas11](http://overthewire.org/wargames/natas/) challenge (see my writeup [here](https://github.com/jeremyrayjewell/cyber_journal/blob/main/writeups/overthewire/natas/natas11.md))
+A small Python utility for decoding and encoding XOR-encrypted cookies, built to solve the [OverTheWire Natas11](http://overthewire.org/wargames/natas/) challenge (see my writeup [here](https://github.com/jeremyrayjewell/cyber_journal/blob/main/writeups/overthewire/natas/natas11.md)).
 
 This script performs XOR decryption and encryption using a known-plaintext attack or a user-supplied repeating key. It supports both **cookie decoding** (to extract the XOR key and plaintext) and **cookie encoding** (to craft a new encrypted value).
 
