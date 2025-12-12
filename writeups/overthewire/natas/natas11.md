@@ -2,7 +2,7 @@
 **Date:** 2025-12-11  
 
 ## Obfuscated password (ROT13)  
-`g7V5IUiCn14fWGHTI0poRfoLsSC2qzBh`
+`?`
 
 ---
 
@@ -62,27 +62,28 @@
 
 ## PURPOSE
 
-This level teaches how to exploit **XOR encryption** when both the plaintext and ciphertext are partially known — an example of **known plaintext attack**.
+In the source code we can find this `$defaultdata = array("showpassword"=>"no", "bgcolor"=>"#ffffff");`, and later in the code we see `setcookie("data", base64_encode(xor_encrypt(json_encode($d))));`. This tells us the cookie is storing a `base64`-encoded value and that that value is a result of applying an **XOR cipher** to a **JSON-encoded varsion of `$d`**. `$d` is based on `$defaultdata`, unless the user changes it via input. In short, if we don't send any input, then the cookie is just the XOR-encrypted version of `{"showpassword":"no","bgcolor":"#ffffff"}`
 
-- XOR is symmetric: `A ^ B = C` implies `C ^ B = A` and `C ^ A = B`
-- If we know both the plaintext and ciphertext, we can deduce the key
-- If we know the key, we can encrypt any value (e.g. `{"showpassword":"yes","bgcolor":"#ffffff"}`)
+This level teaches how to exploit **XOR encryption** when both the plaintext and ciphertext are partially known — an example of **known plaintext attack**. XOR is symmetric: `A ^ B = C` implies `C ^ B = A` and `C ^ A = B`. If we know both the plaintext and ciphertext, we can deduce the key. Likewise, if we know the key, we can encrypt any value (e.g. `{"showpassword":"yes","bgcolor":"#ffffff"}`)
 
-This challenge is a hands-on reminder that **XOR is not secure** on its own, especially with repeating keys.
+The easiest thing to do was to make a script, [so I did.](../../../experiments/xor-cookie-tool)
 
 ---
 
 ## SOLUTION
 
-1. Copy the `data` cookie from your browser and base64-decode it.
+1. Copy the `data` cookie from your browser and base64-decode its value, `HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GIjEJAydnTRg=`. In bash we can achieve this with `base64 -d <<< 'HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GIjEJAydnTRg='`
 2. XOR the decoded blob against the known JSON string it encrypts:
    ```json
    {"showpassword":"no","bgcolor":"#ffffff"}
    ```
    This gives us the XOR key.
 3. Replace `"no"` with `"yes"` in the plaintext and re-XOR with the key.
-4. Base64-encode the result and set it as the new `data` cookie.
-5. Refresh the page to get the password.
+
+Browser: Base64-encode the result and set it as the new `data` cookie, refresh the page to get the password.
+Bash:
+
+`HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAycJA0c5`
 
 ---
 
