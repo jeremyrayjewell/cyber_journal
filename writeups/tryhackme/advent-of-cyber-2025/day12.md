@@ -1,6 +1,6 @@
 # Advent of Cyber 2025 – Day 12, 2025-12-12
-**Room:** Phishing – Email Threat Triage
-**Category:** Incident Response / Email Security
+**Room:** Phishing – Email Threat Triage \
+**Category:** Incident Response / Email Security \
 **Skills Practiced:** Phishing detection, email header analysis, impersonation spotting, spoofing identification, typosquatting and punycode recognition, attachment risk analysis, distinguishing spam from phishing.
 
 ---
