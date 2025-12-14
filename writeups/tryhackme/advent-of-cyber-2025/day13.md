@@ -1,6 +1,6 @@
-# Advent of Cyber 2025 – Day 13, 2025-12-13
-**Room:** YARA – Hidden Messages
-**Category:** Threat Hunting / Malware Detection
+# Advent of Cyber 2025 – Day 13, 2025-12-13 
+**Room:** YARA – Hidden Messages \
+**Category:** Threat Hunting / Malware Detection \
 **Skills Practiced:** Writing YARA rules, regex construction, string detection, directory scanning, pattern-based hunting, decoding staged messages.
 
 ---
