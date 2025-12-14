@@ -6,9 +6,8 @@
 ---
 
 ## Summary
-With TBFC’s Email Protection Platform offline, the SOC team was forced to manually triage suspicious emails using the **Wareville Email Threat Inspector**. The objective of this challenge was to correctly classify incoming messages as either **phishing or non-threatening spam**, while identifying the specific techniques used by attackers attempting to compromise TBFC users.
+With TBFC’s Email Protection Platform offline, the SOC team was forced to manually triage suspicious emails using the **Wareville Email Threat Inspector**. The objective of this challenge was to correctly classify incoming messages as either **phishing or non-threatening spam**, while identifying the specific techniques used by attackers attempting to compromise TBFC users. This task emphasized analyst judgement rather than tooling, requiring careful inspection of sender details, message intent, headers, domains, and attachments. Each phishing message contained multiple indicators that had to be identified correctly to proceed.
 
-This task emphasized analyst judgement rather than tooling, requiring careful inspection of sender details, message intent, headers, domains, and attachments. Each phishing message contained multiple indicators that had to be identified correctly to proceed.
 ---
 
 ## Walkthrough Notes
@@ -35,6 +34,7 @@ Several emails attempted to impersonate trusted TBFC personnel or departments. I
 - Whether the sender domain matched TBFC’s internal naming conventions
 - Use of free or external email providers
 Any mismatch immediately raised suspicion.
+
 ---
 
 ### 3. Social Engineering Indicators
