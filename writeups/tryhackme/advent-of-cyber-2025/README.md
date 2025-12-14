@@ -19,8 +19,8 @@ I avoid including any challenge flags in the writeups to keep them spoiler-free.
 | [09](./day09.md)  | File Encryption & Recovery                 | Completed         |
 | [10](./day10.md)  | Santa’s Malware Lab                        | Partially Done    | 
 | [11](./day11.md)  | Leave the Cookies, Take the Payload (XSS) | Completed         | 
-| 12  |                                            | Not Started       |                                        
-| 13  |                                            | Not Started       |                                        
+| [12](./day12.md)  | Phishing – Email Threat Triage             | Completed      |                                        
+| [13](./day13.md)  | YARA – Hidden Messages                     | Completed      |                                        
 | 14  |                                            | Not Started       |                                        
 | 15  |                                            | Not Started       |                                        
 | 16  |                                            | Not Started       |                                        
