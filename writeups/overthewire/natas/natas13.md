@@ -2,7 +2,7 @@
 **Date:** 2025-12-13  
 
 ## Obfuscated password (ROT13)  
-`?`
+`m3HLpe4i4hOcrK8s7RMoZUymX4HE2KgD`
 
 ---
 
