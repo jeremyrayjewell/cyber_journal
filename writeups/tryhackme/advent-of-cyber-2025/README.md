@@ -21,8 +21,8 @@ I avoid including any challenge flags in the writeups to keep them spoiler-free.
 | [11](./day11.md)  | Leave the Cookies, Take the Payload (XSS) | Completed         | 
 | [12](./day12.md)  | Phishing – Email Threat Triage             | Completed      |                                        
 | [13](./day13.md)  | YARA – Hidden Messages                     | Completed      |                                        
-| 14  |                                            | Not Started       |                                        
-| 15  |                                            | Not Started       |                                        
+| [14](./day14.md)  | Container Security – DoorDasher / Hopperoo | Completed       |                                        
+| [15](./day15.md)  | Web Attack Forensics – Drone Alone         | Completed       |                                        
 | 16  |                                            | Not Started       |                                        
 | 17  |                                            | Not Started       |                                        
 | 18  |                                            | Not Started       |                                        
