@@ -1,6 +1,6 @@
-# Advent of Cyber 2025 – Day 15, 2025-12-15
-**Room:** Web Attack Forensics – Drone Alone
-**Category:** Blue Team / Web Attack Forensics / SIEM
+# Advent of Cyber 2025 – Day 15, 2025-12-15 \
+**Room:** Web Attack Forensics – Drone Alone \
+**Category:** Blue Team / Web Attack Forensics / SIEM \
 **Skills Practiced:** Splunk investigation, Apache log analysis, Sysmon process correlation, command injection detection, Base64 payload decoding, web-to-host attack reconstruction.
 
 ---
