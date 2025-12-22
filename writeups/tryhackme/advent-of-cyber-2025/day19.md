@@ -1,5 +1,5 @@
 # Advent of Cyber 2025 – Day 19, 2025-12-19 
-**Room:** ICS / Modbus – Claus for Concer  
+**Room:** ICS / Modbus – Claus for Concern  
 **Category:** Industrial Control Systems (ICS) / OT Security  
 **Skills Practiced:** SCADA analysis, PLC logic inspection, Modbus TCP interaction, ICS incident response, safe remediation sequencing
 
