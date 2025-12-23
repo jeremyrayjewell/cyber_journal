@@ -23,11 +23,11 @@ I avoid including any challenge flags in the writeups to keep them spoiler-free.
 | [13](./day13.md)  | YARA – Hidden Messages                     | Completed      |                                        
 | [14](./day14.md)  | Container Security – DoorDasher / Hopperoo | Completed       |                                        
 | [15](./day15.md)  | Web Attack Forensics – Drone Alone         | Completed       |                                        
-| 16  |                                            | Not Started       |                                        
-| 17  |                                            | Not Started       |                                        
-| 18  |                                            | Not Started       |                                        
-| 19  |                                            | Not Started       |                                        
-| 20  |                                            | Not Started       |                                        
+| [16](./day16.md)  | Forensics – Registry Furensics             | Completed       |                                        
+| [17](./day17.md)  | CyberChef – Hoperation Save McSkidy        | Completed       |                                        
+| [18](./day18.md)  | Obfuscation – The Egg Shell File           | Completed       |                                        
+| [19](./day19.md)  | ICS / Modbus – Claus for Concern           | Completed       |                                        
+| [20](./day20.md)  | Race Conditions – Toy to The World         | Completed       |                                        
 | 21  |                                            | Not Started       |                                        
 | 22  |                                            | Not Started       |                                        
 | 23  |                                            | Not Started       |                                        
