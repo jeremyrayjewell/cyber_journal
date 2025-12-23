@@ -28,10 +28,10 @@ I avoid including any challenge flags in the writeups to keep them spoiler-free.
 | [18](./day18.md)  | Obfuscation – The Egg Shell File           | Completed       |                                        
 | [19](./day19.md)  | ICS / Modbus – Claus for Concern           | Completed       |                                        
 | [20](./day20.md)  | Race Conditions – Toy to The World         | Completed       |                                        
-| 21  |                                            | Not Started       |                                        
-| 22  |                                            | Not Started       |                                        
-| 23  |                                            | Not Started       |                                        
-| 24  |                                            | Not Started       | 
+| [21](./day21.md)  | Malware Analysis - Malhare.exe             | Completed       |                                        
+| [22](./day22.md)  |                                            | Completed       |                                        
+| [23](./day23.md)  |                                            | Completed       |                                        
+| [24](./day24.md)  |                                            | Not Started       | 
 
 
 Each writeup is named using the following format: `DayXX.md`
