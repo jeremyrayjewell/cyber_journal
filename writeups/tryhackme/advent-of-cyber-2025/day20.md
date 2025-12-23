@@ -1,6 +1,6 @@
 # Advent of Cyber 2025 – Day 20, 2025-12-20 
-**Room:** Race Conditions – Toy to The World 
-**Category:** Web Application Security  
+**Room:** Race Conditions – Toy to The World \
+**Category:** Web Application Security  \
 **Skills Practiced:** Race condition exploitation, Burp Suite Repeater, concurrent request analysis, transaction logic abuse
 
 ---
