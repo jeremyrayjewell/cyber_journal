@@ -17,7 +17,7 @@ I avoid including any challenge flags in the writeups to keep them spoiler-free.
 | [07](./day07.md)  | Network Enumeration                        | Completed         | 
 | [08](./day08.md)  | SOC-mas Calendar Restoration               | Completed         | 
 | [09](./day09.md)  | File Encryption & Recovery                 | Completed         |
-| [10](./day10.md)  | Santa’s Malware Lab                        | Partially Done    | 
+| [10](./day10.md)  | Santa’s Malware Lab                        | Completed    | 
 | [11](./day11.md)  | Leave the Cookies, Take the Payload (XSS) | Completed         | 
 | [12](./day12.md)  | Phishing – Email Threat Triage             | Completed      |                                        
 | [13](./day13.md)  | YARA – Hidden Messages                     | Completed      |                                        
