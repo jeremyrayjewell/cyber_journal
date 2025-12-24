@@ -31,7 +31,7 @@ I avoid including any challenge flags in the writeups to keep them spoiler-free.
 | [21](./day21.md)  | Malware Analysis - Malhare.exe             | Completed       |                                        
 | [22](./day22.md)  | C2 Detection - Command & Carol             | Completed       |                                        
 | [23](./day23.md)  | AWS Security – S3cret Santa                | Completed       |                                        
-| [24](./day24.md)  |                                            | Not Started       | 
+| [24](./day24.md)  | Exploitation with cURL – Hoperation Eggsploit| Completed       | 
 
 
 Each writeup is named using the following format: `DayXX.md`
