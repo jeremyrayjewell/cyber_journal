@@ -73,6 +73,7 @@ These indicators allowed C2 detection even though the traffic itself was encrypt
 
 ### 6. Challenge PCAP Analysis
 
+After reviewing RITA output using the provided AsyncRAT dataset, the same workflow was applied to the challenge PCAP (`rita_challenge.pcap`).
 Using the same workflow, the challenge PCAP (rita_challenge.pcap) was analyzed:
 - Converted to Zeek logs
 - Imported into RITA
@@ -85,6 +86,8 @@ RITA’s search filters made it possible to isolate high-confidence C2 traffic b
 - Destination domain
 - Beacon score threshold
 - Connection duration sorting
+RITA’s search syntax was used to isolate high-confidence beaconing activity. For example, the following filter was used to identify long-duration, high-beacon-score connections to a known C2 domain:
+`dst:rabbithole.malhare.net beacon:>70 sort:duration-desc`
 
 ---
 
