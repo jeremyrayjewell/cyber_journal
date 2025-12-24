@@ -30,7 +30,7 @@ I avoid including any challenge flags in the writeups to keep them spoiler-free.
 | [20](./day20.md)  | Race Conditions – Toy to The World         | Completed       |                                        
 | [21](./day21.md)  | Malware Analysis - Malhare.exe             | Completed       |                                        
 | [22](./day22.md)  | C2 Detection - Command & Carol             | Completed       |                                        
-| [23](./day23.md)  |                                            | Completed       |                                        
+| [23](./day23.md)  | AWS Security – S3cret Santa                | Completed       |                                        
 | [24](./day24.md)  |                                            | Not Started       | 
 
 
