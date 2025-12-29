@@ -4,6 +4,8 @@ A reusable blind SQL injection automation tool designed for controlled security 
 This script was developed while solving OverTheWire – Natas Level 15, and is written to be reusable for other
 boolean-based blind SQL injection scenarios.
 
+![Blind SQLi Extractor Screenshot](blind_sqli_extractor.png)
+
 ---
 
 ## Overview
