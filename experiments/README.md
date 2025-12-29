@@ -4,6 +4,9 @@ This directory contains a collection of small, self-contained experiments, utili
 
 ## Contents
 
+### [blind_sqli_extractor/](blind_sqli_extractor/)
+Automates boolean-based blind SQL injection in Python.
+
 ### [cipher-graphs/](cipher-graphs/)
 Python-based visualizations of cryptographic algorithms such as RSA, DSA, and Curve25519, using plots and animations to make complex math intuitive.
 
