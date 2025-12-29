@@ -14,7 +14,7 @@
 
 ## PURPOSE
 
-This level demonstrates a **blind SQL injection scenario.* Unlike earlier levels, the application does not output database results directly. Instead, it only indicates whether a query returned *any* rows.
+This level demonstrates a **blind SQL injection scenario**. Unlike earlier levels, the application does not output database results directly. Instead, it only indicates whether a query returned *any* rows.
 
 By observing this binary response, it becomes possible to infer sensitive information one character at a time.
 
