@@ -18,7 +18,7 @@ def parse_args():
     parser.add_argument("--user", required=True, help="HTTP auth username")
     parser.add_argument("--password", required=True, help="HTTP auth password")
     parser.add_argument("--param", required=True, help="Vulnerable parameter name")
-    parser.add_argument("--true-string", required=True, help="String indicating TRUE condition")
+    parser.add_argument("--true-string", default="", help="String indicating TRUE condition")
     parser.add_argument("--max-length", type=int, default=32, help="Max length of extracted value")
     parser.add_argument("--delay", type=float, default=0.0, help="Delay between requests (seconds)")
     parser.add_argument("--payload-template", required=True, help="Payload template using {char} and/or {pos}")
