@@ -29,13 +29,15 @@ def parse_args():
 # Core Logic
 # -------------------------------
 
-def send_payload(url, auth, param, payload, true_string, baseline_len):
+def send_payload(url, auth, param, payload, baseline_len):
     r = requests.get(
         url,
         params={param: payload},
         auth=auth,
         timeout=10
     )
+
+    return len(r.text) < baseline_len
 
     # Mode 1: explicit success string (Natas 15)
     if true_string:
