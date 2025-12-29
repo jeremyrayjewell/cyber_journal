@@ -37,7 +37,12 @@ def send_payload(url, auth, param, payload, true_string):
         auth=auth,
         timeout=10
     )
-    return true_string in r.text
+
+    if true_string:
+        return true_string in r.text
+
+    return len(r.text.strip()) > 0
+
 
 def extract_secret(args):
     charset = string.ascii_letters + string.digits
