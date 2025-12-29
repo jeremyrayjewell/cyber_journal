@@ -2,7 +2,6 @@
 import argparse
 import requests
 import string
-import sys
 import time
 
 # -------------------------------
@@ -38,9 +37,11 @@ def send_payload(url, auth, param, payload, true_string):
         timeout=10
     )
 
+    # Natas 15 mode (string-based)
     if true_string:
         return true_string in r.text
 
+    # Natas 16 mode (output-based)
     return len(r.text.strip()) > 0
 
 
@@ -58,7 +59,6 @@ def extract_secret(args):
                 char=ch,
                 pos=pos
             )
-
 
             if send_payload(
                 args.url,
