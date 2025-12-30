@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-"""
-Generic Blind Command Injection Tool
-"""
 
 import argparse
 import requests
