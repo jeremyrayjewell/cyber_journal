@@ -4,6 +4,9 @@ This directory contains a collection of small, self-contained experiments, utili
 
 ## Contents
 
+### [blind_command_injector/](blind_command_injector/)
+Python-based blind command injection tool that infers protected values by observing command execution behavior rather than direct output.
+
 ### [blind_sqli_extractor/](blind_sqli_extractor/)
 Automates boolean-based blind SQL injection in Python.
 
