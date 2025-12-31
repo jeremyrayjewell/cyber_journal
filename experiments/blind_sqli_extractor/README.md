@@ -1,8 +1,7 @@
 # blind_sqli_extractor
 
 A reusable blind SQL injection automation tool designed for controlled security testing and educational use.
-This script was developed while solving OverTheWire – Natas Level 15, and is written to be reusable for other
-boolean-based blind SQL injection scenarios.
+This script was developed while solving OverTheWire Natas (levels 15 and 17) and is written to support both boolean-based and time-based blind SQL injection techniques.
 
 ![Blind SQLi Extractor Screenshot](blind_sqli_extractor.png)
 
@@ -10,51 +9,54 @@ boolean-based blind SQL injection scenarios.
 
 ## Overview
 
-Many vulnerable applications do not return query results directly. Instead, they reveal whether a condition
-is true or false through subtle response differences. This tool exploits that behavior to extract sensitive
-values one character at a time.
+Many vulnerable applications do not return query results directly. Instead, they reveal information indirectly through response behavior such as timing differences or conditional output.
 
-The goal is clarity, reusability, and correctness.
+This tool exploits those behaviors to extract sensitive values one character at a time in a reliable and repeatable way.
+
+The primary goals are clarity, correctness, and reusability.
 
 ---
 
 ## How It Works
 
-1. A crafted SQL payload is injected into a vulnerable parameter.
-2. The payload checks whether a specific character at a given position matches the expected value.
-3. The application’s response reveals whether the condition evaluated to true.
-4. The script iterates through characters until the full value is recovered.
+- A crafted SQL payload is injected into a vulnerable parameter.
+- The payload evaluates a condition on a specific character of the target value.
+- The application’s response indicates whether the condition evaluated to true.
+- The script iterates through characters until the full value is recovered.
+- The tool supports both boolean-based and time-based inference techniques.
 
 ---
 
 ## Usage
 
+```
 python3 blind_sqli_extractor.py \
-  --url "http://natas15.natas.labs.overthewire.org/" \
-  --user natas15 \
-  --password <NATAS15_PASSWORD> \
-  --param username \
-  --true-string "This user exists" \
-  --max-length 32
-
+  <url> \
+  <user> \
+  <password> \
+  <target> \
+  <mode>
+```
 ---
 
 ## Arguments
 
---url         Target URL  
---user        HTTP authentication username  
---password    HTTP authentication password  
---param       Vulnerable request parameter  
---true-string String indicating a TRUE condition  
---max-length  Maximum number of characters to extract  
+--url
+Target URL
+--user
+HTTP authentication username
+--password
+HTTP authentication password
+--target
+Target username whose value is being extracted
+--mode
+Extraction method: boolean or time
 
 ---
 
 ## Use Case
 
-This tool was used to solve OverTheWire Natas Level 15, where the application reveals only a boolean response
-indicating whether a SQL condition is true. By iterating through possible characters, the password for the
-next level can be reconstructed.
+This tool was used to solve the OverTheWire Natas challenges where application responses reveal only boolean conditions or timing differences. By systematically testing each possible character, the full secret value can be reconstructed.
 
 ---
 
