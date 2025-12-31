@@ -60,6 +60,25 @@ python3 blind_sqli_extractor.py \
 
 Once complete, the password for `natas16` is revealed.
 
+### Tooling Evolution (2025-12-30 update)
+
+Although Natas 15 can be solved with a simple boolean-based SQL injection, I chose to treat it as the foundation for a more general blind SQL exploitation framework.
+While the challenge itself does not require timing-based inference, the extraction logic was implemented in a reusable way to support future levels where output is fully suppressed.
+This approach emphasizes:
+- Designing tooling that remains useful beyond a single challenge
+- Separating detection logic from exploitation logic
+- Preparing for scenarios where only indirect feedback is available
+By structuring the solution this way, the same framework could later be extended to handle time-based inference, as required in Natas 17.
+
+**Updated Command:**
+```
+python3 blind_sqli_extractor.py \
+  http://natas15.natas.labs.overthewire.org/ \
+  natas15 \
+  <NATAS15_PASSWORD> \
+  natas16 \
+  boolean
+```
 
 ---
 
