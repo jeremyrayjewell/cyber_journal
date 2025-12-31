@@ -14,18 +14,11 @@ Usage:
   python3 exploit.py <url> <user> <pass> <target> <mode>
 
 Arguments:
-  url     Target URL (e.g. http://natas17.natas.labs.overthewire.org/index.php)
+  url     Target URL 
   user    HTTP auth username
   pass    HTTP auth password
   target  Target username to extract (e.g. natas18)
   mode    Attack mode:  "time"  or  "boolean"
-
-Examples:
-  python3 exploit.py http://natas17.natas.labs.overthewire.org/index.php \\
-      natas17 PASSWORD natas18 time
-
-  python3 exploit.py http://natas15.natas.labs.overthewire.org/index.php \\
-      natas15 PASSWORD natas16 boolean
 
 Notes:
   • 'time' mode uses response delays (safe for blind SQLi)
