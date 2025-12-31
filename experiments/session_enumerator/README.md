@@ -1,4 +1,4 @@
-# session_enumeratorr
+# session_enumerator
 
 A lightweight Python utility for enumerating predictable session identifiers in web applications.
 Designed for educational use, CTF challenges, and controlled security testing.
