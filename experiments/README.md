@@ -25,11 +25,14 @@ A Python-based Local File Inclusion enumerator.
 ### [nofiltergpt-chat/](nofiltergpt-chat/)
 CLI client for the **NoFilterGPT** API. Reads API key from `.env`, sends prompts, and prints formatted responses.
 
-### [ssh-shared-tmux/](ssh-shared-tmux/)
-Bash scripts to open an SSH port, start an SSH server, and create a shared `tmux` session for collaborative terminal access. Includes a disconnect script to stop SSH and close the port.
-
 ### [port-knocking/](port-knocking/)
 Stealth SSH access using a knock sequence to temporarily open the SSH port; includes client knock scripts and a sample `knockd` configuration.
+
+### [session_enumerator/](session_enumerator/)
+A lightweight Python utility for enumerating predictable session identifiers in web applications. Designed for educational use, CTF challenges, and controlled security testing.
+
+### [ssh-shared-tmux/](ssh-shared-tmux/)
+Bash scripts to open an SSH port, start an SSH server, and create a shared `tmux` session for collaborative terminal access. Includes a disconnect script to stop SSH and close the port.
 
 ### [directory-enumerator/](directory-enumerator/)
 A Python-based HTTP directory enumeration tool (`dir_enum.py`). Supports Basic Auth, built-in common paths, custom wordlists, directory listing detection, colorized output, and verbose mode for headers and body previews. Useful for quickly identifying exposed directories and files during assessments.
