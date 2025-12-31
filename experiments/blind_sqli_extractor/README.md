@@ -31,11 +31,11 @@ The primary goals are clarity, correctness, and reusability.
 
 ```
 python3 blind_sqli_extractor.py \
-  <url> \
-  <user> \
-  <password> \
-  <target> \
-  <mode>
+  url \
+  user \
+  password \
+  target \
+  mode
 ```
 ---
 
