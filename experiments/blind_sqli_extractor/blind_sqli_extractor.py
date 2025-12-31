@@ -5,36 +5,10 @@ import time
 import sys
 import statistics
 
-def print_help():
-    print("""
-Blind SQL Injection Utility
-===========================
-
-Usage:
-  python3 exploit.py <url> <user> <pass> <target> <mode>
-
-Arguments:
-  url     Target URL 
-  user    HTTP auth username
-  pass    HTTP auth password
-  target  Target username to extract (e.g. natas18)
-  mode    Attack mode:  "time"  or  "boolean"
-
-Notes:
-  • 'time' mode uses response delays (safe for blind SQLi)
-  • 'boolean' mode relies on visible response differences
-  • Output format is standardized for logging and automation
-""")
-    sys.exit(0)
-
-
-# ---- Argument parsing ----
-if len(sys.argv) == 2 and sys.argv[1] in ("-h", "--help"):
-    print_help()
-
 if len(sys.argv) != 6:
-    print("[!] Invalid arguments.\n")
-    print_help()
+    print(f"Usage:\n  {sys.argv[0]} <url> <user> <pass> <target> <mode>")
+    print("Modes: boolean | time")
+    sys.exit(1)
 
 URL, USER, PASS, TARGET, MODE = sys.argv[1:]
 MODE = MODE.lower()
@@ -133,5 +107,4 @@ if MODE == "time":
 elif MODE == "boolean":
     boolean_based()
 else:
-    print("[!] Invalid mode. Use 'time' or 'boolean'.")
-    sys.exit(1)
+    print("Invalid mode. Use: time | boolean")
