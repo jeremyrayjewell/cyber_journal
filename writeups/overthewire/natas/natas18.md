@@ -31,6 +31,16 @@ To exploit this, I wrote [an enumeration tool (session_enumerator.py)](https://g
 Once the correct session ID was discovered, the server returned the credentials for the next level, confirming successful exploitation.
 This approach required no brute-force of credentials and no SQL injection, only careful analysis of session handling behavior.
 
+Example command used with [session_enumerator.py](https://github.com/jeremyrayjewell/cyber_journal/tree/main/experiments/session_enumerator) during testing:
+
+```bash
+python session_enumerator.py \
+  --url http://natas18.natas.labs.overthewire.org \
+  --user natas18 \
+  --password <REDACTED> \
+  --mode numeric
+```
+
 ---
 
 ## TAKEAWAYS
