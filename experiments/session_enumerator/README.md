@@ -1,7 +1,8 @@
 # session_enumerator
 
 A lightweight Python utility for enumerating predictable session identifiers in web applications.
-Designed for educational use, CTF challenges, and controlled security testing.
+
+Designed for educational use, CTF challenges, and authorized security testing, this tool identifies insecure session management by testing predictable session values rather than brute-forcing credentials.
 
 ![Session Enumerator Screenshot](session_enumerator.png)
 
@@ -9,49 +10,59 @@ Designed for educational use, CTF challenges, and controlled security testing.
 
 ## Overview
 
-`session_enumerator` targets applications that rely on predictable or insecure session identifiers.
-Instead of brute-forcing credentials, it tests possible session values directly to identify authenticated or privileged sessions.
-
-This technique is commonly applicable when:
-- Session IDs are numeric or low-entropy
+`session_enumerator` targets applications that rely on weak or deterministic session identifiers.
+Instead of attacking authentication directly, it attempts to reuse or predict session IDs that may grant elevated access (e.g., admin sessions).
+This class of vulnerability commonly appears when:
+- Session IDs are sequential or low-entropy
+- Session values are derived from predictable input
 - The application trusts client-supplied session identifiers
-- Authentication state is tied directly to the session ID
-The tool was developed while solving OverTheWire Natas Level 18, where the application relied on predictable PHP session IDs.
 
 ---
 
 ## How It Works
 
-Sends HTTP requests using a supplied authentication context.
-- Iterates through a range of possible session identifiers.
-- Injects each candidate as a session cookie.
-- Detects successful authentication by matching a known response string.
-- Stops when a valid session is discovered.
-The approach avoids brute-forcing credentials and instead exploits flawed session management logic.
+The tool performs the following steps:
+- Iterates through a range of candidate session identifiers
+- Injects each value as a session cookie
+- Sends an authenticated HTTP request
+- Inspects the response for a success indicator
+- Stops immediately when a valid session is discovered
+This avoids password brute-forcing and instead exploits flawed session management logic.
+
+### Supported Session Modes
+
+| Mode        | Description                                          |
+| ----------- | ---------------------------------------------------- |
+| `numeric`   | Sequential numeric session IDs (e.g. `1`, `2`, `3`)  |
+| `hex-admin` | Hex-encoded session values derived from `<id>-admin` |
+
+Additional modes can be added easily.
 
 ---
 
 ## Usage
 
 ```
-python3 session_enumerator.py \
-  <url> \
-  <username> \
-  <password> \
-  [options]
-
+python session_enumerator.py \
+  --url http://target.example.com \
+  --user username \
+  --password password \
+  --mode numeric
 ```
 ---
 
-## Arguments
+## Command-Line Options
 
-| Option          | Description                                          |
-| --------------- | ---------------------------------------------------- |
-| `--cookie-name` | Name of the session cookie (default: PHPSESSID)      |
-| `--start`       | Starting session ID (default: 1)                     |
-| `--end`         | Ending session ID (default: 640)                     |
-| `--match`       | Response string indicating successful authentication |
-| `--delay`       | Delay between requests (seconds)                     |
+| Option       | Description                                          |
+| ------------ | ---------------------------------------------------- |
+| `--url`      | Target application URL                               |
+| `--user`     | HTTP authentication username                         |
+| `--password` | HTTP authentication password                         |
+| `--mode`     | Session generation mode (`numeric`, `hex-admin`)     |
+| `--start`    | Starting session ID (default: `1`)                   |
+| `--end`      | Ending session ID (default: `640`)                   |
+| `--delay`    | Delay between requests in seconds                    |
+| `--match`    | Response string indicating successful authentication |
 
 ---
 
