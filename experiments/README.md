@@ -31,6 +31,9 @@ Stealth SSH access using a knock sequence to temporarily open the SSH port; incl
 ### [session_enumerator/](session_enumerator/)
 A lightweight Python utility for enumerating predictable session identifiers in web applications. Designed for educational use, CTF challenges, and controlled security testing.
 
+## [session_injector/}(session_injector/)
+Targets applications that trust user-influenced session storage and illustrates how session poisoning can lead to full authentication bypass.
+
 ### [ssh-shared-tmux/](ssh-shared-tmux/)
 Bash scripts to open an SSH port, start an SSH server, and create a shared `tmux` session for collaborative terminal access. Includes a disconnect script to stop SSH and close the port.
 
