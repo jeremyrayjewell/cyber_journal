@@ -2,7 +2,7 @@
 **Course by John Christopher**
 
 * **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
-* **Section:** 1 – Performing Hands-On Activities
+* **Section:** 2 – Performing Hands-On Activities
 * **Date:** 2026-01-09
 * **Notes Author:** Jeremy Ray Jewell
 
