@@ -1,18 +1,17 @@
-# Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS
-## by John Christopher  
-## Section 3 – Manage organizational and client access settings in Exchange Online
 
-**Date:** 2026-01-09 
-[Notes on the Udemy course **Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS** by  **John Christopher**](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)  
+# Microsoft 365 Messaging Admin Exchange Online
+**Course by John Christopher**
+
+* **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
+* **Section:** 3 – Manage organizational and client access settings in Exchange Online
+* **Date:** 2026-01-09
+* **Notes Author:** Jeremy Ray Jewell
+
 ---
 
 ## Overview  
 
-Section 3 focuses on **controlling visibility, access, and sharing behavior in Exchange Online**. It moves beyond basic mailbox setup into how organizations **structure address visibility**, **segregate users**, **support offline access**, and **secure collaboration**—both internally and with external partners.
-
-The section explains how Exchange dynamically builds and manages address data through the **Global Address List (GAL)**, how that data can be **filtered and segmented** using **Address Book Policies (ABPs)**, and how users continue working through **Offline Address Books (OABs)** when disconnected. It also covers **external sharing controls** (organization-wide and per-user), **Outlook on the Web (OWA) policies** for browser-based access control, and the **practical realities of managing all of this almost entirely through PowerShell**.
-
-Overall, this section emphasizes **architecture, governance, and access control**, showing how Exchange Online scales from a single directory into a **multi-organization, policy-driven environment** without spinning up separate tenants.
+Section 3 covers visibility, access, and governance in Exchange Online. It focuses on how organizations manage user discovery and secure collaboration across internal and external environments.
 
 ---
 
@@ -193,7 +192,7 @@ Overall, this section emphasizes **architecture, governance, and access control*
 	- OAB administration is PowerShell-driven  
 	- Understanding cmdlet usage is more important than memorizing syntax  
 
-—
+---
 
 ## Module 3.5: Manage Address Book Policies (ABPs)
 
