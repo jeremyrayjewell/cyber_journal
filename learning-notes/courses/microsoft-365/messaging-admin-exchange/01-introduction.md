@@ -1,14 +1,11 @@
 # Microsoft 365 Messaging Admin: Exchange Online
 **Course by John Christopher**
 
-**Metadata**
 * **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
 * **Section:** 1 – Introduction
 * **Date:** 2026-01-09
 * **Notes Author:** Jeremy Ray Jewell
 
-**Date:** 2026-01-09 
-[Notes on the Udemy course **Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS** by  **John Christopher**](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)  
 ---
 
 ## Overview  
