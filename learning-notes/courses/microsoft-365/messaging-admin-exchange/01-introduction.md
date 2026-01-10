@@ -1,6 +1,11 @@
-# Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS
-## by John Christopher  
-## Section 1 – Introduction  
+# Microsoft 365 Messaging Admin: Exchange Online
+**Course by John Christopher**
+
+**Metadata**
+* **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
+* **Section:** 1 – Introduction
+* **Date:** 2026-01-09
+* **Notes Author:** Jeremy Ray Jewell
 
 **Date:** 2026-01-09 
 [Notes on the Udemy course **Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS** by  **John Christopher**](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)  
@@ -19,8 +24,6 @@ Rather than teaching Exchange Online in isolation, this section ensures a clear 
 **Learning Objectives:**  
 - Understand the instructional approach and structure of the course  
 - Identify the hands-on learning methods used throughout the course  
-- Recognize the availability of simulations, labs, and instructor support  
-- Set expectations for ongoing updates and real-world applicability  
 
 **Key Topics:**  
 - Interactive, browser-based simulations that guide learners through administrative tasks  
