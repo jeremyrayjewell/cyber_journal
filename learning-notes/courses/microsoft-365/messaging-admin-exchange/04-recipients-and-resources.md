@@ -1,16 +1,16 @@
-# Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS
-## by John Christopher  
-## Section 4 – Manage recipients and resources
+# Microsoft 365 Messaging Admin Exchange Online
+**Course by John Christopher**
 
-**Date:** 2026-01-09 
-[Notes on the Udemy course **Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS** by  **John Christopher**](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)  
+* **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
+* **Section:** 4 – Manage recipients and resources
+* **Date:** 2026-01-09
+* **Notes Author:** Jeremy Ray Jewell
+
 ---
 
 ## Overview  
 
-Section 4 focuses on **how Exchange Online represents people, roles, and resources as directory-backed objects**, and how those objects are managed, licensed, and delegated. Instead of treating email as a single mailbox-per-user concept, this section shows how Exchange uses **different recipient types** to support collaboration, scheduling, delegation, and external communication without unnecessary licensing or security risk.  
-The section explains how **mailboxes are created implicitly through licensing**, how **shared and resource mailboxes** enable role-based and scheduling workflows, and how **contacts, mail users, and groups** extend Exchange beyond the tenant boundary. It also covers **modern versus legacy constructs**, emphasizing Microsoft 365 groups over older distribution models and SharePoint/OneDrive over public folders.  
-Overall, Section 4 reframes Exchange administration as **identity- and policy-driven**, where the correct recipient type matters more than simply “creating an email address,” and where clean design decisions directly impact usability, security, and cost.
+Section 4 covers the management of Exchange Online recipients, resources, and identities. It explains how to choose the correct object type to support specific business workflows while optimizing for security, licensing, and usability.
 
 ---
 
