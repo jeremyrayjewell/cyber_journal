@@ -1,4 +1,4 @@
-# Microsoft 365 Messaging Admin Exchange Onlinee
+# Microsoft 365 Messaging Admin Exchange Online
 **Course by John Christopher**
 
 * **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
