@@ -1,16 +1,16 @@
-# Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS
-## by John Christopher  
-## Section 2 –  Performing Hands-On Activities
+# Microsoft 365 Messaging Admin Exchange Online
+**Course by John Christopher**
 
-**Date:** 2026-01-09 
-[Notes on the Udemy course **Microsoft 365 Messaging Admin Exchange Online Course w/ SIMS** by  **John Christopher**](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)  
+* **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
+* **Section:** 1 – Performing Hands-On Activities
+* **Date:** 2026-01-09
+* **Notes Author:** Jeremy Ray Jewell
+
 ---
 
 ## Overview  
 
-Section 2 focuses on enabling **hands-on practice** with Microsoft 365 and Exchange Online in a safe, controlled way. Rather than assuming access to a production tenant, this section explains how to use **simulations** and **trial subscriptions** to build practical experience without risk. It also clarifies common points of confusion around assignments, licensing, portals, and regional limitations.
-
-The emphasis is on removing friction: understanding what is *required* versus *optional*, how to avoid breaking real environments, and how to continue learning even when full lab access is unavailable.
+Section 2 explains how to practice with Microsoft 365 and Exchange Online safely. It focuses on using **simulations** and **trial subscriptions** so you can gain hands-on experience without risking a real production environment.
 
 ---
 
@@ -48,7 +48,7 @@ The emphasis is on removing friction: understanding what is *required* versus *o
 - Microsoft Teams is not enabled by default but can be activated separately as a 30-day trial  
 - Lab setup is required to fully follow along with hands-on portions of the course  
 
-—
+---
 
 ## Module 2.3: Creating a Trial Microsoft 365 / Azure Account  
 
