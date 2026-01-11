@@ -4,7 +4,7 @@
 
 * **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
 * **Section:** 3 – Manage organizational and client access settings in Exchange Online
-* **Date:** 2026-01-09
+* **Date:** 2026-01-10
 * **Notes Author:** Jeremy Ray Jewell
 
 ---
