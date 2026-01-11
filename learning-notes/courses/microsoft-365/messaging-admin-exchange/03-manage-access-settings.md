@@ -85,7 +85,7 @@ Section 3 covers visibility, access, and governance in Exchange Online. It focus
 	- Role changes may take up to ~30 minutes to propagate  
 - Exchange Online PowerShell setup:
 	- PowerShell is required; no full graphical management exists  
-	- Execution policy may need to be set to allow scripts  
+	- Execution policy may need to be set to allow scripts (course recommends `Unrstricted` but `RemoteSigned` should be enough)  
 	- Install and import the `ExchangeOnlineManagement` module  
 	- Connect using `Connect-ExchangeOnline`  
 - GAL management via PowerShell:
