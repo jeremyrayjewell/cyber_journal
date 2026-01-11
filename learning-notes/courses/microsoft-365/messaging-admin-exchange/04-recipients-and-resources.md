@@ -3,7 +3,7 @@
 
 * **Course Link:** [https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course](https://www.udemy.com/course/microsoft-365-messenger-administrator-exchange-course)
 * **Section:** 4 – Manage recipients and resources
-* **Date:** 2026-01-09
+* **Date:** 2026-01-10
 * **Notes Author:** Jeremy Ray Jewell
 
 ---
@@ -24,54 +24,53 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 - Recipients and resources overview:
 	- Exchange Online recipients and resources are objects that can receive or relay email  
 	- These objects define how email delivery, scheduling, and collaboration operate  
-- User mailboxes:
+- **User mailboxes**:
 	- Standard individual mailboxes tied to user accounts  
 	- Support email, calendar, contacts, and tasks  
-	- Require an Exchange license  
-- Shared mailboxes:
+	- *Require* an Exchange license  
+- **Shared mailboxes**:
 	- Designed for multiple users (e.g., helpdesk@company.com)  
-	- Do not require their own Exchange license  
-	- Accessed by licensed user mailboxes  
-- Mail contacts:
+	- *Do not require* their own Exchange license  
+	- Accessed by *licensed* user mailboxes  
+- **Mail contacts**:
 	- Represent external email addresses inside the GAL  
 	- Do not have user accounts or mailboxes in the tenant  
 	- Used for partners, vendors, or frequent external contacts  
-- Mail-enabled users:
+- **Mail-enabled users**:
 	- Have user accounts without Exchange mailboxes  
-	- Email is delivered to an external address  
+	- Email is delivered to an *external address*  
 	- Common for contractors or consultants  
-	- Do not require an Exchange license  
-- Room mailboxes:
-	- Represent physical rooms or meeting spaces  
+	- *Do not require* an Exchange license  
+- **Room mailboxes**:
+	- Represent *physical rooms* or *meeting spaces*  
 	- Used for scheduling and availability management  
 	- Naming conventions vary by organization  
-- Equipment mailboxes:
+- **Equipment mailboxes**:
 	- Represent shared equipment (e.g., projectors)  
 	- Used for reservation and scheduling  
 	- Prevents conflicts over shared resources  
-- Distribution groups:
-	- Basic email distribution lists  
+- **Distribution groups**:
+	- Basic email *distribution lists*  
 	- Deliver messages to all members  
 	- No calendars, permissions, Teams, or SharePoint integration  
-- Mail-enabled security groups:
+- **Mail-enabled security groups**:
 	- Receive email like distribution groups  
 	- Can also be assigned permissions to resources  
 	- Do not create Teams or SharePoint sites  
-- Dynamic distribution groups:
-	- Membership determined by attribute-based rules  
+- **Dynamic distribution groups**:
+	- Membership determined by *attribute-based rules*  
 	- Automatically updated as user attributes change  
-	- Considered a legacy approach in modern environments  
-- Microsoft 365 groups:
-	- Modern, recommended group type  
+	- Considered a *legacy approach* in modern environments  
+- **Microsoft 365 groups**:
+	- Modern, *recommended* group type  
 	- Support email, shared calendars, Teams, SharePoint, and Planner  
 	- Designed for collaboration and project-based work  
-- Mail-enabled public folders:
-	- Legacy collaboration feature from early Exchange versions  
+- **Mail-enabled public folders**:
+	- *Legacy* collaboration feature from early Exchange versions  
 	- Still supported but no longer actively developed  
-	- Microsoft recommends SharePoint and OneDrive instead  
+	- Microsoft recommends *SharePoint and OneDrive instead*  
 
-
-—
+---
 
 ## Module 4.2: Manage User Mailboxes
 **Learning Objectives:**  
@@ -85,7 +84,7 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Mailboxes are automatically provisioned when a user is assigned an Exchange-capable license  
 	- This replaces on-premises mailbox creation via EAC or Active Directory  
 - Licensing dependency:
-	- A valid Exchange Online license is required for every user mailbox  
+	- A valid Exchange Online license is *required* for every user mailbox  
 	- Licenses may be Exchange Online–only or bundled in Microsoft 365 plans  
 	- Common options include Exchange Online Plan 1/2, Microsoft 365 Business, E3, and E5  
 	- License availability and pricing vary and change over time  
@@ -93,8 +92,8 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Once a license is assigned, the mailbox is created automatically  
 	- Users can immediately access email via Outlook or Outlook on the web  
 - Shared mailbox exception:
-	- Shared mailboxes can be created directly without licenses  
-	- Shared mailboxes rely on licensed users for access  
+	- Shared mailboxes can be created directly *without* licenses  
+	- Shared mailboxes *rely on* licensed users for access  
 - Managing existing mailboxes:
 	- Exchange Admin Center → Recipients → Mailboxes  
 	- Selecting a mailbox exposes configuration tabs  
@@ -123,13 +122,13 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Recipient limits and mail tips  
 - Alternative creation methods:
 	- Users created via PowerShell also receive mailboxes when licensed  
-	- Licensing remains the only required trigger for mailbox creation  
+	- Licensing remains the *only* required trigger for mailbox creation  
 
-—
+---
 
 ## Module 4.3: Manage Resource Mailboxes
 **Learning Objectives:**  
-- Understand what resource mailboxes are and when they are used  
+- Understand what **resource mailboxes** are and when they are used  
 - Learn how to create and configure room and equipment mailboxes  
 - See how users interact with resource mailboxes in Outlook  
 
@@ -181,7 +180,7 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Consistent behavior across admin and user interfaces  
 	- Essential for structured scheduling in Exchange environments  
 
-—
+---
 
 ## Module 4.4: Manage Shared Mailboxes
 **Learning Objectives:**  
@@ -236,7 +235,7 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Easy to configure and manage  
 	- Widely used for role-based or team-based email workflows  
 
-—
+---
 
 ## Module 4.5: Create and Manage Mail Contacts and Mail Users
 **Learning Objectives:**  
@@ -289,7 +288,7 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Mail users bridge identity access with external email delivery  
 	- Both simplify collaboration without mailbox licensing  
 
-—
+---
 
 ## Module 4.6: Manage Groups, Including Distribution Lists, Microsoft 365 Groups, and More
 
@@ -355,7 +354,7 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Legacy group types still exist for backward compatibility  
 	- Dynamic groups reduce administrative overhead but require careful planning  
 
-—
+---
 
 ## Module 4.7: Manage mailbox permissions, including delegation
 
@@ -394,7 +393,7 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Delegation avoids shared credentials and improves auditability  
 	- Choosing between Send As and Send on Behalf is often a policy decision  
 
-—
+---
 
 ## Module 4.8: Manage mailbox mail flow settings
 
@@ -436,7 +435,7 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Useful for targeted restrictions without global impact  
 	- Changes may take a short time to propagate  
 
-—
+---
 
 ## Module 4.9: Create and manage public folders  
 **+ Simulation: Create an HR Department Dynamic Distribution Group**
