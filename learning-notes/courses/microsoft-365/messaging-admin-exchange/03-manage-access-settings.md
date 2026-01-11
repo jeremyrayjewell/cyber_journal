@@ -18,14 +18,14 @@ Section 3 covers visibility, access, and governance in Exchange Online. It focus
 ## Module 3.1: Understanding the Global Address List (GAL)
 
 **Learning Objectives:**  
-- Understand what the Global Address List (GAL) is and its role in Exchange  
-- Identify the types of recipient objects included in the GAL  
-- Distinguish between the GAL, custom address lists, and offline address books  
+- Understand what the **Global Address List (GAL)** is and its role in Exchange  
+- Identify the types of *recipient objects* included in the **GAL**  
+- Distinguish between the **GAL**, **custom address lists**, and **offline address books**  
 - Understand visibility, filtering, and management considerations  
 
 **Key Topics:**  
 - Definition and purpose:
-	- The Global Address List (GAL) is a **dynamically generated directory** of mail-enabled recipient objects  
+	- The **Global Address List (GAL)** is a **dynamically generated directory** of *mail-enabled recipient objects*  
 	- Includes users, contacts, groups, rooms, and other mail-enabled objects  
 	- Used by Outlook, Outlook on the web, and other Exchange clients for address resolution  
 - Dynamic nature:
@@ -47,15 +47,15 @@ Section 3 covers visibility, access, and governance in Exchange Online. It focus
 - Management and administration:
 	- GAL creation and modification require **Exchange Online PowerShell**  
 	- Limited graphical management options  
-	- Unique names are required for multiple GALs  
+	- Unique names are required for multiple GALs
 - Default GAL views:
-	- All Users  
-	- All Groups  
+  	- All Rooms
+	- All Users
+   	- All Distribution Lists  
 	- All Contacts  
-	- All Rooms  
-	- Distribution Lists  
-	- Public Folders  
-	- Offline Global Address List  
+	- All Groups  
+	- Offline Global Address List
+    - Public Folders  
 - Filtering and privacy:
 	- Certain recipients can be hidden or restricted from general visibility  
 	- Used for executives, service accounts, or sensitive roles  
