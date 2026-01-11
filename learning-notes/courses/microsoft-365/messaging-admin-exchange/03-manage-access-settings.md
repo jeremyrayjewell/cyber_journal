@@ -113,7 +113,6 @@ Section 3 covers visibility, access, and governance in Exchange Online. It focus
 
 **Learning Objectives:**  
 - Understand what an Offline Address Book (OAB) is and why it exists  
-- Identify when and how OABs are downloaded and updated  
 - Recognize scenarios that trigger full OAB downloads in Outlook  
 
 **Key Topics:**  
@@ -128,23 +127,20 @@ Section 3 covers visibility, access, and governance in Exchange Online. It focus
 	- Admins decide which address lists are available offline  
 	- By default, the GAL is associated with the OAB  
 - Update behavior:
-	- OABs are generated and updated automatically (approximately every 8 hours)  
+	- OABs are generated and updated automatically (~ every 8 hours)  
 	- Outlook checks for changes during send/receive operations  
 - Manual download:
 	- Outlook → File → Account Settings → Download Address Book  
 	- Users can download updates or select specific address books  
-- Full OAB download triggers:
+- *Full OAB download triggers*:
 	- No existing OAB on the client (first-time setup)  
 	- Version mismatch between server and client OAB  
 	- Missing OAB files on the client  
 	- Previous full download failure  
 	- Multiple MAPI profiles using Cached Exchange Mode on the same client  
 - Supporting concepts:
-	- MAPI (Messaging Application Programming Interface) handles Exchange communication  
-	- Cached Exchange Mode stores mail and address data locally for offline use  
-- Exam and practical focus:
-	- Know the acronym **OAB**  
-	- Understand its purpose, benefits, and common download conditions  
+	- **MAPI (Messaging Application Programming Interface)** handles Exchange communication  
+	- **Cached Exchange Mode** stores mail and address data locally for offline use  
 
 ---
 
@@ -353,25 +349,16 @@ Section 3 covers visibility, access, and governance in Exchange Online. It focus
 
 **Learning Objectives:**  
 - Understand how to reaccess completed Udemy simulations  
-- Learn the exact steps to reopen assignment instructions and simulation links  
 
 **Key Topics:**  
 - Udemy limitation:
 	- Once an assignment is completed, Udemy does **not** provide a visible “restart” option  
-- Common confusion:
-	- Returning to a completed assignment shows a summary screen with no obvious way to relaunch the simulation  
 - How to redo a simulation:
 	1. Open the completed assignment  
 	2. Click **Go to Summary** (lower-left)  
 	3. Click **Back to Assignment** (lower-right)  
 	4. Click **Instructions** (upper-left)  
 	5. Use the simulation link again  
-- Key takeaway:
-	- The simulation link is always accessible via the **Instructions** view  
-	- Simulations can be repeated unlimited times using this method  
-- Course-wide relevance:
-	- This applies to **all** assignments across the instructor’s courses  
-	- Assignment names may differ, but the process is identical  
 
 ---
 
@@ -386,9 +373,7 @@ Section 3 covers visibility, access, and governance in Exchange Online. It focus
 - **Sharing policies** allow controlled calendar and information sharing with external domains, either globally or per mailbox.
 - **Outlook on the Web (OWA) policies** restrict browser-based email functionality and attachment access, especially useful in shared or untrusted environments.
 - Policy changes often **do not apply immediately**; propagation delays (15–45 minutes) are normal and expected.
-- Udemy simulations can always be redone—even after completion—by navigating back through **Summary → Assignment → Instructions**.
 - From an admin perspective, **Exchange Online is policy-first**: visibility, access, and collaboration are shaped by configuration—not user choice.
-
 
 ---
 
