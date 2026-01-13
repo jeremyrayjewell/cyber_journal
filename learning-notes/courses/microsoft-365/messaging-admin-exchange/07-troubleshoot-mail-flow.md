@@ -9,7 +9,7 @@
 ---
 
 ## Overview  
-
+Section 7 focuses on troubleshooting mail flow in Exchange Online using Microsoft’s built-in diagnostic tools. It teaches how to detect abnormal mail behavior with alert policies, trace and investigate individual messages, analyze message headers and NDRs for root causes, and validate connectivity using Microsoft’s Remote Connectivity Analyzer. Together, these tools form a complete workflow for diagnosing delivery failures, security issues, and configuration errors in real-world environments.
 
 ---
 
@@ -293,7 +293,18 @@
 ---
 
 ## KEY TAKEAWAYS
-
+- Alert policies provide early warning for dangerous or abnormal mail flow behavior.  
+- Message Trace is the primary tool for tracking exactly what happened to an email.  
+- Message headers reveal authentication, routing, and security validation details.  
+- NDRs are structured diagnostics that directly point to delivery failure causes.  
+- Microsoft documentation is essential for decoding NDR status codes.  
+- The Remote Connectivity Analyzer validates client, SMTP, and DNS connectivity from Microsoft’s infrastructure.  
+- Troubleshooting Exchange Online is a layered process:
+  - Detect (alerts)  
+  - Track (message trace)  
+  - Validate (headers + NDRs)  
+  - Test (connectivity analyzer)  
+- Together, these tools provide full visibility into mail delivery, security enforcement, and transport reliability.
 
 ---
 
