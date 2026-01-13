@@ -475,9 +475,7 @@ Section 4 covers the management of Exchange Online recipients, resources, and id
 	- Microsoft recommends **SharePoint and OneDrive** for collaboration and file sharing  
 
 **Assignment: Simulation – Create an HR Department Dynamic Distribution Group**  
-- Task:
-	- Create a dynamic distribution group for the HR department  
-	- Assign *John Christopher* as the group owner  
+- Create a dynamic distribution group for the HR department  
 - Key concepts reinforced:
 	- Dynamic membership based on user attributes (e.g., Department = HR)  
 	- Automatic membership updates (evaluated periodically)  
