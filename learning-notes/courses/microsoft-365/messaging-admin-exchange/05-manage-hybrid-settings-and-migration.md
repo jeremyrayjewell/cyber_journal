@@ -62,7 +62,7 @@ Section 5 explains how hybrid Exchange enables mailbox migrations and coexistenc
 
 **Key Topics:**  
 - Migration entry point:
-	- portal.microsoft.com → Show All → Exchange  
+	- admin.microsoft.com → Show All → Exchange  
 	- Exchange Admin Center → Migration  
 	- Migration Batches is the primary interface for migrations  
 - Modern migration workflow:
@@ -77,7 +77,7 @@ Section 5 explains how hybrid Exchange enables mailbox migrations and coexistenc
 		- Migrate **from** Exchange Online  
 - Migration types available:
 	- Remote move migration  
-	- Staged migration  
+	- Staged migration (retired since course was made)
 	- Cutover migration  
 	- Cross-tenant migration  
 	- Google Workspace migration  
@@ -137,14 +137,22 @@ Section 5 explains how hybrid Exchange enables mailbox migrations and coexistenc
 	- Does not require creating new mailboxes before importing data  
 	- Fastest and cleanest migration method  
 	- Requires modern Exchange versions (e.g., Exchange 2016/2019)  
-- Staged migration:
+- Staged migration (since retired):
 	- Used when migrating mailboxes gradually over time  
 	- Recommended for:
 		- Exchange 2003  
 		- Exchange 2007  
 		- Environments with **more than 2000 mailboxes**  
-	- Mailboxes are migrated in groups  
-	- Allows partial cloud adoption while keeping on-prem Exchange active  
+	- Microsoft’s modern migration model assumes:
+		- Exchange 2010+ on-prem
+		- Hybrid configuration
+		- Remote Move migrations
+	- Remote Move completely replaces what staged migration used to do, but better:
+		- It moves existing mailboxes directly
+		- It supports true hybrid coexistence
+		- It allows partial migrations
+		- It keeps identities intact
+		- It is more reliable and more secure
 - Cutover migration:
 	- Moves **all mailboxes at once**
 	- Recommended when:
