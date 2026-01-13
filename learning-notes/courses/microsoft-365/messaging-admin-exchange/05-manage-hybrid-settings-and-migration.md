@@ -49,9 +49,8 @@ Section 5 explains how hybrid Exchange enables mailbox migrations and coexistenc
 	- In the cloud, “endpoints” represent how Exchange Online authenticates to and connects with the on-prem Exchange environment
 	- Endpoints depend on the on-prem virtual directory/URL configuration being known and correct
 
-
-
 ---
+
 ## Module 5.2: Hybrid Migrations using the Exchange Admin Center in Exchange Online
 **Learning Objectives:**  
 - Understand where and how hybrid migrations are initiated in Exchange Online  
@@ -103,7 +102,6 @@ Section 5 explains how hybrid Exchange enables mailbox migrations and coexistenc
 	- All Exchange hybrid migrations begin in the Exchange Admin Center  
 	- Migration Batches represent the operational unit of mailbox movement  
 	- Choosing the correct migration type is the most important decision point  
-
 
 ---
 
