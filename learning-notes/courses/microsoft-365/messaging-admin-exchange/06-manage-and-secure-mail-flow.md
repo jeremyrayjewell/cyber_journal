@@ -283,18 +283,20 @@ Section 6 explains how Exchange Online controls and secures email using connecto
   - SPF and DKIM records do not activate instantly  
   - Expect delays before validation succeeds  
   - Always verify DNS before enabling DKIM  
-- **Mail Flow Rule Assignment**
+- **Big Idea**
+  - SPF authorizes sending servers  
+  - DKIM proves message integrity  
+  - DMARC enforces policy and reporting  
+  - Mail flow rules enforce organizational email behavior
+ 
+### Assignment: SIMULATION  
+**Mail Flow Rule Assignment**
   - Create a rule that:
     - Applies when recipient is **outside the organization**
     - Action: **Block the message**
     - Include rejection reason (example: “No external emailing allowed”)
     - Enable and enforce the rule  
   - Confirms understanding of transport rules and enforcement logic  
-- **Big Idea**
-  - SPF authorizes sending servers  
-  - DKIM proves message integrity  
-  - DMARC enforces policy and reporting  
-  - Mail flow rules enforce organizational email behavior  
 
 ---
 
