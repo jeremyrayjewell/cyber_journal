@@ -8,27 +8,13 @@
 
 ---
 
-## Overview  
-
-
----
-
-## Module 12.1: 
-**Learning Objectives:**  
-**Key Topics:**  
+## Module 12.1: Getting your Udemy certificate for this course  
+- Know how to receive the Udemy certificate  
 
 ---
 
-## Module 12.2: 
-**Learning Objectives:**  
-**Key Topics:**  
-
----
-
-
-## KEY TAKEAWAYS
-
-
+## Module 12.2: BONUS Lecture  
+- Know where to find the instructor’s other courses and discounts  
 
 ---
 
