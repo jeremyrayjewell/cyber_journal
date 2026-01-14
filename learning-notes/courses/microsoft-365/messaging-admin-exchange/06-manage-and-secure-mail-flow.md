@@ -27,10 +27,10 @@ Section 6 explains how Exchange Online controls and secures email using connecto
 		- Partner organizations  
 		- Devices and applications (printers, scanners, apps)  
 	- Provide authenticated, encrypted mail routing  
-	- Prevent graylisting by establishing trusted mail paths  
+	- Prevent *graylisting* by establishing trusted mail paths  
 - **When connectors are commonly needed:**  
 	- Hybrid Exchange environments (on-prem + Exchange Online coexistence)  
-	- Routing mail through Exchange Online Protection and Defender  
+	- Routing mail through **Exchange Online Protection (EOP)** and **Defender**  
 	- Secure mail exchange with partner companies  
 	- Relaying mail from devices or applications  
 	- Enforcing controlled mail paths instead of open internet delivery  
@@ -38,8 +38,7 @@ Section 6 explains how Exchange Online controls and secures email using connecto
 	- Normal internet email flow works without connectors  
 	- Connectors are only needed when you want control, security, or forced routing  
 - **Connector improvements:**  
-	- Inbound and outbound handled automatically  
-	- No longer configured as separate objects  
+	- Inbound and outbound handled automatically (no longer configured as separate objects)  
 	- Wizard checks whether a connector is actually needed  
 - **Connector authentication:**  
 	- Supports TLS encryption  
