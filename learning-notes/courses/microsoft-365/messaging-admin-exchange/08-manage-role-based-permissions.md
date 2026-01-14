@@ -36,7 +36,7 @@ Section 8 covers how Exchange Online uses RBAC to control permissions, how PIM a
     - Central model used by Azure and Microsoft 365  
 - **Why RBAC Is Better Than Group-Based Security:**  
   - Roles clearly document all permissions they contain  
-  - Permissions are stored directly in the role definition (JSON-based)  
+  - Permissions are stored directly in the role definition (JSON-based, which is JavaScript although the course mistakenly refers to it as Java)  
   - Eliminates “permission sprawl” caused by unmanaged groups  
   - Makes auditing and security reviews far easier  
 - **Role Assignment Model:**  
