@@ -39,7 +39,7 @@ Section 6 explains how Exchange Online controls and secures email using connecto
 	- Connectors are only needed when you want control, security, or forced routing  
 - **Connector improvements:**  
 	- Inbound and outbound handled automatically (no longer configured as separate objects)  
-	- Wizard checks whether a connector is actually needed  
+	- Wizard checks whether a connector is actually needed (inbound/outbound manual setup is no loonger needed) 
 - **Connector authentication:**  
 	- Supports TLS encryption  
 	- Can use:  
@@ -82,9 +82,7 @@ Section 6 explains how Exchange Online controls and secures email using connecto
 	- Can block, redirect, modify, or monitor messages  
 	- Apply organization-wide or to specific users, domains, or conditions  
 	- Enforce security, compliance, and policy requirements  
-- **Where rules are managed:**  
-	- Microsoft 365 Admin Center → Exchange Admin Center  
-	- Mail flow → Rules  
+- **Where rules are managed:** Microsoft 365 Admin Center → Exchange Admin Center → Mail flow → Rules  
 - **Rule creation options:**  
 	- Use built-in templates (disclaimers, moderation, spam bypass, etc.)  
 	- Or create fully custom rules  
