@@ -9,7 +9,7 @@
 ---
 
 ## Overview  
-
+Section 9 focused on how Microsoft 365 Defender turns Exchange Online and Microsoft 365 into an active security platform instead of just a mail system. Everything is policy-driven: links, attachments, spam, phishing, malware, and quarantine behavior are all controlled through centralized threat policies that apply across email, files, and collaboration tools.
 
 ---
 
@@ -236,34 +236,276 @@
 
 ---
 
-## Module 9.5: Configure and manage anti-malware policies
+## Module 9.5: Configure and manage anti-malware policies  
 **Learning Objectives:**  
+- Understand how anti-malware policies protect Exchange Online  
+- Know what Zero-Hour Auto Purge (ZAP) does  
+- Configure quarantine behavior for malware  
+- Manage admin and user notifications  
+
 **Key Topics:**  
+- **Where Anti-Malware Policies Live:**  
+  - `admin.microsoft.com` → Security → Microsoft 365 Defender  
+  - Email & collaboration → Policies & rules → Threat policies → Anti-malware  
+- **Default Anti-Malware Policy:**  
+  - Enabled by default  
+  - Protects all mailboxes unless overridden  
+- **Common Attachment Types Filter:**  
+  - Blocks risky attachment file types  
+  - Basic protection  
+  - Defender for Office 365 **Safe Attachments** is more powerful and preferred  
+- **Zero-Hour Auto Purge (ZAP):**  
+  - Retroactively removes malware or spam already delivered  
+  - If a message is later identified as malicious:
+    - It is pulled from all mailboxes automatically  
+    - Moved to Junk or Quarantine  
+  - Works even after initial delivery  
+  - One of the most important malware protection features  
+- **Admin Notifications:**  
+  - Notify admins when malware is detected  
+  - Separate controls for:
+    - Internal mail  
+    - External mail  
+  - Notifications are customizable  
+- **Custom User Notifications:**  
+  - Optional alerts to users when messages are blocked or quarantined  
+- **Quarantine Policy Integration:**  
+  - Malware messages are quarantined automatically  
+  - Can be configured so:
+    - Only admins can release  
+    - Or users can request release  
+  - Malware detection always overrides normal release permissions  
+- **Custom Anti-Malware Policies:**  
+  - Can be created for:
+    - Specific users  
+    - Groups  
+    - Domains  
+  - Useful for:
+    - Higher-risk departments  
+    - Testing new policies  
+- **Summary:**  
+  - Anti-malware policies provide:
+    - Attachment filtering  
+    - Automatic post-delivery cleanup (ZAP)  
+    - Admin visibility and control  
+    - Quarantine enforcement  
 
 ---
 
-## Module 9.6: Configure and manage Safe Attachments
+## Module 9.6: Configure and manage Safe Attachments  
 **Learning Objectives:**  
+- Understand what Safe Attachments does and how it works  
+- Know how the detonation chamber protects against malicious files  
+- Configure Safe Attachments policies  
+- Understand policy actions: Monitor, Block, Replace  
+- Understand Dynamic Delivery and why it matters  
+
 **Key Topics:**  
+- **What Safe Attachments Is:**  
+  - Part of Microsoft Defender for Office 365  
+  - Scans attachments before users can access them  
+  - Uses a **detonation chamber** (sandbox VM) to:
+    - Open the file  
+    - Observe behavior  
+    - Detect malicious activity (code execution, system changes, etc.)  
+- **Built-in Policy:**  
+  - Applies to all users by default  
+  - Provides baseline protection  
+  - Can be supplemented with custom policies  
+- **Creating a Custom Policy:**  
+  - Example: *Sales Safe Attachments*  
+  - Scope it to a group (e.g., Sales)  
+  - Allows different departments to have different protection levels  
+- **Policy Actions:**  
+  - **Off:**  
+    - No scanning performed  
+  - **Monitor:**  
+    - Delivers all attachments  
+    - Logs detection only  
+  - **Block:**  
+    - Blocks malicious attachments completely  
+  - **Replace:**  
+    - Removes the attachment  
+    - Delivers email with warning message  
+    - Being deprecated in favor of Block  
+- **Dynamic Delivery (Most Important Feature):**  
+  - Delivers the email immediately  
+  - Attachment appears later after scanning finishes  
+  - Prevents delays while the sandbox scan runs  
+  - Users see:
+    - “Attachment is being scanned and will be available shortly”  
+  - Solves user frustration caused by scanning latency  
+- **Redirect Options:**  
+  - Malicious attachments can be redirected to an admin mailbox  
+  - Useful for investigation and review  
+- **Scan Failure Handling:**  
+  - If scanning cannot complete:
+    - Apply configured action (Block/Quarantine)  
+    - Optionally notify administrators  
+- **Quarantine Integration:**  
+  - Detected malware attachments are quarantined  
+  - Controlled by quarantine policies  
+- **Deployment Timing:**  
+  - Policy changes can take time to apply  
+  - Up to 24 hours in worst case (usually much faster)  
+- **Why Safe Attachments Matters:**  
+  - Protects against:
+    - Zero-day malware  
+    - Weaponized documents  
+    - Unknown threats  
+  - Much stronger than basic attachment filtering  
 
 ---
 
-## Module 9.7: Configure and manage Safe Links
+## Module 9.7: Configure and manage Safe Links  
 **Learning Objectives:**  
+- Understand how Safe Links protects users from malicious URLs  
+- Configure Safe Links policies  
+- Know how URL rewriting and real-time scanning work  
+- Understand policy priority and conflict resolution  
+
 **Key Topics:**  
+- **What Safe Links Is:**  
+  - Part of Microsoft Defender for Office 365  
+  - Protects users from malicious links  
+  - Opens URLs inside a **detonation chamber** (sandbox VM with a browser)  
+  - Analyzes:
+    - Redirects  
+    - Downloads  
+    - Code execution  
+    - Malicious behavior  
+- **Built-In Policy:**  
+  - Provides default Safe Links protection  
+  - Applies tenant-wide unless overridden  
+- **Creating a Custom Policy:**  
+  - Example: *Sales Safe Links*  
+  - Scope to a group (e.g., Sales)  
+  - Allows different protection rules per department  
+- **Core Settings:**  
+  - **Enable Safe Links:**  
+    - Turns link protection on  
+    - URLs are rewritten by default  
+  - **Apply to internal email:**  
+    - Can scan links sent between internal users  
+  - **Real-time URL scanning:**  
+    - Checks links at click time, not just at delivery  
+  - **Wait for scan before delivery:**  
+    - Delays message until scanning completes (optional)  
+- **URL Rewriting:**  
+  - Replaces original URL with a Safe Links wrapper  
+  - Prevents users from seeing or copying the real link  
+  - Can exclude trusted domains:
+    - Example: `examlabpractice.com`  
+- **Click Behavior:**  
+  - Track user clicks on links  
+  - Block users from bypassing warnings  
+  - Prevent access to original malicious URLs  
+- **App Coverage:**  
+  - Works with:
+    - Email  
+    - Microsoft Teams  
+    - Other supported Microsoft 365 apps  
+- **Branding & Notifications:**  
+  - Warning pages can display:
+    - Organization branding  
+    - Custom warning text  
+  - Helps users trust alerts  
+- **Policy Priority:**  
+  - Lower number = higher priority  
+  - Used when a user belongs to multiple groups  
+  - Example:
+    - HR policy priority 0  
+    - Sales policy priority 1  
+    → HR policy overrides Sales  
+- **Why Safe Links Matters:**  
+  - Protects against:
+    - Phishing  
+    - Credential theft  
+    - Malicious redirects  
+    - Weaponized URLs  
 
 ---
 
-## Module 9.8: Configure and manage quarantine policies + Assignment 6: SIMULATION: Create a safe attachment policy for Sales with Dynamic Deliver
+## Module 9.8: Configure and manage quarantine policies + Assignment 6: SIMULATION – Create a Safe Attachments policy for Sales with Dynamic Delivery
 **Learning Objectives:**  
+- Understand what quarantine policies control  
+- Configure tenant allow/block rules  
+- Understand how quarantine access is managed  
+- Apply a Safe Attachments policy using Dynamic Delivery  
+
 **Key Topics:**  
+- **Tenant Allow / Block Rules:**  
+  - Block or allow:
+    - External domains  
+    - Spoofed sender pairs  
+    - Specific URLs  
+    - Specific file hashes  
+  - Used to immediately stop known threats  
+- **Email Authentication Settings:**  
+  - ARC (Authenticated Received Chain):  
+    - Preserves authentication across mail servers  
+  - DKIM:  
+    - Uses DNS + digital signatures to verify sender legitimacy  
+- **Advanced Threat Policies:**  
+  - Advanced delivery:
+    - Used for security operations and testing  
+  - Phishing simulation:
+    - Supports training and awareness campaigns  
+  - Enhanced filtering:
+    - Supports third-party mail gateways  
+- **Quarantine Policies:**  
+  - Control what users can do with quarantined messages  
+  - Options:
+    - **Limited access:**  
+      - Users can view messages  
+      - Cannot release them  
+    - **Custom access:**  
+      - Allow users to:
+        - Request release  
+        - Or directly release messages  
+  - Used by:
+    - Anti-phishing  
+    - Anti-spam  
+    - Anti-malware  
+    - Safe Attachments  
+- **Evaluation Mode:**  
+  - Test Defender policies  
+  - No impact on production  
+  - Used for safe configuration testing  
+
+### Assignment 6: SIMULATION  
+Create a Safe Attachments policy for **Sales** using **Dynamic Delivery** and redirect detections to:  
+`jc@examlabpractice.com`
+1. Go to:  
+   `admin.microsoft.com → Security → Policies & rules → Threat policies → Safe Attachments`
+2. Create a new policy:  
+   - Name: `Sales Safe Attachments`  
+   - Apply to group: `Sales`
+3. Settings:  
+   - Enable Safe Attachments  
+   - Enable **Dynamic Delivery**  
+   - Action: Block malicious attachments  
+   - Enable redirect:
+     - Redirect detected attachments to:
+       `jc@examlabpractice.com`
+4. Save the policy  
+5. Allow time for policy propagation (can take up to several hours)
 
 ---
 
 ## KEY TAKEAWAYS
-
-
-
+- Microsoft Defender for Office 365 protects **email, files, and collaboration**, not just inboxes.  
+- Security is enforced through **policies**, not manual review.  
+- **Safe Attachments** sandbox files before users open them.  
+- **Safe Links** sandbox URLs before users click them.  
+- **Dynamic Delivery** solves the delay problem caused by attachment scanning.  
+- **Anti-phishing** focuses on impersonation, spoofing, and credential theft.  
+- **Anti-spam** uses scoring, reputation, and bulk detection.  
+- **Anti-malware + ZAP** can remove threats even after delivery.  
+- **Quarantine policies** define who can see, release, or request messages.  
+- Priority rules decide which policy wins when users belong to multiple groups.  
+- Defender makes Microsoft 365 behave like a **security system**, not just a messaging platform.
+  
 ---
 
 **Notes Author:** Jeremy Ray Jewell  
