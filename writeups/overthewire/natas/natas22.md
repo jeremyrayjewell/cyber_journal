@@ -81,7 +81,7 @@ This returns:
 
     You are an admin. The credentials for the next level are:
     Username: natas23
-    Password: dIUQcI3uSus1JEOSSWRAEXBG8KbR8tRs
+    Password: <PASSWORD>
 
 No session manipulation, no privilege escalation, and no injection was required.  
 The server leaked the credentials in the same response that attempted to redirect the user.
