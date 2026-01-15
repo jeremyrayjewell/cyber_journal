@@ -72,7 +72,8 @@ This command performs the following generically:
 2. Captures the session identifier.
 3. Injects attacker-controlled key/value pairs into the session.
 4. Forces reuse of the same session identifier against the target endpoint.
-5. Detects privileged access and extracts protected credentials.
+5. Detects privileged access and extracts protected credentials./
+   
 The framework does not contain any challenge-specific logic. All behavior is controlled by command-line parameters, making it reusable for:
 - Single-application session poisoning
 - Cross-application session poisoning
