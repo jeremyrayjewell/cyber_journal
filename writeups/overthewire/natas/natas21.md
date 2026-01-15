@@ -2,7 +2,7 @@
 **Date:** 2026-01-14  
 
 ## Obfuscated password (ROT13)  
-``
+`q8ejTOy0Kfyt3o76hu3sRoFyaBHOybmm`
 
 ---
 
