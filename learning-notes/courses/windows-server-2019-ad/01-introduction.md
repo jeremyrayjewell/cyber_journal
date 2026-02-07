@@ -18,14 +18,10 @@ Section 1 covers initial setup and orientation for the course, including install
 
 **Learning Objectives:**  
 - Understand the scope and structure of the course  
-- Identify the core technologies covered (Active Directory, DNS, GPO, DHCP)  
-- Set expectations for hands-on lab components and prerequisites  
 
 **Key Topics:**  
-- Instructor background and teaching approach  
 - Course structure, modules, and progression  
-- Overview of Windows Server 2019 in enterprise environments  
-- How Active Directory, DNS, GPO, and DHCP fit together in real-world networks  
+- Overview of Windows Server 2019 
 - Lab environment expectations (VMs, domain controllers, client machines)  
 
 ---
@@ -74,4 +70,5 @@ Section 1 covers initial setup and orientation for the course, including install
 
 **Notes Author:** Jeremy Ray Jewell  
 [GitHub](https://github.com/jeremyrayjewell) | [LinkedIn](https://www.linkedin.com/in/jeremyrayjewell)  
+
 
