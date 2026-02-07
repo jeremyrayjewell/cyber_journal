@@ -71,6 +71,65 @@ Click a course title to view its summary and notes:
 
 ---
 
+## Microsoft 365 Administration & Security (Microsoft Learn / Udemy)
+
+### Messaging Administrator (Exchange Online)
+
+* [Section 1: Introduction](microsoft-365/messaging-admin-exchange/01-introduction.md)  
+* [Section 2: Hands-on Activities](microsoft-365/messaging-admin-exchange/02-hands-on-activities.md)  
+* [Section 3: Manage Access Settings](microsoft-365/messaging-admin-exchange/03-manage-access-settings.md)  
+* [Section 4: Recipients and Resources](microsoft-365/messaging-admin-exchange/04-recipients-and-resources.md)  
+* [Section 5: Manage Hybrid Settings and Migration](microsoft-365/messaging-admin-exchange/05-manage-hybrid-settings-and-migration.md)  
+* [Section 6: Manage and Secure Mail Flow](microsoft-365/messaging-admin-exchange/06-manage-and-secure-mail-flow.md)  
+* [Section 7: Troubleshoot Mail Flow](microsoft-365/messaging-admin-exchange/07-troubleshoot-mail-flow.md)  
+* [Section 8: Manage Role-based Permissions](microsoft-365/messaging-admin-exchange/08-manage-role-based-permissions.md)  
+* [Section 9: Microsoft 365 Defender](microsoft-365/messaging-admin-exchange/09-microsoft-365-defender.md)  
+* [Section 10: Manage Compliance](microsoft-365/messaging-admin-exchange/10-manage-compliance.md)  
+* [Section 11: Role Plays](microsoft-365/messaging-admin-exchange/11-role-plays.md)  
+* [Section 12: Final](microsoft-365/messaging-admin-exchange/12-final.md)
+
+### Security Administrator
+
+* [Section 1: Introduction to Course](microsoft-365/security-admin/01-intro-to-course.md)  
+* [Section 2: User Identity Administration and PowerShell](microsoft-365/security-admin/02-user-id-admin-and-powershell.md)  
+* [Section 3: Working with Groups in Microsoft 365](microsoft-365/security-admin/03-working-with-groups-in-ms365.md)  
+* [Section 4: Password and Lockout Management](microsoft-365/security-admin/04-password-lockout-management.md)  
+* [Section 5: Administrative Units, RBAC, and PIM](microsoft-365/security-admin/05-admin-units-rbac-pim.md)  
+* [Section 6: Multi-Factor Authentication (MFA)](microsoft-365/security-admin/06-mfa.md)  
+* [Section 7: Self-Service Password Reset (SSPR)](microsoft-365/security-admin/07-sspr.md)  
+* [Section 8: Entra ID Protection](microsoft-365/security-admin/08-entra-id-protection.md)  
+* [Section 9: Conditional Access and Compliance Policies](microsoft-365/security-admin/09-conditional-access-compliance-policies.md)  
+* [Section 10: Foundations: Microsoft 365 Threat Concepts and Dashboards](microsoft-365/security-admin/10-foundations-ms365-threat-concepts-dashboards.md)  
+* [Section 11: Microsoft Purview Data Lifecycle](microsoft-365/security-admin/11-ms-purview-data-lifecycle.md)  
+* [Section 12: Data Loss Prevention (DLP)](microsoft-365/security-admin/12-dlp.md)  
+* [Section 13: Secure Endpoints](microsoft-365/security-admin/13-secure-endpoints.md)  
+* [Section 14: Implement and Manage Microsoft Defender](microsoft-365/security-admin/14-implement-manage-ms-defender.md)  
+* [Section 15: Microsoft Sentinel](microsoft-365/security-admin/15-ms-sentinel.md)  
+* [Section 16: Defender for Cloud and Identity](microsoft-365/security-admin/16-defender-for-cloud-and-id.md)  
+* [Section 17: Purview Logs and Reports](microsoft-365/security-admin/17-purview-logs-reports.md)  
+* [Section 18: Compliance Queries](microsoft-365/security-admin/18-compliance-queries.md)  
+* [Section 19: Purview Communication Compliance](microsoft-365/security-admin/19-purview-communication-compliance.md)  
+* [Section 20: Purview Insider Risk Management](microsoft-365/security-admin/20-purview-insider-risk-management.md)  
+* [Section 21: Role Plays](microsoft-365/security-admin/21-role-plays.md)  
+* [Section 22: Final](microsoft-365/security-admin/22-final.md)
+
+---
+
+## Windows Server 2019 Administration – Active Directory, DNS, GPO, DHCP (Udemy)
+
+* [Section 1: Introduction](windows-server-2019-ad/01-introduction.md)  
+* [Section 2: Domains and Active Directory Overview](windows-server-2019-ad/02-domains-and-ad-overview.md)  
+* [Section 3: Active Directory Basics](windows-server-2019-ad/03-active-directory-basics.md)  
+* [Section 4: Advanced Active Directory Configuration](windows-server-2019-ad/04-active-directory-advanced-config.md)  
+* [Section 5: Troubleshooting Domain Controllers](windows-server-2019-ad/05-troubleshooting-domain-controllers.md)  
+* [Section 6: DNS and Multiple Domain Controllers](windows-server-2019-ad/06-dns-and-multiple-domain-controllers.md)  
+* [Section 7: Group Policy Overview](windows-server-2019-ad/07-group-policy-overview.md)  
+* [Section 8: Common Group Policies](windows-server-2019-ad/08-common-group-policies.md)  
+* [Section 9: Troubleshooting Group Policy Objects](windows-server-2019-ad/09-troubleshooting-gpos.md)  
+* [Section 10: Conclusion](windows-server-2019-ad/10-conclusion.md)
+
+---
+
 ## Author: **Jeremy Ray Jewell**
 
 [GitHub](https://github.com/jeremyrayjewell)  
