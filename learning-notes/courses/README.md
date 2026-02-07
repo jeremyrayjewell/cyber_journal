@@ -5,41 +5,10 @@ Click a course title to view its summary and notes:
 
 ---
 
-## Google Cybersecurity Certificate (Coursera)
+<details>
+<summary><strong>CompTIA Security+ (SY0-701) – Dion Training (Udemy)</strong></summary>
 
-* [Course 1: Foundations of Cybersecurity](google-cybersecurity-certificate/course-01-foundations-of-cybersecurity.md)  
-* [Course 2: Play It Safe: Manage Security Risks](google-cybersecurity-certificate/course-02-play-it-safe.md)  
-* [Course 3: Connect and Protect: Networks and Network Security](google-cybersecurity-certificate/course-03-connect-and-protect.md)  
-* [Course 4: Tools of the Trade: Linux and SQL](google-cybersecurity-certificate/course-04-tools-of-the-trade.md)  
-* [Course 5: Assets, Threats, and Vulnerabilities](google-cybersecurity-certificate/course-05-assets-threats-and-vulnerabilities.md)  
-* [Course 6: Sound the Alarm: Detection and Response](google-cybersecurity-certificate/course-06-sound-the-alarm-detection-and-response.md)  
-* [Course 7: Automate Cybersecurity Tasks with Python](google-cybersecurity-certificate/course-07-automate-cybersecurity-tasks-with-python.md)  
-* [Course 8: Prepare for Cybersecurity Jobs](google-cybersecurity-certificate/course-08-prepare-for-cybersecurity-jobs.md)  
-
----
-
-## IBM Cybersecurity Analyst Professional Certificate (Coursera)
-
-* [Course 1: Introduction to Cybersecurity Careers](ibm-security-analyst-certificate/course-01-introduction-to-cyber-security-careers.md)  
-* [Course 2: Introduction to Cybersecurity Essentials](ibm-security-analyst-certificate/course-02-intro-to-cybersecurity-essentials.md)  
-* [Course 3: Introduction to Cybersecurity Tools](ibm-security-analyst-certificate/course-03-intro-to-cybersecurity-tools.md)  
-* [Course 4: Operating Systems](ibm-security-analyst-certificate/course-04-operating-systems.md)  
-* [Course 5: Computer Networks](ibm-security-analyst-certificate/course-05-computer-networks.md)  
-* [Course 6: Database Essentials](ibm-security-analyst-certificate/course-06-database-essentials.md)  
-* [Course 7: Cybersecurity Architecture](ibm-security-analyst-certificate/course-07-cybersecurity-architecture.md)  
-* [Course 8: Cybersecurity Compliance Framework & System Administration](ibm-security-analyst-certificate/course-08-cybersecurity-compliance.md)  
-* [Course 9: Penetration Testing, Threat Hunting, and Cryptography](ibm-security-analyst-certificate/course-09-penetration-testing.md)  
-* [Course 10: Cybersecurity Incident Response and Digital Forensics](ibm-security-analyst-certificate/course-10-incident-response-digital-forensics.md)
-* [Course 11: Cybersecurity Case Studies and Capstone Project](ibm-security-analyst-certificate/course-11-case-studies-and-capstone.md)
-* [Course 12: Cybersecurity Assessment: CompTIA Security+ and CySA+](ibm-security-analyst-certificate/course-12-cybersecurity-assessment.md)
-* [Course 13: Generative AI: Boost Your Cybersecurity Career](ibm-security-analyst-certificate/course-13-generative-ai.md)
-* [Course 14: Cybersecurity Job Search, Resume, and Interview Preparation](ibm-security-analyst-certificate/course-14-cybersecurity-job-search.md)
-
----
-
-## CompTIA Security+ (SY0-701) – Dion Training (Udemy)
-
-* [Flashcards](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=29) 
+* [Flashcards](https://jeremyrayjewell-flashcards.netlify.app/security-plus-dion.html#deck=29)  
 * [Section 1: Introduction](comptia-securityplus-dion/section-01-introduction.md)  
 * [Section 2: Fundamentals of Security](comptia-securityplus-dion/section-02-fundamentals-of-security.md)  
 * [Section 3: Threat Actors](comptia-securityplus-dion/section-03-threat-actors.md)  
@@ -69,9 +38,50 @@ Click a course title to view its summary and notes:
 * [Section 27: Security Awareness](comptia-securityplus-dion/section-27-security-awareness.md)  
 * [Section 28: Conclusion](comptia-securityplus-dion/section-28-conclusion.md)  
 
+</details>
+
 ---
 
-## Microsoft 365 Administration & Security (Microsoft Learn / Udemy)
+<details>
+<summary><strong>Google Cybersecurity Certificate (Coursera)</strong></summary>
+
+* [Course 1: Foundations of Cybersecurity](google-cybersecurity-certificate/course-01-foundations-of-cybersecurity.md)  
+* [Course 2: Play It Safe: Manage Security Risks](google-cybersecurity-certificate/course-02-play-it-safe.md)  
+* [Course 3: Connect and Protect: Networks and Network Security](google-cybersecurity-certificate/course-03-connect-and-protect.md)  
+* [Course 4: Tools of the Trade: Linux and SQL](google-cybersecurity-certificate/course-04-tools-of-the-trade.md)  
+* [Course 5: Assets, Threats, and Vulnerabilities](google-cybersecurity-certificate/course-05-assets-threats-and-vulnerabilities.md)  
+* [Course 6: Sound the Alarm: Detection and Response](google-cybersecurity-certificate/course-06-sound-the-alarm-detection-and-response.md)  
+* [Course 7: Automate Cybersecurity Tasks with Python](google-cybersecurity-certificate/course-07-automate-cybersecurity-tasks-with-python.md)  
+* [Course 8: Prepare for Cybersecurity Jobs](google-cybersecurity-certificate/course-08-prepare-for-cybersecurity-jobs.md)  
+
+</details>
+
+---
+
+<details>
+<summary><strong>IBM Cybersecurity Analyst Professional Certificate (Coursera)</strong></summary>
+
+* [Course 1: Introduction to Cybersecurity Careers](ibm-security-analyst-certificate/course-01-introduction-to-cyber-security-careers.md)  
+* [Course 2: Introduction to Cybersecurity Essentials](ibm-security-analyst-certificate/course-02-intro-to-cybersecurity-essentials.md)  
+* [Course 3: Introduction to Cybersecurity Tools](ibm-security-analyst-certificate/course-03-intro-to-cybersecurity-tools.md)  
+* [Course 4: Operating Systems](ibm-security-analyst-certificate/course-04-operating-systems.md)  
+* [Course 5: Computer Networks](ibm-security-analyst-certificate/course-05-computer-networks.md)  
+* [Course 6: Database Essentials](ibm-security-analyst-certificate/course-06-database-essentials.md)  
+* [Course 7: Cybersecurity Architecture](ibm-security-analyst-certificate/course-07-cybersecurity-architecture.md)  
+* [Course 8: Cybersecurity Compliance Framework & System Administration](ibm-security-analyst-certificate/course-08-cybersecurity-compliance.md)  
+* [Course 9: Penetration Testing, Threat Hunting, and Cryptography](ibm-security-analyst-certificate/course-09-penetration-testing.md)  
+* [Course 10: Cybersecurity Incident Response and Digital Forensics](ibm-security-analyst-certificate/course-10-incident-response-digital-forensics.md)  
+* [Course 11: Cybersecurity Case Studies and Capstone Project](ibm-security-analyst-certificate/course-11-case-studies-and-capstone.md)  
+* [Course 12: Cybersecurity Assessment: CompTIA Security+ and CySA+](ibm-security-analyst-certificate/course-12-cybersecurity-assessment.md)  
+* [Course 13: Generative AI: Boost Your Cybersecurity Career](ibm-security-analyst-certificate/course-13-generative-ai.md)  
+* [Course 14: Cybersecurity Job Search, Resume, and Interview Preparation](ibm-security-analyst-certificate/course-14-cybersecurity-job-search.md)
+
+</details>
+
+---
+
+<details>
+<summary><strong>Microsoft 365 Administration & Security (Microsoft Learn / Udemy)</strong></summary>
 
 ### Messaging Administrator (Exchange Online)
 
@@ -113,9 +123,12 @@ Click a course title to view its summary and notes:
 * [Section 21: Role Plays](microsoft-365/security-admin/21-role-plays.md)  
 * [Section 22: Final](microsoft-365/security-admin/22-final.md)
 
+</details>
+
 ---
 
-## Windows Server 2019 Administration – Active Directory, DNS, GPO, DHCP (Udemy)
+<details>
+<summary><strong>Windows Server 2019 Administration – Active Directory, DNS, GPO, DHCP (Udemy)</strong></summary>
 
 * [Section 1: Introduction](windows-server-2019-ad/01-introduction.md)  
 * [Section 2: Domains and Active Directory Overview](windows-server-2019-ad/02-domains-and-ad-overview.md)  
@@ -127,6 +140,8 @@ Click a course title to view its summary and notes:
 * [Section 8: Common Group Policies](windows-server-2019-ad/08-common-group-policies.md)  
 * [Section 9: Troubleshooting Group Policy Objects](windows-server-2019-ad/09-troubleshooting-gpos.md)  
 * [Section 10: Conclusion](windows-server-2019-ad/10-conclusion.md)
+
+</details>
 
 ---
 
